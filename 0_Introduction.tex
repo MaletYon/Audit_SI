@@ -1,0 +1,102 @@
+% ==============================================================================
+% Fichier     : chapitres/0_Introduction.tex
+% Titre       : Introduction Générale au Cours d'Audit des Systèmes d'Information
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ==============================================================================
+
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+\markboth{Introduction Générale}{Introduction Générale}
+
+\begin{flushright}
+    \itshape
+    <<~L'audit n'est pas une sanction. C'est un regard lucide\\
+    posé sur une organisation qui veut progresser.~>>\\[0.5ex]
+    \small--- Architecte de l'Ombre
+\end{flushright}
+
+\vspace{1.5ex}
+
+% ==============================================================================
+\section*{Contexte et Pertinence du Cours}
+% ==============================================================================
+
+L'ère numérique a profondément reconfiguré l'architecture des organisations modernes. Les systèmes d'information ne constituent plus de simples supports opérationnels : ils sont devenus le substrat vital sur lequel reposent la compétitivité, la conformité réglementaire et la souveraineté stratégique des entreprises et institutions. Dès lors, la question de leur maîtrise, de leur fiabilité et de leur sécurité s'impose comme une priorité absolue de gouvernance.
+
+C'est précisément dans cet espace de tension entre performance opérationnelle et impératif de contrôle que s'inscrit la discipline de l'\termecle{audit des systèmes d'information}. Loin d'être une activité ancillaire, l'audit SI constitue aujourd'hui une fonction stratégique à part entière, exercée par des professionnels certifiés — \sigle{CISA}, \sigle{CISM}, \sigle{CRISC} — dont l'autorité repose autant sur leur indépendance que sur leur rigueur méthodologique.
+
+Ce cours s'adresse à des étudiants qui seront demain auditeurs, responsables sécurité, consultants en gouvernance informatique ou décideurs numériques. Il leur offre les fondements conceptuels, les outils méthodologiques et la maturité pratique nécessaires pour conduire une mission d'audit avec professionnalisme.
+
+% ==============================================================================
+\section*{Fil Conducteur : L'Entreprise LiZbiZ}
+% ==============================================================================
+
+L'ensemble de ce cours est structuré autour d'un cas pratique unique et cohérent : l'entreprise fictive \textbf{LiZbiZ}, acteur du commerce électronique en pleine transformation digitale. Ce choix pédagogique délibéré permet d'ancrer chaque concept théorique dans une situation concrète, d'observer les mêmes risques sous plusieurs angles d'audit, et de simuler l'expérience complète d'une mission.
+
+Au fil des chapitres, vous endosserez successivement le rôle d'auditeur junior, senior et de chef de mission, confrontés à des problèmes réels : fraude aux fournisseurs fictifs, failles de sécurité réseau, conformité RGPD, gouvernance des projets IA.
+
+% ==============================================================================
+\section*{Objectifs Généraux du Cours}
+% ==============================================================================
+
+\begin{boxobjectifs}
+À l'issue de ce cours, l'étudiant sera capable de :
+\begin{enumerate}
+    \item \textbf{Maîtriser le vocabulaire professionnel} de l'audit et du contrôle interne.
+    \item \textbf{Appliquer la démarche d'audit} (planification, exécution, rapport) selon les normes \sigle{ISO 19011} et \sigle{ISACA}.
+    \item \textbf{Mobiliser les référentiels} \sigle{COSO}, \sigle{COBIT} et \sigle{ISO 27001} comme grilles d'évaluation.
+    \item \textbf{Identifier et cartographier les risques} SI dans un contexte organisationnel donné.
+    \item \textbf{Conduire des tests d'audit} techniques (SQL, réseau, analyse de configuration).
+    \item \textbf{Rédiger un rapport d'audit} structuré, communicable à une direction générale.
+    \item \textbf{Aborder les enjeux émergents} : intelligence artificielle, fraude numérique, protection des données.
+\end{enumerate}
+\end{boxobjectifs}
+
+% ==============================================================================
+\section*{Organisation du Cours}
+% ==============================================================================
+
+Le cours est organisé en deux grandes parties, précédées d'un ancrage contextuel et suivies de travaux pratiques immersifs.
+
+\medskip
+
+\noindent\textbf{Partie~I — Fondements théoriques et méthodologiques}
+
+Cette partie établit les concepts structurants indispensables à toute démarche d'audit. Elle couvre les définitions fondamentales (Chapitre~\ref{chap:fondamentaux}), la démarche générale d'audit SI (Chapitre~\ref{chap:demarche}), les normes et référentiels reconnus (Chapitres~\ref{chap:normes} et~\ref{chap:referentiels}), ainsi que les principaux types d'audits rencontrés en milieu professionnel (Chapitre~\ref{chap:types}).
+
+\medskip
+
+\noindent\textbf{Partie~II — Domaines spécialisés et enjeux contemporains}
+
+Cette partie approfondit les domaines de l'audit technique (Chapitre~\ref{chap:connexes}), et présente l'évaluation finale de synthèse (Chapitre~\ref{chap:evaluation}), qui mobilise l'ensemble des acquis dans le contexte LiZbiZ.
+
+\medskip
+
+\noindent\textbf{Travaux pratiques (TP)}
+
+Deux laboratoires immersifs complètent le dispositif théorique : un audit fonctionnel de l'application de gestion (TP~1) et un audit de sécurité d'infrastructure réseau (TP~2).
+
+% ==============================================================================
+\section*{Posture Épistémologique et Déontologie}
+% ==============================================================================
+
+L'auditeur n'est ni un juge ni un censeur. Il est un professionnel au service de la vérité organisationnelle — une vérité que ni la complaisance ni la suspicion systématique ne peuvent servir. La déontologie de l'audit repose sur quatre piliers indissociables : l'\textbf{intégrité}, l'\textbf{objectivité}, la \textbf{confidentialité} et la \textbf{compétence}. Ces valeurs, portées par l'\sigle{ISACA} (\textit{Information Systems Audit and Control Association})et l'\sigle{IIA} (\textit{Institute of Internal Auditors}), irrigueront l'ensemble de notre démarche pédagogique.
+
+\begin{boxinfo}
+\textbf{Prérequis recommandés :}
+\begin{itemize}
+    \item Bases de la sécurité informatique et des réseaux.
+    \item Notions de bases de données relationnelles (SQL).
+    \item Culture générale de la gouvernance d'entreprise.
+    \item Capacité à lire et analyser des documents techniques en français et en anglais.
+\end{itemize}
+\end{boxinfo}
+
+\vspace{2ex}
+\begin{center}
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}\\[0.8ex]
+    {\small\itshape\color{CouleurPrimaire}
+        Ce cours a été conçu et rédigé avec rigueur pour servir la formation\\
+        des auditeurs de demain. Bonne lecture, et bon audit.}\\[0.5ex]
+    {\small\bfseries\color{CouleurPrimaire}\auteurcours}
+\end{center}

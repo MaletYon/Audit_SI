@@ -1,0 +1,200 @@
+% ==============================================================================
+% Fichier : 05_types_audits.tex
+% Description : Principaux Types d'Audit dans les Systèmes d'Information
+% ==============================================================================
+
+\chapter{Principaux Types d'Audit dans les Systèmes d'Information}
+
+L'audit des SI ne se limite pas à la vérification des ordinateurs. Il couvre plusieurs domaines selon les enjeux de l'entreprise. Ce chapitre détaille les principaux types d'audits rencontrés en milieu professionnel.
+
+\section{Audit des Applications en Service}
+% ------------------------------------------------------------------------------
+
+C'est l'audit le plus courant. Il porte sur un logiciel utilisé quotidiennement par l'entreprise (ERP, CRM, Comptabilité).
+
+\subsection{Objectifs}
+
+L'auditeur vérifie que l'application assure :
+\begin{itemize}
+    \item \textbf{La Fiabilité :} Les données sont exactes (Intégrité).
+    \item \textbf{La Sécurité :} Les accès sont restreints et contrôlés.
+    \item \textbf{La Disponibilité :} L'application est accessible quand nécessaire.
+\end{itemize}
+
+\subsection{Les Deux Dimensions de l'Audit}
+
+\begin{enumerate}
+    \item \textbf{Contrôles Généraux (General Controls) :} L'environnement global.
+    \begin{itemize}
+        \item Le système d'exploitation est-il sécurisé ?
+        \item La salle serveur est-elle verrouillée ?
+        \item Les sauvegardes fonctionnent-elles ?
+    \end{itemize}
+    
+    \item \textbf{Contrôles d'Application (Application Controls) :} Le logiciel métier.
+    \begin{itemize}
+        \item L'application gère-t-elle les droits d'accès fines ?
+        \item Les données de sortie sont-elles cohérentes avec les entrées ?
+        \item Y a-t-il une piste d'audit (logs) des actions utilisateurs ?
+    \end{itemize}
+\end{enumerate}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's : Audit de l'APPLICATION}
+L'auditeur vérifie le module comptable.
+\begin{itemize}
+    \item \textit{Test Général :} Le serveur Linux hébergeant la base de données est-il à jour (Patch) ?
+    \item \textit{Test d'Application :} Un utilisateur peut-il modifier une facture déjà validée sans laisser de trace ? (Test de piste d'audit).
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Audit de la Fonction Informatique (DSI)}
+% ------------------------------------------------------------------------------
+
+Ici, on n'audite pas une machine, mais un service : la Direction des Systèmes d'Information.
+
+\subsection{Objectifs}
+
+Évaluer l'organisation, la gestion des ressources et l'efficacité de la DSI.
+
+\subsection{Points de Contrôle Typiques}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{4cm}p{8cm}}
+    \toprule
+    \textbf{Domaine} & \textbf{Exemples de points de contrôle} \\
+    \midrule
+    \textbf{Organisation} & Clarté de l'organigramme, séparation des tâches (Développeur vs Administrateur). \\
+    \textbf{Gestion du Personnel} & Procédures d'embauche/départ (retrait des accès), formation continue. \\
+    \textbf{Gestion des Actifs} & Inventaire du matériel, gestion des licences logicielles. \\
+    \textbf{Contrôle de Gestion} & Suivi des budgets informatiques, coûts des projets. \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+\section{Audit des Projets Informatiques}
+% ------------------------------------------------------------------------------
+
+L'audit intervient souvent \textbf{pendant} le projet (Audit de jalons) ou à la fin (Réception).
+
+\subsection{Objectifs}
+
+S'assurer que le projet sera livré conformément aux attentes (Qualité, Délai, Coût).
+
+\subsection{Phases Clés à Auditer}
+
+\begin{enumerate}
+    \item \textbf{Phase d'Étude (Cahier des charges) :} Les besoins utilisateurs sont-ils bien traduits ? Le budget est-il réaliste ?
+    \item \textbf{Phase de Développement :} Les développeurs suivent-ils les normes de codage sécurisé ? Les tests unitaires sont-ils passés ?
+    \item \textbf{Phase de Recette (Tests) :} Les tests couvrent-ils tous les scénarios métier ?
+    \item \textbf{Phase de Mise en Production :} Les procédures de migration des données sont-elles sécurisées ?
+\end{enumerate}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's : Projet IA}
+L'audit du projet d'intégration de l'IA dans la logistique doit vérifier que les données personnelles des clients ne sont pas utilisées illégalement par l'algorithme d'apprentissage (Conformité RGPD).
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Audit de Sécurité Informatique}
+% ------------------------------------------------------------------------------
+
+C'est un audit spécialisé, souvent technique (Pentest, Audit configuration).
+
+\subsection{Objectifs}
+
+Mesurer la résistance du SI aux menaces (Hacking, Malveillance interne, Sinistres).
+
+\subsection{Les Piliers de la Sécurité (D.I.C.T.)}
+
+L'audit de sécurité vérifie :
+\begin{itemize}
+    \item \textbf{Disponibilité :} Le système est-il robuste face aux pannes ou DDoS ?
+    \item \textbf{Intégrité :} Les données peuvent-elles être modifiées sans autorisation ?
+    \item \textbf{Confidentialité :} L'information n'est-elle accessible qu'aux personnes habilitées ?
+    \item \textbf{Traçabilité :} Peut-on identifier qui a fait quoi et quand (Logs) ?
+\end{itemize}
+
+\subsection{Méthodologie Technique}
+
+\begin{itemize}
+    \item \textbf{Audit de configuration :} Vérification des paramètres (ex: mots de passe forts activés).
+    \item \textbf{Tests d'intrusion (Pentest) :} Simulation d'une attaque réelle pour trouver les failles.
+    \item \textbf{Audit physique :} Contrôle des accès aux locaux, destruction des documents confidentiels.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Autres Types d'Audits}
+% ------------------------------------------------------------------------------
+
+\subsection{Audit du Support Utilisateur et Gestion du Parc}
+
+Vérification de la gestion du Helpdesk (tickets, SLA) et de l'inventaire matériel (disparition de PC, gestion des cycles de vie).
+
+\subsection{Audit de la Fonction Étude (Développement)}
+
+Focus sur la qualité du code, la documentation technique et la gestion des versions (Versionning).
+% ==============================================================================
+% AJOUTS POUR LE CHAPITRE 05 : TYPES D'AUDIT
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+\section{Audit de la Continuité d'Activité et de la Résilience}
+% ------------------------------------------------------------------------------
+
+L'auditeur doit s'assurer que l'organisation est capable de maintenir ou de reprendre ses activités critiques après un sinistre majeur (incendie, cyberattaque massive, panne électrique). Ce volet s'appuie sur le référentiel \textbf{ISO 22301}.
+
+\subsection{Concepts Clés de Résilience}
+
+\begin{itemize}
+    \item \textbf{BIA (Business Impact Analysis) :} L'audit vérifie si une analyse d'impact a été réalisée pour identifier les processus vitaux.
+    \item \textbf{MTPD (Maximum Tolerable Period of Disruption) :} La durée maximale d'interruption supportable par l'entreprise avant que sa survie ne soit menacée.
+    \item \textbf{RTO (Recovery Time Objective) :} L'objectif de temps pour la remise en service des systèmes.
+    \item \textbf{RPO (Recovery Point Objective) :} La perte de données maximale admissible (déterminée par la fréquence des sauvegardes).
+\end{itemize}
+
+\begin{boxalert}
+\textbf{Point de contrôle :} Un RTO de 4h avec des sauvegardes (RPO) de 24h est-il cohérent avec les besoins métiers de \textbf{LiZbiZ} ? L'auditeur doit relever toute inadéquation entre les capacités techniques et les exigences de la Direction.
+\end{boxalert}
+
+% ------------------------------------------------------------------------------
+\section{Audit des Tiers, du Cloud et de l'Outsourcing}
+% ------------------------------------------------------------------------------
+
+À l'heure du "Tout Cloud", l'auditeur ne peut s'arrêter aux murs de l'entreprise. Si \textbf{LiZbiZ} héberge ses données clients sur AWS ou Azure, le périmètre d'audit doit s'adapter.
+
+\subsection{Le "Droit d'Audit" et les Rapports SOC}
+\begin{itemize}
+    \item \textbf{Clause d'Audit :} Vérifier la présence d'une clause contractuelle permettant à l'entreprise (ou ses mandataires) d'auditer le prestataire.
+    \item \textbf{Rapports SOC (Service Organization Controls) :} En l'absence d'audit direct, l'auditeur doit analyser les rapports de certification du prestataire :
+    \begin{itemize}
+        \item \textbf{SOC 1 (Type II) :} Focus sur les contrôles financiers.
+        \item \textbf{SOC 2 (Type II) :} Focus sur la sécurité, disponibilité et confidentialité.
+    \end{itemize}
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Focus technique : Les Contrôles Applicatifs (IPO)}
+% ------------------------------------------------------------------------------
+
+Pour l'audit de l'APPLICATION de \textbf{LiZbiZ}, l'auditeur utilise le modèle \textbf{Input-Process-Output} pour s'assurer de l'intégrité des données.
+
+
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}
+    \hline
+    \rowcolor{gray!20} \textbf{Étape} & \textbf{Objectif de Contrôle} & \textbf{Exemple de Test d'Audit} \\ \hline
+    \textbf{Entrée (Input)} & Données complètes, exactes et autorisées. & Tester si le système rejette une commande avec un prix négatif. \\ \hline
+    \textbf{Traitement (Process)} & Calculs conformes aux règles métiers. & Vérifier que le calcul de la TVA sur les articles high-tech est exact. \\ \hline
+    \textbf{Sortie (Output)} & Résultats distribués aux bonnes personnes. & S'assurer que les factures générées ne sont accessibles qu'au client concerné. \\ \hline
+\end{tabular}
+\caption{Matrice de contrôle applicatif IPO}
+\end{table}

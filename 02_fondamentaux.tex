@@ -1,0 +1,197 @@
+% ==============================================================================
+% Fichier : 02_fondamentaux.tex
+% Description : Définitions, Concepts et Bases de l'Audit et du Contrôle
+% ==============================================================================
+
+\chapter{Définitions, Concepts et Bases de l'Audit et du Contrôle}
+
+Ce chapitre établit le vocabulaire commun de l'auditeur. Une ambiguïté sur les termes "contrôle", "risque" ou "objectif" peut compromettre la compréhension de toute la mission.
+
+\section{Audit et Contrôle : Distinction Fondamentale}
+% ------------------------------------------------------------------------------
+
+Il est fréquent de confondre ces deux notions, pourtant distinctes.
+
+\subsection{Définitions}
+
+\begin{boxdef}
+\textbf{L'Audit :} Activité d'examen d'un \textbf{processus} ou d'une organisation par un tiers indépendant, visant à évaluer la conformité, l'efficacité et l'optimisation.
+\end{boxdef}
+
+\begin{boxdef}
+\textbf{Le Contrôle :} Action de vérification ponctuelle d'une \textbf{opération} pour s'assurer de sa régularité, exactitude ou sincérité.
+\end{boxdef}
+
+\subsection{Comparaison}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+    \toprule
+    \textbf{Critère} & \textbf{Audit} & \textbf{Contrôle} \\
+    \midrule
+    \textbf{Sujet} & Un processus global. & Une opération unitaire. \\
+    \textbf{But} & Amélioration, Optimisation. & Vérification, Conformité. \\
+    \textbf{Acteur} & Indépendant (Interne ou Externe). & Souvent opérationnel. \\
+    \textbf{Périodicité} & Ponctuelle (Mission). & Continue ou fréquente. \\
+    \bottomrule
+\end{tabular}
+\caption{Différences entre Audit et Contrôle}
+\end{table}
+
+\begin{boxlizbiz}
+\textbf{Exemple Lizbiz's :}
+\begin{itemize}
+    \item \textbf{Contrôle :} Le comptable vérifie que le montant d'une facture correspond à la commande reçue.
+    \item \textbf{Audit :} L'auditeur analyse l'ensemble du processus "Achat-Fournisseur" pour voir si les contrôles (comme celui du comptable) sont efficaces et appliqués tout le temps.
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{L'Assurance Raisonnable}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{Assurance Raisonnable :} Niveau de confiance élevé, mais non absolu, que l'auditeur apporte sur la fiabilité des éléments analysés.
+\end{boxdef}
+
+L'auditeur ne peut pas garantir à 100\% qu'il n'y a pas d'erreur ou de fraude (limite intrinsèque de l'échantillonnage, limites du temps, dissimulation possible). La certification ISO n'est pas une assurance "tous risques".
+
+% ------------------------------------------------------------------------------
+\section{Le Concept de Risque}
+% ------------------------------------------------------------------------------
+
+L'audit est intrinsèquement lié à la gestion des risques.
+
+\subsection{Définition Académique}
+
+Le risque est la probabilité qu'une menace exploite une vulnérabilité pour générer un impact sur une ressource.
+\[ Risque = Probabilité \times Impact \]
+
+\subsection{Le Cycle du Risque}
+
+L'auditeur intervient souvent sur le "Risque Résiduel".
+
+\begin{enumerate}
+    \item \textbf{Risque Inhérent :} Risque brut, sans aucune mesure de protection.
+    \item \textbf{Mesures de Contrôle :} Ce que l'entreprise a mis en place (Prévention, Détection).
+    \item \textbf{Risque Résiduel :} Risque qui reste après application des contrôles. C'est celui que l'auditeur évalue.
+\end{enumerate}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's :}
+Le \textbf{Risque Inhérent} de fraude à la commande est élevé. Lizbiz's a mis en place un \textbf{Contrôle} de validation manuelle par le manager. L'auditeur vérifie si ce contrôle fonctionne bien. Si le manager valide tout sans regarder, le \textbf{Risque Résiduel} reste élevé.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Le Contrôle Interne (CI)}
+% ------------------------------------------------------------------------------
+
+\subsection{Définition}
+
+\begin{boxdef}
+\textbf{Contrôle Interne :} Ensemble des mesures prises par une organisation pour maîtriser ses activités et atteindre ses objectifs (Performance, Sécurité, Conformité).
+\end{boxdef}
+
+\subsection{Les Types de Contrôles}
+
+On distingue généralement trois catégories de contrôles :
+\begin{enumerate}
+    \item \textbf{Préventifs :} Visent à empêcher l'erreur ou la fraude (ex: Mot de passe, Séparation des tâches).
+    \item \textbf{Détectifs :} Visent à identifier l'erreur lorsqu'elle s'est produite (ex: Relevé de banque, Logs, Alarmes).
+    \item \textbf{Correctifs :} Visent à corriger l'erreur et rétablir la situation (ex: Procédure de rejet de facture, Restauration de sauvegarde).
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+\section{Principes d'Organisation du Contrôle}
+% ------------------------------------------------------------------------------
+
+Deux principes classiques régissent l'organisation du contrôle interne.
+
+\subsection{La Règle des Quatre Yeux (Four Eyes Principle)}
+
+\begin{boxdef}
+Principe selon lequel toute décision ou opération sensible doit être validée par \textbf{deux personnes distinctes} et compétentes.
+\end{boxdef}
+
+Cela empêche une seule personne de détourner des fonds ou de valider ses propres erreurs.
+
+\subsection{L'Allégorie des Deux Mains}
+
+Pour empêcher la fraude, il faut séparer les tâches conflictuelles :
+\begin{itemize}
+    \item \textbf{Main Droite (Opérationnel) :} Celui qui exécute l'opération (ex: saisir la commande).
+    \item \textbf{Main Gauche (Contrôle) :} Celui qui valide ou contrôle l'opération (ex: valider le paiement).
+\end{itemize}
+
+\begin{boxalert}
+\textbf{Danger :} Si une même personne a le rôle "Créer Fournisseur" ET "Payer Fournisseur", le système est vulnérable à la fraude (création d'un fournisseur fictif). C'est une Non-Conformité majeure.
+\end{boxalert}
+
+% ------------------------------------------------------------------------------
+\section{La Boîte à Outils de l'Auditeur : Le Vocabulaire de la Mission}
+% ------------------------------------------------------------------------------
+
+Pour structurer ses travaux, l'auditeur utilise un vocabulaire précis pour décrire ce qu'il fait.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{4cm}p{8cm}}
+    \toprule
+    \textbf{Terme} & \textbf{Définition} \\
+    \midrule
+    \textbf{Point de Contrôle} & Élément précis sur lequel porte l'audit (ex: Le serveur de paiement). \\
+    \textbf{Objectif de Contrôle} & But à atteindre (ex: Assurer la confidentialité des données). \\
+    \textbf{Critère d'évaluation} & La règle de référence (ex: La politique de sécurité, la norme ISO). \\
+    \textbf{Question d'évaluation} & La question technique posée pour vérifier le critère (ex: "Les flux sont-ils chiffrés ?"). \\
+    \textbf{Constatation} & Le résultat factuel de l'audit (ex: "Les flux ne sont pas chiffrés"). \\
+    \bottomrule
+\end{tabular}
+\caption{Vocabulaire de la mission d'audit}
+\end{table}
+
+\subsection{Le "Contradictoire"}
+
+Principe fondamental de l'audit : l'audité doit pouvoir s'expliquer et contester les faits avant la rédaction finale du rapport. L'auditeur ne peut pas porter de jugement sans avoir entendu l'audité.
+
+\subsection{Observation vs Constatation}
+
+\begin{itemize}
+    \item \textbf{Constatation :} Un fait brut noté lors de l'enquête (ex: "L'employé n'a pas verrouillé sa session").
+    \item \textbf{Observation :} L'observation validée et documentée dans le rapport, avec analyse de l'impact.
+\end{itemize}
+
+\subsection{Sur place et Sur pièces}
+
+Deux méthodes de vérification :
+\begin{itemize}
+    \item \textbf{Sur place :} Présence physique de l'auditeur (entretiens, observation des locaux).
+    \item \textbf{Sur pièces :} Analyse de documents à distance (revue de procédures, extraction de données).
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Définitions des Systèmes d'Information (SI)}
+% ------------------------------------------------------------------------------
+
+Pour auditer l'informatique, il faut en comprendre les composantes.
+
+\subsection{Système Informatique vs Système d'Information}
+
+\begin{boxdef}
+\begin{itemize}
+    \item \textbf{Système d'Information (SI) :} Ensemble organisé de ressources (personnes, données, procédures) permettant de traiter l'information dans l'organisation.
+    \item \textbf{Système Informatique :} Partie technique du SI (Matériel, Logiciel, Réseau).
+\end{itemize}
+\end{boxdef}
+
+L'auditeur audite le SI (le métier, l'usage) en s'appuyant sur la technique du Système Informatique.
+
+\subsection{Composantes Techniques (Rappels)}
+
+\begin{itemize}
+    \item \textbf{Système d'exploitation :} Interface entre matériel et logiciels (Windows, Linux).
+    \item \textbf{Base de données :} Structuration des données (PostgreSQL, Oracle).
+    \item \textbf{Réseau :} Liaison entre les équipements.
+    \item \textbf{Sécurité :} Protection des actifs (Firewall, Antivirus).
+\end{itemize}
