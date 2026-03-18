@@ -365,6 +365,43 @@
 }
 
 
+% --- H.— Boite Théorème
+\newtcolorbox{boiteTheoreme}[2][]{
+  enhanced,
+  attach boxed title to top left={xshift=4mm, yshift=-3mm},
+  fonttitle=\bfseries\scshape,
+  colbacktitle=CouleurPrimaire,        % Bleu marine profond (vs grisT)
+  colframe=CouleurPrimaire,            % Bordure bleu marine
+  colback=CouleurDef,                  % Fond bleu très clair (#E6F4FF)
+  coltitle=white,
+  boxrule=0.8pt,                       % Légèrement plus marqué (cohérence cours)
+  arc=3pt,                             % Légèrement arrondi (cohérence cours)
+  boxed title style={
+    colframe=CouleurPrimaire,
+    arc=3pt,
+    boxrule=0.8pt
+  },
+  title=\strut #2, #1
+}
+
+% --- I.— boiteRemarque 
+\newtcolorbox{boiteRemarque}[2][]{
+  enhanced,
+  attach boxed title to top left={xshift=4mm, yshift=-3mm},
+  fonttitle=\bfseries\scshape,
+  colbacktitle=CouleurAccent,          % Or institutionnel (vs grisR)
+  colframe=CouleurAccent,              % Bordure or
+  colback=CouleurAlerte,               % Fond ambre pâle (#FFF3E1)
+  coltitle=white,
+  boxrule=0.8pt,
+  arc=3pt,
+  boxed title style={
+    colframe=CouleurAccent,
+    arc=3pt,
+    boxrule=0.8pt
+  },
+  title=\strut #2, #1
+}
 % ==============================================================================
 % VIII. STYLE DE CODE SOURCE (LISTINGS)
 % ==============================================================================
@@ -520,7 +557,7 @@
 
 % Commande pour l'auteur en filigrane de titre de partie
 \newcommand{\auteurcours}{MINKA MI NGUIDJOÏ Thierry Emmanuel}
-\newcommand{\institutionprimaire}{Université de Yaoundé I — ENSPY}
+\newcommand{\institutionprimaire}{Université de Yaoundé I — ENSP}
 \newcommand{\unitepedago}{Département de Génie Informatique}
 \newcommand{\anneescolaire}{2025--2026}
 
