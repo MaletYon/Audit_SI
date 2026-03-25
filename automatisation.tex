@@ -1,0 +1,380 @@
+\chapter{Outils d'automatisation et d'assistance à l'audit des SI}
+\label{annexe:outils-audit}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+L'auditeur des systèmes d'information dispose aujourd'hui d'un écosystème
+d'outils logiciels qui transforment profondément la nature et la portée de
+ses missions. Ces outils ne remplacent pas le jugement professionnel~; ils
+l'amplifient~: là où l'auditeur traditionnel sondait par échantillonnage,
+l'outil d'analyse de données peut analyser la population entière des
+transactions~; là où le questionnaire papier collectait des déclarations,
+la plateforme GRC consolide des preuves documentées et traçables.
+
+Cette annexe est organisée en quatre temps~: d'abord une grille de critères
+de sélection indépendante des outils~; ensuite une classification fonctionnelle
+qui regroupe les outils par famille plutôt que par éditeur~; puis des fiches
+synthétiques par outil~; enfin un arbre de décision permettant de choisir
+selon le contexte de la mission.
+
+% ------------------------------------------------------------------------------
+\section{Critères de sélection d'un outil d'audit}
+\label{sec:criteres-outils}
+% ------------------------------------------------------------------------------
+
+Avant de comparer des outils, l'auditeur doit définir les critères qui
+guideront son choix. Ces critères sont indépendants des outils~: ils
+dépendent du contexte de la mission, du niveau de maturité de l'équipe
+et des contraintes institutionnelles.
+
+\subsection*{Critère~1. Périmètre fonctionnel couvert}
+
+Un outil peut couvrir un ou plusieurs des cinq périmètres suivants~:
+\begin{enumerate}
+  \item \textbf{Analyse de données (AD)~:} extraction, manipulation,
+        interrogation et visualisation de fichiers de transactions~;
+  \item \textbf{Gestion de la mission (GM)~:} planification, papiers de
+        travail, suivi des recommandations~;
+  \item \textbf{GRC~:} gouvernance, gestion des risques et conformité,
+        cartographie des risques, auto-évaluation des contrôles~;
+  \item \textbf{Contrôle continu (CC)~:} surveillance automatisée des
+        transactions et détection d'anomalies en temps réel ou quasi-réel~;
+  \item \textbf{Extraction et transformation (ET)~:} lecture de formats
+        de fichiers complexes (PDF, rapports propriétaires, exports ERP).
+\end{enumerate}
+
+\subsection*{Critère~2. Intégration aux référentiels}
+
+Certains outils intègrent nativement les référentiels (COSO, COBIT, ISO,
+IIA) comme cadres d'évaluation. Cette intégration réduit la charge de
+paramétrage et renforce l'opposabilité des conclusions.
+
+\subsection*{Critère~3. Courbe d'apprentissage et autonomie}
+
+Un outil destiné à un auditeur seul ou à une petite équipe doit être
+opérationnel rapidement~; un outil destiné à une institution d'audit
+de grande taille peut justifier un investissement de formation plus long.
+La distinction clé est~: \emph{outil pour auditeur individuel} (ACL
+Desktop, IDEA) vs.\ \emph{plateforme institutionnelle} (SAP GRC, Oracle GRC).
+
+\subsection*{Critère~4. Accessibilité et coût}
+
+\begin{itemize}
+  \item \textbf{Outils commerciaux sur abonnement~:} ACL (Galvanize/Diligent),
+        IDEA (CaseWare), SAP GRC, Oracle GRC~; coût élevé, support complet~;
+  \item \textbf{Outils open source ou gratuits~:} PSPP (analyse statistique),
+        LibreOffice Calc avec macros, Python/pandas pour l'analyse de données~;
+        coût nul, courbe d'apprentissage variable~;
+  \item \textbf{Outils académiques et institutionnels~:} certains éditeurs
+        (CaseWare IDEA) proposent des licences académiques ou des versions
+        allégées adaptées aux institutions publiques.
+\end{itemize}
+
+\subsection*{Critère~5. Capacité TAAO (Techniques d'Audit Assistées par
+Ordinateur)}
+
+Un outil TAAO de qualité doit permettre~: l'importation de fichiers dans
+des formats variés (CSV, Excel, XML, formats ERP propriétaires)~; la
+réalisation des tests statistiques courants (stratification, échantillonnage,
+détection de doublons, calcul de Benford)~; et la traçabilité complète
+des étapes de traitement pour garantir la reproductibilité des tests.
+
+\subsection*{Critère~6. Adaptation au contexte africain et institutionnel}
+
+Pour les institutions d'audit public (CONSUPE, IGE, cours des comptes
+africaines), trois contraintes additionnelles s'imposent~:
+\begin{itemize}
+  \item \textbf{Fonctionnement hors-ligne}~: les environnements audités
+        peuvent ne pas avoir de connexion Internet stable~;
+  \item \textbf{Formats locaux}~: les ERP utilisés (SIGIPES, IPPIS, IFMIS)
+        exportent dans des formats spécifiques~;
+  \item \textbf{Contraintes budgétaires}~: le coût par siège d'une licence
+        SAP GRC ou ACL Enterprise peut être prohibitif pour une institution
+        publique africaine.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Classification fonctionnelle des outils}
+\label{sec:classification-outils}
+% ------------------------------------------------------------------------------
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.5}
+\caption{Classification des outils d'audit par famille fonctionnelle}
+\label{tab:classification-outils}
+\begin{tabular}{|p{3cm}|p{5cm}|p{5.5cm}|}
+  \hline
+  \rowcolor{gray!20}
+  \textbf{Famille} & \textbf{Description} & \textbf{Outils représentatifs} \\ \hline
+
+  \textbf{F1. Analyse de données (TAAO)} &
+  Extraction, interrogation, tests statistiques sur populations entières de
+  transactions &
+  ACL Desktop (Galvanize/Diligent), IDEA (CaseWare), Monarch (Datawatch),
+  Python/pandas, R \\ \hline
+
+  \textbf{F2. Gestion de mission d'audit} &
+  Planification, papiers de travail, suivi des recommandations,
+  reporting, archivage de la mission &
+  ACL Workpapers, CaseWare Working Papers, TeamMate+, Protiviti PGP,
+  RVR (Devoteam), Oxial Blue Audit \\ \hline
+
+  \textbf{F3. Plateforme GRC intégrée} &
+  Gouvernance, risques, conformité, contrôle interne, audit, plans de
+  continuité~; plateforme unifiée multi-modules &
+  SAP GRC~10, Oracle GRC, BWise (Nasdaq), eFront GRC, Enablon, Cura GRC,
+  Cogis Software, Archer (RSA/EMC) \\ \hline
+
+  \textbf{F4. Contrôle et audit continus} &
+  Surveillance automatisée des transactions et des accès en temps réel
+  ou quasi-réel, alertes &
+  ACL AuditExchange, GreenLight Audit Analytics, modules SAP EGRCC,
+  Oracle EGRC Controls \\ \hline
+
+  \textbf{F5. Extraction de données complexes} &
+  Lecture et transformation de fichiers dans des formats difficiles~:
+  PDF semi-structurés, rapports d'ERP, fichiers mainframe &
+  Monarch (Datawatch), ACL Importer, ACL Acerno, Python (pdfplumber,
+  openpyxl), scripts ETL \\ \hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+\section{Fiches synthétiques des principaux outils}
+\label{sec:fiches-outils}
+% ------------------------------------------------------------------------------
+
+\subsection*{ACL / Galvanize (Diligent)}
+
+\begin{description}
+  \item[Famille(s)] F1 (analyse de données), F2 (gestion de mission),
+        F4 (contrôle continu).
+  \item[Description] ACL est la référence mondiale de l'analyse de données
+        en audit. Sa force est la capacité à analyser des populations entières
+        de transactions sans échantillonnage, avec une traçabilité complète
+        de chaque étape. La plateforme AuditExchange étend les capacités
+        vers le contrôle continu centralisé. Le module Workpapers gère les
+        papiers de travail avec lien direct vers les données analysées.
+  \item[Points forts] Couverture fonctionnelle étendue~; intégration
+        native des données SAP via ACL Direct Link~; traçabilité des tests~;
+        large base d'utilisateurs et de ressources pédagogiques.
+  \item[Points faibles] Coût de licence élevé~; courbe d'apprentissage
+        significative pour les fonctions avancées~; dépendance à la
+        connectivité pour les fonctions cloud.
+  \item[Recommandation d'usage] Outil de référence pour les équipes d'audit
+        interne de grande taille, les Big Four et les institutions d'audit
+        public bien dotées. Idéal pour les missions à fort volume de
+        transactions (paie, achats, stocks).
+\end{description}
+
+\subsection*{IDEA. CaseWare}
+
+\begin{description}
+  \item[Famille(s)] F1 (analyse de données), F2 (gestion de mission).
+  \item[Description] IDEA (\emph{Interactive Data Extraction and Analysis})
+        est reconnu pour sa simplicité d'utilisation relative et sa capacité
+        à importer une grande variété de formats de fichiers. Il couvre les
+        fonctions TAAO essentielles~: stratification, doublons, ruptures de
+        séquence, calcul de la Loi de Benford, échantillonnage, analyse
+        d'ancienneté, comparaison de fichiers. CaseWare Working Papers est
+        le module compagnon de gestion des papiers de travail.
+  \item[Points forts] Interface plus accessible qu'ACL~; large palette
+        d'importateurs de formats (Excel, CSV, PDF, formats ERP)~; licences
+        académiques disponibles~; documentation francophone disponible~;
+        fonctionnement hors-ligne natif.
+  \item[Points faibles] Moins adapté au contrôle continu que ACL
+        AuditExchange~; capacités de visualisation limitées comparées aux
+        outils modernes.
+  \item[Recommandation d'usage] \textbf{Outil recommandé en premier choix
+        pour les institutions d'audit public africaines}~: rapport
+        fonctionnalités/coût favorable, fonctionnement hors-ligne, licences
+        académiques disponibles, et adapté aux missions de taille moyenne.
+        Convient parfaitement à l'audit de systèmes comme SIGIPES pour
+        l'analyse des anomalies de paie.
+\end{description}
+
+\subsection*{Monarch. Datawatch/Altair}
+
+\begin{description}
+  \item[Famille(s)] F5 (extraction de données complexes).
+  \item[Description] Monarch est un outil de transformation de données
+        spécialisé dans l'extraction depuis des sources non structurées~:
+        rapports PDF, fichiers texte à largeur fixe, exports d'imprimante,
+        formats mainframe. Il permet de transformer ces sources en tableaux
+        structurés exportables vers Excel, Access ou un outil d'analyse.
+  \item[Points forts] Capacité d'extraction depuis des formats impossibles
+        à lire directement par ACL ou IDEA~; aucune compétence de
+        programmation requise~; interface visuelle intuitive.
+  \item[Points faibles] Outil de transformation, pas d'analyse~; doit être
+        utilisé en amont d'IDEA ou ACL.
+  \item[Recommandation d'usage] Indispensable lorsque les données à analyser
+        sont piégées dans des rapports PDF ou des formats d'impression. Outil
+        de préparation des données, à coupler avec IDEA ou ACL pour les tests.
+\end{description}
+
+\subsection*{SAP GRC~10}
+
+\begin{description}
+  \item[Famille(s)] F3 (plateforme GRC), F4 (contrôle continu).
+  \item[Description] SAP GRC est une suite intégrée de modules~: Access
+        Control (gestion des risques liés aux autorisations et séparation
+        des tâches dans SAP et non-SAP), Risk Management (gestion des
+        risques d'entreprise), Process Control (contrôle interne et
+        conformité), et Audit Management (planification et réalisation
+        des missions).
+  \item[Points forts] Intégration native avec SAP~: analyse des
+        séparations de tâches (SoD) directement dans les données SAP~;
+        contrôle continu des transactions~; référentiel de risques et
+        de contrôles intégré.
+  \item[Points faibles] Réservé aux environnements SAP~; coût de licence
+        très élevé~; implémentation longue et coûteuse~; nécessite des
+        compétences SAP spécialisées.
+  \item[Recommandation d'usage] Pertinent uniquement dans les organisations
+        dont le SI repose sur SAP. Inadapté aux institutions publiques
+        africaines dont les SI sont généralement non-SAP.
+\end{description}
+
+\subsection*{BWise (Nasdaq)}
+
+\begin{description}
+  \item[Famille(s)] F3 (plateforme GRC intégrée).
+  \item[Description] BWise est une plateforme GRC standard qui couvre
+        l'audit interne, le contrôle interne, la gestion des risques et la
+        conformité. Elle propose une description structurée de l'organisation
+        (processus, risques, contrôles) et automatise les campagnes d'évaluation,
+        les plans d'action et le reporting.
+  \item[Points forts] Couverture fonctionnelle GRC complète~; indépendance
+        vis-à-vis de l'ERP sous-jacent~; interfaces configurables.
+  \item[Points faibles] Coût de déploiement et de licence élevé~; adapté
+        aux grandes organisations~; peu accessible pour les petites équipes.
+  \item[Recommandation d'usage] Adapté aux grandes DSI ou aux départements
+        d'audit interne cherchant à unifier leurs processus GRC sur une
+        plateforme unique. Non recommandé pour les missions ponctuelles.
+\end{description}
+
+\subsection*{RVR. Devoteam}
+
+\begin{description}
+  \item[Famille(s)] F2 (gestion de mission), F3 (GRC).
+  \item[Description] RVR est une plateforme GRC française intégrée couvrant
+        le processus d'audit (plan, planification, réalisation, papiers de
+        travail, rapport, suivi des recommandations), le contrôle interne
+        et la gestion des risques. Elle intègre les référentiels COSO et AMF
+        nativement et suit une méthodologie conforme aux normes IIA.
+  \item[Points forts] Interface francophone~; conformité IIA native~;
+        intégration référentiels COSO/AMF~; adapté aux équipes d'audit
+        francophones.
+  \item[Points faibles] Moins connu hors de France~; écosystème de
+        partenaires plus restreint qu'ACL ou SAP.
+  \item[Recommandation d'usage] \textbf{Option pertinente pour les
+        institutions d'audit public francophones d'Afrique subsaharienne}
+        (CONSUPE, IGF, Cour des Comptes)~: interface et documentation
+        francophone, conformité aux normes IIA, tarification plus accessible
+        que les solutions anglo-saxonnes.
+\end{description}
+
+\subsection*{Python / pandas / openpyxl (open source)}
+
+\begin{description}
+  \item[Famille(s)] F1 (analyse de données), F5 (extraction).
+  \item[Description] Python, avec ses bibliothèques d'analyse (pandas,
+        numpy), de visualisation (matplotlib, seaborn) et de traitement
+        de fichiers (openpyxl, pdfplumber), constitue une alternative
+        open source complète aux outils TAAO commerciaux. Un auditeur
+        maîtrisant Python peut reproduire l'ensemble des tests d'IDEA ou
+        d'ACL Desktop sans coût de licence.
+  \item[Points forts] Coût nul~; flexibilité maximale~; capacité à traiter
+        des volumes très importants~; intégration avec les outils de
+        visualisation~; reproductibilité totale (scripts versionnables sous
+        Git).
+  \item[Points faibles] Courbe d'apprentissage significative~; absence
+        de traçabilité automatique des tests~; nécessite de construire
+        soi-même les fonctions d'importation et de test~; non certifié
+        par les organismes professionnels.
+  \item[Recommandation d'usage] \textbf{Recommandé pour les auditeurs
+        formés en génie informatique} (profil ENSP) qui disposent déjà
+        de compétences en programmation~: coût nul, puissance maximale,
+        et compétence directement valorisable dans les missions d'audit
+        technique. À coupler avec un outil de gestion de mission (papiers
+        de travail) pour une couverture complète.
+\end{description}
+
+% ------------------------------------------------------------------------------
+\section{Arbre de décision pour le choix d'un outil}
+\label{sec:arbre-decision-outils}
+% ------------------------------------------------------------------------------
+
+L'arbre ci-dessous guide le choix d'un outil selon quatre questions
+successives. Il est conçu pour être opérationnel en contexte africain
+et institutionnel.
+
+\begin{enumerate}
+
+  \item \textbf{La mission nécessite-t-elle principalement l'analyse de
+        fichiers de données (transactions, accès, paie)~?}
+  \begin{itemize}
+    \item \textbf{Oui} → Aller à la question~2.
+    \item \textbf{Non} (mission de gouvernance, de conformité, de
+          gestion des risques) → Aller à la question~4.
+  \end{itemize}
+
+  \item \textbf{Disposez-vous d'un budget pour un outil commercial~?}
+  \begin{itemize}
+    \item \textbf{Oui, et l'équipe n'a pas de compétences en programmation}
+          → \textbf{IDEA} (premier choix) ou \textbf{ACL Desktop}.
+    \item \textbf{Oui, et l'organisation utilise SAP}
+          → \textbf{SAP GRC + ACL Direct Link}.
+    \item \textbf{Non, ou budget très limité} → Aller à la question~3.
+  \end{itemize}
+
+  \item \textbf{L'équipe dispose-t-elle de compétences en programmation
+        Python~?}
+  \begin{itemize}
+    \item \textbf{Oui} → \textbf{Python/pandas/openpyxl}.
+    \item \textbf{Non} → Demander une \textbf{licence académique IDEA}
+          (CaseWare en propose pour les institutions d'enseignement)
+          ou utiliser \textbf{Excel avec macros} pour les missions de
+          taille limitée.
+  \end{itemize}
+
+  \item \textbf{La mission concerne-t-elle la gouvernance et la gestion
+        des risques (pas l'analyse de transactions)~?}
+  \begin{itemize}
+    \item \textbf{Oui, contexte francophone, budget modéré}
+          → \textbf{RVR} (Devoteam) ou tableur structuré (outil
+          développé au chapitre~\ref{chap:outil-audit}).
+    \item \textbf{Oui, grande organisation, budget élevé}
+          → \textbf{BWise} ou \textbf{eFront GRC}.
+    \item \textbf{Oui, données à extraire de formats non structurés
+          (PDF, rapports)} → \textbf{Monarch} en amont, puis IDEA ou
+          Python pour l'analyse.
+  \end{itemize}
+
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Recommandation pratique pour les institutions publiques africaines}
+
+Pour les institutions d'audit public à budget contraint (CONSUPE, IGF,
+corps de contrôle), la combinaison suivante offre le meilleur rapport
+fonctionnalité/coût/autonomie~:
+
+\begin{itemize}
+  \item \textbf{IDEA} pour l'analyse de données (licence institutionnelle
+        négociable)~;
+  \item \textbf{L'outil Excel de décomposition hiérarchique}
+        (chapitre~\ref{chap:outil-audit}) pour la gestion de la mission
+        et la collecte des preuves~;
+  \item \textbf{Python/pandas} pour les analystes ayant une formation
+        en génie informatique, en particulier pour les analyses de fichiers
+        volumineuses (paie, marchés publics).
+\end{itemize}
+
+Cette combinaison est entièrement fonctionnelle hors-ligne, ne dépend
+d'aucun abonnement cloud, et peut être déployée sur des postes sans
+connexion Internet~--- contrainte courante sur les terrains d'audit dans
+les administrations publiques.
+\end{boxalert}
