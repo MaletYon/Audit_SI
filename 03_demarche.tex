@@ -184,16 +184,27 @@ Pour mener à bien les travaux préparatoires, certains documents sont requis à
 fins d'analyse. La liste ci-dessous est non exhaustive et doit être personnalisée
 selon le sujet d'audit et l'entité auditée.
 
-\begin{table}[H]
-\centering
-\small
-\renewcommand{\arraystretch}{1.35}
-\caption{Liste des documents à solliciter en phase préparatoire}
-\label{tab:docs-solliciter}
-\begin{tabular}{|c|p{8.5cm}|p{3.5cm}|}
+% --- CORRECTION : Utilisation de longtable pour permettre le passage à la page suivante ---
+\begin{longtable}{|c|p{8.5cm}|p{3.5cm}|}
+    \caption{Liste des documents à solliciter en phase préparatoire} \\
+    \label{tab:docs-solliciter} \\
     \hline
     \rowcolor{gray!20}
     \textbf{N°} & \textbf{Document requis} & \textbf{Utilité} \\ \hline
+    \endfirsthead
+    
+    \hline
+    \rowcolor{gray!20}
+    \textbf{N°} & \textbf{Document requis} & \textbf{Utilité} \\ \hline
+    \endhead
+    
+    \hline
+    \multicolumn{3}{r}{\footnotesize \textit{Suite du tableau page suivante...}} \\
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
     01 & Organigramme de l'entité & \\ \hline
     02 & Organigramme fonctionnel de la DSI & \\ \hline
     03 & Fiches de postes de la DSI & \\ \hline
@@ -242,8 +253,7 @@ selon le sujet d'audit et l'entité auditée.
     46 & Politique RH et de formation & \\ \hline
     47 & Schéma directeur informatique (SDI) & \\ \hline
     48 & Politique de sécurité des systèmes d'information (PSSI) & \\ \hline
-\end{tabular}
-\end{table}
+\end{longtable}
 
 \begin{boxlizbiz}
 \textbf{Exercice Lizbiz's~:}
@@ -485,7 +495,7 @@ C'est l'entretien central de la prise de connaissance. Il porte sur~: l'organisa
 interne et la séparation des fonctions~; l'état du parc applicatif et des projets~;
 les risques identifiés par la DSI elle-même~; le niveau de dépendance vis-à-vis des
 prestataires~; les changements importants depuis le dernier audit~; et les
-\emph{problèmes connus non résolus}~— généralement les risques les plus sérieux.
+\emph{problèmes connus non résolus}~généralement les risques les plus sérieux.
 
 \paragraph{Niveau~3. Responsables métier et utilisateurs~: la réalité vécue.}
 Les directions métier apportent une information que ni la documentation ni la DSI ne
