@@ -571,40 +571,51 @@ exemple~: \texttt{01\_APPLI}, \texttt{02\_DSI}, \texttt{03\_PROJETS},
 
 Chaque feuille de domaine comporte les colonnes suivantes, dans l'ordre~:
 
-\begin{table}[H]
-\centering
-\small
+\begin{longtable}{|p{1.2cm}|p{3cm}|p{11cm}|}
 \caption{Structure standard d'une feuille de domaine dans l'outil d'aide à
-l'audit}
-\label{tab:colonnes-excel}
-\begin{tabular}{clp{7.5cm}}
-\toprule
-\textbf{Col.} & \textbf{En-tête} & \textbf{Contenu et rôle} \\
-\midrule
+l'audit} \\
+\label{tab:colonnes-excel} \\
+\hline
+\rowcolor{gray!20}
+\textbf{Col.} & \textbf{En-tête} & \textbf{Contenu et rôle} \\ \hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!20}
+\textbf{Col.} & \textbf{En-tête} & \textbf{Contenu et rôle} \\ \hline
+\endhead
+
+\hline
+\multicolumn{3}{r}{\footnotesize \textit{Suite du tableau page suivante...}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
 A & \texttt{DOMAINE} &
   Nom du domaine audité (identique sur toutes les lignes de la feuille~;
-  sert à la consolidation dans la synthèse). \\
-\addlinespace
+  sert à la consolidation dans la synthèse). \\ \hline
+
 B & \texttt{POINT DE CONTRÔLE} &
   Libellé du point de contrôle (niveau~2). Plusieurs lignes successives
   partagent le même libellé, regroupées visuellement par un fond coloré
-  alterné. \\
-\addlinespace
+  alterné. \\ \hline
+
 C & \texttt{OBJECTIF DE CONTRÔLE} &
   Libellé de l'objectif de contrôle (niveau~3), formulé à l'infinitif
-  (\emph{S'assurer que\ldots}, \emph{Vérifier que\ldots}). \\
-\addlinespace
+  (\emph{S'assurer que\ldots}, \emph{Vérifier que\ldots}). \\ \hline
+
 D & \texttt{CRITÈRE} &
   Assertion élémentaire à vérifier (niveau~4), formulée au présent de
-  l'indicatif. \\
-\addlinespace
+  l'indicatif. \\ \hline
+
 E & \texttt{ÉLÉMENT REQUIS} &
-  Document ou preuve à collecter (niveau~5). \\
-\addlinespace
+  Document ou preuve à collecter (niveau~5). \\ \hline
+
 F & \texttt{QUESTION D'ÉVALUATION} &
   Question posée sur le terrain (niveau~6), appelant une réponse
-  trichotomique~: \texttt{O}~/ \texttt{N}~/ \texttt{PAS}. \\
-\addlinespace
+  trichotomique~: \texttt{O}~/ \texttt{N}~/ \texttt{PAS}. \\ \hline
+
 G & \texttt{RÉPONSE} &
   Cellule de saisie auditeur~: réponse \emph{trichotomique} obligatoire.
   \texttt{O}~(\emph{Oui})~: critère satisfait, preuve collectée.
@@ -614,50 +625,49 @@ G & \texttt{RÉPONSE} &
   signalant soit une défaillance du contrôle interne, soit un défaut de
   circulation de l'information.
   C'est la \emph{seule colonne remplie manuellement} lors de la mission~;
-  toutes les autres colonnes calculées en dépendent. \\
-\addlinespace
+  toutes les autres colonnes calculées en dépendent. \\ \hline
+
 H & \texttt{RISQUE} &
   Formulation du risque associé à une réponse négative (niveau~7).
-  Affiché en rouge automatiquement si la réponse en col.~G est~N. \\
-\addlinespace
+  Affiché en rouge automatiquement si la réponse en col.~G est~N. \\ \hline
+
 I & \texttt{CONSÉQUENCE} &
-  Impact organisationnel de la réalisation du risque (niveau~8). \\
-\addlinespace
+  Impact organisationnel de la réalisation du risque (niveau~8). \\ \hline
+
 J & \texttt{CRITICITÉ} &
   Score calculé automatiquement (formule)~: pondération de la
   probabilité d'occurrence du risque et de la gravité de la conséquence.
-  Exprimé sur une échelle~1--4 ou 1--9 selon le référentiel retenu. \\
-\addlinespace
+  Exprimé sur une échelle~1--4 ou 1--9 selon le référentiel retenu. \\ \hline
+
 K & \texttt{STATUT} &
   Formule conditionnelle~: \texttt{CONFORME} si \texttt{G}~=~\texttt{O}~;
   \texttt{NON~CONFORME} si \texttt{G}~=~\texttt{N}~;
   \texttt{ZONE~GRISE} si \texttt{G}~=~\texttt{PAS}.
   Mise en forme conditionnelle~: vert~/ rouge~/ orange ambré
-  respectivement. \\
-\addlinespace
+  respectivement. \\ \hline
+
 L & \texttt{RECOMMANDATION} &
   Cellule de saisie auditeur~: action corrective recommandée. Renseignée
-  pour les statuts \texttt{NON~CONFORME} et \texttt{ZONE~GRISE}. \\
-\addlinespace
+  pour les statuts \texttt{NON~CONFORME} et \texttt{ZONE~GRISE}. \\ \hline
+
 M & \texttt{PRIORITÉ} &
   Urgence de la recommandation~: \texttt{IMMÉDIATE}, \texttt{COURT TERME}
   ou \texttt{MOYEN TERME}. Calculée à partir du score de criticité
-  (col.~J). \\
-\addlinespace
+  (col.~J). \\ \hline
+
 N & \texttt{COMMENTAIRE} &
   Champ libre de l'auditeur~: nuance, contexte, source de la preuve
   collectée, ou motif du PAS/NEK (document non produit, réponses
-  contradictoires, interlocuteur non disponible). \\
-\addlinespace
+  contradictoires, interlocuteur non disponible). \\ \hline
+
 O & \texttt{ENTROPIE} &
   Calculée automatiquement au niveau du point de contrôle (ligne de
   sous-total)~: $H = -\sum_{m \in \{O,N,P\}} p_m \log_2 p_m$ où $p_m$
   est la proportion de réponses de modalité~$m$ dans le point de contrôle
   considéré. Une valeur proche de $\log_2 3 \approx 1{,}585$~bits signale
-  une zone grise à fort niveau d'incertitude. \\
-\bottomrule
-\end{tabular}
-\end{table}
+  une zone grise à fort niveau d'incertitude. \\ \hline
+
+\end{longtable}
 
 \subsection{Fonctionnement des formules d'automatisation}
 
