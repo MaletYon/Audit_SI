@@ -1,0 +1,342 @@
+% ==============================================================================
+% Fichier     : 05_types_audits.tex
+% Description : Principaux Types d'Audit dans les Systèmes d'Information
+% ==============================================================================
+
+\chapter{Principaux Types d'Audit dans les Systèmes d'Information}\label{chap:05_types_audits}
+
+\begin{boxobjectifs}
+À l'issue de ce chapitre, l'apprenant doit être capable de :
+\begin{itemize}
+    \item Distinguer les huit types d'audit SI dans leurs périmètres, enjeux et déclencheurs respectifs ;
+    \item Identifier les référentiels internationaux associés à chaque type ;
+    \item Comprendre les interactions et dépendances entre types d'audits ;
+    \item Positionner chaque type dans le continuum \textit{gouvernance, fonctionnement, sécurité, résilience}.
+\end{itemize}
+\end{boxobjectifs}
+
+L'audit des systèmes d'information n'est pas un acte monolithique. Il recouvre un spectre de missions dont la nature, le périmètre, les enjeux et la posture de l'auditeur diffèrent profondément selon l'objet examiné. Auditer une application comptable n'appelle pas les mêmes compétences ni les mêmes outils qu'auditer une infrastructure réseau ou un projet en cours de développement. Chaque type d'audit répond à une question fondamentale distincte : \textit{le logiciel fait-il ce qu'on attend de lui ?}, \textit{la DSI est-elle gouvernée efficacement ?}, \textit{le projet sera-t-il livré conformément aux engagements ?}, \textit{le SI résistera-t-il à une cyberattaque ou à un sinistre ?}
+
+Ce chapitre présente les huit grands types d'audit SI rencontrés en milieu professionnel. Pour chacun, la même structure est suivie : enjeu fondamental, périmètre et frontières, fréquence et déclencheurs, dimensions caractéristiques, référentiels mobilisés, interactions avec les autres types et illustration par le cas LiZbiZ. Les décompositions opérationnelles détaillées, points de contrôle, critères, questions d'évaluation, risques et conséquences, font l'objet du chapitre suivant.
+
+\begin{boxinfo}
+\textbf{Une lecture systémique.} Les types d'audit ne sont pas étanches. Un audit de la fonction informatique révèle souvent des lacunes dans la gestion des projets ; un audit de sécurité met fréquemment en lumière des déficiences organisationnelles que seul un audit de la DSI aurait pu formellement documenter. L'auditeur SI expérimenté perçoit ces connexions et sait élargir son périmètre lorsque les constats le justifient.
+\end{boxinfo}
+
+
+% ==============================================================================
+\section{Audit des Applications en Service}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+Une application en service est un logiciel opérationnel accompagnant, automatisant ou se substituant à un processus de l'organisation, qu'il s'agisse d'un ERP gérant les flux financiers, d'un CRM pilotant la relation client, d'un progiciel de paie ou d'un système de gestion des stocks. Ces applications sont au cœur des processus métiers : leurs défaillances se traduisent directement en pertes financières, en erreurs de traitement ou en violations réglementaires.
+
+L'enjeu de cet audit est double. D'un côté, il s'agit d'émettre une \termecle{assurance raisonnable} sur la fiabilité de l'application, c'est-à-dire sur la qualité de son contrôle interne et la validité des données qu'elle traite et restitue. De l'autre, il s'agit d'apprécier son adéquation aux besoins de l'organisation, sa performance et sa capacité à évoluer avec elle. Ces deux périmètres, fiabilité-sécurité d'une part, efficacité-performance de l'autre, constituent les deux visées distinctes mais complémentaires de l'audit d'application en service. Un audit complet les couvre toutes deux.
+
+\subsection{Périmètre et frontières}
+
+Le périmètre de cet audit couvre l'application elle-même dans toutes ses composantes : programmes, données, paramètres, documentation et habilitations. Il englobe également l'environnement dans lequel elle s'exécute, système d'exploitation, base de données, infrastructure réseau, et les processus organisationnels qui entourent son exploitation : gestion des accès, procédures de sauvegarde, plans de continuité, contrats de maintenance.
+
+La frontière avec l'audit de la fonction informatique mérite d'être précisée. L'audit d'application se concentre sur \textit{ce que fait} le logiciel et \textit{comment il est exploité} ; l'audit de la DSI examine \textit{comment est gouvernée} l'entité qui le produit et le maintient. En pratique, les deux missions se nourrissent mutuellement : une faiblesse détectée dans la gestion des droits d'accès d'une application peut révéler une déficience structurelle dans la politique de sécurité de la DSI.
+
+\subsection{Dimensions caractéristiques}
+
+L'audit d'application en service s'articule autour de deux axes analytiques fondamentaux.
+
+\textbf{Les contrôles généraux} (\textit{General Controls}) couvrent l'environnement global dans lequel l'application fonctionne : sécurité du système d'exploitation hôte, protection physique des serveurs, procédures de sauvegarde et de reprise, gestion des mises à jour et des correctifs, séparation entre les environnements de développement, de test et de production. Ces contrôles conditionnent la fiabilité de tous les contrôles applicatifs : si l'environnement est compromis, aucun contrôle programmatique ne peut être considéré comme fiable.
+
+\textbf{Les contrôles d'application} (\textit{Application Controls}) portent sur le logiciel métier lui-même et s'organisent selon le modèle \termecle{IPO, Input, Process, Output}. En entrée, l'auditeur vérifie que seules des données complètes, exactes et autorisées sont acceptées par le système. En traitement, il s'assure que les calculs et règles de gestion sont correctement implémentés et que les données sensibles sont journalisées. En sortie, il contrôle que les résultats produits sont distribués aux seuls destinataires habilités et que les états de sortie font l'objet d'un contrôle utilisateur effectif.
+
+La \termecle{piste d'audit} (\textit{audit trail}) constitue l'épine dorsale de tout audit d'application : toute action significative sur les données, création, modification, suppression, doit être horodatée, attribuée à un utilisateur identifié et conservée de façon intègre. Son absence est une observation critique majeure.
+
+\subsection{Fréquence et déclencheurs}
+
+La fréquence recommandée est de deux à trois ans pour une application de gestion stable. Mais plusieurs événements doivent déclencher un audit anticipé, indépendamment de ce calendrier : une migration vers une nouvelle version majeure, un changement de prestataire de maintenance, un incident de sécurité impliquant l'application, une évolution réglementaire significative affectant les données traitées, ou encore une croissance rapide du volume de transactions.
+
+\subsection{Référentiels mobilisés}
+
+\norme{COBIT 2019} fournit le cadre de gouvernance ; \norme{ISO/IEC 27034} traite spécifiquement de la sécurité applicative ; \norme{ISO 19011} guide la conduite de la mission d'audit elle-même. Pour les applications financières, les normes \norme{IAS/IFRS} et les exigences de l'auditeur financier externe constituent des référentiels complémentaires incontournables.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Pourquoi auditer l'APPLICATION maintenant ?}
+
+LiZbiZ exploite depuis quatre ans un progiciel de gestion commerciale et comptable baptisé \textit{APPLICATION}. Deux signaux ont déclenché la mission : une discordance entre les totaux de la balance comptable et les relevés bancaires sur le trimestre écoulé, et la découverte fortuite par un administrateur qu'un utilisateur avait modifié une facture validée sans qu'aucune trace n'en subsiste dans les logs. Ces deux constats pointent simultanément une défaillance dans les contrôles d'application (absence de piste d'audit sur le module comptable) et une faiblesse dans les contrôles généraux (politique de gestion des droits insuffisante). L'auditeur doit déterminer si la discordance résulte d'une erreur de traitement, d'une manipulation intentionnelle ou d'un bug applicatif.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit de la Fonction Informatique (DSI)}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+La Direction des Systèmes d'Information est le pivot organisationnel de toute la chaîne de valeur numérique de l'entreprise. Elle conçoit, déploie, exploite et maintient l'ensemble des actifs informatiques dont dépendent les processus métiers. Auditer la DSI, ce n'est pas auditer une machine ni un logiciel : c'est examiner une \textit{organisation}, sa gouvernance, sa stratégie, ses ressources, ses méthodes, sa culture et son positionnement au sein de l'entreprise.
+
+L'enjeu central est celui de la \termecle{maturité informatique} : la DSI est-elle organisée, dotée, pilotée et régulée de façon à remplir efficacement sa mission et à créer de la valeur pour l'organisation ? Une DSI immature génère des risques en cascade : projets dépassant les délais et les budgets, applications mal maintenues, incidents récurrents non résolus, dépendance critique vis-à-vis de prestataires extérieurs ou de personnes-clés dont le départ pourrait paralyser l'organisation.
+
+\subsection{Périmètre et frontières}
+
+Cet audit couvre six domaines : le rôle et le positionnement de la DSI dans l'organigramme ; sa planification stratégique et l'existence d'un schéma directeur ; la maîtrise de ses budgets et de ses coûts ; la mesure de sa performance ; son organisation interne et la gestion de ses ressources humaines ; enfin, sa conformité au cadre législatif et réglementaire applicable.
+
+La frontière avec l'audit des applications est claire : on s'intéresse ici non pas à ce que produisent les systèmes, mais à la qualité de l'entité qui les produit et les gère. La frontière avec l'audit de sécurité est plus poreuse : la politique de sécurité des SI relève organiquement de la DSI, et sa qualité sera examinée lors des deux types d'audit, sous l'angle organisationnel dans l'audit de la fonction informatique, sous l'angle technique dans l'audit de sécurité.
+
+\subsection{Dimensions caractéristiques}
+
+La \termecle{séparation des tâches} est le premier principe structurant. Elle doit être vérifiée à plusieurs niveaux : entre les équipes de développement et celles de la production, entre l'administration des bases de données et l'exploitation courante, entre la maîtrise d'ouvrage (MOA) et la maîtrise d'œuvre (MOE). Sa violation est un vecteur classique de fraude et d'erreur non détectée.
+
+La \termecle{dépendance aux personnes-clés} est un risque spécifiquement camerounais et africain que l'auditeur doit systématiquement évaluer. Lorsqu'une seule personne détient la connaissance d'un système critique, configuration d'un serveur, paramétrage d'une application, accès à un prestataire —, le départ de cette personne peut paralyser l'organisation. L'auditeur recherche l'existence de procédures documentées, de formations croisées et de plans de succession.
+
+Le \termecle{turn-over} de la DSI constitue un indicateur de santé organisationnelle. Un taux inférieur à 5~\% par an peut signaler une organisation figée ; supérieur à 15~\%, il révèle une instabilité préoccupante susceptible de compromettre la continuité du service.
+
+La conformité au \textbf{cadre législatif camerounais} est un point de contrôle distinctif de ce cours. Les lois de 2010 sur la cybersécurité, la cybercriminalité et les transactions électroniques imposent des obligations précises que la DSI doit connaître et faire respecter. L'auditeur vérifiera que ces textes sont connus des responsables informatiques et que des mesures préventives concrètes ont été mises en place, notamment sur la fraude informatique, le chiffrement, la signature électronique et l'archivage électronique.
+
+\subsection{Fréquence et déclencheurs}
+
+La fréquence recommandée est de trois ans. Les déclencheurs d'un audit anticipé sont : un changement de DSI ou de directeur général, une restructuration organisationnelle majeure, une série d'incidents IT récurrents, ou un audit financier externe ayant relevé des faiblesses dans l'environnement de contrôle informatique.
+
+\subsection{Référentiels mobilisés}
+
+\norme{COBIT 2019} est la référence principale, particulièrement pour les domaines de gouvernance (EDM) et de gestion (APO, BAI, DSS, MEA). \norme{ITIL 4} complète COBIT sur les processus opérationnels. \norme{ISO/IEC 20000-1} traite du management des services informatiques. \norme{ISO 19011} encadre la conduite de la mission.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Une DSI sans gouvernance formalisée}
+
+La DSI de LiZbiZ, composée de sept personnes, est dirigée par un responsable informatique qui cumule les fonctions de développeur senior, d'administrateur système et d'interlocuteur contractuel des prestataires. Aucune charte informatique ne définit le périmètre de ses responsabilités. Le schéma directeur date de 2019 et n'a pas été mis à jour depuis la décision d'intégrer l'IA dans la logistique. Le budget IT est intégré au budget général sans ligne de dépense détaillée. Un auditeur n'ayant examiné que l'APPLICATION aurait pu imputer les défaillances constatées à un problème logiciel ; l'audit de la DSI révèle que leur cause racine est organisationnelle.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit des Projets Informatiques}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+Les projets informatiques sont des investissements à haut risque. Les études internationales sur l'échec des projets IT, dont le célèbre \textit{Chaos Report} du Standish Group, documentent depuis trente ans que moins de 30~\% des projets IT sont livrés dans les délais, dans les budgets et avec le périmètre fonctionnel initial. Les causes de ces échecs sont rarement techniques : elles sont organisationnelles, méthodologiques et relationnelles.
+
+L'enjeu de l'audit de projet est donc de s'assurer que les mécanismes de pilotage, de qualité et de contrôle sont en place pour maximiser les chances de succès, ou, si le projet est déjà terminé, de documenter les causes d'échec et d'en tirer les enseignements. La question centrale est : \textit{ce projet est-il maîtrisé ?}
+
+\subsection{Périmètre et frontières}
+
+L'audit de projet peut intervenir à deux moments distincts, avec des objectifs différents. L'\textbf{audit de jalons} (\textit{gate review}) intervient en cours de projet, à des étapes prédéfinies, pour vérifier que les conditions de passage à la phase suivante sont réunies. C'est une forme d'audit prospectif : il vise à prévenir les dérives avant qu'elles ne soient irréversibles. L'\textbf{audit de réception} intervient à la clôture du projet pour vérifier la conformité des livrables aux spécifications initiales et tirer les enseignements pour les projets futurs.
+
+Le périmètre couvre l'intégralité du cycle de vie : de l'étude d'opportunité jusqu'à la mise en production et la bascule vers la maintenance. Un projet abandonné ou suspendu doit également faire l'objet d'un audit, pour documenter les causes et éviter que les mêmes erreurs ne se reproduisent.
+
+\subsection{Dimensions caractéristiques}
+
+Le \termecle{triangle QCD}, Qualité, Coût, Délai, est le cadre de référence de l'audit de projet. L'auditeur examine comment ces trois contraintes ont été définies, communiquées, suivies et rééquilibrées au cours du projet. Il est rare qu'un projet respecte simultanément les trois ; la question est de savoir si les arbitrages ont été conscients, documentés et validés par les parties prenantes compétentes.
+
+La distinction entre \termecle{MOA} (Maîtrise d'Ouvrage, le client, définisseur des besoins) et \termecle{MOE} (Maîtrise d'Œuvre, le réalisateur technique) est au cœur de l'audit de projet. L'auditeur vérifie que ces deux rôles sont clairement séparés, que leurs responsabilités sont contractuellement définies et que la MOA a effectivement exercé son rôle de validation à chaque étape, sans se défausser sur la MOE des décisions qui lui appartiennent.
+
+La \termecle{gestion des risques de projet} constitue un point de contrôle critique. L'auditeur recherche l'existence d'un registre des risques, régulièrement mis à jour, avec des plans d'atténuation assignés à des responsables identifiés. L'absence de ce dispositif est un signal d'alarme fort : un projet sans gestion formelle des risques est un projet qui subit les événements au lieu de les anticiper.
+
+\subsection{Fréquence et déclencheurs}
+
+Tout projet doit être audité à son terme. Pour les projets stratégiques ou de grande envergure, des audits de jalons sont recommandés à l'issue de chaque phase majeure. Les signaux déclencheurs d'un audit anticipé non planifié sont : un dépassement budgétaire supérieur à 15~\%, un glissement de planning supérieur à 20~\% du délai initial, un changement de chef de projet, ou des conflits récurrents entre MOA et MOE.
+
+\subsection{Référentiels mobilisés}
+
+\norme{PMBOK} (Project Management Institute) et \norme{PRINCE2} sont les deux référentiels de conduite de projet les plus répandus dans les organisations auditées. \norme{ISO 21500} propose un cadre normatif international harmonisé. Pour les projets agiles, \norme{SCRUM} et \norme{SAFe} constituent les cadres de référence, avec des implications spécifiques sur la façon dont l'auditeur doit adapter sa démarche, les livrables n'étant plus définis ex ante mais émergents.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Le projet IA sans garde-fous}
+
+LiZbiZ a lancé il y a huit mois un projet d'intégration d'un algorithme d'apprentissage automatique dans son système de planification logistique. Aucune charte de projet n'a été formalisée. Le budget alloué a déjà été dépassé de 40~\% sans décision formelle de révision. Les données clients utilisées pour entraîner le modèle n'ont fait l'objet d'aucune analyse de conformité RGPD. La MOA, la direction logistique, n'a participé à aucune réunion de validation depuis le lancement. L'audit de jalons déclenché par la direction générale révèle un projet hors de contrôle sur les trois dimensions du triangle QCD, avec un risque juridique réel lié au traitement non conforme des données personnelles.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit du Support Utilisateur et de la Gestion du Parc}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+Le support utilisateur et la gestion du parc informatique constituent le visage quotidien de la DSI pour l'ensemble des collaborateurs de l'organisation. La qualité de ce service conditionne directement la productivité des utilisateurs et leur confiance dans les outils informatiques. Un Helpdesk inefficace, des équipements mal inventoriés, des licences non maîtrisées ou des procédures de départ lacunaires sont des risques opérationnels, financiers et de sécurité souvent sous-estimés.
+
+L'enjeu de cet audit est double : évaluer la qualité du service rendu aux utilisateurs, d'une part, et s'assurer de la maîtrise du patrimoine matériel et logiciel de l'organisation, d'autre part. Ces deux objectifs sont liés : on ne peut garantir un bon niveau de service sans connaître précisément les actifs que l'on gère.
+
+\subsection{Dimensions caractéristiques}
+
+La \termecle{gestion des incidents et des demandes} est évaluée à travers l'existence et le suivi des \termecle{SLA} (\textit{Service Level Agreements}) : délai de prise en charge, délai de résolution, taux de résolution au premier contact (\textit{First Call Resolution Rate}). L'auditeur vérifie que ces indicateurs sont effectivement mesurés, communiqués aux utilisateurs et que les écarts font l'objet d'un plan d'amélioration.
+
+La \termecle{procédure d'off-boarding} est un point de contrôle à fort enjeu sécuritaire. Le départ d'un collaborateur, qu'il soit volontaire ou non, doit déclencher immédiatement la révocation de l'ensemble de ses accès logiques (réseau, applications, messagerie, VPN) et la récupération de ses équipements. L'auditeur vérifie l'existence de cette procédure et son effectivité en testant sur un échantillon de départs récents.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Le développeur fantôme}
+
+Trois mois après le départ d'un développeur senior, l'auditeur constate que son compte VPN est toujours actif et que ses droits d'accès à l'environnement de production de l'\textit{APPLICATION} n'ont pas été révoqués. Aucune procédure d'off-boarding formalisée n'existe. Le risque est critique : cet ancien collaborateur, qui connaît l'architecture du SI, pourrait se connecter à distance et accéder aux données clients de LiZbiZ sans qu'aucune alerte ne soit générée.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit de Sécurité Informatique}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+L'audit de sécurité est le type d'audit SI qui a connu la plus forte croissance au cours des dix dernières années, sous l'effet conjugué de la multiplication des cyberattaques, de la généralisation de la transformation numérique et du durcissement des exigences réglementaires. Son enjeu est de mesurer objectivement la résistance du SI aux menaces, qu'elles soient externes (hackers, groupes criminels organisés, États) ou internes (employés malveillants, erreurs humaines, sous-traitants négligents).
+
+Ce qui distingue fondamentalement l'audit de sécurité des autres types d'audit SI est sa dimension \textit{adversariale} : l'auditeur ne se contente pas de vérifier l'existence de contrôles, il cherche à démontrer leur insuffisance en adoptant la posture d'un attaquant. Les tests d'intrusion (\textit{pentests}) en sont l'expression la plus radicale.
+
+\subsection{Les piliers D.I.C.T.}
+
+L'audit de sécurité s'organise autour des quatre propriétés fondamentales que tout SI doit garantir.
+
+La \termecle{Disponibilité} vise à s'assurer que le système est accessible aux utilisateurs autorisés quand ils en ont besoin, y compris dans des conditions dégradées. Elle est menacée par les pannes matérielles, les saturations de ressources, les attaques par déni de service distribué (DDoS) et les catastrophes naturelles. L'auditeur vérifie l'existence et le test régulier des plans de continuité.
+
+L'\termecle{Intégrité} garantit que les données ne peuvent être modifiées, créées ou supprimées que par des utilisateurs autorisés, selon des processus contrôlés. Sa violation est parfois difficile à détecter : une modification subtile d'un montant dans une base de données comptable peut passer inaperçue pendant des mois si aucun contrôle de cohérence n'est en place.
+
+La \termecle{Confidentialité} assure que l'information n'est accessible qu'aux personnes qui en ont le droit. Elle est menacée par des configurations défectueuses, des droits d'accès excessifs, des données en clair sur des supports non chiffrés ou des communications non sécurisées.
+
+La \termecle{Traçabilité}, parfois appelée imputabilité, garantit que toute action sur le SI peut être attribuée à un acteur identifié et horodatée de façon fiable. Sans elle, il est impossible d'investiguer un incident, de reconstituer une chronologie d'attaque ou d'apporter la preuve d'une fraude devant une juridiction.
+
+\subsection{Dimensions caractéristiques}
+
+L'audit de sécurité mobilise trois méthodologies complémentaires dont la combinaison dépend du périmètre et des objectifs de la mission.
+
+L'\textbf{audit de configuration} consiste à vérifier que les paramètres des systèmes, serveurs, équipements réseau, applications, sont conformes aux référentiels de durcissement (\textit{hardening}) reconnus, tels que les benchmarks \norme{CIS} (\textit{Center for Internet Security}). Il détecte les mots de passe par défaut non modifiés, les services inutiles exposés, les correctifs de sécurité non appliqués.
+
+Les \textbf{tests d'intrusion} (\textit{pentests}) simulent une attaque réelle dans un cadre contractuellement défini, périmètre, règles d'engagement, autorisation écrite préalable obligatoire. Ils peuvent être menés en boîte noire (l'auditeur ne connaît pas l'infrastructure), en boîte grise (il dispose d'informations partielles) ou en boîte blanche (accès complet à la documentation). Le pentest ne remplace pas l'audit de configuration ; il le complète en démontrant l'exploitabilité réelle des vulnérabilités identifiées.
+
+L'\textbf{audit physique} examine la sécurité des locaux : contrôle des accès à la salle des serveurs, gestion des visiteurs, destruction des documents confidentiels, protection contre les sinistres (incendie, inondation, coupure électrique). Il est souvent négligé mais constitue régulièrement le maillon faible de la chaîne de sécurité.
+
+\subsection{Fréquence et déclencheurs}
+
+La fréquence minimale recommandée est annuelle. Les tests de pénétration externes sur les périmètres exposés à Internet, sites web, API, messagerie, VPN, peuvent être plus fréquents, voire continus dans les organisations les plus matures (programme de \textit{bug bounty}). Les déclencheurs d'un audit non planifié sont : tout incident de sécurité significatif, une modification majeure de l'architecture, l'ouverture d'un nouveau périmètre réseau, l'intégration d'un prestataire tiers.
+
+\subsection{Référentiels mobilisés}
+
+\norme{ISO/IEC 27001:2022} est le référentiel de management de la sécurité de l'information, dont l'annexe A liste 93 mesures de sécurité organisées en quatre thèmes. \norme{NIST Cybersecurity Framework v2.0} (2024) propose un cadre fonctionnel articulé autour de six fonctions : Gouverner, Identifier, Protéger, Détecter, Répondre, Rétablir. \norme{ISO/IEC 27035} traite de la gestion des incidents. Pour les tests d'intrusion, le référentiel \norme{PTES} (\textit{Penetration Testing Execution Standard}) et l'environnement \norme{OWASP} pour les applications web font autorité.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Trois observations critiques}
+
+Le pentest mené sur le périmètre de LiZbiZ révèle : \textit{(i)} le serveur Apache hébergeant l'\textit{APPLICATION} présente une vulnérabilité critique non corrigée depuis six mois, permettant une exécution de code à distance ; \textit{(ii)} le serveur de base de données comptable est sur le même segment réseau que les postes utilisateurs, supprimant toute barrière entre un poste compromis et les données financières ; \textit{(iii)} les journaux du pare-feu ne sont conservés que sept jours, rendant impossible toute investigation rétrospective sur un incident ayant débuté plusieurs semaines auparavant. Ces trois constats sont interdépendants : un attaquant ayant exploité la vulnérabilité Apache peut latéralement atteindre la base de données sans que personne ne le sache ni ne puisse le prouver.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit de la Continuité d'Activité et de la Résilience}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+La résilience organisationnelle désigne la capacité d'une entité à anticiper les disruptions, à y résister et à reprendre ses activités critiques dans des délais compatibles avec sa survie. L'audit de la continuité d'activité ne se demande pas \textit{si} un sinistre surviendra, il postule qu'il surviendra, mais \textit{si l'organisation est prête à y faire face}.
+
+Cet audit est en forte croissance depuis les cyberattaques par rançongiciel (\textit{ransomware}) qui ont paralysé des hôpitaux, des administrations et des entreprises entières, parfois pendant plusieurs semaines. Il est également requis par un nombre croissant de régulateurs sectoriels, banques, assurances, opérateurs d'importance vitale, qui imposent des exigences formelles de continuité.
+
+\subsection{Concepts fondamentaux}
+
+Quatre indicateurs structurent l'évaluation de la résilience.
+
+Le \termecle{BIA} (\textit{Business Impact Analysis}) est le point de départ de tout dispositif de continuité : il identifie les processus critiques de l'organisation, quantifie l'impact d'une interruption sur chacun d'eux et détermine les ressources minimales nécessaires à leur maintien. L'auditeur vérifie l'existence, la complétude et la mise à jour régulière du BIA.
+
+Le \termecle{MTPD} (\textit{Maximum Tolerable Period of Disruption}) est la durée maximale d'interruption d'un processus au-delà de laquelle la survie de l'organisation est menacée. C'est une donnée métier, déterminée par les dirigeants, non par la DSI.
+
+Le \termecle{RTO} (\textit{Recovery Time Objective}) est l'objectif de délai de remise en service des systèmes après un sinistre. Il doit être inférieur au MTPD : un RTO supérieur au MTPD est une incohérence fondamentale que l'auditeur doit impérativement relever.
+
+Le \termecle{RPO} (\textit{Recovery Point Objective}) est la perte de données maximale admissible, exprimée en unité de temps. Il est directement lié à la fréquence des sauvegardes : un RPO de quatre heures implique des sauvegardes au moins toutes les quatre heures.
+
+\begin{boxalert}
+\textbf{L'incohérence RTO/RPO : un classique de l'audit.} Un RTO de 4~h avec un RPO de 24~h est techniquement incohérent dans de nombreux contextes : on peut relancer les systèmes en quatre heures, mais avec des données vieilles d'une journée, ce qui peut être inacceptable pour un processus financier ou logistique critique. L'auditeur doit systématiquement vérifier la cohérence de ces paramètres avec les exigences métiers réelles.
+\end{boxalert}
+
+\subsection{Fréquence et déclencheurs}
+
+La fréquence recommandée est annuelle, incluant obligatoirement un \textbf{test réel} du Plan de Continuité d'Activité (PCA) et du Plan de Reprise d'Activité (PRA), un plan non testé est un plan dont on ignore s'il fonctionnera. Les déclencheurs d'un audit non planifié sont : tout incident ayant nécessité l'activation du PCA/PRA, une modification significative de l'architecture du SI, ou une nouvelle exigence réglementaire.
+
+\subsection{Référentiels mobilisés}
+
+\norme{ISO 22301:2019} est le standard international du management de la continuité d'activité. \norme{ISO 22317} traite spécifiquement du BIA. \norme{NIST SP 800-34} offre un guide pratique de planification de la continuité pour les systèmes d'information.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Un PCA sur papier, jamais testé}
+
+LiZbiZ dispose d'un Plan de Continuité d'Activité rédigé en 2021 par un consultant externe. Ce document identifie correctement les processus critiques et définit un RTO de 4~h et un RPO de 8~h pour l'\textit{APPLICATION}. Cependant, l'auditeur constate : \textit{(i)} le PCA n'a jamais été testé depuis sa rédaction ; \textit{(ii)} les sauvegardes sont effectuées quotidiennement à 23~h, générant un RPO réel de 23~h, incompatible avec l'objectif de 8~h ; \textit{(iii)} les coordonnées de l'hébergeur de secours mentionnées dans le PCA correspondent à un prestataire dont le contrat a été résilié en 2022. Le PCA de LiZbiZ est un document de conformité apparente, pas un dispositif opérationnel.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Audit de la Fonction Étude (Développement)}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+La fonction étude, ou fonction développement, est responsable de la conception, du développement et de la maintenance évolutive des applications de l'organisation. Son audit examine la rigueur des méthodes employées, la qualité du code produit, la maîtrise de la documentation et l'intégration de la sécurité dès la conception. C'est un audit qui requiert à la fois des compétences organisationnelles et une capacité à apprécier la qualité technique des livrables.
+
+L'enjeu principal est de s'assurer que les applications produites en interne, ou développées sous sous-traitance, sont fiables, maintenables, documentées et conformes aux exigences de sécurité. Une fonction étude mal organisée produit une \textit{dette technique} qui s'accumule silencieusement : le code non documenté devient inconnaissable au départ des développeurs qui l'ont écrit, les applications non testées accumulent des bugs latents, les versions non gérées créent des environnements impossibles à reproduire.
+
+\subsection{Dimensions caractéristiques}
+
+La \termecle{séparation des environnements} est un contrôle fondamental : les environnements de développement, de test et de production doivent être strictement séparés. Un développeur ne doit jamais avoir accès direct à la production ; toute mise en production doit passer par une procédure formalisée avec validation indépendante. Sa violation est un facteur de risque majeur, tant pour la fiabilité des applications que pour leur sécurité.
+
+La \termecle{gestion des versions} (\textit{versioning}) assure la traçabilité de l'évolution du code source. L'auditeur vérifie l'utilisation d'un système de contrôle de version (Git ou équivalent), la politique de branches, et la capacité à reproduire un état antérieur du système en cas d'incident.
+
+Le \termecle{Security by Design}, intégration de la sécurité dès la conception, est le paradigme moderne du développement sécurisé. L'auditeur vérifie l'existence de normes de codage sécurisé, la réalisation d'analyses statiques du code (SAST) pour détecter les vulnérabilités classiques (injections SQL, XSS, gestion incorrecte des erreurs) et l'intégration de tests de sécurité dans le pipeline de déploiement (DevSecOps).
+
+\subsection{Fréquence et déclencheurs}
+
+La fréquence recommandée est de deux à trois ans, ou lors de l'adoption d'une nouvelle méthodologie de développement (passage à l'Agile, adoption du DevOps), de l'intégration d'un nouveau prestataire de développement, ou d'un incident applicatif grave ayant pour origine une défaillance du processus de développement.
+
+\subsection{Référentiels mobilisés}
+
+\norme{ISO/IEC 25010} définit les caractéristiques de qualité d'un produit logiciel. \norme{ISO/IEC 27034} traite de la sécurité applicative. \norme{OWASP SAMM} (\textit{Software Assurance Maturity Model}) propose un modèle de maturité pour les pratiques de développement sécurisé. Pour les projets agiles, \norme{SAFe} et les pratiques DevSecOps constituent les références contemporaines.
+
+
+% ==============================================================================
+\section{Audit des Tiers, du Cloud et de l'Externalisation}
+% ==============================================================================
+
+\subsection{Enjeu fondamental}
+
+L'externalisation informatique, hébergement cloud, infogérance, sous-traitance de développement, SaaS, transfère des activités et des données à des tiers, mais ne transfère pas la responsabilité. L'organisation reste juridiquement responsable de la sécurité et de la conformité de ses données, y compris lorsqu'elles sont traitées par un prestataire. C'est le principe fondateur du RGPD en matière de sous-traitance : le responsable de traitement doit s'assurer que son sous-traitant offre des garanties suffisantes.
+
+L'audit des tiers répond à une question simple mais dont la réponse est souvent inconfortable : \textit{faites-vous confiance à votre prestataire, ou en avez-vous la preuve ?}
+
+\subsection{Dimensions caractéristiques}
+
+Le \termecle{droit d'audit} est la première vérification contractuelle. Toute convention avec un prestataire hébergeant des données sensibles doit contenir une clause permettant à l'organisation, ou à ses mandataires, d'auditer le prestataire. Son absence prive l'organisation de tout moyen de contrôle indépendant.
+
+Les \termecle{rapports SOC} (\textit{Service Organization Controls}) constituent le substitut standard au droit d'audit direct lorsque celui-ci est contractuellement ou pratiquement impossible, notamment vis-à-vis des grands hyperscalers (AWS, Azure, GCP) qui n'ouvrent pas leurs infrastructures à l'audit individuel de leurs clients. Deux niveaux sont pertinents pour l'auditeur SI :
+
+\begin{itemize}
+    \item \textbf{SOC 1 Type II} : évalue les contrôles relatifs au reporting financier sur une période d'observation (généralement six ou douze mois). Pertinent pour les prestataires hébergeant des applications comptables ou financières.
+    \item \textbf{SOC 2 Type II} : évalue les contrôles relatifs à la sécurité, la disponibilité, l'intégrité du traitement, la confidentialité et la protection des données personnelles. C'est le rapport le plus fréquemment demandé pour les prestataires cloud hébergeant des données sensibles.
+\end{itemize}
+
+L'auditeur ne se contente pas de vérifier l'existence de ces rapports : il en analyse le contenu, notamment les exceptions relevées par l'auditeur du prestataire, et évalue leur pertinence au regard des services effectivement consommés par l'organisation.
+
+La \termecle{cartographie des tiers} est un préalable indispensable à cet audit : l'organisation doit disposer d'un inventaire à jour de tous ses prestataires informatiques, avec pour chacun la nature des données traitées, le niveau de criticité et les mécanismes de contrôle en place.
+
+\subsection{Fréquence et déclencheurs}
+
+La revue des tiers doit être annuelle au minimum. Tout changement significatif chez un prestataire critique, rachat, incident de sécurité public, modification des conditions contractuelles, doit déclencher une revue immédiate.
+
+\subsection{Référentiels mobilisés}
+
+\norme{ISO/IEC 27036} traite spécifiquement de la sécurité des relations avec les fournisseurs. \norme{ISO/IEC 27017} et \norme{27018} complètent ISO 27001 pour les environnements cloud. Le \norme{RGPD} (articles 28 et 29) encadre contractuellement les relations entre responsables de traitement et sous-traitants.
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Un cloud sans filet}
+
+LiZbiZ héberge ses données clients et ses sauvegardes sur une solution cloud d'un prestataire local. L'auditeur constate : \textit{(i)} le contrat signé ne contient aucune clause d'audit ; \textit{(ii)} le prestataire ne publie aucun rapport SOC et ne dispose d'aucune certification ISO 27001 ; \textit{(iii)} aucun inventaire des prestataires n'existe dans la DSI, le responsable informatique ne peut pas lister de mémoire l'ensemble des services tiers utilisés par l'organisation. LiZbiZ fait confiance à son prestataire sans en avoir la moindre preuve formelle, en violation des obligations qui lui incombent en tant que responsable de traitement de données personnelles.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Interactions entre types d'audit et cartographie du risque SI}
+% ==============================================================================
+
+Les huit types d'audit présentés dans ce chapitre ne sont pas des silos indépendants. Ils forment un système d'observation complémentaire dont les résultats se nourrissent mutuellement. Comprendre ces interactions est ce qui distingue l'auditeur expérimenté du technicien compétent.
+
+L'audit de la fonction informatique fournit le cadre organisationnel dans lequel tous les autres audits s'inscrivent : une DSI mal gouvernée génère mécaniquement des faiblesses dans la gestion des applications, des projets et de la sécurité. Il est donc logique de commencer par cet audit lorsqu'une organisation est auditée pour la première fois.
+
+L'audit de sécurité révèle fréquemment des vulnérabilités dont la cause racine est organisationnelle, des droits d'accès excessifs consécutifs à l'absence de procédure d'off-boarding, des correctifs non appliqués faute de processus de gestion des patches, une segmentation réseau déficiente résultant d'une architecture non documentée. Ces causes racines relèvent de l'audit de la fonction informatique, pas de l'audit de sécurité.
+
+L'audit de continuité complète l'audit de sécurité en posant la question \textit{après} l'incident : une fois la cyberattaque survenue, l'organisation est-elle capable de reprendre ses activités ? Les deux audits sont complémentaires et doivent idéalement être conduits de façon coordonnée.
+
+L'audit des tiers conditionne la portée réelle de tous les autres : si les données critiques sont hébergées chez un tiers non audité, les contrôles internes de l'organisation ne valent que pour la fraction du SI qu'elle maîtrise directement.
+
+\begin{boxresume}
+\textbf{À retenir.} Les huit types d'audit SI couvrent un continuum allant de la gouvernance (audit de la DSI) au fonctionnement (applications, projets, support) en passant par la sécurité et la résilience (sécurité, continuité) jusqu'à l'écosystème étendu (tiers et cloud). Chaque type répond à une question fondamentale distincte, mobilise des référentiels spécifiques et requiert des compétences particulières. Le chapitre suivant décompose chacun de ces types selon le modèle opérationnel du cours, de la définition du domaine jusqu'à la criticité des conséquences, fournissant ainsi à l'auditeur les instruments de mesure qui transforment ces typologies en missions concrètes.
+\end{boxresume}

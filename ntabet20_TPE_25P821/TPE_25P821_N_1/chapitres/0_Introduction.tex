@@ -1,0 +1,148 @@
+% ==============================================================================
+% Fichier     : chapitres/0_Introduction.tex
+% Titre       : Introduction Générale au Cours d'Audit des Systèmes d'Information
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ==============================================================================
+
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+\label{chap:introduction}
+\markboth{Introduction Générale}{Introduction Générale}
+
+\begin{flushright}
+    \itshape
+    <<~Éduquer, c'est donner à l'autre les armes de sa propre lucidité.~>>\\[0.8ex]
+    \small--- À ceux qui ont pris la peine de comprendre avant d'agir,\\
+    et de vérifier avant de conclure.
+\end{flushright}
+
+\vspace{1.5ex}
+
+% ==============================================================================
+\section*{Contexte et pertinence du cours}
+% ==============================================================================
+
+L'ère numérique a profondément reconfiguré l'architecture des organisations modernes. Les systèmes d'information ne constituent plus de simples supports opérationnels~: ils sont devenus le substrat vital sur lequel reposent la compétitivité, la conformité réglementaire et la souveraineté stratégique des entreprises comme des institutions publiques. La gestion des finances camerounaises, la planification de la paie des fonctionnaires, la facturation des prestations médicales, la logistique d'un distributeur~: chacune de ces fonctions repose aujourd'hui sur un SI dont la défaillance n'est plus un incident technique mais une crise organisationnelle.
+
+C'est précisément dans cet espace de tension entre performance opérationnelle et impératif de contrôle que s'inscrit la discipline de l'\termecle{audit des systèmes d'information}. Loin d'être une activité ancillaire, l'audit SI constitue aujourd'hui une fonction stratégique à part entière, exercée par des professionnels certifiés, \sigle{CISA}, \sigle{CISM}, \sigle{CRISC}, \sigle{CGEIT}, dont l'autorité repose autant sur leur indépendance que sur leur rigueur méthodologique. La demande mondiale pour ces profils ne cesse de croître~: les Big~4 (Deloitte, PwC, EY, KPMG), les institutions de contrôle supérieur, les directions de l'audit interne des grandes organisations recrutent des auditeurs SI formés, outillés et capables d'opérer dans des environnements de plus en plus complexes.
+
+Ce cours s'adresse à des étudiants qui seront demain auditeurs internes ou externes, responsables de la sécurité des systèmes d'information, consultants en gouvernance, experts judiciaires en cybercriminalité, ou décideurs numériques dans des institutions publiques et privées. Il leur offre les fondements conceptuels, les outils méthodologiques et la maturité pratique nécessaires pour conduire une mission d'audit avec professionnalisme, de la lettre de mission au rapport de restitution.
+
+% ==============================================================================
+\section*{Fil conducteur~: l'entreprise LiZbiZ}
+% ==============================================================================
+
+L'ensemble de ce cours est structuré autour d'un cas pratique unique, cohérent et progressif~: l'entreprise fictive \textbf{LiZbiZ}, acteur du commerce électronique et de la logistique en pleine transformation numérique. Ce choix pédagogique délibéré permet d'ancrer chaque concept théorique dans une situation concrète et d'observer les mêmes risques sous plusieurs angles d'audit simultanément.
+
+LiZbiZ n'est pas un simple support d'illustration. C'est un environnement d'immersion~: dès le chapitre~\ref{chap:01_cas_lizbiz}, l'apprenant en découvre l'architecture technique, le mandat d'audit et l'organisation de la mission. Au fil des chapitres, il endosse successivement le rôle d'auditeur junior, senior et chef de mission, confronté à des problèmes réels~: absence de piste d'audit sur le module comptable, failles de sécurité réseau exploitées lors du pentest, non-conformité du projet IA au regard du RGPD, comptes VPN d'anciens collaborateurs jamais révoqués, Plan de Continuité d'Activité jamais testé depuis sa rédaction. Chaque observation de terrain est formalisée dans l'outil d'aide à l'audit, traitée par le modèle trichotomique \textbf{O~/~N~/~PAS-NEK} et quantifiée par l'entropie de Shannon.
+
+% ==============================================================================
+\section*{Objectifs généraux du cours}
+% ==============================================================================
+
+\begin{boxobjectifs}
+À l'issue de ce cours, l'étudiant sera capable de~:
+\begin{enumerate}
+    \item \textbf{Maîtriser le vocabulaire professionnel} de l'audit et du contrôle interne, des référentiels et des normes en vigueur.
+    \item \textbf{Appliquer la démarche d'audit}, planification, exécution, communication des résultats, selon les normes \sigle{ISO~19011} et \sigle{ISACA}.
+    \item \textbf{Mobiliser les référentiels internationaux}~: \sigle{COSO}, \sigle{COBIT~2019}, \sigle{ISO~27001:2022}, \sigle{ISO~22301}, \sigle{NIST~CSF~2.0} comme grilles d'évaluation adaptées au contexte.
+    \item \textbf{Déployer la méthode de décomposition hiérarchique}, du domaine à la conséquence en huit niveaux, pour construire un outil d'aide à l'audit opérationnel.
+    \item \textbf{Mesurer l'incertitude de l'audit} par le modèle trichotomique \sigle{O/N/PAS-NEK} et l'entropie de Shannon, distinguant ce qui ne va pas de ce qu'on ne sait pas.
+    \item \textbf{Conduire des tests d'audit techniques}~: analyse de configuration, tests d'intrusion, requêtes SQL, analyse de logs.
+    \item \textbf{Rédiger un rapport d'audit} structuré, hiérarchisé par niveau de criticité et communicable à une direction générale.
+    \item \textbf{Aborder les enjeux émergents}~: gouvernance de l'intelligence artificielle (EU~AI~Act), fraude numérique, forensics, audit des tiers et du cloud.
+\end{enumerate}
+\end{boxobjectifs}
+
+% ==============================================================================
+\section*{Organisation du cours}
+% ==============================================================================
+
+Le cours s'organise en quatre parties thématiques, précédées d'une introduction et d'un ancrage contextuel, et complétées par deux laboratoires immersifs.
+
+\medskip
+\noindent\textbf{Partie~I, Fondements théoriques et méthodologiques}
+
+Le chapitre~\ref{chap:01_cas_lizbiz} installe le cas fil rouge LiZbiZ, identité de l'entreprise, architecture technique du SI audité, mandat de mission et environnement de laboratoire. Ce chapitre précède délibérément les fondements conceptuels~: l'apprenant dispose d'un terrain concret avant d'acquérir les outils qui lui permettront de l'analyser.
+
+Le chapitre~\ref{chap:02_fondamentaux} pose les définitions structurantes~: distinction audit/contrôle, assurance raisonnable, cycle du risque, contrôle interne COSO, vocabulaire de la mission (constatation, contradictoire, sur place et sur pièces). Ces concepts sont la grammaire de toute mission d'audit.
+
+Le chapitre~\ref{chap:03_demarche} détaille la démarche générale d'audit SI en trois phases canoniques~: travaux préparatoires et planification, exécution sur le terrain, communication des résultats. Il constitue le protocole opérationnel que l'apprenant appliquera à chaque type d'audit.
+
+\medskip
+\noindent\textbf{Partie~II, Référentiels et typologies d'audit}
+
+Le chapitre~\ref{chap:04_referentiels} présente les référentiels internationaux reconnus~: COSO pour le contrôle interne, COBIT~2019 pour la gouvernance IT, ISO~27001:2022 pour la sécurité de l'information, ISO~19011 pour la conduite de l'audit, ISO~22301 pour la continuité d'activité, et NIST~CSF~2.0 pour la cybersécurité. Chacun est présenté dans sa logique propre et articulé aux autres.
+
+Le chapitre~\ref{chap:05_types_audits} présente les huit types d'audit SI rencontrés en milieu professionnel~: applications en service, fonction informatique (DSI), projets informatiques, support et gestion du parc, sécurité informatique, continuité d'activité, fonction étude, tiers et cloud. Pour chaque type, l'enjeu fondamental, le périmètre, la fréquence, les dimensions caractéristiques, les référentiels mobilisés et le cas LiZbiZ correspondant sont développés. Les interactions entre types sont analysées en section finale.
+
+\medskip
+\noindent\textbf{Partie~III, Outils d'aide à l'audit}
+
+Le chapitre~\ref{chap:shannon} introduit les fondements de la théorie de l'information de Shannon nécessaires à la formalisation de l'incertitude en audit. Il pose les bases mathématiques du modèle trichotomique O/N/PAS-NEK et de l'entropie d'audit, qui constituent l'innovation méthodologique centrale de ce cours.
+
+Le chapitre~\ref{chap:06_outil_aide_audit} décrit la méthode de décomposition hiérarchique en huit niveaux, du domaine à la conséquence, et son implémentation dans un outil Excel automatisé. Il précise la logique de chaque palier, les formules de statut, de criticité et d'entropie, et le protocole en sept étapes pour construire la grille d'un nouveau domaine.
+
+Le chapitre~\ref{chap:decomposition} applique cette méthode aux six types d'audit canoniques. Pour chaque domaine, les points de contrôle de référence, les objectifs de contrôle et des exemples complets de chaîne N4--N8 (critère, élément requis, question, risque, conséquence) sont fournis. L'apprenant dispose ainsi de tous les éléments pour constituer son outil Excel personnel.
+
+\medskip
+\noindent\textbf{Partie~IV, Enjeux contemporains et évaluation}
+
+Le chapitre~\ref{chap:07_sujets_connexes} traite des domaines à forte valeur ajoutée professionnelle qui n'entrent pas dans les types d'audit classiques~: l'impact de l'intelligence artificielle sur les SI et son cadre de gouvernance (EU~AI~Act), la fraude dans et par les systèmes d'information, l'audit forensics et la chaîne de garde des preuves numériques.
+
+Le chapitre~\ref{chap:08_evaluation_finale} constitue la mise en situation finale~: conduite d'une mission d'audit complète sur LiZbiZ, de la planification à la rédaction du rapport, mobilisant l'ensemble des compétences acquises.
+
+\medskip
+\noindent\textbf{Travaux pratiques immersifs}
+
+Deux laboratoires complètent le dispositif. Le TP~\ref{chap:lab1_application} est un audit fonctionnel de l'\textit{APPLICATION} de LiZbiZ~: création et interrogation de la base de données SQL, construction de l'outil Excel d'aide à l'audit, rédaction d'un rapport de mission. Le TP~\ref{chap:lab2_infrastructure} est un audit de sécurité d'infrastructure réseau~: exercice de pentest guidé, analyse des logs et des configurations, exploitation des résultats dans le rapport de sécurité.
+
+% ==============================================================================
+\section*{Une innovation méthodologique~: le modèle trichotomique et l'entropie d'audit}
+% ==============================================================================
+
+Ce cours introduit une contribution originale à la pratique de l'audit SI~: le \termecle{modèle trichotomique de réponse} O~/~N~/~\textbf{PAS-NEK} (\textit{Pas Assez de Savoir, Not Enough Knowledge}), formalisé par l'entropie informationnelle de Shannon appliquée à la distribution des réponses de l'auditeur.
+
+La pratique révèle qu'une troisième situation échappe systématiquement à la dichotomie Oui/Non~: celle où l'auditeur ne peut pas se prononcer, non par manque de diligence, mais parce que l'information elle-même n'existe pas, ne circule pas ou est contradictoire au sein de l'entité auditée. La modalité \textbf{PAS/NEK} n'est pas un aveu d'échec~: c'est un signal diagnostique de première importance, indiquant soit une défaillance du contrôle interne, soit un défaut de circulation de l'information, deux pathologies organisationnelles distinctes qui appellent des recommandations différentes.
+
+L'entropie de Shannon, appliquée à la distribution des trois modalités, fournit un indicateur quantitatif de l'incertitude~: nulle lorsque toutes les réponses convergent, maximale ($\approx 1{,}585$ bits) lorsque les trois modalités sont équiprobables. Ce double signal, taux de conformité et entropie d'incertitude, transforme l'outil d'aide à l'audit en un instrument à deux dimensions, mesurant à la fois \textit{ce qui ne va pas} et \textit{ce qu'on ne sait pas}. La formalisation complète de ce modèle est développée au chapitre~\ref{chap:shannon}.
+
+% ==============================================================================
+\section*{Posture épistémologique et déontologie}
+% ==============================================================================
+
+L'auditeur n'est ni un juge ni un censeur. Il est un professionnel au service de la vérité organisationnelle, une vérité que ni la complaisance ni la suspicion systématique ne peuvent servir. La déontologie de l'audit repose sur quatre piliers indissociables~: l'\textbf{intégrité}, l'\textbf{objectivité}, la \textbf{confidentialité} et la \textbf{compétence}. Ces valeurs, portées par l'\sigle{ISACA} et l'\sigle{IIA} (\textit{Institute of Internal Auditors}), irrigueront l'ensemble de notre démarche.
+
+Un constat bien documenté vaut mieux qu'une intuition brillante. La rigueur est la crédibilité de l'auditeur. L'indépendance est son autorité.
+
+\begin{boxinfo}
+\textbf{Prérequis recommandés~:}
+\begin{itemize}
+    \item Bases de la sécurité informatique et des réseaux (protocoles TCP/IP, pare-feu, DMZ).
+    \item Notions de bases de données relationnelles et maîtrise élémentaire du SQL.
+    \item Culture générale de la gouvernance d'entreprise et du contrôle interne.
+    \item Maîtrise opérationnelle d'un tableur (Microsoft Excel ou LibreOffice Calc).
+    \item Capacité à lire et analyser des documents techniques en français et en anglais.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Évaluation~:}
+\begin{itemize}
+    \item \textbf{50\,\%}, Travaux dirigés~: construction de l'outil d'aide à l'audit et rapport de mission LiZbiZ.
+    \item \textbf{25\,\%}, Contrôle continu~: QCM, questions ouvertes, exercices de décomposition.
+    \item \textbf{20\,\%}, Recherche~: note de synthèse sur un enjeu contemporain de l'audit SI.
+    \item \textbf{5\,\%}, Participation active aux échanges en cours.
+\end{itemize}
+\end{boxinfo}
+
+\vspace{2ex}
+\begin{center}
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}\\[0.8ex]
+    {\small\itshape\color{CouleurPrimaire}
+        Ce cours a été conçu avec la conviction que la maîtrise du numérique\\
+        est une responsabilité collective autant qu'individuelle.\\
+        Bonne lecture, et bon audit.}\\[0.5ex]
+    {\small\bfseries\color{CouleurPrimaire}\auteurcours}\\
+    {\small\color{CouleurBordInfo}\itshape\institutionprimaire\ —\ \anneescolaire}
+\end{center}

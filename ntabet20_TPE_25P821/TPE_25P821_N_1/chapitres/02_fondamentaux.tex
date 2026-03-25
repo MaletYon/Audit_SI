@@ -1,0 +1,993 @@
+% ==============================================================================
+% Fichier     : 02_fondamentaux.tex
+% Description : Définitions, Concepts et Bases, Audit, Contrôle et SI
+% Cours       : Audit des Systèmes d'Information (GES4062)
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Note        : Tous les concepts de la V0 sont repris intégralement.
+% ==============================================================================
+
+\chapter{Définitions, Concepts et Bases de l'Audit et du Contrôle}%
+\label{chap:02_fondamentaux}
+
+\begin{boxobjectifs}
+\textbf{Objectif du chapitre :} Poser les fondations théoriques nécessaires à la
+compréhension approfondie des systèmes d'information, de leur audit, et des enjeux
+qui y sont associés. Une maîtrise rigoureuse de ces concepts est indispensable pour
+appréhender les méthodologies, normes et pratiques qui guident l'évaluation, le
+contrôle et la sécurisation des systèmes d'information.
+\end{boxobjectifs}
+
+% ==============================================================================
+\section{Définitions, Concepts et Bases de l'Audit et du Contrôle}
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+\subsection{Les Différences entre l'Audit et le Contrôle}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Audit et Contrôle}
+\textbf{L'audit} a pour sujet un \textbf{processus}, tandis que le \textbf{contrôle}
+s'applique à une \textbf{opération}.
+
+Le but de l'audit est l'\textbf{optimisation du processus} sous revue pour en améliorer
+la participation dans la \textbf{création de valeur} pour l'entité. Celui du contrôle
+peut être de s'assurer de l'\textbf{exactitude}, la \textbf{complétude},
+l'\textbf{existence}, la \textbf{cohérence}, \dots de l'opération visée.
+\end{boxdef}
+
+\begin{boxlizbiz}{Illustration Lizbiz's}
+\begin{itemize}
+  \item \textbf{Contrôle :} Le comptable vérifie que le montant d'une facture
+    correspond à la commande reçue, il s'assure de la cohérence d'une opération.
+  \item \textbf{Audit :} L'auditeur analyse l'ensemble du processus
+    « Achat–Fournisseur » pour évaluer si les contrôles en place sont efficaces et
+    systématiquement appliqués, et propose des optimisations créatrices de valeur.
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsection{L'Assurance Raisonnable}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Assurance Raisonnable}
+La notion d'assurance raisonnable est liée à la collecte des éléments probants
+nécessaires pour que l'auditeur puisse conclure que les éléments analysés
+\textbf{pris dans leur ensemble} ne comportent pas d'inexactitudes importantes,
+pouvant entacher \textbf{les choix du commanditaire}.
+\end{boxdef}
+
+L'auditeur ne peut certifier à cent pour cent l'absence d'erreur ou de fraude, les
+contraintes d'échantillonnage, de temps et la possibilité de dissimulation délibérée
+constituent des limites inhérentes à l'exercice. L'assurance est donc raisonnable,
+non absolue.
+
+% ------------------------------------------------------------------------------
+\subsection{Les Risques}
+\label{subsec:risques}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Définition Académique du Risque}
+
+\begin{boxdef}{Risque, Définition académique}
+Le \termecle{risque} est la \textbf{probabilité} qu'une menace exploite une
+vulnérabilité pour générer un \textbf{impact} sur une ressource identifiée.
+
+L'élément capital pour l'existence du risque est donc la \textbf{ressource}.
+
+Le risque est essentiellement probable ; sa valeur est comprise dans l'intervalle
+$]0,1[$. Dès matérialisation de la chose projetée, c'est-à-dire lorsque la valeur
+vaut $1$, on parle d'\textbf{incident}. En revanche, lorsqu'elle vaut $0$, on parle
+d'\textbf{opportunité}.
+\end{boxdef}
+
+\subsubsection{Généralités sur les Risques}
+
+Les éléments minimaux constitutifs du risque sont :
+\begin{itemize}
+  \item la ressource ;
+  \item la ou les vulnérabilités ;
+  \item la ou les menaces ;
+  \item le ou les impacts.
+\end{itemize}
+
+À ceux-ci peuvent s'ajouter : le ou les agents de menace, la compétence de l'agent
+de menace, la motivation de l'agent de menace, etc.
+
+L'évaluation des risques est un processus \textbf{cyclique} qui consiste à identifier
+les risques, à préciser leur impact potentiel sur l'entreprise, à recenser les contrôles
+en place pour les réduire, à évaluer la pertinence de ces contrôles et à déterminer si
+les risques résiduels sont acceptables par l'entreprise.
+
+\begin{boiteRemarque}{À retenir}
+Par définition, sans ressource, pas de risque. Le gestionnaire de risque doit donc
+savoir sur quels éléments il a la main, afin de bien dimensionner ses efforts.
+\end{boiteRemarque}
+
+\subsubsection{Traitement du Risque}
+
+Il existe seulement \textbf{quatre méthodes} pour traiter le risque :
+
+\begin{enumerate}
+  \item \textbf{L'acceptation :} consiste à ne rien faire bien qu'étant pleinement
+    conscient du risque encouru ;
+  \item \textbf{L'évitement} (ou arrêt de l'activité) : préconise l'extinction de la
+    raison du risque ;
+  \item \textbf{Le transfert ou partage :} l'entité, par le mécanisme contractuel,
+    s'assure de l'intervention d'un tiers pour l'aider le moment échéant à faire
+    face à l'impact ;
+  \item \textbf{La réduction ou mitigation :} se matérialise par le déploiement de
+    contre-mesures ou l'amélioration de mécanismes de contrôle déjà en place pour
+    agir soit sur la vulnérabilité, soit sur la menace, soit sur l'impact, ou une
+    combinaison des trois.
+\end{enumerate}
+
+À l'issue de l'exécution d'une méthode de traitement, le risque résiduel doit avoir
+été minimisé. Par abus de langage, quand on parle de \textbf{gestion des risques},
+on entend généralement que la méthode de traitement est déjà choisie et qu'il s'agit
+de la réduction ou mitigation.
+
+\subsubsection{Principaux Groupes de Risques Informatiques}
+
+Il y a trois principaux groupes de risques en informatique :
+\begin{itemize}
+  \item les risques \textbf{opérationnels} ;
+  \item les risques \textbf{financiers} ;
+  \item les risques \textbf{légaux} ou de non-conformité.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Quelques risques informatiques et leurs facteurs}
+\label{tab:risques_informatiques}
+\small
+\begin{tabular}{p{6cm}p{7.5cm}}
+\toprule
+\textbf{Risques informatiques} & \textbf{Facteurs de risques} \\
+\midrule
+L'inadéquation du SI avec la stratégie de l'entité et les besoins des utilisateurs &
+  Absence de schéma directeur ; manque d'implication de la direction ; absence de
+  gouvernance informatique ; manque d'implication des utilisateurs métiers ; absence
+  d'analyse de la valeur des SI mis en place. \\
+\midrule
+L'incapacité de l'organisation à redémarrer les systèmes en cas d'arrêt ou de destruction &
+  Absence de sauvegarde régulière (sauvegardes externes) ; absence de plan de
+  secours ; absence de site de secours. \\
+\midrule
+La sécurité du SI inadaptée au niveau de risque identifié et accepté par la direction &
+  Absence de politique de sécurité ; failles en sécurité physique, logique, réseau,
+  exploitation, postes et données. \\
+\midrule
+L'accès aux données et applications par des personnes non autorisées &
+  Absence de gestion rigoureuse d'attribution des droits ; gestion insuffisante des
+  mots de passe ; systèmes ne permettant pas une gestion fine des accès. \\
+\midrule
+Les applications informatiques non fiables &
+  Erreurs de programmation par rapport aux spécifications ; applications
+  insuffisamment testées ; utilisateurs insuffisamment impliqués dans le
+  développement. \\
+\midrule
+L'indisponibilité du système informatique &
+  Mauvaise gestion de l'environnement matériel (énergie, climatisation) ; absence
+  de convention de service ; absence d'outil de surveillance ; absence de cellule
+  réactive ; absence de contrat de maintenance. \\
+\midrule
+La mauvaise utilisation du système informatique &
+  Applications non conviviales ; utilisateurs insuffisamment formés ;
+  documentation insuffisante ; manque de contrôles bloquants. \\
+\midrule
+La non-conformité du système avec la législation &
+  Politiques non conformes à la réglementation en cybersécurité, données
+  personnelles, cybercriminalité, communications électroniques. \\
+\midrule
+La non-pérennité du système informatique &
+  Utilisation de la sous-traitance sans transfert de compétence ; documentation
+  inexistante ou non mise à jour ; obsolescence technologique ; forte dépendance
+  vis-à-vis de personnes clés. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Risques en Audit}
+
+L'informatique ne suffit pas à éliminer les risques, mais constitue un outil important
+pour mieux les gérer et assurer la synergie de tous les secteurs de l'entreprise. Dans
+le cadre des travaux d'audit, il faut obtenir une assurance raisonnable que les états
+financiers sont exempts d'inexactitudes importantes.
+
+Un audit ne nécessite pas la validation de la totalité des transactions ; l'exhaustivité
+est difficilement atteignable, d'où l'importance de la gestion des risques en audit.
+
+\paragraph{Risque Inhérent}
+Le \termecle{risque inhérent} est le risque lié soit à l'activité, soit à l'entité,
+soit au secteur dans lequel l'entité opère.
+
+\paragraph{Risque de Non-contrôle}
+Le \termecle{risque de non-contrôle} est fonction de l'efficacité avec laquelle la
+conception et le fonctionnement du contrôle interne permettent d'atteindre les
+objectifs de l'entité. Il subsiste toujours un risque de non-contrôle en raison des
+limites liées au contrôle interne.
+
+\paragraph{Risque de Non-détection}
+Le \termecle{risque de non-détection} est le risque que l'auditeur ne détecte pas une
+inexactitude qui pourrait être importante, soit isolément, soit cumulée avec d'autres
+inexactitudes. Il est fonction de l'efficacité des procédés d'audit et de leur mise en
+œuvre : il est donc lié à l'auditeur, à son expertise, son expérience, sa
+compréhension du sujet d'audit et le choix de ses outils.
+
+\paragraph{Risque Technologique}
+Le \termecle{risque technologique} est lié à l'utilisation des technologies dans le
+but d'atteindre les objectifs de l'entreprise. Il peut être pris en compte dans le
+risque de non-détection.
+
+\paragraph{Risque de Mission}
+Le \termecle{risque de mission} est le risque que l'auditeur exprime une opinion
+inappropriée sur les faits examinés contenant des inexactitudes significatives. Il est
+représenté par la formule suivante :
+
+\begin{boiteTheoreme}{Formule du Risque de Mission d'Audit}
+\[
+\mathbf{RMA} = RI \times RNC \times RND
+\]
+\begin{itemize}
+  \item $\mathbf{RMA}$ : Risque de mission d'audit
+  \item $\mathbf{RI}$ : Risque inhérent
+  \item $\mathbf{RNC}$ : Risque de non-contrôle
+  \item $\mathbf{RND}$ : Risque de non-détection
+\end{itemize}
+\end{boiteTheoreme}
+
+\subsubsection{La Matrice des Risques}
+
+\paragraph{Rôle et définition}
+La \termecle{matrice des risques} est un outil opérationnel de gestion des risques.
+Elle permet d'avoir sur le même support des informations utiles à la prise de décision
+en rapport avec les risques. À ce titre, son usage est fortement recommandé par les
+bonnes pratiques et les professionnels en la matière.
+
+\paragraph{Contenu d'une Matrice des Risques}
+La matrice des risques est un tableau récapitulatif qui met sur le même plan les points
+suivants :
+\begin{enumerate}
+  \item un numéro d'ordre ;
+  \item le domaine ou cycle concerné ;
+  \item la structure compétente ;
+  \item le poste de travail concerné ;
+  \item le ou les titulaires du poste sur la période ;
+  \item le logiciel utilisé ;
+  \item la phase ou l'étape du processus visé ;
+  \item le point de contrôle évalué ;
+  \item le ou les critères d'évaluation ;
+  \item la ou les questions d'évaluation ;
+  \item la réponse associée ;
+  \item le ou les éléments requis (futurs éléments probants) ;
+  \item le risque associé ;
+  \item la conséquence majeure en cas de réalisation du risque relevé ;
+  \item la criticité subséquente ;
+  \item un commentaire le cas échéant.
+\end{enumerate}
+
+\begin{boxexo}{Exercice}
+Chaque apprenant proposera une matrice des risques dans un fichier Excel contenant
+les seize éléments énumérés ci-dessus.
+\end{boxexo}
+
+% ------------------------------------------------------------------------------
+\subsection{Le Contrôle Interne}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Définition du Contrôle Interne}
+
+\begin{boxdef}{Contrôle Interne, Définition COSO}
+Le référentiel \norme{COSO} définit le contrôle interne comme un processus mis en
+œuvre par les dirigeants qui couvre tous les niveaux de l'entreprise et est destiné à
+fournir une \textbf{assurance raisonnable} quant à la réalisation des trois objectifs
+suivants :
+\begin{itemize}
+  \item l'efficacité et l'efficience des opérations ;
+  \item la fiabilité des informations financières ;
+  \item la conformité aux lois et règlements.
+\end{itemize}
+\end{boxdef}
+
+\subsubsection{Généralités sur le Contrôle Interne}
+
+Le contrôle interne est une notion indispensable pour toutes les entreprises,
+notamment au niveau managérial. Il s'agit d'un véritable système de sécurité/veille,
+composé d'un ensemble de méthodes, de règles et de procédures définies par
+l'entreprise, mais aussi d'un ensemble de postes de travail et de fonctions présentes
+dans l'organigramme. Il s'adapte selon la taille et les caractéristiques de chaque
+entité : plus la taille de l'entreprise est importante, plus les procédés du contrôle
+interne devraient être conséquents.
+
+Le contrôle interne vise à avoir la pleine maîtrise de son entreprise et à éviter les
+erreurs. Il garantit la qualité de la gestion, du système mis en place et la bonne
+utilisation des ressources. Pour le mettre en place, il est nécessaire de posséder une
+vision claire de l'entité, ce qui passe par la bonne codification des processus de
+production.
+
+\subsubsection{Évaluation du Système de Contrôle Interne}
+
+L'évaluation du système de contrôle interne a pour but de renseigner sur l'état du
+contrôle interne mis en place par l'entité en lien avec le sujet d'audit, afin d'en
+accroître la plus-value. Dans le cadre de l'audit d'un pan de l'entité, l'auditeur
+devra réaliser l'abstraction du système de contrôle interne couvert par le mandat.
+
+Le référentiel faisant autorité en matière d'évaluation de système de contrôle interne
+est le \norme{COSO}, avec ses \textbf{cinq composantes} et ses
+\textbf{dix-sept principes}, qui assure une couverture de bout en bout de l'entreprise.
+
+\begin{boxexo}{Exercice}
+Chaque apprenant proposera dans la première colonne les 5 composantes du COSO,
+et dans la seconde les 17 principes rangés par composante. Une fois l'exercice
+réalisé : dans quelle cellule du tableau ainsi constitué devrait être rangé les
+bordereaux de transmission utilisés dans l'entité ?
+\end{boxexo}
+
+% ------------------------------------------------------------------------------
+\subsection{La Règle des Quatre Yeux}
+% ------------------------------------------------------------------------------
+
+\begin{boiteTheoreme}{Règle des Quatre Yeux, Énoncé}
+La première paire d'yeux observe ; la seconde peut \textbf{infirmer, confirmer ou
+réformer}.
+\end{boiteTheoreme}
+
+Un auditeur n'achève jamais un travail seul, quel que soit son niveau d'expertise ou
+d'expérience. Il a toujours besoin que son travail soit révisé : pour confirmer qu'il ne
+s'est pas trompé, ou pour indiquer qu'il s'est trompé, ou encore pour mettre son
+travail en perspective.
+
+\begin{boxexo}{Exercice}
+Chaque apprenant proposera deux exemples d'application de la règle des quatre yeux.
+\end{boxexo}
+
+% ------------------------------------------------------------------------------
+\subsection{L'Allégorie des Deux Mains}
+% ------------------------------------------------------------------------------
+
+On peut se servir de ses deux mains pour illustrer ce qu'est l'audit.
+
+\begin{itemize}
+  \item Dans la \textbf{première main}, l'auditeur charge le
+    \textbf{corpus réglementaire} dont il se servira.
+  \item Dans la \textbf{seconde}, il place les \textbf{faits observés}, la pratique
+    sur le terrain.
+  \item Puis il place ses deux mains en regard pour en dégager les
+    \textbf{écarts et différences} éventuels.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\subsection{Les Trois Piliers de l'Audit Interne}
+% ------------------------------------------------------------------------------
+
+L'audit interne repose sur trois piliers fondamentaux :
+
+\begin{enumerate}
+  \item \textbf{La spécification des tâches :} veut que ce qu'il y a à faire soit
+    bien défini, précisé et communiqué. Elle se matérialise au niveau de l'agent par
+    la \textbf{fiche de poste}.
+
+  \item \textbf{La séparation des tâches et fonctions incompatibles :} a pour but
+    d'éviter qu'un maillon de la chaîne ne concentre suffisamment de prérogatives
+    pour, seul, pouvoir exécuter de bout en bout une procédure. Ce pilier est
+    implémenté en finances publiques au Cameroun par le principe qui stipule qu'un
+    seul individu ne peut pas cumuler à la fois les fonctions d'\textbf{ordonnateur}
+    et de \textbf{comptable public} pour la même opération.
+
+  \item \textbf{Le contrôle réciproque des tâches :} précise que le palier supérieur
+    prolonge le travail du palier inférieur en le validant. Ce pilier se matérialise
+    dans l'administration publique notamment par le système de \textbf{visa
+    hiérarchique} sur les documents. C'est aussi le cas dans les divers \textit{workflows}
+    où, sans la validation explicite du N+1, la procédure n'avance pas.
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+\subsection{Point de Contrôle}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Point de Contrôle}
+Un \termecle{point de contrôle} représente un élément dans la procédure auditée pour
+lequel l'auditeur souhaiterait obtenir des éclaircissements, en questionnant la
+conformité au référentiel établi et en récoltant les éléments d'analyse.
+
+Dans la pratique, si l'on linéarise la procédure à auditer, chaque acteur ou changement
+de phase peut être matérialisé par un point de contrôle.
+\end{boxdef}
+
+\begin{boxlizbiz}{Exemple, Procédure école}
+Soit la procédure suivante : l'apprenant part du portail de l'école pour la salle de
+classe. Les points de contrôle peuvent être :
+\begin{itemize}
+  \item le portail ;
+  \item l'entrée dans le bâtiment ;
+  \item l'entrée dans la salle de classe.
+\end{itemize}
+\end{boxlizbiz}
+
+\begin{boxexo}{Exercice}
+Chaque apprenant proposera un exemple de procédure et en identifiera les points de
+contrôle. La procédure doit donner lieu à au moins quatre points de contrôle.
+\end{boxexo}
+
+% ------------------------------------------------------------------------------
+\subsection{Objectif de Contrôle}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Objectif de Contrôle}
+On peut définir un \termecle{objectif de contrôle} comme étant la raison pour laquelle
+l'auditeur évalue un point de contrôle. Pour chaque point de contrôle, il y a au
+moins un objectif de contrôle.
+\end{boxdef}
+
+\paragraph{Formulation}
+Il est usuel de formuler les objectifs de contrôle de l'une des façons suivantes :
+\begin{itemize}
+  \item \emph{S'assurer que xxxxxxxxxxxxx ;}
+  \item \emph{Vérifier que xxxxxxxxxxxxx.}
+\end{itemize}
+
+\begin{boxlizbiz}{Exemples, Procédure école}
+Pour les points de contrôle identifiés précédemment :
+\begin{itemize}
+  \item \textbf{Le portail :} S'assurer que l'apprenant soit identifié au niveau du portail.
+  \item \textbf{L'entrée dans le bâtiment :} S'assurer que seuls les apprenants en règle
+    avec la scolarité accèdent au bâtiment.
+  \item \textbf{L'entrée dans la salle de classe :} Vérifier qu'aucun apprenant n'entre en
+    salle de classe après l'enseignant.
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsection{Critère d'Évaluation}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Critère d'Évaluation}
+Les \termecle{critères d'évaluation} sont la matérialisation des jalons dont
+l'assemblage permet de réaliser l'objectif de contrôle. Il faut donc satisfaire
+l'ensemble des critères d'évaluation d'un point de contrôle pour que son évaluation
+soit concluante. Dans la pratique, il faut généralement plusieurs critères d'évaluation
+par objectif de contrôle.
+\end{boxdef}
+
+\begin{boxlizbiz}{Exemple, Portail de l'école}
+Pour l'objectif \og S'assurer que l'apprenant soit identifié au niveau du portail \fg{},
+les critères d'évaluation sont :
+\begin{itemize}
+  \item L'apprenant a une pièce d'identité ;
+  \item Un vigile est présent à la guérite du portail ;
+  \item Le vigile dispose de la liste d'apprenants s'étant acquittés de leurs droits
+    académiques ;
+  \item La liste dont dispose le vigile est à jour ;
+  \item La comparaison entre la pièce d'identité de l'apprenant et la liste à jour dont
+    dispose le vigile est probante.
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsection{Question d'Évaluation}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Question d'Évaluation}
+Les \termecle{questions d'évaluation} permettent de mesurer l'atteinte des objectifs
+de contrôle en transformant quasi-systématiquement chaque critère d'évaluation en
+question libellée de façon univoque et de manière que les \textbf{réponses soient
+booléennes}.
+\end{boxdef}
+
+\begin{boxlizbiz}{Exemple, Portail de l'école}
+Pour l'objectif \og S'assurer que l'apprenant soit identifié au niveau du portail \fg{} :
+\begin{itemize}
+  \item L'apprenant a-t-il une pièce d'identité ?
+  \item Y a-t-il un vigile à la guérite du portail ?
+  \item Le vigile dispose-t-il d'une liste d'apprenants s'étant acquittés de leurs droits
+    académiques ?
+  \item Cette liste est-elle à jour ?
+  \item Le vigile compare-t-il la pièce d'identité de l'apprenant à la liste à jour dont
+    il dispose ?
+\end{itemize}
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsection{Constatation d'Audit}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Définitions}
+
+Plusieurs définitions coexistent dans la littérature ; au final elles renvoient toutes
+à la même réalité :
+
+\begin{boxdef}{Constatation d'Audit}
+Une \termecle{constatation d'audit} est la consignation du fait observé par l'auditeur,
+c'est-à-dire un \textbf{écart par rapport au référentiel} utilisé comme
+\textit{baseline}.
+
+Quoique peu courant, une constatation d'audit n'est pas toujours un écart
+\textbf{négatif} : certaines entités performent au-delà de la baseline de référence —
+il s'agit alors d'un écart \textbf{positif}.
+\end{boxdef}
+
+La définition consistant à définir la constatation d'audit comme une violation d'une
+norme établie et diffusée n'a pas été retenue ici, pour cette raison.
+
+\subsubsection{Exemples}
+
+\paragraph{Constatation Positive}
+L'équipe de mission a constaté qu'en sus de la règle établie et des bonnes pratiques
+en la matière, qui fixent le nombre de missions d'audit annuelle pour les applications
+en service à une (1), l'entreprise Lizbiz's en a réalisé trois (3) en 2022.
+
+\paragraph{Constatation Négative}
+L'équipe de mission a constaté qu'en violation du second pilier de l'audit interne qui
+grave la séparation des tâches et fonctions incompatibles dans le marbre, repris et
+surligné par le point 10.3.2 d'\norme{ISO 27002} qui interdit le cumul des fonctions
+d'administrateur de base de données et celui d'administrateur réseau, dans l'entreprise
+Lizbiz's, Monsieur \textsc{Bomba} a régulièrement exercé ces deux fonctions pendant
+toute la période sous revue.
+
+% ------------------------------------------------------------------------------
+\subsection{Le Contradictoire}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Contradictoire}
+Élément \og sine qua non \fg{} du droit de la défense, le \termecle{contradictoire}
+est repris en audit pour donner la possibilité à l'audité de présenter sa version du
+fait querellé, appuyée d'éléments probants suffisants au regard de la constatation
+dressée par l'auditeur.
+
+Il matérialise l'\textbf{obligation d'impartialité} et la \textbf{preuve d'humilité}
+de l'auditeur, qui soumet à l'audité le premier jet de ce qu'il pense avoir établi comme
+constat, avant sa consignation définitive dans le rapport.
+\end{boxdef}
+
+% ------------------------------------------------------------------------------
+\subsection{Les Observations}
+% ------------------------------------------------------------------------------
+
+Dans certains types de rapport de mission, notamment ceux d'ISC comme le
+\sigle{CONSUPE} (Contrôle Supérieur de l'État), l'observation est la forme arrêtée
+pour consigner les travaux d'audit.
+
+\begin{boxdef}{Structure d'une Observation}
+Une observation se compose de :
+\begin{enumerate}
+  \item un numéro d'ordre ;
+  \item l'énoncé de la norme visée ;
+  \item la constatation d'audit ;
+  \item les risques ou conséquences du fait observé ;
+  \item le contradictoire ;
+  \item l'analyse de l'auditeur ;
+  \item la conclusion sur le fait observé ;
+  \item la ou les recommandations pour contenir, réparer ou éviter à l'avenir la
+    situation observée.
+\end{enumerate}
+\end{boxdef}
+
+\begin{boiteRemarque}{Rappel}
+Il faudra le cas échéant se conformer à la structure arrêtée par son entité, qui peut
+différer de ce modèle générique.
+\end{boiteRemarque}
+
+% ------------------------------------------------------------------------------
+\subsection{Sur Place et Sur Pièces}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Sur Place et Sur Pièces}
+Ce concept renvoie au fait que, pour réaliser un audit, l'auditeur doit se déplacer
+physiquement de manière à être présent sur les lieux, y recueillir les pièces
+justificatives nécessaires, puis les traiter en personne et se prononcer sur leur
+caractère suffisant ou non.
+
+\textbf{L'audit ne se base donc pas sur des ouï-dire} ou des allégations non factuelles,
+même si ces éléments peuvent être utilisés pour ouvrir ou fermer des pistes d'audit.
+\end{boxdef}
+
+% ------------------------------------------------------------------------------
+\subsection{L'Aveu de Carence}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Aveu de Carence}
+Lorsque l'audité est sollicité sur un fait pour en apporter une explication
+complémentaire à celle de l'équipe de mission et ne se manifeste pas, cette dernière
+peut conclure à l'\termecle{aveu de carence} après avoir fait la preuve que l'audité
+a été relancé sur le fait querellé plusieurs fois, par tout moyen laissant trace, et n'a
+pas réagi.
+
+L'aveu de carence signifie l'\textbf{acceptation tacite} par l'audité du fait qui est
+porté à son attention. C'est donc une \textbf{exception au principe du contradictoire}.
+\end{boxdef}
+
+% ==============================================================================
+\section{Définitions, Concepts et Bases des Systèmes d'Information}
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+\subsection{Notion de Système}
+% ------------------------------------------------------------------------------
+
+Plusieurs définitions coexistent dans la littérature, certaines à la limite de
+l'antinomisme. Dans le cadre de ce cours, un \termecle{système} sera considéré comme
+étant un \textbf{groupe d'éléments interagissant ensemble pour rendre un résultat
+prédictible}.
+
+% ------------------------------------------------------------------------------
+\subsection{Les Systèmes d'Information}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Système Informatique}
+
+\begin{boxdef}{Système Informatique}
+Représente l'ensemble des \textbf{logiciels et matériels informatiques} participant à
+l'acquisition, au stockage, au traitement, au transport et à la diffusion de
+l'information sous forme électronique au sein de l'organisation.
+\end{boxdef}
+
+\subsubsection{Système d'Information}
+
+\begin{boxdef}{Système d'Information}
+Ensemble des \textbf{ressources humaines, matérielles, logicielles et procédurales}
+participant à l'acquisition, au stockage, au traitement, au transport et à la diffusion
+de l'information sous toutes ses formes au sein de l'organisation.
+
+Il s'agit d'un \textbf{système sociotechnique} composé de deux sous-systèmes :
+l'un social (structure organisationnelle et personnes) et l'autre technique
+(\textit{hardware}, \textit{software}, équipements de télécommunication et processus
+d'affaires).
+\end{boxdef}
+
+\subsubsection{Fonction Informatique}
+
+\begin{boxdef}{Fonction Informatique}
+La \termecle{fonction informatique} comprend, outre le système informatique, les
+personnes, processus, ressources financières et informationnelles. Elle a pour but de
+fournir à l'entreprise les éléments nécessaires à la réalisation optimale de ses
+missions.
+\end{boxdef}
+
+\subsubsection{Fonction d'Information}
+
+\begin{boxdef}{Fonction d'Information}
+Ensemble organisé de personnes, de procédures et d'équipement qui a pour objet de
+réunir, de trier, d'analyser, d'évaluer et de distribuer, en temps utile, de l'information
+pertinente et valide, provenant de sources internes et externes à l'organisation, afin
+que tous ceux qui ont à prendre des décisions disposent des éléments leur permettant
+de choisir l'action la plus appropriée au moment adéquat.
+\end{boxdef}
+
+\subsubsection{Problèmes Inhérents aux SI}
+
+Comme tous les systèmes, les SI peuvent être sujets à des problèmes liés soit à
+l'agencement des éléments qui les constituent, soit aux fonctions qu'ils fournissent,
+ou une combinaison des deux. Tous les problèmes inhérents au SI peuvent donc en
+absolu se classer dans l'une de ces deux catégories.
+
+\subsubsection{Informatisation des SI}
+
+Tous les systèmes d'information ne sont ni informatisés ni informatisables.
+L'informatisation d'un système d'information est une phase critique de sa vie. Des
+préalables doivent être respectés :
+\begin{itemize}
+  \item la définition claire et précise du but et des objectifs de l'informatisation ;
+  \item les termes de référence de son informatisation, qui reprennent la définition du
+    besoin, le périmètre des travaux, une certaine vision du futur système, les délais
+    de réalisation, et les autres contraintes connexes ;
+  \item l'allocation des ressources pour le projet d'informatisation, notamment
+    matérielles, humaines et financières.
+\end{itemize}
+
+L'informatisation d'un système d'information est donc un projet à traiter comme tel,
+dans le strict respect des usages et bonnes pratiques en la matière.
+
+\subsubsection{Types de Migration/Changement de SI}
+
+Il existe trois grands types de changement de système :
+
+\begin{table}[htbp]
+\centering
+\caption{Différents types de migration de système}
+\label{tab:migration}
+\small
+\begin{tabular}{clp{5cm}p{5cm}}
+\toprule
+\textbf{N°} & \textbf{Type} & \textbf{Avantages majeurs} & \textbf{Inconvénients majeurs} \\
+\midrule
+1 & Direct & Rapidité d'exécution. & Aucun retour arrière possible. \\
+2 & Par étape &
+  Possibilité de retour arrière si une étape se passe mal ; assimilation progressive
+  du nouveau système brique par brique. &
+  Temps relativement long de mise en œuvre ; ressource en infrastructure requise pour
+  supporter les deux systèmes. \\
+3 & En parallèle &
+  Temps d'apprentissage suffisant du nouveau système ; comparaison poussée des
+  deux systèmes ; possibilité de basculer vers le système le plus avantageux. &
+  Ressources requises pour faire tourner les deux systèmes simultanément. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Pour chacun de ces types de migration, l'auditeur devra recueillir la documentation et
+observer comment et si les règles inhérentes à la migration de système ont été
+respectées, notamment :
+\begin{itemize}
+  \item l'exhaustivité du transfert des données de l'ancien vers le nouveau système ;
+  \item la convertibilité des données le cas échéant ;
+  \item l'intégrité des données au moment de leur transfert ;
+  \item la préservation de la confidentialité des données ;
+  \item l'exactitude ou la convergence des résultats du nouveau système ;
+  \item la préservation des principes de séparation des tâches et fonctions
+    incompatibles.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\subsection{Système d'Exploitation}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Système d'Exploitation}
+Un \termecle{système d'exploitation} est un logiciel constitué de plusieurs fonctions
+dont le rôle est la gestion du matériel informatique qui constitue son hôte et les
+logiciels qui y sont installés. Il est encore appelé \textbf{logiciel de base}, car les
+autres logiciels sont installés par-dessus lui.
+\end{boxdef}
+
+Microsoft est le constructeur du célèbre système d'exploitation Windows, dont quelques
+déclinaisons sont : Windows XP, Windows 10, Windows 11.
+
+% ------------------------------------------------------------------------------
+\subsection{Système de Fichier}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Système de Fichier}
+Un \termecle{système de fichier} décrit la façon dont le système d'exploitation
+organise la gestion des éléments sur un support physique (disque dur, disque
+amovible, clé USB).
+\end{boxdef}
+
+\norme{FAT}, \norme{FAT32} et \norme{NTFS} sont des systèmes de fichiers Windows.
+
+% ------------------------------------------------------------------------------
+\subsection{Fichiers}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Fichier}
+Un \termecle{fichier} est la matérialisation du stockage sur support physique des
+données suivant un format défini dans le système de fichier. À chaque fichier est
+associé un logiciel particulier pour sa lecture et modification ; le lien entre les deux
+se fait par une \textbf{extension}.
+\end{boxdef}
+
+On peut classer les fichiers par leur taille, leur extension, leur nom ou leur date de
+modification. À titre d'exemple, Word ouvre en standard les fichiers d'extension
+\texttt{.doc} et \texttt{.docx} ; pour Excel, ce sont les extensions \texttt{.xls} et
+\texttt{.xlsx}.
+
+% ------------------------------------------------------------------------------
+\subsection{Base de Données}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Base de Données}
+Une \termecle{base de données} est une collection organisée de données structurées,
+généralement stockées électroniquement dans un système informatique. On peut la
+concevoir comme un classeur électronique qui contient des tiroirs et leurs contenus.
+Les bases de données sont de plusieurs types, les plus répandus étant objet et
+relationnel. C'est le \sigle{SGBD} (Système de Gestion de Base de Données) qui gère
+et contrôle la base de données.
+\end{boxdef}
+
+% ------------------------------------------------------------------------------
+\subsection{Réseau Informatique}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Réseau Informatique}
+Un \termecle{réseau informatique} est un système constitué de matériel et logiciel
+informatiques interagissant entre eux pour acheminer des données.
+\end{boxdef}
+
+% ------------------------------------------------------------------------------
+\subsection{Sécurité Informatique}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}{Sécurité Informatique}
+La \termecle{sécurité informatique} peut se définir comme un ensemble constitué de
+moyens humains, matériels, procéduraux et financiers mis en œuvre dans le but de
+garantir l'\textbf{intégrité}, la \textbf{disponibilité} et la \textbf{confidentialité}
+des informations traitées, stockées et acheminées au moyen d'outils et de procédés
+informatiques.
+\end{boxdef}
+
+% ==============================================================================
+\section{Les Contrôles en Audit des Systèmes d'Information}
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+\subsection{Rôle}
+% ------------------------------------------------------------------------------
+
+Simplement dit, le rôle d'un contrôle est de s'assurer du \textbf{respect d'une règle
+connue, établie et précise}, avant la réalisation ou non d'une action subséquente.
+
+% ------------------------------------------------------------------------------
+\subsection{Les Contrôles dans les SI}
+% ------------------------------------------------------------------------------
+
+Lors de l'audit des SI, deux catégories majeures de contrôles sont évaluées :
+les \textbf{contrôles généraux des systèmes d'information} et les
+\textbf{contrôles d'application}. Ces deux types de contrôles agissent de manière
+complémentaire mais divergent dans leur portée et leur approche.
+
+% ------------------------------------------------------------------------------
+\subsubsection{Contrôles Généraux}
+% ------------------------------------------------------------------------------
+
+\paragraph{Définition et objectif}
+
+\begin{boxdef}{Contrôles Généraux (\textit{GITC})}
+Les \termecle{contrôles généraux des systèmes d'information}
+(\textit{General IT Controls}, \sigle{GITC}) concernent l'\textbf{environnement
+informatique global} d'une organisation. Ils sont mis en place pour garantir que
+l'infrastructure informatique est gérée de manière sécurisée et fiable. Ces contrôles
+sont \textbf{transversaux} et s'appliquent à l'ensemble des systèmes et applications
+informatiques, assurant ainsi une base stable pour leur bon fonctionnement.
+\end{boxdef}
+
+\begin{boxlizbiz}{Exemple Lizbiz's}
+La société Lizbiz's utilise plusieurs serveurs pour héberger ses systèmes de gestion
+agricole et commerciale. Les contrôles généraux vont s'assurer que ces serveurs sont
+protégés contre les accès non autorisés, que les mises à jour de sécurité sont
+régulièrement effectuées, et que des procédures de sauvegarde sont en place en cas de
+défaillance matérielle ou d'incident informatique.
+\end{boxlizbiz}
+
+\paragraph{Quelques Champs d'Application}
+
+\subparagraph{Sécurité des Systèmes et Gestion des Accès}
+Ce contrôle vise à s'assurer que seuls les utilisateurs autorisés ont accès aux
+systèmes d'information. Il implique des mesures de protection comme les mots de
+passe robustes, l'authentification multi-facteurs (\sigle{MFA}), et une gestion stricte
+des autorisations d'accès.
+
+\begin{boxlizbiz}{Exemple Lizbiz's}
+Lizbiz's met en place une politique de mots de passe obligeant les employés à changer
+leur mot de passe tous les 90 jours, avec des exigences de complexité. L'accès aux
+systèmes critiques nécessite une authentification par application mobile en plus du
+mot de passe.
+\end{boxlizbiz}
+
+\subparagraph{La Gestion des Changements}
+Les processus de gestion des changements garantissent que toutes les modifications
+apportées aux systèmes informatiques (mises à jour logicielles, changements
+d'infrastructure) sont correctement planifiées, testées et approuvées, minimisant les
+risques de perturbation.
+
+\subparagraph{La Gestion des Opérations Informatiques}
+Les opérations quotidiennes des systèmes informatiques doivent être surveillées pour
+assurer leur continuité, sauvegardes régulières, gestion des incidents, planification
+de la maintenance.
+
+\subparagraph{Plans de Continuité des Activités et Reprise après Sinistre}
+Le premier prévoit un ensemble de mécanismes pour s'assurer que les services
+identifiés comme critiques continuent d'être fonctionnels quel que soit l'incident.
+Le second prévoit la restauration des systèmes d'information à l'état normal en cas
+d'incident majeur. L'objectif commun : \textbf{minimiser les interruptions des activités
+critiques}.
+
+% ------------------------------------------------------------------------------
+\subsubsection{Contrôles d'Application}
+% ------------------------------------------------------------------------------
+
+\paragraph{Définition et objectif}
+
+\begin{boxdef}{Contrôles d'Application}
+Les \termecle{contrôles d'application} sont une transcription informatique des
+contrôles organisationnels. Encore appelés \textbf{contrôles programmés}, ils sont
+encodés au moyen de programmes informatiques dans les logiciels pour matérialiser
+l'existence d'une règle. Ils sont fréquents dans les opérations d'entrée, de traitement
+et de sortie de l'application (\textbf{modèle IPO}). Leur objectif est de garantir
+l'intégralité, la fiabilité et l'exactitude du traitement des données.
+\end{boxdef}
+
+\paragraph{Quelques Champs d'Application}
+
+\subparagraph{Contrôles d'Entrée de Données}
+Ces contrôles s'assurent que les données saisies dans les systèmes d'information
+sont exactes, complètes et conformes aux règles et formats établis.
+
+\begin{boxlizbiz}{Exemple Lizbiz's}
+Dans le système de gestion des récoltes, un contrôle empêche l'enregistrement d'une
+nouvelle livraison de coton si les informations sur le poids et la qualité ne sont pas
+correctement renseignées.
+\end{boxlizbiz}
+
+\subparagraph{Contrôle de Traitement de Données}
+Ces contrôles vérifient que les transactions sont correctement exécutées selon les
+règles métier prédéfinies.
+
+\begin{boxlizbiz}{Exemple Lizbiz's}
+Dans le système de facturation, un contrôle empêche la génération d'une facture tant
+que la livraison n'a pas été confirmée dans le système et que toutes les étapes de
+validation n'ont pas été suivies.
+\end{boxlizbiz}
+
+\subparagraph{Contrôle de Sortie de Données}
+Ces contrôles garantissent que les informations générées par les systèmes (rapports
+financiers, états de gestion) sont exactes, complètes et conformes aux attentes.
+
+\subparagraph{Contrôle d'Accès Spécifiques aux Applications}
+Ces contrôles s'assurent que seules les personnes habilitées peuvent effectuer
+certaines actions sensibles dans les applications.
+
+\begin{boxlizbiz}{Exemple Lizbiz's}
+Dans le système de gestion des ressources humaines, seuls les gestionnaires des paies
+peuvent approuver les versements salariaux, chaque approbation étant enregistrée avec
+un horodatage et l'identifiant de l'utilisateur.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsubsection{Complémentarité entre Contrôles Généraux et Contrôles d'Application}
+% ------------------------------------------------------------------------------
+
+\paragraph{Interdépendance fonctionnelle}
+Les contrôles généraux créent un environnement sécurisé et stable qui permet aux
+contrôles d'application de fonctionner efficacement. Un contrôle général de gestion
+des accès garantit que seuls les utilisateurs autorisés peuvent interagir avec une
+application spécifique ; un contrôle général de gestion des changements prévient les
+erreurs systémiques susceptibles d'affecter les applications.
+
+\paragraph{Sécurisation renforcée}
+Les contrôles généraux protègent l'infrastructure et l'environnement global, tandis
+que les contrôles d'application s'assurent que les processus métier spécifiques sont
+correctement exécutés.
+
+\begin{boxlizbiz}{Exemple, Vulnérabilité de complémentarité}
+Lors d'un audit de Lizbiz's, il a été constaté que bien que le système de gestion des
+ressources humaines ait des contrôles d'application solides pour valider les congés des
+employés, une faiblesse dans les contrôles généraux de gestion des accès a permis à
+un utilisateur non autorisé d'accéder au système et de modifier des données sensibles.
+Cela démontre l'importance de la complémentarité des deux types de contrôles.
+\end{boxlizbiz}
+
+\paragraph{Prévention des erreurs à différents niveaux}
+Les contrôles généraux sont préventifs à un niveau global ; les contrôles d'application
+se concentrent sur la prévention des erreurs spécifiques aux transactions ou aux
+processus métier.
+
+% ------------------------------------------------------------------------------
+\subsubsection{Divergences entre Contrôles Généraux et Contrôles d'Application}
+% ------------------------------------------------------------------------------
+
+\paragraph{Portée}
+Les contrôles généraux s'appliquent à \textbf{l'ensemble des systèmes et des
+infrastructures} informatiques de l'organisation. Les contrôles d'application, en
+revanche, sont \textbf{spécifiques à des logiciels ou à des systèmes particuliers},
+concentrés sur des processus métier bien définis.
+
+\paragraph{Focalisation}
+Les contrôles généraux se focalisent sur la gestion et la sécurité de l'infrastructure
+informatique (performance globale, intégrité de l'environnement). Les contrôles
+d'application sont centrés sur les processus métier et les transactions spécifiques.
+
+\paragraph{Approche Proactive vs Réactive}
+Les contrôles généraux sont principalement \textbf{proactifs} : ils visent à prévenir
+les incidents et à garantir que l'infrastructure est sécurisée avant que des problèmes
+ne surviennent. Les contrôles d'application peuvent être à la fois \textbf{proactifs et
+réactifs} : ils préviennent les erreurs dans les transactions, mais détectent également
+les anomalies après qu'elles se sont produites.
+
+\begin{boxresume}
+\textbf{Synthèse du chapitre :}
+\begin{itemize}
+  \item L'audit porte sur un processus (optimisation/valeur) ; le contrôle porte sur
+    une opération (exactitude/conformité).
+  \item Le risque est une probabilité dans $]0,1[$ qui nécessite une ressource pour
+    exister ; quatre méthodes le traitent.
+  \item La formule $\mathrm{RMA} = RI \times RNC \times RND$ encadre le risque de
+    mission d'audit.
+  \item L'audit interne repose sur trois piliers : spécification, séparation et contrôle
+    réciproque des tâches.
+  \item La chaîne conceptuelle, point de contrôle \textrightarrow{} objectif de
+    contrôle \textrightarrow{} critère \textrightarrow{} question (booléenne)
+    \textrightarrow{} constatation (positive ou négative), structure toute mission.
+  \item Le contradictoire est un droit de la défense ; l'aveu de carence, son exception.
+  \item Les contrôles généraux (GITC) sécurisent l'environnement global ; les contrôles
+    d'application (IPO) sécurisent les traitements métier. Les deux sont complémentaires
+    et divergent en portée, focalisation et posture proactive/réactive.
+\end{itemize}
+\end{boxresume}

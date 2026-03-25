@@ -1,0 +1,122 @@
+% ==============================================================================
+% Fichier : 01_cas_lizbiz.tex
+% Description : Présentation du Cas Pratique Fil Rouge - Entreprise LiZbiZ
+% ==============================================================================
+
+\chapter{Cas Pratique Fil Rouge : Entreprise LiZbiZ}\label{chap:01_cas_lizbiz}
+
+Ce chapitre présente le contexte de l'entreprise \textbf{LiZbiZ}, qui servira de support unique pour l'ensemble des travaux pratiques et mises en situation de ce cours.
+
+\section{Identité et Contexte de l'Entreprise}
+
+\subsection{Présentation Générale}
+
+\textbf{LiZbiZ} est une entreprise commerciale spécialisée dans la vente de matériel informatique et high-tech. Elle s'est distinguée par une digitalisation rapide de ses processus, passant d'un modèle traditionnel à un modèle hybride fort sur le e-commerce.
+
+\begin{itemize}
+    \item \textbf{Secteur :} Commerce de gros et de détail / E-commerce.
+    \item \textbf{Effectif :} 150 salariés.
+    \item \textbf{Activité principale :} Vente de matériels, gestion de commandes en ligne, logistique associée.
+\end{itemize}
+
+\subsection{Contexte Stratégique et Enjeux}
+
+L'entreprise traverse une phase critique de transformation.
+\begin{enumerate}
+    \item \textbf{Transformation Digitale :} LiZbiZ a récemment intégré des solutions d'Intelligence Artificielle (IA) pour optimiser sa logistique et son service client (Chatbots, prévision de stocks).
+    \item \textbf{Exposition Médiatique :} L'entreprise est sous le feu des projecteurs. Des rumeurs de fraudes internes et de dysfonctionnements informatiques commencent à circuler.
+    \item \textbf{Enjeu Réglementaire :} En tant qu'acteur majeur du e-commerce, LiZbiZ est soumise au RGPD et doit assurer la protection des données clients.
+\end{enumerate}
+
+\begin{boxlizbiz}
+\textbf{Situation déclenchante :}
+Suite à plusieurs articles de presse évoquant une possible fraude financière assistée par des failles informatiques et une utilisation contestable de l'IA, le Comité de Direction (COMEX) a décidé de mandat un audit approfondi pour rassurer les actionnaires.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Le Système d'Information : Périmètre de l'Audit}
+% ------------------------------------------------------------------------------
+
+Le Système d'Information de LiZbiZ est centré autour d'une application majeure, simplement nommée \textbf{APPLICATION}, qui gère l'ensemble du cycle de vie de l'entreprise.
+
+\subsection{L'Application "APPLICATION"}
+
+C'est le cœur numérique de l'entreprise. Elle assure les fonctions vitales suivantes :
+\begin{itemize}
+    \item \textbf{Gestion Commerciale :} Création des comptes clients/fournisseurs, gestion des commandes.
+    \item \textbf{Gestion Comptable :} Saisie des écritures, plan comptable, tenue des journaux.
+    \item \textbf{Gestion Financière :} Facturation, suivi de la trésorerie, gestion des immobilisations.
+    \item \textbf{Reporting :} Génération des états financiers et rapports de synthèse.
+\end{itemize}
+
+\subsection{Architecture Technique (Simplifiée)}
+
+L'infrastructure repose sur une architecture cliente-serveur :
+\begin{itemize}
+    \item \textbf{Serveur de Base de Données :} SGBD Relationnel (PostgreSQL) hébergeant les données critiques.
+    \item \textbf{Serveur d'Application :} Interface utilisateur et traitement métier.
+    \item \textbf{Postes Clients :} Accès via navigateur web ou client lourd (comptabilité).
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Le Mandat d'Audit}
+% ------------------------------------------------------------------------------
+
+Cette section définit le cadre contractuel de votre mission en tant qu'auditeur.
+
+\subsection{Origine de la Mission}
+
+La mission fait suite à une demande formelle du COMEX, motivée par :
+\begin{enumerate}
+    \item La nécessité de vérifier la fiabilité des informations financières produites par l'APPLICATION.
+    \item Le besoin de sécuriser le nouveau périmètre IA.
+    \item La volonté de détecter d'éventuelles fraudes internes (Section 5.2 du cours).
+\end{enumerate}
+
+\subsection{Objectifs de la Mission}
+
+L'objectif général est de réaliser un \textbf{Audit d'une Application en Service}. Les objectifs spécifiques sont :
+\begin{itemize}
+    \item \textbf{Fiabilité :} S'assurer que les données comptables sont exactes et complètes.
+    \item \textbf{Sécurité :} Vérifier que les mécanismes de contrôle d'accès sont efficaces.
+    \item \textbf{Conformité :} S'assurer du respect des procédures internes et des lois (RGPD).
+\end{itemize}
+
+\subsection{Organisation de l'Équipe (RACI)}
+
+L'équipe de mission est composée comme suit :
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+    \toprule
+    \textbf{Rôle} & \textbf{Responsabilité} & \textbf{Interlocuteur LiZbiZ} \\
+    \midrule
+    Chef de Mission & Supervision, Synthèse, Rapport & DSI / DG \\
+    Auditeur Senior   & Tests techniques, Entretiens & Responsable Informatique \\
+    Auditeur Junior   & Saisie, Extraction données   & Utilisateurs clés \\
+    \bottomrule
+\end{tabular}
+\caption{Équipe d'audit et interlocuteurs}
+\end{table}
+
+% ------------------------------------------------------------------------------
+\section{Environnement de Laboratoire (Immersion)}
+% ------------------------------------------------------------------------------
+
+Pour mener cette mission, nous disposerons d'un environnement simulé représentant le SI de LiZbiZ.
+
+\subsection{Travaux Pratiques Préparatoires}
+
+Dans le cadre de ce cours, vous serez amenés à :
+\begin{enumerate}
+    \item \textbf{Créer l'environnement :} Mettre en place la base de données de l'APPLICATION (Schéma relationnel fourni).
+    \item \textbf{Charger les données :} Peupler la base avec un jeu de données réalistes (Clients, Factures, Écritures).
+    \item \textbf{Concevoir les outils :} Développer des requêtes SQL et des feuilles de calcul pour automatiser les tests d'audit.
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Mise en garde professionnelle :}
+L'auditeur ne doit jamais intervenir sur le système de production réel sans précautions. L'utilisation d'un laboratoire ou d'une copie (snapshot) est impérative pour ne pas perturber l'activité de LiZbiZ.
+\end{boxalert}
+
