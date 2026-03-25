@@ -1,1095 +1,840 @@
 % ==============================================================================
-% Fichier     : 05_types_audits.tex
-% Description : Principaux Types d'Audit dans les Systèmes d'Information
+% Fichier  : 05_theorie_information_shannon.tex
+% Titre    : Fondements de la Théorie de l'Information de Shannon
+%            appliqués à l'Audit des Systèmes d'Information
+% Cours    : Audit des Systèmes d'Information – ENSP, Département GI
+% Niveau   : Humanités Numériques, Niveau 3
 % ==============================================================================
 
-\chapter{Principaux Types d'Audit dans les Systèmes d'Information}%
-\label{chap:05_types_audits}
+\chapter{Fondements de la Théorie de l'Information de Shannon}
+\label{chap:shannon}
 
-\begin{boxobjectifs}
-À l'issue de ce chapitre, l'apprenant doit être capable de~:
-\begin{itemize}
-    \item Distinguer les huit types d'audit SI dans leurs périmètres, enjeux
-        et déclencheurs respectifs~;
-    \item Identifier les référentiels internationaux associés à chaque type~;
-    \item Comprendre les interactions et dépendances entre types d'audits~;
-    \item Positionner chaque type dans le continuum
-        \textit{gouvernance, fonctionnement, sécurité, résilience}.
-\end{itemize}
-\end{boxobjectifs}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Pourquoi un auditeur doit-il connaître la théorie de l'information~?}
+\label{sec:motivation}
+% ──────────────────────────────────────────────────────────────────────────────
 
-L'audit des systèmes d'information n'est pas un acte monolithique. Il recouvre un
-spectre de missions dont la nature, le périmètre, les enjeux et la posture de
-l'auditeur diffèrent profondément selon l'objet examiné. Auditer une application
-comptable n'appelle pas les mêmes compétences ni les mêmes outils qu'auditer une
-infrastructure réseau ou un projet en cours de développement. Chaque type d'audit
-répond à une question fondamentale distincte~: \textit{le logiciel fait-il ce qu'on
-attend de lui~?}, \textit{la DSI est-elle gouvernée efficacement~?}, \textit{le projet
-sera-t-il livré conformément aux engagements~?}, \textit{le SI résistera-t-il à une
-cyberattaque ou à un sinistre~?}
+L'audit des systèmes d'information est, dans son essence, une activité de
+réduction d'incertitude. L'auditeur arrive dans une organisation dont il ignore
+l'état réel~: les contrôles sont-ils en place~? La documentation existe-t-elle~?
+Les processus sont-ils appliqués~? Chaque question posée, chaque document
+examiné, chaque entretien conduit contribue à réduire cette incertitude initiale
+et à construire une opinion argumentée sur la qualité du contrôle interne.
 
-Ce chapitre présente les huit grands types d'audit SI rencontrés en milieu
-professionnel. Pour chacun, la même structure est suivie~: enjeu fondamental,
-périmètre et frontières, fréquence et déclencheurs, dimensions caractéristiques,
-référentiels mobilisés, interactions avec les autres types et illustration par le
-cas LiZbiZ. Les décompositions opérationnelles détaillées, points de contrôle,
-critères, questions d'évaluation, risques et conséquences, font l'objet du chapitre
-suivant.
+Cette réduction progressive de l'incertitude n'est pas seulement une métaphore
+intuitive~: elle peut être \emph{mesurée}. C'est précisément l'objet de la
+théorie mathématique de l'information, fondée par Claude Elwood Shannon en
+1948~\cite{Shannon1948}. Cette théorie fournit une métrique rigoureuse, l'entropie,
+qui quantifie l'incertitude contenue dans une distribution de probabilités. Dans
+le chapitre suivant, cette métrique sera directement mise en œuvre pour
+quantifier l'incertitude résiduelle d'un audit à travers la distribution des
+réponses trichotomiques O~/~N~/~PAS. Comprendre son fondement théorique est donc
+une condition préalable à l'utilisation correcte et à l'interprétation juste de
+l'outil d'aide à l'audit.
 
-\begin{boxinfo}
-\textbf{Une lecture systémique.} Les types d'audit ne sont pas étanches. Un audit
-de la fonction informatique révèle souvent des lacunes dans la gestion des projets~;
-un audit de sécurité met fréquemment en lumière des déficiences organisationnelles
-que seul un audit de la DSI aurait pu formellement documenter. L'auditeur SI
-expérimenté perçoit ces connexions et sait élargir son périmètre lorsque les
-constats le justifient.
-\end{boxinfo}
+Ce chapitre présente les notions fondamentales dans l'ordre de leur construction
+logique~: la quantification de l'information (§\,\ref{sec:information}), l'entropie
+de Shannon et ses propriétés (§\,\ref{sec:entropie}), la notion d'information
+mutuelle et de réduction d'incertitude (§\,\ref{sec:info-mutuelle}), puis
+l'application directe à la mesure de l'incertitude dans un audit
+(§\,\ref{sec:application-audit}).
 
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: l'incertitude comme objet d'audit}
 
-% ==============================================================================
-\section{Audit des Applications en Service}
-\label{sec:audit-appli}
-% ==============================================================================
+Lors d'une mission préliminaire chez Lizbiz's, l'auditeur senior dresse un bilan
+intermédiaire~: sur~30~questions du domaine Sécurité, 10~ont reçu une réponse~O,
+10~une réponse~N, et 10~une réponse~PAS. L'équipe dispose donc d'une vision à peu
+près aussi informative que le hasard le plus complet. Ce constat, avant même
+d'avoir produit un rapport, est \emph{en soi} un constat d'audit~: une
+organisation dont les acteurs ne savent pas si ses propres contrôles de sécurité
+fonctionnent est une organisation en situation de risque structurel. La mesure
+de cette situation par l'entropie de Shannon permettra de la rendre communicable,
+comparable et traçable d'un exercice à l'autre.
+\end{boxlizbiz}
 
-\subsection{Enjeu fondamental}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{La mesure de l'information}
+\label{sec:information}
+% ──────────────────────────────────────────────────────────────────────────────
 
-Une application en service est un logiciel opérationnel accompagnant, automatisant
-ou se substituant à un processus de l'organisation, qu'il s'agisse d'un ERP gérant
-les flux financiers, d'un CRM pilotant la relation client, d'un progiciel de paie ou
-d'un système de gestion des stocks. Ces applications sont au cœur des processus
-métiers~: leurs défaillances se traduisent directement en pertes financières, en
-erreurs de traitement ou en violations réglementaires.
+\subsection{Le problème de la surprise}
 
-L'enjeu de cet audit est double. D'un côté, il s'agit d'émettre une
-\termecle{assurance raisonnable} sur la fiabilité de l'application, c'est-à-dire
-sur la qualité de son contrôle interne et la validité des données qu'elle traite
-et restitue. De l'autre, il s'agit d'apprécier son adéquation aux besoins de
-l'organisation, sa performance et sa capacité à évoluer avec elle. Ces deux
-périmètres, fiabilité-sécurité d'une part, efficacité-performance de l'autre,
-constituent les deux visées distinctes mais complémentaires de l'audit d'application
-en service. Un audit complet les couvre toutes deux.
+La question fondatrice de Shannon est d'une simplicité trompeuse~: \emph{combien
+d'information apporte un message~?} L'intuition quotidienne suggère que la réponse
+dépend du degré de surprise provoqué par ce message. Apprendre que le soleil s'est
+levé ce matin n'apporte aucune information~: c'est un événement certain. Apprendre
+qu'un système d'information national a subi une intrusion réussie malgré une
+politique de sécurité certifiée ISO~27001 est fortement informatif~: c'est un
+événement de faible probabilité.
 
-\subsection{Périmètre et frontières}
+Cette intuition peut être formalisée~: l'information apportée par un événement
+doit être une fonction \emph{décroissante} de sa probabilité. Shannon montre
+qu'à deux contraintes supplémentaires près, continuité de la fonction et
+additivité pour les événements indépendants, il existe une unique famille de
+fonctions satisfaisant ces propriétés~\cite{Shannon1948, Cover2006}.
 
-Le périmètre de cet audit couvre l'application elle-même dans toutes ses
-composantes~: programmes, données, paramètres, documentation et habilitations.
-Il englobe également l'environnement dans lequel elle s'exécute, système
-d'exploitation, base de données, infrastructure réseau, et les processus
-organisationnels qui entourent son exploitation~: gestion des accès, procédures
-de sauvegarde, plans de continuité, contrats de maintenance.
-
-La frontière avec l'audit de la fonction informatique mérite d'être précisée.
-L'audit d'application se concentre sur \textit{ce que fait} le logiciel et
-\textit{comment il est exploité}~; l'audit de la DSI examine \textit{comment est
-gouvernée} l'entité qui le produit et le maintient. En pratique, les deux missions
-se nourrissent mutuellement~: une faiblesse détectée dans la gestion des droits
-d'accès d'une application peut révéler une déficience structurelle dans la politique
-de sécurité de la DSI.
-
-\subsection{Dimensions caractéristiques}
-
-L'audit d'application en service s'articule autour de deux axes analytiques
-fondamentaux.
-
-\textbf{Les contrôles généraux} (\textit{General Controls}) couvrent l'environnement
-global dans lequel l'application fonctionne~: sécurité du système d'exploitation hôte,
-protection physique des serveurs, procédures de sauvegarde et de reprise, gestion
-des mises à jour et des correctifs, séparation entre les environnements de
-développement, de test et de production. Ces contrôles conditionnent la fiabilité
-de tous les contrôles applicatifs~: si l'environnement est compromis, aucun contrôle
-programmatique ne peut être considéré comme fiable.
-
-\textbf{Les contrôles d'application} (\textit{Application Controls}) portent sur
-le logiciel métier lui-même et s'organisent selon le modèle \termecle{IPO — Input,
-Process, Output}. En entrée, l'auditeur vérifie que seules des données complètes,
-exactes et autorisées sont acceptées par le système. En traitement, il s'assure que
-les calculs et règles de gestion sont correctement implémentés et que les données
-sensibles sont journalisées. En sortie, il contrôle que les résultats produits sont
-distribués aux seuls destinataires habilités et que les états de sortie font l'objet
-d'un contrôle utilisateur effectif.
-
-La \termecle{piste d'audit} (\textit{audit trail}) constitue l'épine dorsale de tout
-audit d'application~: toute action significative sur les données, création,
-modification, suppression, doit être horodatée, attribuée à un utilisateur identifié
-et conservée de façon intègre. Son absence est une observation critique majeure.
-
-% ------------------------------------------------------------------------------
-\subsection{Au-delà du Modèle IPO~: les Contrôles des Interfaces Inter-applicatives}
-\label{subsec:controles-interfaces}
-% ------------------------------------------------------------------------------
-
-Le modèle IPO décrit le cycle de traitement \emph{interne} à une application. Mais
-un système d'information d'entreprise est rarement composé d'une seule application
-autosuffisante~: il est un réseau d'applications qui échangent des données,
-automatiquement, semi-automatiquement ou manuellement, via des interfaces. Ces
-échanges inter-applicatifs constituent une source de risque propre, distincte des
-risques internes à chaque application~: une donnée peut être correctement produite
-par l'application source et corrompue, tronquée ou détournée lors de son transfert
-vers l'application destination.
-
-L'interface n'est pas un 4\up{ème} niveau séquentiel du modèle IPO~: elle peut se
-greffer à n'importe quel point du cycle (alimenter un Input, déclencher un traitement
-ou transmettre un Output). Elle constitue un \textbf{domaine de contrôle transversal},
-distinct et complémentaire de la matrice IPO.
-
-\begin{boxdef}
-\textbf{Interface inter-applicative~:}
-Lien d'échange de données entre deux applications ou systèmes distincts, caractérisé
-par~: son \emph{type} (automatique, semi-automatique ou manuel)~; les applications
-source et destination~; la \emph{nature des flux} échangés~; son \emph{protocole
-d'échange} (fichier plat, API REST, Web Service, EDI, message queue)~; sa
-\emph{périodicité} (temps réel, quotidien, hebdomadaire)~; et ses \emph{contrôles
-intégrés} (totaux de contrôle, accusé de réception, chiffrement). Plus une interface
-est manuelle ou semi-automatique, plus son niveau de risque est élevé~: chaque
-intervention humaine dans un flux de données est un point potentiel d'erreur,
-d'omission ou de fraude.
+\begin{boxdef}{Information propre (auto-information)}
+Soit $\mathcal{X}$ un espace de probabilité fini et $x \in \mathcal{X}$ un
+événement de probabilité $p(x) \in (0,\,1]$. L'\emph{information propre}
+(ou \emph{auto-information}) de $x$ est définie par~:
+\begin{equation}
+  I(x) \;=\; -\log_2 p(x) \;\in\; [0,\,+\infty)
+  \label{eq:autopinfo}
+\end{equation}
+L'unité de mesure est le \emph{bit} lorsque le logarithme est en base~2.
 \end{boxdef}
 
-\subsubsection{Cartographie des Interfaces~: Préalable à l'Audit}
-
-Avant tout test, l'auditeur constitue la cartographie des interfaces de l'application
-auditée. Pour chaque interface identifiée, il documente~:
+Quelques cas limites illustrent la cohérence de cette définition~:
 \begin{itemize}
-    \item Le type~: \textbf{automatique}, \textbf{semi-automatique} ou
-        \textbf{manuel}~;
-    \item Les applications source et destination~;
-    \item Le protocole, le format d'échange et la périodicité~;
-    \item Le responsable désigné pour le traitement des anomalies~;
-    \item Les contrôles intégrés~: totaux de contrôle, numérotation de séquence,
-        accusé de réception, chiffrement.
+  \item si $p(x) = 1$ (événement certain), alors $I(x) = -\log_2 1 = 0$~: un
+        événement certain n'apporte aucune information~;
+  \item si $p(x) = 1/2$, alors $I(x) = 1$~bit~: l'issue d'un tirage à pile-ou-face
+        équitable apporte exactement~1~bit d'information~;
+  \item si $p(x) \to 0$ (événement rarissime), alors $I(x) \to +\infty$~: un événement
+        de probabilité quasi nulle serait, s'il se réalisait, porteur d'une
+        information quasi infinie.
 \end{itemize}
 
-\paragraph{Signal de risque~: l'interface non inventoriée.}
-Les interfaces les plus dangereuses sont celles qui ne figurent pas dans la
-cartographie officielle~: transferts de fichiers par clé USB, exports Excel
-réintégrés manuellement dans un ERP, flux échangés par messagerie électronique.
-Ces \emph{interfaces informelles} échappent à tout contrôle intégré et constituent
-des angles morts de l'audit applicatif. L'auditeur doit donc non seulement valider
-la cartographie fournie par l'audité, mais interroger les utilisateurs sur leurs
-pratiques réelles d'échange de données.
+\paragraph{Propriété d'additivité.}
+Si $x$ et $y$ sont deux événements \emph{indépendants}, l'information apportée
+par leur réalisation conjointe est la somme des informations individuelles~:
+\begin{equation}
+  I(x,y) \;=\; I(x) + I(y)
+  \label{eq:additivite}
+\end{equation}
+Cette propriété est fondamentale~: elle est la traduction formelle du fait qu'apprendre
+deux nouvelles indépendantes est aussi informatif qu'apprendre chacune séparément.
 
-\subsubsection{Les Objectifs de Contrôle des Interfaces}
+\subsection{De l'événement à la source}
 
-Trois objectifs structurent l'audit des interfaces.
+Dans la pratique, on s'intéresse rarement à un événement isolé mais à une
+\emph{source d'information}, c'est-à-dire une variable aléatoire $X$ prenant ses
+valeurs dans un ensemble fini $\mathcal{X} = \{x_1, \ldots, x_n\}$ avec des
+probabilités $p(x_i) = \Pr[X = x_i]$. La question pertinente devient alors~:
+quelle est l'incertitude \emph{moyenne} sur la valeur que va prendre $X$, avant
+qu'on en connaisse la réalisation~? La réponse est l'entropie de Shannon.
 
-\paragraph{1. L'intégrité des flux.}
-Les données transmises doivent être reçues de façon \emph{exhaustive},
-\emph{exacte} et \emph{dans l'ordre attendu}~:
+% ──────────────────────────────────────────────────────────────────────────────
+\section{L'entropie de Shannon}
+\label{sec:entropie}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Définition}
+
+\begin{boxdef}{Entropie de Shannon}
+Soit $X$ une variable aléatoire discrète à valeurs dans $\mathcal{X} =
+\{x_1, \ldots, x_n\}$, de loi $p$. L'\emph{entropie de Shannon} de $X$ est la
+valeur d'information propre \emph{moyenne} sous la loi $p$~:
+\begin{equation}
+  H(X) \;=\; \mathbb{E}_{p}\bigl[I(X)\bigr]
+           \;=\; -\sum_{i=1}^{n} p(x_i)\,\log_2 p(x_i)
+  \label{eq:entropie}
+\end{equation}
+avec la convention $0 \log_2 0 = 0$ (limite par continuité). L'unité est le
+\emph{bit}. $H(X)$ mesure l'incertitude moyenne associée à la source $X$.
+\end{boxdef}
+
+La formulation de Shannon est remarquable par sa concision~: elle réduit la notion
+d'incertitude, intuitive mais diffuse, à une seule quantité scalaire, calculable,
+additive et reliée à la notion de compression optimale de l'information
+\cite{Shannon1948, MacKay2003}.
+
+\subsection{Propriétés fondamentales}
+
+Les quatre propriétés suivantes sont des théorèmes démontrables à partir de la
+définition~\eqref{eq:entropie}~\cite{Cover2006}.
+
+\begin{boiteTheoreme}{Non-négativité et borne supérieure de l'entropie}
+Pour toute variable aléatoire discrète $X$ à $n$ valeurs~:
+\begin{equation}
+  0 \;\leq\; H(X) \;\leq\; \log_2 n
+  \label{eq:bornes}
+\end{equation}
 \begin{itemize}
-    \item \textbf{Totaux de contrôle de lots (\textit{batch control totals})~:}
-        la somme des montants ou le nombre d'enregistrements calculés côté source
-        est comparé à la valeur reçue côté destination~; toute discordance déclenche
-        une alerte~;
-    \item \textbf{Numérotation de séquence~:} chaque enregistrement porte un numéro
-        séquentiel~; l'application destination détecte les ruptures (perte) et les
-        doublons (duplication)~;
-    \item \textbf{Rapprochement périodique~:} réconciliation formelle entre les
-        soldes ou totaux des deux systèmes à une fréquence définie et documentée.
+  \item $H(X) = 0$ si et seulement si $X$ est \emph{déterministe}~: une et une
+        seule valeur $x_i$ a une probabilité~1 (certitude complète, incertitude
+        nulle)~;
+  \item $H(X) = \log_2 n$ si et seulement si $X$ est \emph{uniformément distribuée}~:
+        toutes les valeurs sont équiprobables (incertitude maximale).
 \end{itemize}
+\end{boiteTheoreme}
 
-\paragraph{2. La confidentialité et la non-répudiation des échanges.}
-Lorsque les données échangées sont sensibles~:
-\begin{itemize}
-    \item Les données sont \textbf{chiffrées en transit}~: protocole TLS~1.2 minimum
-        pour les échanges réseau~;
-    \item \textbf{L'identité de l'émetteur est authentifiée}~: un certificat ou une
-        clé partagée garantit que le flux provient bien du système source déclaré~;
-    \item Les échanges sont \textbf{non répudiables}~: une signature numérique ou
-        un journal horodaté permet de prouver qu'un message a bien été envoyé par
-        telle application à telle heure et reçu par telle autre.
-\end{itemize}
+\paragraph{Application au contexte trichotomique de l'audit.}
+Dans l'outil d'aide à l'audit (chapitre~\ref{chap:outil-audit}), les réponses
+prennent trois valeurs~: $n = 3$. La borne supérieure de l'entropie est donc
+$\log_2 3 \approx 1{,}585$~bits, valeur atteinte lorsque les trois modalités O, N
+et PAS/NEK sont équiprobables. C'est le repère cardinal de l'outil~: une entropie
+proche de~$1{,}585$ signale que les réponses d'un point de contrôle sont aussi
+incertaines que le hasard le plus parfait; une entropie proche de~0 signale une
+situation de quasi-certitude (toutes les réponses convergent vers la même
+modalité).
 
-\paragraph{3. La résilience de l'interface et le traitement des anomalies.}
-\begin{itemize}
-    \item Un \textbf{responsable d'interface est désigné}~: une personne nommée
-        surveille les interfaces et traite les anomalies dans les délais définis~;
-    \item Les \textbf{anomalies sont journalisées et traitées}~: un registre des
-        erreurs est tenu, les anomalies répétitives signalent un défaut de conception
-        à corriger en profondeur~;
-    \item Une \textbf{procédure de rejeu} existe~: en cas d'échec d'un transfert,
-        la procédure permet de relancer le flux sans créer de doublon ni perdre de
-        données~;
-    \item Les flux sont \textbf{testés avant mise en production}~: aucune interface
-        nouvelle ou modifiée n'alimente la production sans validation sur un
-        environnement de test avec des données représentatives.
-\end{itemize}
+\begin{boiteTheoreme}{Concavité de l'entropie}
+La fonction $H$ est \emph{strictement concave} sur le simplexe des distributions
+de probabilité~: pour toutes distributions $p$ et $q$ et tout $\lambda \in (0,1)$,
+\begin{equation}
+  H\bigl(\lambda p + (1-\lambda) q\bigr) \;\geq\; \lambda H(p) + (1-\lambda) H(q)
+  \label{eq:concavite}
+\end{equation}
+\end{boiteTheoreme}
+
+La concavité a une interprétation directe~: mélanger deux sources d'information
+ne peut qu'augmenter ou conserver l'incertitude, jamais la réduire. En termes
+d'audit, agréger les réponses de deux équipes d'auditeurs indépendants sur le même
+périmètre ne peut que maintenir ou accroître l'entropie globale~; elle ne saurait
+la réduire.
+
+\begin{boiteTheoreme}{Sous-additivité}
+Pour deux variables aléatoires $X$ et $Y$, l'entropie jointe satisfait~:
+\begin{equation}
+  H(X, Y) \;\leq\; H(X) + H(Y)
+  \label{eq:sous-additivite}
+\end{equation}
+avec égalité si et seulement si $X$ et $Y$ sont \emph{indépendantes}.
+\end{boiteTheoreme}
+
+\begin{boiteTheoreme}{Entropie conditionnelle et règle de chaînage}
+L'\emph{entropie conditionnelle} de $X$ sachant $Y$ est l'incertitude résiduelle
+sur $X$ lorsque $Y$ est connue~:
+\begin{equation}
+  H(X \mid Y) \;=\; -\sum_{j} p(y_j) \sum_{i} p(x_i \mid y_j)\,\log_2 p(x_i \mid y_j)
+  \label{eq:entropie-cond}
+\end{equation}
+La \emph{règle de chaînage} s'écrit alors~:
+\begin{equation}
+  H(X, Y) \;=\; H(X) + H(Y \mid X) \;=\; H(Y) + H(X \mid Y)
+  \label{eq:chainage}
+\end{equation}
+On a toujours $H(X \mid Y) \leq H(X)$~: la connaissance d'une observation $Y$
+ne peut qu'égaler ou réduire l'incertitude sur $X$, jamais l'augmenter.
+\end{boiteTheoreme}
+
+\subsection{Illustration sur des distributions élémentaires}
+
+Le tableau~\ref{tab:entropies} calcule l'entropie pour plusieurs distributions
+trichotomiques représentatives de situations d'audit.
 
 \begin{table}[H]
 \centering
 \small
-\renewcommand{\arraystretch}{1.5}
-\caption{Matrice de contrôle des interfaces inter-applicatives}
-\label{tab:controles-interfaces}
-\begin{tabular}{|p{2.6cm}|p{3.8cm}|p{3.8cm}|p{2.5cm}|}
-    \hline
-    \rowcolor{gray!20}
-    \textbf{Objectif} & \textbf{Critère} & \textbf{Test d'audit} &
-    \textbf{Risque si absent} \\ \hline
-    \textbf{Intégrité des flux} &
-    Totaux de contrôle calculés côté source et vérifiés côté destination~;
-    les écarts déclenchent une alerte &
-    Simuler un flux incomplet~; vérifier que l'alerte est émise et reçue
-    par le responsable &
-    Pertes ou altérations non détectées~; décisions sur données
-    incomplètes \\ \hline
-    \textbf{Exhaustivité} &
-    L'application destination détecte les ruptures de séquence et les
-    doublons &
-    Soumettre un flux avec un enregistrement manquant~; vérifier la
-    détection et l'alerte &
-    Enregistrements perdus ou dupliqués intégrés silencieusement \\ \hline
-    \textbf{Confidentialité} &
-    Les flux sensibles sont chiffrés en transit (TLS~1.2 minimum) &
-    Analyser la configuration du protocole~; capturer un échange et
-    vérifier qu'il est illisible en clair &
-    Interception des données en transit~; violation RGPD \\ \hline
-    \textbf{Authentification de l'émetteur} &
-    L'identité de l'application source est vérifiée avant acceptation
-    du flux &
-    Soumettre un flux depuis une source non autorisée~; vérifier le
-    rejet &
-    Injection de données frauduleuses~; usurpation applicative \\ \hline
-    \textbf{Non-répudiation} &
-    Un journal horodaté enregistre émetteur, destinataire et résultat
-    de chaque transfert &
-    Consulter le journal~; vérifier sa complétude et son intégrité &
-    Impossibilité de prouver ou contester un transfert en cas de litige
-    \\ \hline
-    \textbf{Traitement des anomalies} &
-    Un responsable désigné surveille les interfaces et traite les
-    anomalies dans les délais définis &
-    Demander le registre des erreurs (3~derniers mois)~; vérifier que
-    chaque anomalie a un plan de correction &
-    Anomalies ignorées~; corruptions accumulées sans détection \\ \hline
-    \textbf{Procédure de rejeu} &
-    En cas d'échec, la relance est possible sans doublon ni perte de
-    données &
-    Simuler un échec~; rejouer~; vérifier exhaustivité et absence de
-    doublons &
-    Perte définitive ou duplication silencieuse lors de la reprise \\ \hline
-    \textbf{Test avant production} &
-    Toute interface nouvelle ou modifiée est testée sur un environnement
-    de recette avant mise en production &
-    Demander les PV de test des 3~dernières mises en production
-    d'interface &
-    Anomalies de format ou de logique découvertes sur données réelles
-    \\ \hline
+\caption{Entropie de Shannon pour des distributions trichotomiques {O, N, PAS}
+représentatives de situations d'audit}
+\label{tab:entropies}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Situation d'audit} & $p_O$ & $p_N$ & $p_P$ &
+$H$ (bits) & \textbf{Interprétation} \\
+\midrule
+Conformité totale &
+1{,}00 & 0{,}00 & 0{,}00 & 0{,}000 & Certitude~: aucune zone d'ombre \\
+\addlinespace
+Forte non-conformité &
+0{,}10 & 0{,}80 & 0{,}10 & 0{,}922 & Situation dégradée mais lisible \\
+\addlinespace
+Forte incertitude &
+0{,}10 & 0{,}10 & 0{,}80 & 0{,}922 & Carence informationnelle majeure \\
+\addlinespace
+Incertitude modérée &
+0{,}50 & 0{,}25 & 0{,}25 & 1{,}500 & Zone grise significative \\
+\addlinespace
+Incertitude maximale &
+$\frac{1}{3}$ & $\frac{1}{3}$ & $\frac{1}{3}$ & 1{,}585 & Chaos informationnel \\
+\bottomrule
 \end{tabular}
 \end{table}
 
-\begin{boxalert}
-\textbf{Point de vigilance~: les interfaces non cartographiées.}
-
-Les interfaces les plus risquées sont celles que la cartographie officielle ne
-recense pas~: exports Excel recopiés manuellement, transferts par clé USB,
-échanges de données par messagerie. Ces \emph{interfaces informelles} présentent
-trois caractéristiques défavorables~:
-\begin{enumerate}
-    \item \textbf{Aucun contrôle intégré~:} pas de total de contrôle, pas de
-        détection de doublon, pas de journal~;
-    \item \textbf{Dépendance à la rigueur individuelle~:} la qualité du transfert
-        repose entièrement sur l'attention de la personne qui l'exécute~;
-    \item \textbf{Invisibilité~:} elles n'apparaissent ni dans la documentation
-        applicative, ni dans les contrats de service, ni dans les revues de contrôle
-        interne.
-\end{enumerate}
-Pour les détecter, l'auditeur interroge directement les utilisateurs~:
-\emph{«~Comment transmettez-vous les données de cette application à votre collègue
-de la comptabilité~?~»} La réponse \og{}on exporte en Excel et on envoie par mail\fg{}
-est une réponse \texttt{NON~CONFORME} systématique, quelle que soit la qualité des
-interfaces officielles.
-\end{boxalert}
-
-\begin{boxlizbiz}
-\textbf{Cas Lizbiz's~: l'interface logistique-comptabilité}
-
-L'application de gestion des stocks de Lizbiz's est interfacée avec le module
-comptable~: chaque soir, un fichier automatique transfère les mouvements de stock
-valorisés vers la comptabilité. L'auditeur vérifie le contrôle d'intégrité~: le
-fichier émis contient un total de contrôle, mais l'application comptable ne le
-vérifie pas à la réception — elle importe silencieusement ce qu'elle reçoit. Un
-test simple le confirme~: l'auditeur modifie manuellement le total dans le fichier
-de test~; la comptabilité importe le fichier sans aucune alerte. Par ailleurs,
-deux utilisateurs du service logistique avouent envoyer par mail des corrections
-de valorisation en dehors du fichier automatique~: interface informelle, non
-journalisée, non contrôlée. L'auditeur ne peut pas se prononcer sur la fiabilité
-des données comptables tant que ces interfaces ne sont pas corrigées et
-documentées.
-\end{boxlizbiz}
-
-\subsection{Fréquence et déclencheurs}
-
-La fréquence recommandée est de deux à trois ans pour une application de gestion
-stable. Plusieurs événements doivent déclencher un audit anticipé~: une migration
-vers une nouvelle version majeure, un changement de prestataire de maintenance,
-un incident de sécurité impliquant l'application, une évolution réglementaire
-significative, ou une croissance rapide du volume de transactions.
-
-\subsection{Référentiels mobilisés}
-
-\norme{COBIT~2019} fournit le cadre de gouvernance~; \norme{ISO/IEC~27034} traite
-spécifiquement de la sécurité applicative~; \norme{ISO~19011} guide la conduite de
-la mission d'audit. Pour les applications financières, les normes \norme{IAS/IFRS}
-et les exigences de l'auditeur financier externe constituent des référentiels
-complémentaires incontournables.
-
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Pourquoi auditer l'APPLICATION maintenant~?}
-
-LiZbiZ exploite depuis quatre ans un progiciel de gestion commerciale et comptable
-baptisé \textit{APPLICATION}. Deux signaux ont déclenché la mission~: une
-discordance entre les totaux de la balance comptable et les relevés bancaires sur
-le trimestre écoulé, et la découverte fortuite par un administrateur qu'un
-utilisateur avait modifié une facture validée sans qu'aucune trace n'en subsiste
-dans les logs. Ces deux constats pointent simultanément une défaillance dans les
-contrôles d'application (absence de piste d'audit sur le module comptable) et une
-faiblesse dans les contrôles généraux (politique de gestion des droits insuffisante).
-L'auditeur doit déterminer si la discordance résulte d'une erreur de traitement,
-d'une manipulation intentionnelle ou d'un bug applicatif.
-\end{boxlizbiz}
-
-
-% ==============================================================================
-\section{Audit de la Fonction Informatique (DSI)}
-\label{sec:audit-dsi}
-% ==============================================================================
-
-\subsection{Enjeu fondamental}
-
-La Direction des Systèmes d'Information est le pivot organisationnel de toute
-la chaîne de valeur numérique de l'entreprise. Elle conçoit, déploie, exploite
-et maintient l'ensemble des actifs informatiques dont dépendent les processus
-métiers. Auditer la DSI, ce n'est pas auditer une machine ni un logiciel~: c'est
-examiner une \textit{organisation}, sa gouvernance, sa stratégie, ses ressources,
-ses méthodes, sa culture et son positionnement au sein de l'entreprise.
-
-L'enjeu central est celui de la \termecle{maturité informatique}~: la DSI est-elle
-organisée, dotée, pilotée et régulée de façon à remplir efficacement sa mission
-et à créer de la valeur pour l'organisation~? Une DSI immature génère des risques
-en cascade~: projets dépassant les délais et les budgets, applications mal maintenues,
-incidents récurrents non résolus, dépendance critique vis-à-vis de prestataires
-extérieurs ou de personnes-clés dont le départ pourrait paralyser l'organisation.
-
-\subsection{Périmètre et frontières}
-
-Cet audit couvre six domaines~: le rôle et le positionnement de la DSI dans
-l'organigramme~; sa planification stratégique et l'existence d'un schéma directeur~;
-la maîtrise de ses budgets et de ses coûts~; la mesure de sa performance~; son
-organisation interne et la gestion de ses ressources humaines~; enfin, sa conformité
-au cadre législatif et réglementaire applicable.
-
-La frontière avec l'audit des applications est claire~: on s'intéresse ici non pas
-à ce que produisent les systèmes, mais à la qualité de l'entité qui les produit et
-les gère. La frontière avec l'audit de sécurité est plus poreuse~: la politique de
-sécurité des SI relève organiquement de la DSI, et sa qualité sera examinée lors
-des deux types d'audit, sous l'angle organisationnel dans l'audit de la fonction
-informatique, sous l'angle technique dans l'audit de sécurité.
-
-\subsection{Dimensions caractéristiques}
-
-La \termecle{séparation des tâches} est le premier principe structurant. Elle doit
-être vérifiée à plusieurs niveaux~: entre les équipes de développement et celles
-de la production, entre l'administration des bases de données et l'exploitation
-courante, entre la maîtrise d'ouvrage (MOA) et la maîtrise d'œuvre (MOE). Sa
-violation est un vecteur classique de fraude et d'erreur non détectée.
-
-La \termecle{dépendance aux personnes-clés} est un risque spécifiquement camerounais
-et africain que l'auditeur doit systématiquement évaluer. Lorsqu'une seule personne
-détient la connaissance d'un système critique, configuration d'un serveur, paramétrage
-d'une application, accès à un prestataire, le départ de cette personne peut paralyser
-l'organisation. L'auditeur recherche l'existence de procédures documentées, de
-formations croisées et de plans de succession.
-
-Le \termecle{turn-over} de la DSI constitue un indicateur de santé organisationnelle.
-Un taux inférieur à 5\,\% par an peut signaler une organisation figée~; supérieur
-à 15\,\%, il révèle une instabilité préoccupante susceptible de compromettre la
-continuité du service.
-
-La conformité au \textbf{cadre législatif camerounais} est un point de contrôle
-distinctif. Les lois de 2010 sur la cybersécurité, la cybercriminalité et les
-transactions électroniques imposent des obligations précises que la DSI doit
-connaître et faire respecter. L'auditeur vérifiera que ces textes sont connus des
-responsables informatiques et que des mesures préventives concrètes ont été mises
-en place~: fraude informatique, chiffrement, signature électronique, archivage
-électronique.
-
-\subsection{Fréquence et déclencheurs}
-
-La fréquence recommandée est de trois ans. Les déclencheurs d'un audit anticipé
-sont~: un changement de DSI ou de directeur général, une restructuration
-organisationnelle majeure, une série d'incidents IT récurrents, ou un audit
-financier externe ayant relevé des faiblesses dans l'environnement de contrôle
-informatique.
-
-\subsection{Référentiels mobilisés}
-
-\norme{COBIT~2019} est la référence principale, particulièrement pour les domaines
-de gouvernance (EDM) et de gestion (APO, BAI, DSS, MEA). \norme{ITIL~4} complète
-COBIT sur les processus opérationnels. \norme{ISO/IEC~20000-1} traite du management
-des services informatiques. \norme{ISO~19011} encadre la conduite de la mission.
-
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Une DSI sans gouvernance formalisée}
-
-La DSI de LiZbiZ, composée de sept personnes, est dirigée par un responsable
-informatique qui cumule les fonctions de développeur senior, d'administrateur
-système et d'interlocuteur contractuel des prestataires. Aucune charte informatique
-ne définit le périmètre de ses responsabilités. Le schéma directeur date de 2019
-et n'a pas été mis à jour depuis la décision d'intégrer l'IA dans la logistique.
-Le budget IT est intégré au budget général sans ligne de dépense détaillée. Un
-auditeur n'ayant examiné que l'APPLICATION aurait pu imputer les défaillances
-constatées à un problème logiciel~; l'audit de la DSI révèle que leur cause racine
-est organisationnelle.
-\end{boxlizbiz}
-
-
-% ==============================================================================
-\section{Audit des Projets Informatiques}
-\label{sec:audit-projets}
-% ==============================================================================
-
-\subsection{Enjeu fondamental}
-
-Les projets informatiques sont des investissements à haut risque. Les études
-internationales sur l'échec des projets IT, dont le célèbre \textit{Chaos Report}
-du Standish Group, documentent depuis trente ans que moins de 30\,\% des projets IT
-sont livrés dans les délais, dans les budgets et avec le périmètre fonctionnel initial.
-Les causes de ces échecs sont rarement techniques~: elles sont organisationnelles,
-méthodologiques et relationnelles.
-
-L'enjeu de l'audit de projet est donc de s'assurer que les mécanismes de pilotage,
-de qualité et de contrôle sont en place pour maximiser les chances de succès, ou,
-si le projet est déjà terminé, de documenter les causes d'échec et d'en tirer les
-enseignements. La question centrale est~: \textit{ce projet est-il maîtrisé~?}
-
-\subsection{Périmètre et frontières}
-
-L'audit de projet peut intervenir à deux moments distincts. L'\textbf{audit de jalons}
-(\textit{gate review}) intervient en cours de projet, à des étapes prédéfinies, pour
-vérifier que les conditions de passage à la phase suivante sont réunies~: c'est une
-forme d'audit prospectif. L'\textbf{audit de réception} intervient à la clôture pour
-vérifier la conformité des livrables aux spécifications et tirer les enseignements
-pour les projets futurs. Un projet abandonné ou suspendu doit également être audité.
-
-\subsection{Dimensions caractéristiques}
-
-Le \termecle{triangle QCD} — Qualité, Coût, Délai — est le cadre de référence de
-l'audit de projet. L'auditeur examine comment ces trois contraintes ont été définies,
-communiquées, suivies et rééquilibrées. La question n'est pas de savoir si les trois
-ont été respectées simultanément, mais si les arbitrages ont été conscients, documentés
-et validés par les parties prenantes compétentes.
-
-La distinction entre \termecle{MOA} (Maîtrise d'Ouvrage, le client, définisseur des
-besoins) et \termecle{MOE} (Maîtrise d'Œuvre, le réalisateur technique) est au cœur
-de l'audit de projet. L'auditeur vérifie que ces deux rôles sont clairement séparés,
-que leurs responsabilités sont contractuellement définies et que la MOA a effectivement
-exercé son rôle de validation à chaque étape.
-
-La \termecle{gestion des risques de projet} constitue un point de contrôle critique.
-L'auditeur recherche l'existence d'un registre des risques, régulièrement mis à jour,
-avec des plans d'atténuation assignés à des responsables identifiés. L'absence de ce
-dispositif est un signal d'alarme fort.
-
-\subsection{Fréquence et déclencheurs}
-
-Tout projet doit être audité à son terme. Les signaux déclencheurs d'un audit anticipé
-sont~: un dépassement budgétaire supérieur à 15\,\%, un glissement de planning
-supérieur à 20\,\% du délai initial, un changement de chef de projet, ou des conflits
-récurrents entre MOA et MOE.
-
-\subsection{Référentiels mobilisés}
-
-\norme{PMBOK} et \norme{PRINCE2} sont les deux référentiels de conduite de projet les
-plus répandus. \norme{ISO~21500} propose un cadre normatif international harmonisé.
-Pour les projets agiles, \norme{SCRUM} et \norme{SAFe} constituent les cadres de
-référence avec des implications spécifiques sur la démarche d'audit, les livrables
-n'étant plus définis ex ante mais émergents.
-
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Le projet IA sans garde-fous}
-
-LiZbiZ a lancé il y a huit mois un projet d'intégration d'un algorithme
-d'apprentissage automatique dans son système de planification logistique. Aucune
-charte de projet n'a été formalisée. Le budget alloué a déjà été dépassé de 40\,\%
-sans décision formelle de révision. Les données clients utilisées pour entraîner le
-modèle n'ont fait l'objet d'aucune analyse de conformité RGPD. La MOA n'a participé
-à aucune réunion de validation depuis le lancement. L'audit de jalons révèle un projet
-hors de contrôle sur les trois dimensions du triangle QCD, avec un risque juridique
-réel lié au traitement non conforme des données personnelles.
-\end{boxlizbiz}
-
-
-% ==============================================================================
-\section{Audit du Support Utilisateur et de la Gestion du Parc}
-\label{sec:audit-support}
-% ==============================================================================
-
-\subsection{Enjeu fondamental}
-
-Le support utilisateur et la gestion du parc informatique constituent le visage
-quotidien de la DSI pour l'ensemble des collaborateurs. La qualité de ce service
-conditionne directement la productivité des utilisateurs et leur confiance dans les
-outils informatiques. Un Helpdesk inefficace, des équipements mal inventoriés, des
-licences non maîtrisées ou des procédures de départ lacunaires sont des risques
-opérationnels, financiers et de sécurité souvent sous-estimés.
-
-\subsection{Dimensions caractéristiques}
-
-La \termecle{gestion des incidents et des demandes} est évaluée à travers l'existence
-et le suivi des \termecle{SLA} (\textit{Service Level Agreements})~: délai de prise
-en charge, délai de résolution, taux de résolution au premier contact (\textit{First
-Call Resolution Rate}). L'auditeur vérifie que ces indicateurs sont effectivement
-mesurés, communiqués aux utilisateurs et que les écarts font l'objet d'un plan
-d'amélioration.
-
-La \termecle{procédure d'off-boarding} est un point de contrôle à fort enjeu
-sécuritaire. Le départ d'un collaborateur doit déclencher immédiatement la révocation
-de l'ensemble de ses accès logiques (réseau, applications, messagerie, VPN) et la
-récupération de ses équipements. L'auditeur vérifie l'existence de cette procédure et
-son effectivité en testant sur un échantillon de départs récents.
-
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Le développeur fantôme}
-
-Trois mois après le départ d'un développeur senior, l'auditeur constate que son
-compte VPN est toujours actif et que ses droits d'accès à l'environnement de
-production de l'\textit{APPLICATION} n'ont pas été révoqués. Aucune procédure
-d'off-boarding formalisée n'existe. Le risque est critique~: cet ancien collaborateur,
-qui connaît l'architecture du SI, pourrait se connecter à distance et accéder aux
-données clients de LiZbiZ sans qu'aucune alerte ne soit générée.
-\end{boxlizbiz}
-
-
-% ==============================================================================
-\section{Audit de Sécurité Informatique}
-\label{sec:audit-securite}
-% ==============================================================================
-
-\subsection{Enjeu fondamental}
-
-L'audit de sécurité est le type d'audit SI qui a connu la plus forte croissance au
-cours des dix dernières années, sous l'effet conjugué de la multiplication des
-cyberattaques, de la généralisation de la transformation numérique et du durcissement
-des exigences réglementaires. Son enjeu est de mesurer objectivement la résistance
-du SI aux menaces, qu'elles soient externes (hackers, groupes criminels organisés,
-États) ou internes (employés malveillants, erreurs humaines, sous-traitants
-négligents).
-
-Ce qui distingue fondamentalement l'audit de sécurité des autres types d'audit SI
-est sa dimension \textit{adversariale}~: l'auditeur ne se contente pas de vérifier
-l'existence de contrôles, il cherche à démontrer leur insuffisance en adoptant la
-posture d'un attaquant. Les tests d'intrusion (\textit{pentests}) en sont l'expression
-la plus radicale.
-
-% ------------------------------------------------------------------------------
-\subsection{Les Piliers D.I.C.T.}
-\label{subsec:dict}
-% ------------------------------------------------------------------------------
-
-L'audit de sécurité s'organise autour des quatre propriétés fondamentales que tout
-SI doit garantir.
-
-La \termecle{Disponibilité} vise à s'assurer que le système est accessible aux
-utilisateurs autorisés quand ils en ont besoin, y compris dans des conditions
-dégradées. Elle est menacée par les pannes matérielles, les saturations de ressources,
-les attaques DDoS et les catastrophes naturelles.
-
-L'\termecle{Intégrité} garantit que les données ne peuvent être modifiées, créées
-ou supprimées que par des utilisateurs autorisés, selon des processus contrôlés.
-Sa violation est parfois difficile à détecter~: une modification subtile d'un montant
-comptable peut passer inaperçue pendant des mois si aucun contrôle de cohérence
-n'est en place.
-
-La \termecle{Confidentialité} assure que l'information n'est accessible qu'aux
-personnes qui en ont le droit. Elle est menacée par des configurations défectueuses,
-des droits d'accès excessifs, des données en clair sur des supports non chiffrés ou
-des communications non sécurisées.
-
-La \termecle{Traçabilité}, parfois appelée imputabilité, garantit que toute action
-sur le SI peut être attribuée à un acteur identifié et horodatée de façon fiable.
-Sans elle, il est impossible d'investiguer un incident, de reconstituer une chronologie
-d'attaque ou d'apporter la preuve d'une fraude devant une juridiction.
-
-% ------------------------------------------------------------------------------
-\subsection{Disponibilité Physique~: les Contrôles Environnementaux}
-\label{subsec:controles-environnementaux}
-% ------------------------------------------------------------------------------
-
-La disponibilité d'un SI ne dépend pas seulement de son architecture logique,
-redondance, failover, PRA, mais aussi des conditions physiques dans lesquelles ses
-équipements opèrent. Un centre de calcul parfaitement redondant sur le plan réseau
-peut être mis hors service en quelques minutes par une coupure électrique non
-anticipée, une inondation ou un incendie. Les contrôles environnementaux constituent
-le \emph{socle physique} de la disponibilité~: ils sont la condition préalable à
-laquelle tous les contrôles logiques se trouvent subordonnés.
-
-La démarche d'audit environnemental repose sur un principe de
-\textbf{défense en profondeur spatiale}~: l'auditeur raisonne par zones concentriques,
-du périmètre extérieur jusqu'à la baie critique, en vérifiant que chaque zone dispose
-de ses propres dispositifs de protection indépendants des zones adjacentes.
-
-\begin{boxdef}
-\textbf{Plan d'Occupation des Sols du SI (POS-SI)~:}
-Document cartographiant la localisation physique de l'ensemble des équipements
-informatiques au sein des locaux de l'organisation~: salles serveurs, locaux techniques,
-postes de travail, équipements réseau, baies de brassage. Il identifie les
-\emph{zones fonctionnelles} (production, développement, accès public) et les
-\emph{responsables de zones}. L'auditeur utilise ce document comme base de la revue
-des contrôles environnementaux~: sans cartographie physique du SI, l'audit ne peut
-couvrir que ce que l'audité consent à montrer.
-\end{boxdef}
-
-\subsubsection{Les Zones de Sécurité Physique}
-
-L'approche par zones concentriques distingue trois niveaux de protection~:
-
-\begin{enumerate}
-    \item \textbf{Zone périphérique (périmètre du bâtiment)~:} contrôle d'accès
-        général au bâtiment, gardiennage, vidéosurveillance des entrées, gestion
-        des badges visiteurs. La défaillance de cette zone expose l'ensemble du SI
-        aux menaces physiques externes.
-    \item \textbf{Zone intermédiaire (locaux techniques)~:} accès restreint aux
-        personnels habilités, serrures électroniques ou mécaniques sur les locaux
-        réseau (baies de brassage, équipements actifs), alarme anti-intrusion. Les
-        équipements réseau placés dans des couloirs ou des faux-plafonds accessibles
-        constituent une vulnérabilité fréquente.
-    \item \textbf{Zone critique (salle serveur)~:} niveau de protection maximal.
-        L'accès est nominatif, journalisé et revu périodiquement. Aucune personne
-        externe ne doit y accéder seule~; la règle du \emph{double regard}
-        (\textit{two-person rule}) est recommandée pour les interventions sensibles.
-\end{enumerate}
-
-\paragraph{Clé de contrôle.}
-L'auditeur demande le journal d'accès à la salle serveur des 30~derniers jours et
-le rapproche de la liste du personnel habilité. Tout accès d'une personne non
-habilitée, ou dont l'habilitation a expiré (départ de l'entreprise, changement de
-poste), constitue une non-conformité immédiate.
-
-\subsubsection{Les Dispositifs de Protection contre les Menaces Physiques}
-
-L'auditeur réalise une \textbf{visite physique de la salle serveur}. Aucun document
-ne remplace l'observation directe~: des détecteurs de fumée peuvent figurer dans
-l'inventaire et être non fonctionnels~; une UPS peut être en service mais non
-dimensionnée pour la charge réelle.
-
-\begin{table}[H]
-\centering
-\small
-\renewcommand{\arraystretch}{1.5}
-\caption{Contrôles environnementaux~: points de vérification lors de la visite
-de la salle serveur}
-\label{tab:controles-env}
-\begin{tabular}{|p{2.8cm}|p{4.8cm}|p{4.5cm}|}
-    \hline
-    \rowcolor{gray!20}
-    \textbf{Menace} & \textbf{Dispositif attendu} &
-    \textbf{Test d'audit} \\ \hline
-    \textbf{Coupure électrique} &
-    ASC/UPS dimensionnée pour couvrir le délai de bascule vers le groupe
-    électrogène~; groupe électrogène avec réserve de carburant documentée
-    et testée &
-    Vérifier le rapport du dernier test de bascule UPS~; vérifier le niveau
-    de carburant et la date du dernier essai du groupe \\ \hline
-    \textbf{Incendie} &
-    Détecteurs de fumée à double technologie~; système d'extinction
-    automatique adapté à l'environnement électronique (gaz inerte,
-    \textbf{non} eau)~; extincteurs CO\textsubscript{2} à portée &
-    Vérifier les rapports de maintenance annuelle des détecteurs et du
-    système d'extinction~; vérifier la date de contrôle des extincteurs
-    \\ \hline
-    \textbf{Eau / inondation} &
-    Détecteurs d'humidité au niveau du sol~; absence de tuyauterie
-    au-dessus des équipements critiques~; équipements sur plancher surélevé
-    ou supports à $\geq 15$~cm du sol &
-    Observer le cheminement des tuyauteries~; vérifier la hauteur des
-    équipements~; tester les détecteurs d'eau \\ \hline
-    \textbf{Chaleur / humidité} &
-    Climatisation redondante~; sondes de surveillance avec alertes
-    automatiques dans les plages recommandées par les constructeurs &
-    Demander le journal de température et d'hygrométrie des 30~derniers
-    jours~; vérifier l'existence d'une alarme en cas de dépassement \\ \hline
-    \textbf{Électricité statique} &
-    Revêtement de sol antistatique ou dalles antistatiques~; bracelets
-    antistatiques disponibles pour les interventions matérielles &
-    Observation directe lors de la visite \\ \hline
-    \textbf{Accès non autorisé} &
-    Contrôle d'accès électronique nominatif~; journal d'accès horodaté~;
-    caméras de surveillance à l'entrée de la salle &
-    Comparer le journal d'accès à la liste des personnes habilitées~;
-    vérifier que les comptes révoqués ont bien été désactivés \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{La Destruction Sécurisée des Supports}
-
-La fin de vie d'un équipement ou d'un support de stockage constitue un vecteur de
-fuite d'informations souvent sous-estimé. Un disque dur réformé et revendu sans
-effacement préalable peut contenir des données confidentielles, des identifiants ou
-des clés cryptographiques. L'auditeur vérifie que~:
-
-\begin{itemize}
-    \item Une procédure formalisée encadre la mise au rebut de tout équipement
-        contenant des données~: ordinateurs, serveurs, disques de sauvegarde,
-        imprimantes multifonctions (dont le disque interne est souvent ignoré),
-        smartphones professionnels~;
-    \item L'effacement est réalisé selon une méthode certifiée adaptée au support
-        (écrasement multiple conforme à la norme DoD~5220.22-M pour les disques
-        magnétiques~; dégaussage ou destruction physique pour les supports très
-        sensibles~; effacement cryptographique pour les SSD)~;
-    \item Des \textbf{certificats de destruction} sont émis et conservés pour chaque
-        opération, constituant une preuve opposable en cas de litige ou d'audit
-        réglementaire~;
-    \item Les documents papier confidentiels sont détruits par broyage certifié
-        niveau DIN~66399-P4 minimum (particules $\leq 160~\text{mm}^2$), et non par
-        simple déchiquetage en bandelettes.
-\end{itemize}
-
-\begin{boiteRemarque}{Le cas particulier des supports cloud et virtualisés}
-Dans un environnement virtualisé ou cloud, la destruction physique des supports
-n'est pas possible. La parade consiste en l'\textbf{effacement cryptographique}~:
-les données sont chiffrées dès leur création, et la destruction de la clé les rend
-inaccessibles de façon irréversible. L'auditeur vérifie que la politique de
-chiffrement dès la création (\textit{encrypt-at-rest by default}) est appliquée et
-que la gestion des clés est documentée et auditée.
+Deux observations méritent d'être soulignées. Premièrement, une forte
+non-conformité avérée (distribution $0{,}10$-$0{,}80$-$0{,}10$) et une forte
+carence documentaire (distribution $0{,}10$-$0{,}10$-$0{,}80$) produisent la
+\emph{même} entropie~: les deux situations sont, du point de vue informationnel,
+également certaines, bien qu'elles appellent des recommandations distinctes.
+Deuxièmement, la situation de zone grise modérée ($0{,}50$-$0{,}25$-$0{,}25$),
+qui pourrait paraître rassurante du fait de la majorité de réponses O, est
+presque aussi entropique que le désordre complet~: la présence de~$25\,\%$ de
+réponses PAS/NEK suffit à élever fortement l'incertitude globale.
+
+\begin{boiteRemarque}{Calcul de l'entropie~: règle de convention}
+Par définition, $0 \log_2 0 = 0$. Cette convention est indispensable pour que
+la formule~\eqref{eq:entropie} reste valide lorsqu'une ou plusieurs modalités
+ont une probabilité nulle. Dans un tableur, elle se traduit par l'usage d'un
+test conditionnel~: \verb|SI(p=0;0;p*LOG(p;2))|. Omettre cette convention produit
+une erreur de division par zéro.
 \end{boiteRemarque}
 
-\begin{boxlizbiz}
-\textbf{Cas Lizbiz's~: la salle serveur sans plancher surélevé}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Information mutuelle et réduction d'incertitude}
+\label{sec:info-mutuelle}
+% ──────────────────────────────────────────────────────────────────────────────
 
-Lors de la visite physique, l'auditeur constate que la salle serveur de Lizbiz's
-est située en rez-de-chaussée, les équipements directement posés sur le sol carrelé,
-sans plancher surélevé. Le bâtiment est situé en zone urbaine dense, et les archives
-de la ville font état de deux épisodes de remontée des eaux dans le quartier au cours
-des dix dernières années. Le plan de continuité prévoit un RTO de 4~heures~; or,
-une inondation même mineure de 5~cm suffirait à mettre hors service l'ensemble des
-équipements. Ce constat, obtenu en dix minutes de visite, invalide la crédibilité du
-PCA entier~: le risque physique n'avait pas été intégré dans le BIA.
-Statut~: \texttt{NON~CONFORME}. Recommandation~: surélévation des baies à $\geq
-15$~cm ou relocalisation dans un local non exposé, délai~\texttt{IMMÉDIAT}.
-\end{boxlizbiz}
+\subsection{Définition}
 
-% ------------------------------------------------------------------------------
-\subsection{Dimensions Caractéristiques de l'Audit de Sécurité}
-\label{subsec:securite-dimensions}
-% ------------------------------------------------------------------------------
+La notion d'information mutuelle formalise la question~: \emph{combien une
+observation $Y$ réduit-elle l'incertitude sur $X$~?} C'est la traduction
+quantitative de l'activité même de l'audit.
 
-L'audit de sécurité mobilise trois méthodologies complémentaires dont la combinaison
-dépend du périmètre et des objectifs de la mission.
+\begin{boxdef}{Information mutuelle}
+L'\emph{information mutuelle} de deux variables aléatoires $X$ et $Y$ est
+définie par~:
+\begin{equation}
+  I(X\,;\,Y) \;=\; H(X) - H(X \mid Y) \;=\; H(Y) - H(Y \mid X)
+  \label{eq:info-mutuelle}
+\end{equation}
+Elle mesure la réduction d'incertitude sur $X$ apportée par la connaissance de
+$Y$, et réciproquement. On a $I(X\,;\,Y) \geq 0$, avec égalité si et seulement
+si $X$ et $Y$ sont indépendantes.
+\end{boxdef}
 
-L'\textbf{audit de configuration} consiste à vérifier que les paramètres des systèmes
-(serveurs, équipements réseau, applications) sont conformes aux référentiels de
-durcissement (\textit{hardening}) reconnus, tels que les benchmarks \norme{CIS}
-(\textit{Center for Internet Security}). Il détecte les mots de passe par défaut
-non modifiés, les services inutiles exposés, les correctifs de sécurité non appliqués.
+L'information mutuelle s'exprime également comme la divergence de
+Kullback-Leibler~\cite{Kullback1951} entre la loi jointe $p(x,y)$ et le produit
+des lois marginales $p(x)\,p(y)$~:
+\begin{equation}
+  I(X\,;\,Y) \;=\; \sum_{x,y} p(x,y)\,\log_2 \frac{p(x,y)}{p(x)\,p(y)}
+  \label{eq:kl}
+\end{equation}
 
-Les \textbf{tests d'intrusion} (\textit{pentests}) simulent une attaque réelle dans un
-cadre contractuellement défini~: périmètre, règles d'engagement, \textbf{autorisation
-écrite préalable obligatoire}. Ils peuvent être menés en boîte noire (l'auditeur ne
-connaît pas l'infrastructure), en boîte grise (informations partielles) ou en boîte
-blanche (accès complet à la documentation). Le pentest ne remplace pas l'audit de
-configuration~; il le complète en démontrant l'exploitabilité réelle des vulnérabilités
-identifiées.
+\subsection{Interprétation dans le contexte de l'audit}
 
-L'\textbf{audit physique} examine la sécurité des locaux~: contrôle des accès à la
-salle des serveurs, gestion des visiteurs, destruction des documents confidentiels,
-protection contre les sinistres. Il est souvent négligé mais constitue régulièrement
-le maillon faible de la chaîne de sécurité — comme illustré par les contrôles
-environnementaux présentés à la section précédente.
+La table~\ref{tab:analogie-audit} établit le parallèle entre les notions de la
+théorie de l'information et les réalités de la mission d'audit.
 
-\subsection{Fréquence et déclencheurs}
+\begin{table}[H]
+\centering
+\small
+\caption{Correspondance entre théorie de l'information et pratique de l'audit}
+\label{tab:analogie-audit}
+\begin{tabular}{p{4.5cm}p{4.5cm}p{4.5cm}}
+\toprule
+\textbf{Notion formelle} & \textbf{Notation} & \textbf{Réalité de l'audit} \\
+\midrule
+Variable aléatoire $X$ &
+$X$ : état réel du contrôle &
+Le contrôle est-il effectif~? L'auditeur l'ignore avant l'audit. \\
+\addlinespace
+Distribution a priori de $X$ &
+$p(x)$ avant investigation &
+Croyances initiales de l'auditeur~; en l'absence de données~: 
+distribution uniforme sur O/N/PAS. \\
+\addlinespace
+Observation $Y$ &
+Réponse obtenue (O, N, PAS) &
+Réponse à une question d'évaluation, document examiné, entretien conduit. \\
+\addlinespace
+Entropie a priori $H(X)$ &
+Incertitude avant investigation &
+Incertitude totale à l'ouverture de la mission. \\
+\addlinespace
+Entropie a posteriori $H(X \mid Y)$ &
+Incertitude après observation &
+Incertitude résiduelle après collecte des preuves. \\
+\addlinespace
+Information mutuelle $I(X\,;\,Y)$ &
+$H(X) - H(X \mid Y)$ &
+Valeur informative d'une question d'audit~: réduction d'incertitude produite
+par l'investigation. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-La fréquence minimale recommandée est annuelle. Les tests de pénétration externes
-sur les périmètres exposés à Internet peuvent être plus fréquents, voire continus
-dans les organisations les plus matures (programme de \textit{bug bounty}). Les
-déclencheurs d'un audit non planifié sont~: tout incident de sécurité significatif,
-une modification majeure de l'architecture, l'ouverture d'un nouveau périmètre
-réseau, l'intégration d'un prestataire tiers.
+La mission d'audit peut donc se lire comme un processus de maximisation de
+l'information mutuelle~: l'auditeur cherche, par son plan d'investigation, à
+maximiser $I(X\,;\,Y_1, \ldots, Y_k)$, c'est-à-dire à sélectionner les questions
+et les observations qui réduisent le plus l'incertitude initiale $H(X)$. Un
+point de contrôle pour lequel l'entropie reste élevée après investigation, parce
+que toutes les réponses sont PAS/NEK, est un point pour lequel l'information
+mutuelle entre les observations et l'état réel du contrôle est nulle~: les
+questions posées n'ont apporté aucune réduction d'incertitude. C'est un constat
+d'audit en soi.
 
-\subsection{Référentiels mobilisés}
+\subsection{La divergence de Kullback-Leibler et la mesure de l'écart normatif}
 
-\norme{ISO/IEC~27001:2022} est le référentiel de management de la sécurité de
-l'information. \norme{NIST Cybersecurity Framework~v2.0} (2024) propose un cadre
-fonctionnel articulé autour de six fonctions~: Gouverner, Identifier, Protéger,
-Détecter, Répondre, Rétablir. \norme{ISO/IEC~27035} traite de la gestion des
-incidents. Pour les tests d'intrusion, le référentiel \norme{PTES} et
-l'environnement \norme{OWASP} pour les applications web font autorité.
+La théorie de l'information offre un outil complémentaire~: la divergence de
+Kullback-Leibler (KL), qui mesure l'écart entre une distribution observée et une
+distribution de référence~\cite{Kullback1951}.
 
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Trois observations critiques}
+\begin{boxdef}{Divergence de Kullback-Leibler}
+Soient $p$ (distribution observée) et $q$ (distribution de référence) deux
+distributions sur un espace fini $\mathcal{X}$. La \emph{divergence KL} de $p$
+par rapport à $q$ est~:
+\begin{equation}
+  D_{\mathrm{KL}}(p \,\|\, q) \;=\; \sum_{x \in \mathcal{X}} p(x)\,\log_2\frac{p(x)}{q(x)}
+  \label{eq:kl-div}
+\end{equation}
+avec $D_{\mathrm{KL}}(p \,\|\, q) \geq 0$ et égalité si et seulement si $p = q$
+(inégalité de Gibbs~\cite{Cover2006}).
+\end{boxdef}
 
-Le pentest mené sur le périmètre de LiZbiZ révèle~: \textit{(i)}~le serveur Apache
-hébergeant l'\textit{APPLICATION} présente une vulnérabilité critique non corrigée
-depuis six mois, permettant une exécution de code à distance~; \textit{(ii)}~le
-serveur de base de données comptable est sur le même segment réseau que les postes
-utilisateurs, supprimant toute barrière entre un poste compromis et les données
-financières~; \textit{(iii)}~les journaux du pare-feu ne sont conservés que sept jours,
-rendant impossible toute investigation rétrospective sur un incident antérieur.
-Ces trois constats sont interdépendants~: un attaquant ayant exploité la vulnérabilité
-Apache peut atteindre latéralement la base de données sans que personne ne le sache
-ni ne puisse le prouver.
-\end{boxlizbiz}
+Dans le contexte de l'audit, $q$ peut représenter la distribution cible d'une
+organisation mature, par exemple $q = (0{,}90,\,0{,}05,\,0{,}05)$ pour
+un domaine bien contrôlé, et $p$ la distribution observée lors d'une mission.
+La divergence KL mesure alors l'écart entre la réalité observée et l'état
+souhaité~: c'est un indicateur synthétique de la distance entre la maturité
+effective et la maturité cible.
 
+\begin{boiteRemarque}{Non-symétrie de la divergence KL}
+La divergence KL n'est pas symétrique~: $D_{\mathrm{KL}}(p \,\|\, q) \neq
+D_{\mathrm{KL}}(q \,\|\, p)$ en général. Elle ne définit donc pas une distance
+au sens mathématique strict. Pour des usages où la symétrie est souhaitable
+(comparaison entre deux unités auditées), on lui préfère la divergence de Jensen-Shannon,
+définie comme la moyenne des divergences KL de $p$ et $q$ vers leur mélange
+$m = \frac{1}{2}(p+q)$~\cite{Lin1991}. Son usage reste optionnel dans le cadre de
+ce cours~; la divergence KL suffit pour les applications présentées au chapitre
+suivant.
+\end{boiteRemarque}
 
-% ==============================================================================
-\section{Audit de la Continuité d'Activité et de la Résilience}
-\label{sec:audit-continuite}
-% ==============================================================================
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Le codage de l'information~: lien avec la compression}
+\label{sec:codage}
+% ──────────────────────────────────────────────────────────────────────────────
 
-\subsection{Enjeu fondamental}
+L'entropie possède une interprétation opérationnelle fondamentale qui en justifie
+le nom et en éclaire le sens profond~: elle représente la \emph{longueur minimale
+moyenne} d'un code nécessaire pour représenter les messages d'une source. Ce
+résultat est le \emph{théorème du codage source} de Shannon.
 
-La résilience organisationnelle désigne la capacité d'une entité à anticiper les
-disruptions, à y résister et à reprendre ses activités critiques dans des délais
-compatibles avec sa survie. L'audit de la continuité d'activité ne se demande pas
-\textit{si} un sinistre surviendra~; il postule qu'il surviendra, et se demande
-\textit{si l'organisation est prête à y faire face}.
+\begin{boiteTheoreme}{Théorème du codage source (Shannon, 1948)}
+Soit $X$ une source discrète sans mémoire de loi $p$. Tout code préfixe
+(code de Huffman~\cite{Huffman1952}, par exemple) attribue à chaque symbole $x_i$
+un mot de code de longueur $\ell_i$. La \emph{longueur moyenne} $\bar{L} =
+\sum_i p(x_i)\,\ell_i$ satisfait~:
+\begin{equation}
+  H(X) \;\leq\; \bar{L} \;<\; H(X) + 1
+  \label{eq:codage-source}
+\end{equation}
+La borne inférieure $H(X)$ est atteinte asymptotiquement~: l'entropie est la
+limite fondamentale de la compression sans perte.
+\end{boiteTheoreme}
 
-Cet audit est en forte croissance depuis les cyberattaques par rançongiciel qui ont
-paralysé des hôpitaux, des administrations et des entreprises entières. Il est
-également requis par un nombre croissant de régulateurs sectoriels qui imposent des
-exigences formelles de continuité.
+L'interprétation pour l'audit est la suivante. Si un point de contrôle présente
+une entropie $H \approx 0$, ses réponses sont quasi certaines~: elles sont peu
+informatives dans l'absolu, mais elles sont \emph{compressibles} en très peu de
+bits. À l'inverse, une entropie $H \approx 1{,}585$~bits signifie que les
+réponses de ce point de contrôle sont si imprévisibles qu'elles nécessitent la
+quasi-totalité du potentiel informationnel d'un système à trois symboles~: chaque
+réponse est véritablement une \emph{nouvelle} au sens informationnel du terme.
 
-\subsection{Concepts Fondamentaux}
+Cette intuition rejoint directement la pratique de l'audit~: un point de contrôle
+à forte entropie mérite plus de temps, d'investigations complémentaires et de
+diligences documentaires, précisément parce que chaque réponse y est plus
+susceptible d'être surprenante et donc potentiellement révélatrice.
 
-Quatre indicateurs structurent l'évaluation de la résilience.
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Entropie et distributions trichotomiques~: analyse exhaustive}
+\label{sec:trichotomique}
+% ──────────────────────────────────────────────────────────────────────────────
 
-Le \termecle{BIA} (\textit{Business Impact Analysis}) est le point de départ~: il
-identifie les processus critiques, quantifie l'impact d'une interruption sur chacun
-d'eux et détermine les ressources minimales nécessaires à leur maintien. L'auditeur
-vérifie l'existence, la complétude et la mise à jour régulière du BIA.
+\subsection{Paramétrisation de la surface d'entropie}
 
-Le \termecle{MTPD} (\textit{Maximum Tolerable Period of Disruption}) est la durée
-maximale d'interruption d'un processus au-delà de laquelle la survie de l'organisation
-est menacée. C'est une donnée métier, déterminée par les dirigeants, non par la DSI.
+La surface d'entropie d'une distribution trichotomique $(p_O, p_N, p_P)$ avec
+$p_O + p_N + p_P = 1$ forme un simplexe bidimensionnel. Son étude complète
+permet de comprendre comment chacun des trois types de réponse contribue à l'entropie
+globale.
 
-Le \termecle{RTO} (\textit{Recovery Time Objective}) est l'objectif de délai de
-remise en service après un sinistre. Il doit être inférieur au MTPD~: un RTO supérieur
-au MTPD est une incohérence fondamentale que l'auditeur doit impérativement relever.
+En posant $\mathbf{p} = (p_O, p_N, p_P)$, on a~:
+\begin{equation}
+  H(\mathbf{p})
+    = -p_O \log_2 p_O - p_N \log_2 p_N - p_P \log_2 p_P
+    \;\in\; [0,\; \log_2 3]
+  \label{eq:entropie-tri}
+\end{equation}
 
-Le \termecle{RPO} (\textit{Recovery Point Objective}) est la perte de données
-maximale admissible, exprimée en unité de temps. Il est directement lié à la fréquence
-des sauvegardes~: un RPO de quatre heures implique des sauvegardes au moins toutes les
-quatre heures.
+Les lignes de niveau de cette surface révèlent trois zones de qualité distinctes~:
 
-\begin{boxalert}
-\textbf{L'incohérence RTO/RPO~: un classique de l'audit.}
-Un RTO de 4~h avec un RPO de 24~h est techniquement incohérent dans de nombreux
-contextes~: on peut relancer les systèmes en quatre heures, mais avec des données
-vieilles d'une journée, ce qui peut être inacceptable pour un processus financier ou
-logistique critique. L'auditeur doit systématiquement vérifier la cohérence de ces
-paramètres avec les exigences métiers réelles.
-\end{boxalert}
+\begin{enumerate}
+  \item \textbf{Zone de certitude} ($H < 0{,}5$~bit)~: au moins l'une des trois
+        modalités est largement dominante. L'audit est conclusif, même si la
+        conclusion est défavorable. Un audit entièrement rouge (toutes les
+        réponses~N) est, paradoxalement, aussi informatif qu'un audit entièrement
+        vert~: dans les deux cas, $H = 0$.
+  \item \textbf{Zone d'incertitude modérée} ($0{,}5 \leq H < 1{,}0$~bit)~:
+        les réponses sont partagées mais avec une tendance perceptible.
+        L'investigation complémentaire est utile mais non urgente.
+  \item \textbf{Zone grise critique} ($H \geq 1{,}0$~bit)~: les trois modalités
+        coexistent de façon significative. L'audit de ce point de contrôle doit
+        être étendu avant que toute conclusion soit émise.
+\end{enumerate}
 
-\subsection{Fréquence et déclencheurs}
+\subsection{Décomposition de l'entropie et contribution des composantes}
 
-La fréquence recommandée est annuelle, incluant obligatoirement un \textbf{test réel}
-du PCA et du PRA~: un plan non testé est un plan dont on ignore s'il fonctionnera.
-Les déclencheurs d'un audit non planifié sont~: tout incident ayant nécessité
-l'activation du PCA/PRA, une modification significative de l'architecture du SI,
-ou une nouvelle exigence réglementaire.
+L'entropie d'une distribution trichotomique peut se décomposer en la somme de
+l'entropie binaire O~vs.~(N+PAS) et de l'entropie conditionnelle sur la
+répartition N/PAS~:
+\begin{equation}
+  H(p_O, p_N, p_P) \;=\;
+    H_b(p_O) \;+\; (1 - p_O)\,H\!\left(\frac{p_N}{1-p_O},\;
+    \frac{p_P}{1-p_O}\right)
+  \label{eq:decomp}
+\end{equation}
+où $H_b(\alpha) = -\alpha \log_2 \alpha - (1-\alpha)\log_2(1-\alpha)$ est
+l'entropie binaire de Bernoulli. Cette décomposition est utile pour identifier
+la source principale d'incertitude~: le premier terme mesure l'incertitude sur la
+dichotomie conformité/non-conformité, tandis que le second mesure l'incertitude
+entre non-conformité avérée et incertitude documentaire.
 
-\subsection{Référentiels mobilisés}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Application à la mesure de l'incertitude dans un audit}
+\label{sec:application-audit}
+% ──────────────────────────────────────────────────────────────────────────────
 
-\norme{ISO~22301:2019} est le standard international du management de la continuité
-d'activité. \norme{ISO~22317} traite spécifiquement du BIA. \norme{NIST SP~800-34}
-offre un guide pratique de planification de la continuité pour les systèmes
-d'information.
+\subsection{Modélisation formelle du processus d'audit}
 
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Un PCA sur papier, jamais testé}
+Soit $\mathcal{D}$ un domaine d'audit décomposé en $K$ points de contrôle
+$\{C_1, \ldots, C_K\}$, et soit $C_k$ un point de contrôle comportant $n_k$
+questions d'évaluation. Pour chaque question $j \in \{1, \ldots, n_k\}$, l'auditeur
+collecte une réponse $r_{k,j} \in \{\texttt{O},\,\texttt{N},\,\texttt{PAS}\}$.
 
-LiZbiZ dispose d'un Plan de Continuité d'Activité rédigé en~2021. Il identifie
-correctement les processus critiques et définit un RTO de 4~h et un RPO de 8~h pour
-l'\textit{APPLICATION}. Cependant, l'auditeur constate~: \textit{(i)}~le PCA n'a
-jamais été testé~; \textit{(ii)}~les sauvegardes sont effectuées quotidiennement à
-23~h, générant un RPO réel de 23~h, incompatible avec l'objectif de 8~h~;
-\textit{(iii)}~les coordonnées de l'hébergeur de secours correspondent à un
-prestataire dont le contrat a été résilié en~2022. Le PCA de LiZbiZ est un document
-de conformité apparente, pas un dispositif opérationnel.
-\end{boxlizbiz}
+\begin{boxdef}{Entropie d'un point de contrôle}
+Notons $n_k^O$, $n_k^N$, $n_k^P$ les effectifs de chaque modalité dans le point
+de contrôle $C_k$, et $n_k = n_k^O + n_k^N + n_k^P$ le nombre total de questions.
+L'\emph{entropie empirique} du point de contrôle est~:
+\begin{equation}
+  H(C_k) \;=\; -\!\!\!\sum_{m \,\in\, \{\texttt{O},\texttt{N},\texttt{P}\}}
+  \hat{p}_{k,m}\,\log_2 \hat{p}_{k,m}
+  \label{eq:entropie-cp}
+\end{equation}
+où $\hat{p}_{k,m} = n_k^m / n_k$ est la fréquence observée de la modalité~$m$.
+\end{boxdef}
 
+\begin{boxdef}{Entropie d'un domaine (entropie agrégée)}
+L'\emph{entropie du domaine} $\mathcal{D}$ est la moyenne pondérée des entropies
+de ses points de contrôle, pondérée par le nombre de questions~:
+\begin{equation}
+  H(\mathcal{D}) \;=\; \frac{\displaystyle\sum_{k=1}^{K} n_k\,H(C_k)}{\displaystyle\sum_{k=1}^{K} n_k}
+  \label{eq:entropie-domaine}
+\end{equation}
+Cette quantité est l'entropie empirique calculée sur l'ensemble des réponses du
+domaine, traitées comme un seul échantillon.
+\end{boxdef}
 
-% ==============================================================================
-\section{Audit de la Fonction Étude (Développement)}
-\label{sec:audit-etude}
-% ==============================================================================
+\subsection{Le double signal de l'outil d'audit}
 
-\subsection{Enjeu fondamental}
+Le chapitre~\ref{chap:outil-audit} introduit l'idée que l'outil mesure deux
+dimensions distinctes~: \emph{ce qui ne va pas} (taux de non-conformité,
+proportion de réponses~N) et \emph{ce qu'on ne sait pas} (proportion de réponses
+PAS/NEK). La théorie de Shannon éclaire pourquoi ces deux dimensions sont
+fondamentalement irréductibles l'une à l'autre.
 
-La fonction étude est responsable de la conception, du développement et de la
-maintenance évolutive des applications. Son audit examine la rigueur des méthodes
-employées, la qualité du code produit, la maîtrise de la documentation et
-l'intégration de la sécurité dès la conception. C'est un audit qui requiert à la
-fois des compétences organisationnelles et une capacité à apprécier la qualité
-technique des livrables.
+Formellement, les deux signaux sont~:
+\begin{align}
+  \tau_c(\mathcal{D}) &= \hat{p}_O \;=\; \frac{n^O}{n}
+  \label{eq:taux-conformite} \\[6pt]
+  H(\mathcal{D}) &= -\hat{p}_O \log_2 \hat{p}_O
+                   - \hat{p}_N \log_2 \hat{p}_N
+                   - \hat{p}_P \log_2 \hat{p}_P
+  \label{eq:entropie-domaine2}
+\end{align}
 
-L'enjeu principal est de s'assurer que les applications produites en interne, ou
-développées en sous-traitance, sont fiables, maintenables, documentées et conformes
-aux exigences de sécurité. Une fonction étude mal organisée produit une
-\textit{dette technique} qui s'accumule silencieusement~: le code non documenté
-devient inconnaissable au départ des développeurs, les applications non testées
-accumulent des bugs latents.
+Ces deux indicateurs sont \emph{orthogonaux}~: deux domaines de même taux de
+conformité peuvent présenter des entropies très différentes, et inversement. Le
+tableau~\ref{tab:ortho} illustre cette orthogonalité.
 
-\subsection{Dimensions caractéristiques}
+\begin{table}[H]
+\centering
+\small
+\caption{Orthogonalité du taux de conformité et de l'entropie~: quatre
+configurations distinctes pour un même taux de conformité de~$50\,\%$}
+\label{tab:ortho}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Configuration} & $\hat{p}_O$ & $\hat{p}_N$ & $\hat{p}_P$ &
+$\tau_c$ & $H$ (bits) \\
+\midrule
+Audit clair, moitié conforme & 0{,}50 & 0{,}50 & 0{,}00 & 50\,\% & 1{,}000 \\
+Audit ambigu, sans zone grise & 0{,}50 & 0{,}25 & 0{,}25 & 50\,\% & 1{,}500 \\
+Forte carence documentaire & 0{,}50 & 0{,}10 & 0{,}40 & 50\,\% & 1{,}361 \\
+Incertitude maximale & $\frac{1}{3}$ & $\frac{1}{3}$ & $\frac{1}{3}$ & 33\,\% & 1{,}585 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-La \termecle{séparation des environnements} est un contrôle fondamental~: les
-environnements de développement, de test et de production doivent être strictement
-séparés. Un développeur ne doit jamais avoir accès direct à la production~; toute
-mise en production doit passer par une procédure formalisée avec validation
-indépendante.
+Ces quatre situations n'ont pas le même profil de risque, bien que les deux
+premières partagent le même taux de conformité de~$50\,\%$. Dans la première,
+l'auditeur sait ce qui va et ce qui ne va pas~; dans la seconde, un quart des
+réponses reste dans la zone grise, ce qui signifie qu'un quart du périmètre
+audité est soustrait à l'opinion de l'auditeur. Réduire l'audit à son seul taux
+de conformité reviendrait à traiter ces situations de façon identique, ce qui
+serait une erreur méthodologique grave.
 
-La \termecle{gestion des versions} (\textit{versioning}) assure la traçabilité de
-l'évolution du code source. L'auditeur vérifie l'utilisation d'un système de contrôle
-de version (Git ou équivalent), la politique de branches, et la capacité à reproduire
-un état antérieur du système en cas d'incident.
+\subsection{Interprétation normative des seuils d'entropie}
 
-Le \termecle{Security by Design} — intégration de la sécurité dès la conception —
-est le paradigme moderne du développement sécurisé. L'auditeur vérifie l'existence
-de normes de codage sécurisé, la réalisation d'analyses statiques du code (SAST)
-pour détecter les vulnérabilités classiques (injections SQL, XSS, gestion incorrecte
-des erreurs) et l'intégration de tests de sécurité dans le pipeline de déploiement
-(DevSecOps).
+La table~\ref{tab:seuils} résume les seuils d'interprétation de l'entropie en
+contexte d'audit, tels qu'ils seront mis en œuvre dans l'outil du chapitre
+suivant.
 
-\subsection{Fréquence et déclencheurs}
+\begin{table}[H]
+\centering
+\small
+\caption{Seuils normatifs d'entropie pour l'interprétation d'un point de
+contrôle dans l'outil d'aide à l'audit}
+\label{tab:seuils}
+\begin{tabular}{cccl}
+\toprule
+\textbf{Plage} & \textbf{Couleur outil} & \textbf{Qualification} &
+\textbf{Conduite à tenir} \\
+\midrule
+$H < 0{,}5$ & Blanc & Certitude & Aucune investigation complémentaire requise \\
+$0{,}5 \leq H < 1{,}0$ & Jaune & Incertitude modérée &
+Relance de l'audité sur les PAS/NEK \\
+$H \geq 1{,}0$ & Rouge & Zone grise critique &
+Investigation approfondie obligatoire avant conclusion \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-La fréquence recommandée est de deux à trois ans, ou lors de l'adoption d'une
-nouvelle méthodologie de développement (passage à l'Agile, adoption du DevOps),
-de l'intégration d'un nouveau prestataire, ou d'un incident applicatif grave ayant
-pour origine une défaillance du processus de développement.
+\begin{boiteRemarque}{Nature statistique de l'entropie empirique}
+L'entropie~$H(C_k)$ calculée dans l'outil est une \emph{entropie empirique}~:
+elle est estimée sur un échantillon fini de $n_k$ questions. Pour des points de
+contrôle comportant peu de questions ($n_k < 10$), l'estimation peut être biaisée
+et instable. L'estimateur du maximum de vraisemblance de l'entropie est
+asymptotiquement non biaisé mais surestimé pour de petits $n$~\cite{Paninski2003}.
+Des correcteurs de biais (correcteur de Miller-Madow) existent mais ne sont pas
+nécessaires dans le cadre de ce cours, où l'entropie est utilisée comme indicateur
+de pilotage et non comme estimateur statistique précis.
+\end{boiteRemarque}
 
-\subsection{Référentiels mobilisés}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Extensions~: entropie croisée et mesures apparentées}
+\label{sec:extensions}
+% ──────────────────────────────────────────────────────────────────────────────
 
-\norme{ISO/IEC~25010} définit les caractéristiques de qualité d'un produit logiciel.
-\norme{ISO/IEC~27034} traite de la sécurité applicative. \norme{OWASP SAMM}
-(\textit{Software Assurance Maturity Model}) propose un modèle de maturité pour les
-pratiques de développement sécurisé. Pour les projets agiles, \norme{SAFe} et les
-pratiques DevSecOps constituent les références contemporaines.
+Pour les lecteurs souhaitant aller plus loin, deux extensions de la notion
+d'entropie de Shannon sont présentées~: l'entropie croisée, utilisée pour mesurer
+l'adéquation d'un modèle à une distribution observée, et l'entropie de Rényi,
+qui généralise l'entropie de Shannon à une famille paramétrée.
 
+\begin{boxdef}{Entropie croisée}
+Soient $p$ (distribution réelle) et $q$ (distribution modèle) deux distributions
+sur $\mathcal{X}$. L'\emph{entropie croisée} de $p$ relativement à $q$ est~:
+\begin{equation}
+  H(p, q) \;=\; -\sum_{x \in \mathcal{X}} p(x)\,\log_2 q(x)
+  \label{eq:entropie-croisee}
+\end{equation}
+On a $H(p,q) = H(p) + D_{\mathrm{KL}}(p\,\|\,q) \geq H(p)$, avec égalité si
+et seulement si $p = q$.
+\end{boxdef}
 
-% ==============================================================================
-\section{Audit des Tiers, du Cloud et de l'Externalisation}
-\label{sec:audit-tiers}
-% ==============================================================================
+En audit, $q$ peut représenter la distribution cible d'une organisation certifiée
+(ex.~$q_{\mathrm{cible}} = (0{,}90, 0{,}05, 0{,}05)$) et $p$ la distribution observée.
+L'entropie croisée $H(p, q_{\mathrm{cible}})$ mesure alors le coût informationnel
+de l'inadéquation entre la réalité et la cible~: plus ce coût est élevé, plus
+l'organisation s'écarte de son niveau de maturité attendu.
 
-\subsection{Enjeu fondamental}
+\begin{boxdef}{Entropie de Rényi}
+Soit $\alpha > 0$, $\alpha \neq 1$. L'\emph{entropie de Rényi d'ordre $\alpha$}
+est~:
+\begin{equation}
+  H_\alpha(X) \;=\; \frac{1}{1-\alpha}\,\log_2\!\left(\sum_{i} p(x_i)^\alpha\right)
+  \label{eq:renyi}
+\end{equation}
+À la limite $\alpha \to 1$, $H_\alpha(X) \to H(X)$ (entropie de Shannon).
+\end{boxdef}
 
-L'externalisation informatique — hébergement cloud, infogérance, sous-traitance de
-développement, SaaS — transfère des activités et des données à des tiers, mais ne
-transfère pas la responsabilité. L'organisation reste juridiquement responsable de
-la sécurité et de la conformité de ses données, y compris lorsqu'elles sont traitées
-par un prestataire. C'est le principe fondateur du RGPD en matière de sous-traitance.
+L'entropie de Rényi d'ordre~$\alpha > 1$ pénalise davantage les événements
+fréquents et est moins sensible aux événements rares~; pour $\alpha < 1$,
+l'effet inverse se produit. Dans le contexte de l'audit, l'entropie de Rényi
+d'ordre~2 ($H_2$), appelée \emph{entropie de collision}, offre une mesure
+d'incertitude plus robuste aux petites erreurs d'estimation des probabilités~;
+elle peut être utilisée comme vérification de la stabilité des résultats obtenus
+avec l'entropie de Shannon standard~\cite{Renyi1961}.
 
-L'audit des tiers répond à une question simple mais dont la réponse est souvent
-inconfortable~: \textit{faites-vous confiance à votre prestataire, ou en avez-vous
-la preuve~?}
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Synthèse~: de Shannon à l'audit}
+\label{sec:synthese}
+% ──────────────────────────────────────────────────────────────────────────────
 
-\subsection{Dimensions caractéristiques}
+Ce chapitre a construit le socle théorique nécessaire à la pleine compréhension
+de l'outil d'aide à l'audit présenté au chapitre suivant. La progression logique
+en est la suivante~:
 
-Le \termecle{droit d'audit} est la première vérification contractuelle. Toute
-convention avec un prestataire hébergeant des données sensibles doit contenir une
-clause permettant à l'organisation, ou à ses mandataires, d'auditer le prestataire.
-Son absence prive l'organisation de tout moyen de contrôle indépendant.
+\begin{enumerate}
+  \item L'information propre $I(x) = -\log_2 p(x)$ quantifie la surprise associée
+        à l'observation d'un événement isolé~; son analogue en audit est l'apport
+        informationnel d'une seule réponse d'évaluation.
+  \item L'entropie de Shannon $H(X)$ est la moyenne de cette surprise sur
+        l'ensemble d'une source~; appliquée à un point de contrôle, elle mesure
+        l'incertitude résiduelle de l'auditeur après investigation.
+  \item L'information mutuelle $I(X\,;\,Y)$ mesure la réduction d'incertitude
+        apportée par une observation~; elle formalise la valeur informative d'un
+        programme d'audit~: un bon plan d'audit est celui qui maximise la
+        réduction d'incertitude pour un coût d'investigation donné.
+  \item Le théorème du codage source relie l'entropie à la compressibilité~;
+        un point de contrôle à entropie élevée est, au sens formel, un point
+        dont les réponses sont fondamentalement incompressibles~: elles ne peuvent
+        être prédites ni remplacées par des connaissances préalables.
+  \item La divergence de Kullback-Leibler permet de mesurer l'écart entre l'état
+        observé d'un domaine et un référentiel de maturité cible~; elle est
+        l'instrument formel de la notation de maturité.
+\end{enumerate}
 
-Les \termecle{rapports SOC} (\textit{Service Organization Controls}) constituent le
-substitut standard au droit d'audit direct lorsque celui-ci est contractuellement ou
-pratiquement impossible, notamment vis-à-vis des grands hyperscalers (AWS, Azure,
-GCP). Deux niveaux sont pertinents pour l'auditeur SI~:
+\begin{boiteTheoreme}{Principe de la cartographie entropique en audit}
+Soit un audit portant sur $K$ points de contrôle. Définissons le vecteur
+d'entropies $\mathbf{H} = (H(C_1), \ldots, H(C_K)) \in [0,\,\log_2 3]^K$.
+La \emph{cartographie entropique} de l'audit est la représentation graphique de
+$\mathbf{H}$. Elle constitue un second tableau de bord orthogonal au vecteur des
+taux de conformité $\boldsymbol{\tau} = (\tau_{c,1}, \ldots, \tau_{c,K})$.
+
+Les quatre quadrants du plan $(\tau_c, H)$ correspondent à quatre pathologies
+distinctes~:
 \begin{itemize}
-    \item \textbf{SOC~1 Type~II~:} évalue les contrôles relatifs au reporting
-        financier sur une période d'observation (six ou douze mois). Pertinent pour
-        les prestataires hébergeant des applications comptables ou financières.
-    \item \textbf{SOC~2 Type~II~:} évalue les contrôles relatifs à la sécurité,
-        la disponibilité, l'intégrité du traitement, la confidentialité et la
-        protection des données personnelles. C'est le rapport le plus fréquemment
-        demandé pour les prestataires cloud hébergeant des données sensibles.
+  \item $(\tau_c$ élevé, $H$ faible)~: bonne conformité, haute lisibilité,
+        la situation nominale visée~;
+  \item $(\tau_c$ faible, $H$ faible)~: non-conformité massive mais clairement
+        identifiée, situation grave mais traçable~;
+  \item $(\tau_c$ élevé, $H$ élevée)~: apparence de conformité masquée par une
+        carence d'information, situation trompeuse, à risque sous-estimé~;
+  \item $(\tau_c$ faible, $H$ élevée)~: non-conformité probable et incertitude
+        élevée, la situation la plus préoccupante, requérant une investigation
+        immédiate.
+\end{itemize}
+\end{boiteTheoreme}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: lecture de la cartographie entropique}
+
+À l'issue de l'audit de Lizbiz's, la feuille \texttt{SYNTHÈSE} produit le
+vecteur d'entropies suivant pour cinq domaines~:
+
+\smallskip
+\begin{tabular}{lccl}
+\toprule
+\textbf{Domaine} & $\tau_c$ & $H$ (bits) & \textbf{Quadrant} \\
+\midrule
+Applications & $78\,\%$ & $0{,}62$ & Bonne conformité, lisibilité moyenne \\
+DSI & $55\,\%$ & $0{,}38$ & Non-conformité marquée, lisible \\
+Projets & $82\,\%$ & $1{,}21$ & \textbf{Conformité apparente, fort risque masqué} \\
+Support & $91\,\%$ & $0{,}18$ & Situation nominale \\
+Sécurité & $33\,\%$ & $1{,}40$ & \textbf{Non-conformité et incertitude critiques} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+La lecture du seul taux de conformité aurait conduit à concentrer les
+recommandations sur les domaines DSI et Sécurité. La cartographie entropique
+révèle que le domaine Projets, apparemment sain ($\tau_c = 82\,\%$), est en
+réalité une zone grise critique ($H = 1{,}21$~bits)~: plus de la moitié des
+réponses de ce domaine sont PAS/NEK, signalant une organisation de projet dont
+personne ne connaît le fonctionnement réel. Ce domaine exige une investigation
+complémentaire prioritaire avant que l'auditeur puisse émettre une opinion.
+\end{boxlizbiz}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section*{Références bibliographiques}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\addcontentsline{toc}{section}{Références bibliographiques}
+
+\begin{itemize}
+
+\item \textsc{Shannon}, C.\,E. (1948). A mathematical theory of communication.
+\emph{Bell System Technical Journal}, 27(3), 379--423 \& 27(4), 623--656.
+\doi{10.1002/j.1538-7305.1948.tb01338.x}
+
+\item \textsc{Cover}, T.\,M. et \textsc{Thomas}, J.\,A. (2006).
+\emph{Elements of Information Theory} (2\textsuperscript{e}~éd.).
+Wiley-Interscience. ISBN 978-0-471-24195-9.
+
+\item \textsc{MacKay}, D.\,J.\,C. (2003).
+\emph{Information Theory, Inference, and Learning Algorithms}.
+Cambridge University Press. ISBN 978-0-521-64298-9.
+Disponible en libre accès~: \url{http://www.inference.org.uk/mackay/itila/}
+
+\item \textsc{Kullback}, S. et \textsc{Leibler}, R.\,A. (1951).
+On information and sufficiency.
+\emph{The Annals of Mathematical Statistics}, 22(1), 79--86.
+\doi{10.1214/aoms/1177729694}
+
+\item \textsc{Huffman}, D.\,A. (1952).
+A method for the construction of minimum-redundancy codes.
+\emph{Proceedings of the IRE}, 40(9), 1098--1101.
+\doi{10.1109/JRPROC.1952.273898}
+
+\item \textsc{Lin}, J. (1991).
+Divergence measures based on the Shannon entropy.
+\emph{IEEE Transactions on Information Theory}, 37(1), 145--151.
+\doi{10.1109/18.61115}
+
+\item \textsc{Rényi}, A. (1961).
+On measures of entropy and information.
+\emph{Proceedings of the 4th Berkeley Symposium on Mathematical Statistics and
+Probability}, 1, 547--561.
+University of California Press.
+
+\item \textsc{Paninski}, L. (2003).
+Estimation of entropy and mutual information.
+\emph{Neural Computation}, 15(6), 1191--1253.
+\doi{10.1162/089976603321780272}
+
+\item \textsc{Jaynes}, E.\,T. (1957).
+Information theory and statistical mechanics.
+\emph{Physical Review}, 106(4), 620--630.
+\doi{10.1103/PhysRev.106.620}
+
+\item \textsc{ISACA} (2022).
+\emph{CISA Review Manual, 28\textsuperscript{th} Edition}.
+ISACA. ISBN 978-1-60420-981-4.
+
 \end{itemize}
 
-L'auditeur ne se contente pas de vérifier l'existence de ces rapports~: il en analyse
-le contenu, notamment les exceptions relevées par l'auditeur du prestataire.
+% ──────────────────────────────────────────────────────────────────────────────
+\section*{Exercices}
+% ──────────────────────────────────────────────────────────────────────────────
 
-La \termecle{cartographie des tiers} est un préalable indispensable~: l'organisation
-doit disposer d'un inventaire à jour de tous ses prestataires informatiques, avec pour
-chacun la nature des données traitées, le niveau de criticité et les mécanismes de
-contrôle en place.
+\addcontentsline{toc}{section}{Exercices}
 
-\subsection{Fréquence et déclencheurs}
+\begin{boxexo}
+\textbf{Exercice~1 – Calcul direct d'entropie}
 
-La revue des tiers doit être annuelle au minimum. Tout changement significatif chez
-un prestataire critique (rachat, incident de sécurité public, modification des
-conditions contractuelles) doit déclencher une revue immédiate.
+Un auditeur clôture l'examen d'un point de contrôle \emph{Gestion des accès}
+comportant 12~questions. Les réponses sont~: 6~O, 3~N, 3~PAS.
 
-\subsection{Référentiels mobilisés}
+\begin{enumerate}[(a)]
+  \item Calculer l'entropie empirique $H$ du point de contrôle.
+  \item Situer cette valeur dans la table de seuils (table~\ref{tab:seuils}).
+  \item Conclure sur la conduite à tenir.
+\end{enumerate}
+\end{boxexo}
 
-\norme{ISO/IEC~27036} traite spécifiquement de la sécurité des relations avec les
-fournisseurs. \norme{ISO/IEC~27017} et \norme{27018} complètent ISO~27001 pour les
-environnements cloud. Le \norme{RGPD} (articles~28 et~29) encadre contractuellement
-les relations entre responsables de traitement et sous-traitants.
+\begin{boxexo}
+\textbf{Exercice~2 – Orthogonalité des indicateurs}
 
-\begin{boxlizbiz}
-\textbf{LiZbiZ, Un cloud sans filet}
+Deux domaines $\mathcal{D}_1$ et $\mathcal{D}_2$ présentent le même taux de
+conformité $\tau_c = 60\,\%$. La distribution de $\mathcal{D}_1$ est
+$(0{,}60, 0{,}30, 0{,}10)$ et celle de $\mathcal{D}_2$ est $(0{,}60, 0{,}10, 0{,}30)$.
 
-LiZbiZ héberge ses données clients et ses sauvegardes sur une solution cloud d'un
-prestataire local. L'auditeur constate~: \textit{(i)}~le contrat ne contient aucune
-clause d'audit~; \textit{(ii)}~le prestataire ne publie aucun rapport SOC et ne dispose
-d'aucune certification ISO~27001~; \textit{(iii)}~aucun inventaire des prestataires
-n'existe dans la DSI — le responsable informatique ne peut pas lister l'ensemble des
-services tiers utilisés. LiZbiZ fait confiance à son prestataire sans en avoir la
-moindre preuve formelle, en violation de ses obligations en tant que responsable de
-traitement de données personnelles.
-\end{boxlizbiz}
+\begin{enumerate}[(a)]
+  \item Calculer $H(\mathcal{D}_1)$ et $H(\mathcal{D}_2)$.
+  \item Ces deux valeurs sont-elles différentes~? Justifier.
+  \item Quel domaine présente le risque le plus préoccupant du point de vue de
+        la qualité de l'information~? Argumenter.
+\end{enumerate}
+\end{boxexo}
 
+\begin{boxexo}
+\textbf{Exercice~3 – Divergence de Kullback-Leibler et écart normatif}
 
-% ==============================================================================
-\section{Interactions entre Types d'Audit et Cartographie du Risque SI}
-\label{sec:interactions-types}
-% ==============================================================================
+Une organisation de référence présente la distribution cible
+$q = (0{,}90, 0{,}05, 0{,}05)$. L'organisation Lizbiz's présente sur le domaine
+Sécurité la distribution observée $p = (0{,}33, 0{,}40, 0{,}27)$.
 
-Les huit types d'audit présentés dans ce chapitre ne sont pas des silos indépendants.
-Ils forment un système d'observation complémentaire dont les résultats se nourrissent
-mutuellement. Comprendre ces interactions est ce qui distingue l'auditeur expérimenté
-du technicien compétent.
+\begin{enumerate}[(a)]
+  \item Calculer $D_{\mathrm{KL}}(p \,\|\, q)$.
+  \item Interpréter le résultat en termes d'écart de maturité.
+  \item Commenter la non-symétrie en calculant $D_{\mathrm{KL}}(q \,\|\, p)$.
+\end{enumerate}
+\end{boxexo}
 
-L'audit de la fonction informatique fournit le cadre organisationnel dans lequel tous
-les autres audits s'inscrivent~: une DSI mal gouvernée génère mécaniquement des
-faiblesses dans la gestion des applications, des projets et de la sécurité. Il est
-logique de commencer par cet audit lorsqu'une organisation est auditée pour la
-première fois.
+\begin{boxexo}
+\textbf{Exercice~4 – Codage et interprétation}
 
-L'audit de sécurité révèle fréquemment des vulnérabilités dont la cause racine est
-organisationnelle~: des droits d'accès excessifs consécutifs à l'absence de procédure
-d'off-boarding, des correctifs non appliqués faute de processus de gestion des patches,
-une segmentation réseau déficiente résultant d'une architecture non documentée. Ces
-causes racines relèvent de l'audit de la fonction informatique, pas de l'audit de
-sécurité.
+Un point de contrôle présente une distribution de réponses $(0{,}80, 0{,}15, 0{,}05)$.
 
-L'audit de continuité complète l'audit de sécurité en posant la question
-\textit{après} l'incident~: une fois la cyberattaque survenue, l'organisation est-elle
-capable de reprendre ses activités~? Les deux audits sont complémentaires et doivent
-idéalement être conduits de façon coordonnée. L'audit des contrôles environnementaux,
-présenté dans la section sécurité, nourrit directement l'évaluation du BIA~: un risque
-physique non intégré dans le BIA rend le PCA inopérant, comme l'illustre le cas de la
-salle serveur de Lizbiz's.
+\begin{enumerate}[(a)]
+  \item Calculer l'entropie $H$.
+  \item En utilisant le théorème du codage source, donner la longueur minimale
+        moyenne d'un code binaire représentant les réponses de ce point de
+        contrôle.
+  \item Un code naïf assignerait~2~bits par symbole (codage en base~4). Quel
+        est le gain de compression théorique possible~?
+\end{enumerate}
+\end{boxexo}
 
-L'audit des applications en service est inséparable de l'audit des interfaces
-inter-applicatives~: une application fiable dont les données d'entrée arrivent par des
-interfaces non contrôlées ne produit que des résultats dont la fiabilité est illusoire.
-L'intégrité bout en bout d'un processus métier dépend de la qualité de l'ensemble des
-maillons applicatifs et de leurs connexions.
-
-L'audit des tiers conditionne la portée réelle de tous les autres~: si les données
-critiques sont hébergées chez un tiers non audité, les contrôles internes de
-l'organisation ne valent que pour la fraction du SI qu'elle maîtrise directement.
-
-\begin{boxresume}
-\textbf{À retenir.} Les huit types d'audit SI couvrent un continuum allant de la
-gouvernance (audit de la DSI) au fonctionnement (applications, projets, support)
-en passant par la sécurité et la résilience (sécurité, continuité) jusqu'à
-l'écosystème étendu (tiers et cloud). Chaque type répond à une question fondamentale
-distincte, mobilise des référentiels spécifiques et requiert des compétences
-particulières. Deux domaines transversaux traversent plusieurs types d'audit~: les
-contrôles d'interfaces inter-applicatives, qui conditionnent la fiabilité des données
-quel que soit l'applicatif concerné, et les contrôles environnementaux, qui
-conditionnent la disponibilité physique de l'ensemble du SI. Le chapitre suivant
-décompose chacun de ces types selon le modèle opérationnel du cours, de la définition
-du domaine jusqu'à la criticité des conséquences, fournissant ainsi à l'auditeur les
-instruments de mesure qui transforment ces typologies en missions concrètes.
-\end{boxresume}
