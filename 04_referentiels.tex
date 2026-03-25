@@ -5,22 +5,34 @@
 
 \chapter{Normes et Référentiels Usuels en Audit des Systèmes d'Information}\label{chap:04_referentiels}
 
-L'auditeur a besoin de "briques" techniques et organisationnelles pour évaluer la maturité d'un SI. Les référentiels fournissent les bonnes pratiques reconnues internationalement. Ce chapitre présente les trois piliers : COSO, COBIT et la série ISO 27000.
+L'auditeur a besoin de \og{}briques\fg{} techniques et organisationnelles pour évaluer la maturité
+d'un SI. Les référentiels fournissent les bonnes pratiques reconnues internationalement et
+constituent le vocabulaire commun entre l'auditeur, la direction et les équipes IT.
+Ce chapitre présente d'abord les trois piliers fondateurs, COSO, COBIT et la série ISO~27000,
+puis neuf référentiels complémentaires qui enrichissent la palette de l'auditeur selon les
+domaines couverts~: valeur des investissements, risques, maturité des processus, gestion des
+services et méthodologie d'audit.
 
-\section{COSO : Le Modèle de Contrôle Interne}
-% ------------------------------------------------------------------------------
+% ==============================================================================
+\section{COSO~: Le Modèle de Contrôle Interne}
+\label{sec:coso}
+% ==============================================================================
 
 \subsection{Présentation}
 
 \begin{boxdef}
-\textbf{COSO (Committee of Sponsoring Organizations) :} Cadre de référence conceptuel du contrôle interne, publié en 1992 (révisé en 2013). C'est le modèle standard pour la gouvernance d'entreprise, souvent exigé par les lois sur la gouvernance (ex: Sarbanes-Oxley aux USA).
+\textbf{COSO (Committee of Sponsoring Organizations)~:} Cadre de référence conceptuel du
+contrôle interne, publié en~1992 (révisé en~2013). C'est le modèle standard pour la gouvernance
+d'entreprise, souvent exigé par les lois sur la gouvernance (ex~: Sarbanes-Oxley aux USA).
 \end{boxdef}
 
-Bien que généraliste, COSO est le socle sur lequel s'appuient les autres référentiels informatiques.
+Bien que généraliste, COSO est le socle sur lequel s'appuient les autres référentiels
+informatiques.
 
 \subsection{Les Trois Objectifs}
 
-Le contrôle interne selon COSO vise à donner une assurance raisonnable sur la réalisation de trois objectifs :
+Le contrôle interne selon COSO vise à donner une assurance raisonnable sur la réalisation
+de trois objectifs~:
 \begin{enumerate}
     \item \textbf{Réalisation et Optimisation des opérations} (Performance).
     \item \textbf{Fiabilité des informations financières} (Comptabilité).
@@ -29,7 +41,7 @@ Le contrôle interne selon COSO vise à donner une assurance raisonnable sur la 
 
 \subsection{Les Cinq Composantes (Le Cube COSO)}
 
-Pour atteindre ces objectifs, l'organisation doit mettre en place 5 composantes liées :
+Pour atteindre ces objectifs, l'organisation doit mettre en place 5~composantes liées~:
 
 \begin{table}[h!]
 \centering
@@ -38,41 +50,54 @@ Pour atteindre ces objectifs, l'organisation doit mettre en place 5 composantes 
     \toprule
     \textbf{Composante} & \textbf{Description} \\
     \midrule
-    \textbf{Environnement de Contrôle} & La culture, l'éthique, la compétence du personnel. (Le "ton donné par le sommet"). \\
-    \textbf{Évaluation des Risques} & Identification et analyse des risques qui pourraient empêcher d'atteindre les objectifs. \\
-    \textbf{Activités de Contrôle} & Les politiques et procédures concrètes (Séparation des tâches, autorisations). \\
-    \textbf{Information et Communication} & La circulation de l'information nécessaire au pilotage (Qualité des données). \\
-    \textbf{Pilotage (Monitoring)} & Surveillance continue du système de contrôle interne (Audits, Supervision). \\
+    \textbf{Environnement de Contrôle} & La culture, l'éthique, la compétence du personnel.
+        (Le \og{}ton donné par le sommet\fg{}). \\
+    \textbf{Évaluation des Risques} & Identification et analyse des risques qui pourraient
+        empêcher d'atteindre les objectifs. \\
+    \textbf{Activités de Contrôle} & Les politiques et procédures concrètes (Séparation des
+        tâches, autorisations). \\
+    \textbf{Information et Communication} & La circulation de l'information nécessaire au
+        pilotage (Qualité des données). \\
+    \textbf{Pilotage (Monitoring)} & Surveillance continue du système de contrôle interne
+        (Audits, Supervision). \\
     \bottomrule
 \end{tabular}
-\caption{Les 5 composantes du référentiel COSO}
+\caption{Les 5~composantes du référentiel COSO}
 \end{table}
 
 \begin{boxlizbiz}
-\textbf{Application Lizbiz's :}
-L'audit du système de gestion des commandes chez Lizbiz's vérifiera si les 5 composantes COSO sont présentes : existe-t-il une procédure (Activité de contrôle) ? Les risques de fraude sont-ils évalués (Évaluation des risques) ? Les managers supervisent-ils les anomalies (Pilotage) ?
+\textbf{Application Lizbiz's~:}
+L'audit du système de gestion des commandes chez Lizbiz's vérifiera si les
+5~composantes COSO sont présentes~: existe-t-il une procédure (Activité de contrôle)~?
+Les risques de fraude sont-ils évalués (Évaluation des risques)~? Les managers supervisent-ils
+les anomalies (Pilotage)~?
 \end{boxlizbiz}
 
-% ------------------------------------------------------------------------------
-\section{COBIT : La Gouvernance des SI}
-% ------------------------------------------------------------------------------
+% ==============================================================================
+\section{COBIT~: La Gouvernance des SI}
+\label{sec:cobit}
+% ==============================================================================
 
 \subsection{Présentation}
 
 \begin{boxdef}
-\textbf{COBIT (Control Objectives for Information and Related Technologies) :} Référentiel de gouvernance et de management des SI développé par l'ISACA. Il fait le pont entre les métiers et l'IT.
+\textbf{COBIT (Control Objectives for Information and Related Technologies)~:} Référentiel
+de gouvernance et de management des SI développé par l'ISACA. Il fait le pont entre les
+métiers et l'IT.
 \end{boxdef}
 
-C'est le référentiel de choix pour l'auditeur SI car il propose une liste d'objectifs de contrôle précis pour chaque processus informatique.
+C'est le référentiel de choix pour l'auditeur SI car il propose une liste d'objectifs de
+contrôle précis pour chaque processus informatique.
 
 \subsection{Objectifs et Apports}
 
-COBIT répond à la question : "Comment aligner l'IT sur la stratégie de l'entreprise ?".
-Il structure le SI en domaines et processus, offrant à l'auditeur une grille de lecture universelle.
+COBIT répond à la question~: \og{}Comment aligner l'IT sur la stratégie de l'entreprise~?\fg{}
+Il structure le SI en domaines et processus, offrant à l'auditeur une grille de lecture
+universelle.
 
 \subsection{Structure de COBIT (Version 5 / 2019)}
 
-COBIT divise la gouvernance et le management en 5 domaines principaux :
+COBIT divise la gouvernance et le management en 5~domaines principaux~:
 
 \begin{table}[h!]
 \centering
@@ -80,15 +105,20 @@ COBIT divise la gouvernance et le management en 5 domaines principaux :
     \toprule
     \textbf{Domaine} & \textbf{Contenu (Exemples de processus)} \\
     \midrule
-    \textbf{Evaluer, Diriger et Surveiller (EDM)} & Gouvernance stratégique (EDM01 : Gouvernance du cadre I&T). \\
+    \textbf{Evaluer, Diriger et Surveiller (EDM)} & Gouvernance stratégique
+        (EDM01~: Gouvernance du cadre I\&T). \\
     \midrule
-    \textbf{Planifier et Organiser (PO)} & Stratégie, Architecture, Budget (PO01 : Gérer le cadre de management IT). \\
+    \textbf{Planifier et Organiser (PO)} & Stratégie, Architecture, Budget
+        (PO01~: Gérer le cadre de management IT). \\
     \midrule
-    \textbf{Acquérir et Implémenter (AI)} & Projets, Développement, Intégration (AI06 : Gérer les changements). \\
+    \textbf{Acquérir et Implémenter (AI)} & Projets, Développement, Intégration
+        (AI06~: Gérer les changements). \\
     \midrule
-    \textbf{Délivrer et Servir (DS)} & Exploitation, Support, Sécurité (DS01 : Gérer les opérations). \\
+    \textbf{Délivrer et Servir (DS)} & Exploitation, Support, Sécurité
+        (DS01~: Gérer les opérations). \\
     \midrule
-    \textbf{Surveiller, Évaluer et Analyser (MEA)} & Performance, Conformité (MEA02 : Surveiller et évaluer le contrôle interne). \\
+    \textbf{Surveiller, Évaluer et Analyser (MEA)} & Performance, Conformité
+        (MEA02~: Surveiller et évaluer le contrôle interne). \\
     \bottomrule
 \end{tabular}
 \caption{Les domaines de COBIT}
@@ -96,54 +126,438 @@ COBIT divise la gouvernance et le management en 5 domaines principaux :
 
 \subsection{Utilisation par l'Auditeur}
 
-Pour chaque processus (ex: DS5 "Gérer la sécurité"), COBIT fournit :
+Pour chaque processus (ex~: DS5 \og{}Gérer la sécurité\fg{}), COBIT fournit~:
 \begin{itemize}
     \item Un objectif de contrôle détaillé.
     \item Des indicateurs de performance (KPI).
-    \item Un modèle de maturité (de 0 : Inexistant à 5 : Optimisé).
+    \item Un modèle de maturité (de~0~: Inexistant à~5~: Optimisé).
 \end{itemize}
 
 \subsection{La Cascade d'Objectifs COBIT}
-L'un des points forts de COBIT est sa capacité à lier la stratégie métier aux objectifs techniques. 
+
+L'un des points forts de COBIT est sa capacité à lier la stratégie métier aux objectifs
+techniques~:
 \begin{enumerate}
     \item \textbf{Besoins des parties prenantes} (Bénéfices, Risques, Ressources).
-    \item \textbf{Objectifs d'entreprise} (ex: Portefeuille de produits et services structurés).
-    \item \textbf{Objectifs d'alignement} (ex: Qualité des informations financières liées à l'IT).
+    \item \textbf{Objectifs d'entreprise} (ex~: Portefeuille de produits et services structurés).
+    \item \textbf{Objectifs d'alignement} (ex~: Qualité des informations financières liées à l'IT).
 \end{enumerate}
-% ------------------------------------------------------------------------------
-\section{La Série ISO 27000 : La Sécurité Normative}
-% ------------------------------------------------------------------------------
 
-Alors que COBIT gère l'IT, la série ISO 27000 se concentre spécifiquement sur la \textbf{Sécurité de l'Information}.
+% ==============================================================================
+\section{La Série ISO~27000~: La Sécurité Normative}
+\label{sec:iso27000}
+% ==============================================================================
 
+Alors que COBIT gère l'IT, la série ISO~27000 se concentre spécifiquement sur la
+\textbf{Sécurité de l'Information}. C'est une famille de normes internationales dont
+les membres sont indissociables~: ISO~27001 pose les exigences, ISO~27002 fournit
+les mesures pour les satisfaire, ISO~27005 fournit la méthode pour en justifier
+la sélection par le risque, et ISO~27006 encadre les organismes qui délivrent
+la certification.
+
+% ------------------------------------------------------------------------------
 \subsection{Vue d'Ensemble}
+\label{subsec:iso27000-vue}
+% ------------------------------------------------------------------------------
 
-C'est une famille de normes internationales. Les plus critiques pour l'auditeur sont :
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{2.4cm}|p{3.2cm}|p{6.4cm}|}
+    \hline
+    \rowcolor{blue!10}
+    \textbf{Norme} & \textbf{Rôle} & \textbf{Contenu principal} \\ \hline
+    \textbf{ISO~27001} & Exigences (certifiable) &
+        Spécifie les exigences du SMSI~: politique, gestion des risques, objectifs,
+        mesures (Annexe~A), amélioration continue. \\ \hline
+    \textbf{ISO~27002} & Code de bonnes pratiques &
+        93~mesures de sécurité détaillées avec lignes directrices d'implémentation
+        (compagnon opérationnel d'ISO~27001). \\ \hline
+    \textbf{ISO~27005} & Gestion des risques &
+        Cadre méthodologique pour identifier, analyser, évaluer et traiter les risques
+        de sécurité de l'information. \\ \hline
+    \textbf{ISO~27006} & Certification &
+        Exigences pour les organismes qui auditent et certifient les SMSI. \\ \hline
+\end{tabular}
+\caption{Les normes clés de la famille ISO~27000}
+\end{table}
 
-\begin{itemize}
-    \item \textbf{ISO 27001 :} Exigences pour un Système de Management de la Sécurité de l'Information (SMSI). C'est la norme \textit{certifiable}.
-    \item \textbf{ISO 27002 :} Code de bonne pratique. Liste détaillée des mesures de sécurité (contrôles) à implémenter.
-    \item \textbf{ISO 27005 :} Gestion des risques en sécurité de l'information.
-    \item \textbf{ISO 27006 :} Exigences pour les organismes de certification.
-\end{itemize}
+% ------------------------------------------------------------------------------
+\subsection{ISO~27001. Exigences du Système de Management de la Sécurité de l'Information}
+\label{subsec:iso27001}
+% ------------------------------------------------------------------------------
 
-\subsection{Importance pour l'Audit}
+\begin{boxdef}
+\textbf{ISO~27001~:} Norme certifiable qui définit les \emph{exigences} d'un Système
+de Management de la Sécurité de l'Information (SMSI). Elle impose à l'organisation de
+mettre en place un cycle structuré~: définir le contexte, évaluer les risques, sélectionner
+des mesures de traitement, les implémenter, les surveiller et les améliorer en continu
+(roue de Deming PDCA).
+\end{boxdef}
 
-\begin{enumerate}
-    \item \textbf{Critères d'audit :} ISO 27001 fournit les exigences ("Il faut une politique de sécurité"). L'auditeur vérifie si c'est fait.
-    \item \textbf{Mesures techniques :} ISO 27002 aide l'auditeur à proposer des recommandations techniques précises (ex: "Comment configurer l'authentification ?").
-\end{enumerate}
+L'Annexe~A d'ISO~27001 liste les 93~mesures de contrôle issues d'ISO~27002 parmi
+lesquelles l'organisation sélectionne celles applicables à son contexte, en justifiant
+les exclusions dans la \textbf{Déclaration d'Applicabilité (SoA)}.
+
+\paragraph{Utilisation par l'auditeur.}
+ISO~27001 fournit les \emph{critères d'audit}~: l'auditeur vérifie que chaque exigence
+de la norme est satisfaite. La SoA est le document pivot~: elle indique quelles mesures
+sont retenues, pourquoi, et quel est leur état d'implémentation. C'est sur elle que
+repose le \emph{gap analysis} de sécurité.
 
 \begin{boxlizbiz}
-\textbf{Projet Lizbiz's :}
-Suite à l'audit, la direction de Lizbiz's souhaite rassurer ses clients. Elle décide de se faire certifier \textbf{ISO 27001}. L'auditeur utilisera l'Annexe A de cette norme (qui liste les contrôles obligatoires) comme grille d'évaluation pour le futur audit de certification.
+\textbf{Projet Lizbiz's~:}
+Suite à l'audit, la direction de Lizbiz's souhaite rassurer ses clients et décide
+de se faire certifier \textbf{ISO~27001}. L'auditeur utilisera l'Annexe~A comme
+grille d'évaluation pour le futur audit de certification, en construisant la SoA
+avec les équipes sécurité.
 \end{boxlizbiz}
 
 % ------------------------------------------------------------------------------
-\section{Synthèse : Comment Choisir ?}
+\subsection{ISO~27002. Code de Bonnes Pratiques pour la Sécurité de l'Information}
+\label{subsec:iso27002}
 % ------------------------------------------------------------------------------
 
-L'auditeur combine souvent ces référentiels :
+\begin{boxdef}
+\textbf{ISO~27002:2022~:} Compagnon opérationnel d'ISO~27001. Là où ISO~27001 pose
+les \emph{exigences}, ISO~27002 fournit les \emph{lignes directrices} concrètes pour
+implémenter chacune des 93~mesures référencées en Annexe~A. Ce n'est pas une norme
+certifiable~: c'est un code de bonnes pratiques.
+\end{boxdef}
+
+La version~2022 restructure profondément le référentiel (de 114~mesures en 14~domaines
+vers 93~mesures en 4~thèmes) et introduit 11~nouvelles mesures~: surveillance des
+activités, gestion des configurations, sécurité du cloud, préparation aux incidents.
+
+\paragraph{Structure.} Les 93~mesures sont réparties en quatre thèmes~:
+\begin{itemize}
+    \item \textbf{Organisationnel} (37~mesures)~: politiques, rôles, gestion des risques,
+        intelligence des menaces~;
+    \item \textbf{Humain} (8~mesures)~: sélection, sensibilisation, clauses contractuelles~;
+    \item \textbf{Physique} (14~mesures)~: périmètre, équipements, supports~;
+    \item \textbf{Technologique} (34~mesures)~: authentification, chiffrement, journalisation,
+        filtrage web, gestion des vulnérabilités.
+\end{itemize}
+
+\paragraph{Utilisation par l'auditeur.} ISO~27002 est la référence de premier niveau pour
+tout audit de sécurité~: elle fournit la liste des mesures applicables une fois la SoA
+établie, justifie chaque objectif de contrôle par une recommandation normative
+internationale (renforçant l'opposabilité du rapport), et sert de base au
+\emph{gap analysis}~: écart entre les mesures recommandées et celles effectivement
+implémentées. Elle est structurellement compatible avec COBIT, permettant une
+gouvernance IT unifiée.
+
+% ------------------------------------------------------------------------------
+\subsection{ISO~27005. Gestion des Risques Liés à la Sécurité de l'Information}
+\label{subsec:iso27005}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{ISO~27005:2022~:} Norme méthodologique pour la gestion des risques de sécurité
+de l'information, alignée sur ISO~31000 (management du risque en général). Elle boucle
+le triptyque ISO~27001~/~ISO~27002~/~ISO~27005~: les risques identifiés selon ISO~27005
+justifient le choix des mesures ISO~27002 retenues dans la SoA d'ISO~27001.
+\end{boxdef}
+
+ISO~27005 ne prescrit pas de méthode unique~: elle est compatible avec des approches
+quantitatives (EBIOS~RM, MEHARI, OCTAVE) et qualitatives.
+
+\paragraph{Structure.} Le processus ISO~27005 suit cinq étapes cycliques~:
+\begin{enumerate}
+    \item \textbf{Établissement du contexte~:} périmètre, critères d'évaluation,
+        appétit au risque~;
+    \item \textbf{Identification des risques~:} actifs informationnels, menaces,
+        vulnérabilités, impacts potentiels~;
+    \item \textbf{Analyse des risques~:} estimation de la vraisemblance et de l'impact,
+        calcul du niveau de risque~;
+    \item \textbf{Évaluation des risques~:} comparaison au seuil d'acceptabilité,
+        priorisation~;
+    \item \textbf{Traitement des risques~:} sélection des mesures (réduire, accepter,
+        transférer, éviter), plan de traitement.
+\end{enumerate}
+
+\paragraph{Utilisation par l'auditeur.} L'auditeur mobilise ISO~27005 pour évaluer
+la qualité du processus de gestion des risques de l'entité~: la méthodologie est-elle
+formalisée et révisée~? La cartographie est-elle exhaustive~? Les risques résiduels
+ont-ils été acceptés formellement par le niveau décisionnel approprié~? ISO~27005
+est complémentaire de Risk~IT~: Risk~IT couvre les risques IT au sens large
+(gouvernance, valeur, processus)~; ISO~27005 se concentre sur les seuls risques
+de sécurité de l'information.
+
+% ------------------------------------------------------------------------------
+\subsection{Importance pour l'Audit}
+\label{subsec:iso27000-audit}
+% ------------------------------------------------------------------------------
+
+Les trois normes opérationnelles de la famille forment un triptyque indissociable
+du point de vue de l'auditeur~:
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{2.4cm}|p{4.0cm}|p{5.6cm}|}
+    \hline
+    \rowcolor{blue!10}
+    \textbf{Norme} & \textbf{Rôle en audit} & \textbf{Question clé} \\ \hline
+    ISO~27001 & Critères d'audit (exigences) &
+        Les exigences du SMSI sont-elles toutes satisfaites~? \\ \hline
+    ISO~27002 & Référentiel de mesures (recommandations) &
+        Les mesures de sécurité retenues sont-elles implémentées et efficaces~? \\ \hline
+    ISO~27005 & Fondement de la sélection des mesures &
+        Le processus de gestion des risques est-il rigoureux et formalisé~? \\ \hline
+\end{tabular}
+\caption{Rôles respectifs des normes ISO~27000 en audit}
+\end{table}
+% ==============================================================================
+\section{Référentiels Complémentaires}
+\label{sec:referentiels-complementaires}
+% ==============================================================================
+
+Les référentiels présentés dans les sections précédentes forment un socle. Ils sont complétés par
+un écosystème normatif spécialisé~: chacun des référentiels suivants aborde le SI sous un angle
+précis, et leur valeur augmente lorsqu'ils sont utilisés de façon articulée plutôt qu'isolée.
+
+% ------------------------------------------------------------------------------
+\subsection{Val~IT. Gouvernance de la Valeur des Investissements IT}
+\label{subsec:val-it}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{Val~IT~:} Référentiel publié par l'ISACA en~2006 (révisé en~2008), conçu comme
+complément de COBIT. Là où COBIT gouverne les \emph{processus} IT, Val~IT gouverne la
+\emph{valeur} que ces processus créent pour l'organisation.
+\end{boxdef}
+
+Val~IT répond à la question fondamentale des directions générales~: \emph{l'investissement
+consenti dans l'informatique produit-il le retour attendu~?}
+
+\paragraph{Structure.} Val~IT s'articule en trois domaines couvrant 22~processus de
+gestion~: la \emph{gouvernance de la valeur} (cadre de décision), la \emph{gestion du
+portefeuille} (priorisation des projets) et la \emph{gestion des bénéfices} (réalisation
+effective des gains après mise en service). Le \textbf{business case} en est la pièce
+maîtresse~: aucun projet ne devrait être lancé sans une estimation documentée de sa valeur
+nette.
+
+\paragraph{Utilisation par l'auditeur.} L'auditeur mobilise Val~IT pour évaluer~:
+\begin{itemize}
+    \item l'existence et la qualité des business cases des projets IT en cours ou livrés~;
+    \item la gouvernance du portefeuille IT~: les projets sont-ils priorisés selon des critères
+        explicites alignés sur la stratégie~?
+    \item le suivi de la réalisation des bénéfices~: une fois l'application livrée, vérifie-t-on
+        que les gains promis ont bien été obtenus~?
+\end{itemize}
+
+Val~IT s'appuie sur COBIT pour l'évaluation des processus sous-jacents et est complémentaire de
+COSO~: COSO évalue le contrôle interne~; Val~IT évalue si les investissements qui l'alimentent
+sont justifiés.
+
+% ------------------------------------------------------------------------------
+\subsection{Risk~IT. Gouvernance des Risques Liés aux Technologies de l'Information}
+\label{subsec:risk-it}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{Risk~IT~:} Publié par l'ISACA en~2009, troisième pilier du triptyque
+COBIT~/~Val~IT~/~Risk~IT. Il couvre l'ensemble des risques IT susceptibles d'affecter les
+objectifs de l'organisation, qu'ils soient techniques, organisationnels ou stratégiques.
+\end{boxdef}
+
+Risk~IT distingue explicitement les \emph{risques IT propres} (panne, vulnérabilité,
+obsolescence) des \emph{risques métier liés à l'IT} (dysfonctionnements de processus métier
+causés par une défaillance IT).
+
+\paragraph{Structure.} Risk~IT est organisé en trois domaines~:
+\begin{itemize}
+    \item \textbf{Gouvernance des risques IT (RG)~:} cadre de gestion des risques, appétit
+        au risque, culture du risque~;
+    \item \textbf{Évaluation des risques IT (RE)~:} identification, analyse et cartographie~;
+    \item \textbf{Réponse aux risques IT (RR)~:} mise en œuvre des réponses (acceptation,
+        réduction, transfert, évitement).
+\end{itemize}
+
+\paragraph{Utilisation par l'auditeur.} Risk~IT permet d'évaluer la maturité du processus de
+gestion des risques de l'entité~: l'organisation dispose-t-elle d'une cartographie formalisée et
+mise à jour~? L'appétit au risque est-il défini~? Les risques résiduels sont-ils acceptés
+formellement par le niveau décisionnel approprié~?
+
+\begin{boxlizbiz}
+\textbf{Projet Lizbiz's~:}
+La DSI de Lizbiz's ne dispose d'aucune cartographie des risques IT. L'auditeur s'appuiera sur le
+domaine~RE de Risk~IT pour structurer la cartographie préliminaire de la mission, puis sur le
+domaine~RG pour recommander l'instauration d'un appétit au risque formalisé.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\subsection{NIST SP~800-53. Catalogue de Contrôles de Sécurité}
+\label{subsec:nist-800-53}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{NIST SP~800-53~:} Publication spéciale du National Institute of Standards and
+Technology (États-Unis), révision~5 (2020). Catalogue exhaustif de contrôles de sécurité et
+de protection de la vie privée, à portée initialement fédérale américaine mais devenu une
+référence internationale.
+\end{boxdef}
+
+À la différence d'ISO~27001 qui définit des exigences organisationnelles, SP~800-53 spécifie des
+contrôles \emph{techniques et procéduraux granulaires} portant directement sur le système.
+
+\paragraph{Structure.} La révision~5 comprend 20~familles de contrôles~; parmi les plus
+pertinentes pour l'audit~:
+\begin{itemize}
+    \item \textbf{AC} (\emph{Access Control})~: 25~contrôles sur la gestion des accès,
+        des privilèges et des sessions~;
+    \item \textbf{AU} (\emph{Audit and Accountability})~: 16~contrôles sur la journalisation
+        et la traçabilité~;
+    \item \textbf{CM} (\emph{Configuration Management})~: inventaires, lignes de base de
+        configuration, gestion des changements~;
+    \item \textbf{IR} (\emph{Incident Response})~: détection, réponse et récupération~;
+    \item \textbf{SC} (\emph{System and Communications Protection})~: chiffrement, séparation
+        des réseaux.
+\end{itemize}
+
+\paragraph{Utilisation par l'auditeur.} SP~800-53 sert de check-list lors des audits techniques~:
+vérification de la configuration des systèmes, construction de la matrice de couverture des
+contrôles, évaluation des accès dans des environnements complexes ou multi-couches. Il est souvent
+utilisé en complément d'ISO~27001~: ISO~27001 fournit le cadre de management~;
+SP~800-53 fournit le détail technique des contrôles.
+
+% ------------------------------------------------------------------------------
+\subsection{CMMi. Modèle d'Évaluation de la Maturité des Processus IT}
+\label{subsec:cmmi}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{CMMI (\emph{Capability Maturity Model Integration})~:} Développé par le Software
+Engineering Institute (SEI) de l'Université Carnegie~Mellon. La version actuelle,
+CMMI~v2.0 (2018), mesure le \emph{degré de maturité} des processus d'une organisation sur
+une échelle en cinq niveaux~: il ne prescrit pas de solutions techniques mais garantit que les
+résultats sont prévisibles et améliorables.
+\end{boxdef}
+
+\paragraph{L'échelle de maturité.}
+\begin{enumerate}
+    \item \textbf{Initial~:} processus imprévisibles, réactifs, dépendants des individus.
+    \item \textbf{Géré~:} processus gérés au niveau des projets (planification, surveillance).
+    \item \textbf{Défini~:} processus documentés, standardisés, proactifs à l'échelle de
+        l'organisation.
+    \item \textbf{Géré quantitativement~:} processus mesurés à l'aide d'indicateurs
+        quantitatifs.
+    \item \textbf{En optimisation~:} amélioration continue basée sur les données~; innovation
+        intégrée au processus.
+\end{enumerate}
+
+\paragraph{Utilisation par l'auditeur.} CMMi est l'outil de référence pour évaluer la maturité
+de la fonction Études (qualité des processus de développement, tests, documentation) et pour
+positionner la DSI sur l'échelle 1--5, donnant une vue synthétique communicable à la direction.
+L'indice de maturité $M = \tau_c \times 5$ utilisé dans la feuille de synthèse de l'outil d'audit
+reflète directement l'esprit de cette échelle. CMMi est complémentaire de COBIT (gouvernance des
+processus) et de Val~IT (valeur des processus).
+
+% ------------------------------------------------------------------------------
+\subsection{ITIL. Bibliothèque des Bonnes Pratiques des Services IT}
+\label{subsec:itil}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{ITIL (\emph{Information Technology Infrastructure Library})~:} Recueil de bonnes
+pratiques en gestion des services IT (\emph{ITSM}), maintenu par AXELOS. La version
+actuelle, \textbf{ITIL~4} (2019), abandonne la structure en cinq livres au profit d'un
+\emph{Système de Valeur des Services} (SVS) articulé autour de 34~pratiques de gestion.
+\end{boxdef}
+
+ITIL structure la gestion des services IT du point de vue de leur \emph{valeur pour
+l'utilisateur}. Il est la référence mondiale des centres de services, des équipes d'exploitation
+et des helpdesks. La distinction avec COBIT est nette~: COBIT se demande \emph{ce que} l'IT
+doit accomplir~; ITIL se demande \emph{comment} le faire dans une logique de service.
+
+\paragraph{Pratiques clés pertinentes pour l'audit.}
+\begin{itemize}
+    \item \textbf{Gestion des incidents~:} processus de restauration rapide du service~; référence
+        pour l'audit des procédures d'incident~;
+    \item \textbf{Gestion des problèmes~:} identification et résolution des causes profondes des
+        incidents récurrents~;
+    \item \textbf{Gestion des changements~:} contrôle de toute modification apportée au SI~;
+    \item \textbf{Gestion des niveaux de service~:} définition, suivi et révision des SLA~;
+    \item \textbf{Gestion des actifs IT~:} inventaire et suivi du cycle de vie~;
+    \item \textbf{Gestion des connaissances~:} documentation et capitalisation des savoirs IT.
+\end{itemize}
+
+\paragraph{Utilisation par l'auditeur.} L'auditeur utilise ITIL comme grille de référence pour
+évaluer la qualité des processus d'exploitation en régime normal, vérifier que les SLA sont
+définis et respectés, et auditer la gestion des changements~: toute modification de production
+devrait suivre un processus de demande, d'évaluation, d'autorisation, de test et de traçabilité.
+
+% ------------------------------------------------------------------------------
+\subsection{ISO~20000. Système de Management des Services IT}
+\label{subsec:iso20000}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{ISO/IEC~20000-1:2018~:} Norme internationale de gestion des services IT, directement
+dérivée de BS~15000. ISO~20000 est à ITIL ce qu'ISO~27001 est à ISO~27002~: elle transforme les
+bonnes pratiques en exigences \emph{certifiables}.
+\end{boxdef}
+
+ISO~20000 couvre la planification, la conception, la transition, la livraison et l'amélioration
+des services IT en imposant une approche systémique et documentée.
+
+\paragraph{Utilisation par l'auditeur.}
+\begin{itemize}
+    \item \emph{Audit de certification~:} vérification de la conformité du SMS aux exigences de
+        la norme en vue d'une certification tierce partie~;
+    \item \emph{Audit de conformité interne~:} évaluation de l'adéquation des processus de
+        gestion de services (helpdesk, incidents, changements, niveaux de service) aux exigences
+        normatives~;
+    \item \emph{Benchmark de maturité~:} comparaison du niveau de maturité du SMS avec les
+        exigences normatives, sans ambition de certification.
+\end{itemize}
+
+Une organisation certifiée ISO~20000 offre à l'auditeur une présomption de maturité des
+processus de gestion de services~: les certifications ISO~20000 et les rapports SOC~1
+constituent des éléments probants importants lors de l'audit de fournisseurs de services IT
+externalisés.
+
+% ------------------------------------------------------------------------------
+\subsection{ITAF. Cadre de Référence pour l'Audit des Systèmes d'Information}
+\label{subsec:itaf}
+% ------------------------------------------------------------------------------
+
+\begin{boxdef}
+\textbf{ITAF (\emph{IT Assurance Framework})~:} Publié par l'ISACA, cadre méthodologique
+spécifique à la \emph{pratique de l'audit des SI}. Là où COBIT, ITIL ou ISO~27001 gouvernent
+l'IT, l'ITAF gouverne la \emph{façon dont l'auditeur} conduit ses missions. Il complète les
+normes générales d'audit (IIA, INTOSAI) par des directives propres aux systèmes d'information.
+\end{boxdef}
+
+\paragraph{Structure.} L'ITAF est organisé en trois niveaux~:
+\begin{itemize}
+    \item \textbf{Standards généraux~:} principes d'indépendance, compétences requises, éthique
+        professionnelle~;
+    \item \textbf{Standards de performance~:} planification, supervision, documentation,
+        collecte de preuves~;
+    \item \textbf{Standards de reporting~:} structure du rapport, conclusions,
+        recommandations.
+\end{itemize}
+
+\paragraph{Utilisation par l'auditeur.} L'ITAF est la référence professionnelle directe de
+l'auditeur certifié CISA. Il définit le niveau de diligence attendu pour chaque phase de la
+mission, précise les types de preuves acceptables (observation, inspection de documents,
+ré-exécution de contrôles, interrogation) et encadre la communication des conclusions (clarté,
+objectivité, complétude, opportunité). Il est également la référence pour l'évaluation des
+\emph{contrôles compensatoires}~: lorsqu'un contrôle attendu est absent, l'auditeur recherche
+si un contrôle compensatoire produit une assurance équivalente. L'ITAF est méthodologiquement
+neutre~: il est compatible avec tous les référentiels techniques (COBIT, ISO, NIST).
+
+% ==============================================================================
+\section{Synthèse~: Comment Choisir~?}
+\label{sec:synthese-referentiels}
+% ==============================================================================
+
+L'auditeur combine ces référentiels selon le périmètre et les objectifs de la mission. Les trois
+piliers fondateurs couvrent les angles stratégiques essentiels~:
 
 \begin{table}[h!]
 \centering
@@ -151,13 +565,50 @@ L'auditeur combine souvent ces référentiels :
     \toprule
     \textbf{Référentiel} & \textbf{Angle d'attaque} & \textbf{Question clé pour l'auditeur} \\
     \midrule
-    \textbf{COSO} & Gouvernance Globale & Les contrôles internes sont-ils bien conçus ? \\
-    \textbf{COBIT} & Processus IT & L'informatique est-elle bien gérée ? \\
-    \textbf{ISO 27001} & Sécurité Info & Le système est-il sécurisé et certifiable ? \\
+    \textbf{COSO} & Gouvernance Globale & Les contrôles internes sont-ils bien conçus~? \\
+    \textbf{COBIT} & Processus IT & L'informatique est-elle bien gérée~? \\
+    \textbf{ISO~27001} & Sécurité Info & Le système est-il sécurisé et certifiable~? \\
     \bottomrule
 \end{tabular}
-\caption{Comparatif des référentiels}
+\caption{Comparatif des référentiels fondateurs}
 \end{table}
+
+Les référentiels complémentaires affinent cette lecture selon le domaine investigué~:
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\caption{Synthèse des référentiels complémentaires~: portée, usage en audit et domaine associé}
+\label{tab:synthese-referentiels}
+\begin{tabular}{|p{2.4cm}|p{2.8cm}|p{4.2cm}|p{2.8cm}|}
+    \hline
+    \rowcolor{gray!20}
+    \textbf{Référentiel} & \textbf{Portée principale} &
+    \textbf{Usage en audit} & \textbf{Domaine associé} \\ \hline
+    Val~IT & Valeur des investissements IT &
+    Business cases, portefeuille IT, bénéfices réalisés & Gouvernance DSI \\ \hline
+    Risk~IT & Risques IT (gouvernance) &
+    Cartographie des risques IT, appétit au risque & Sécurité / Risques \\ \hline
+    NIST SP~800-53 & Contrôles de sécurité (technique) &
+    Check-list contrôles techniques, matrice de couverture & Sécurité \\ \hline
+    ISO~27002 & Bonnes pratiques sécurité &
+    Gap analysis mesures de sécurité, critères d'audit & Sécurité \\ \hline
+    ISO~27005 & Risques sécurité de l'information &
+    Qualité du processus de gestion des risques sécurité & Sécurité \\ \hline
+    CMMi & Maturité des processus IT &
+    Maturité DSI/Étude, indice de maturité 0--5 & Études / Synthèse \\ \hline
+    ITIL & Gestion des services IT &
+    Exploitation, incidents, changements, SLA & Support / Continuité \\ \hline
+    ISO~20000 & SMS certifiable (ITSM) &
+    Audit de certification/conformité ITSM, SOC prestataires & Support / Cloud \\ \hline
+    ITAF & Méthodologie d'audit des SI &
+    Diligences, preuves, reporting, contrôles compensatoires & Toutes missions \\ \hline
+\end{tabular}
+\end{table}
+
+Le tableau synoptique ci-dessous présente le comparatif complet des référentiels fondateurs en
+fonction de leur cible, de leur focus auditeur et du livrable type attendu~:
 
 \begin{table}[h!]
 \centering
@@ -165,10 +616,24 @@ L'auditeur combine souvent ces référentiels :
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|l|l|l|l|}
     \hline
-    \rowcolor{blue!10} \textbf{Référentiel} & \textbf{Cible} & \textbf{Focus Auditeur} & \textbf{Livrable type} \\ \hline
-    \textbf{COSO} & DG / Audit Interne & Contrôle Interne Global & Rapport de conformité Loi Sarbanes-Oxley \\ \hline
-    \textbf{COBIT} & DSI / Métiers & Gouvernance et Alignement & Matrice de maturité des processus SI \\ \hline
-    \textbf{ISO 27001} & RSSI / Sécurité & Management de la Sécurité & Certification SMSI (Audit de conformité) \\ \hline
+    \rowcolor{blue!10} \textbf{Référentiel} & \textbf{Cible} & \textbf{Focus Auditeur} &
+    \textbf{Livrable type} \\ \hline
+    \textbf{COSO} & DG / Audit Interne & Contrôle Interne Global &
+    Rapport de conformité Loi Sarbanes-Oxley \\ \hline
+    \textbf{COBIT} & DSI / Métiers & Gouvernance et Alignement &
+    Matrice de maturité des processus SI \\ \hline
+    \textbf{ISO~27001} & RSSI / Sécurité & Management de la Sécurité &
+    Certification SMSI (Audit de conformité) \\ \hline
 \end{tabular}
-\caption{Tableau comparatif des référentiels d'audit}
+\caption{Tableau comparatif des référentiels d'audit fondateurs}
 \end{table}
+
+\begin{boxlizbiz}
+\textbf{Synthèse pour Lizbiz's~:}
+Un audit complet du SI de Lizbiz's mobilisera~: COSO pour la revue du contrôle interne global,
+COBIT pour la gouvernance IT et la maturité des processus, ISO~27001/27002 pour la sécurité,
+Val~IT pour évaluer la pertinence des investissements informatiques récents, Risk~IT et
+ISO~27005 pour la cartographie des risques, ITIL pour l'audit de l'exploitation et des niveaux
+de service, CMMi pour positionner la maturité de la DSI, et ITAF comme boussole méthodologique
+tout au long de la mission.
+\end{boxlizbiz}
