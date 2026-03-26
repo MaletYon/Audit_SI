@@ -1,0 +1,7216 @@
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.17)  21 MAR 2026 18:27
+ restricted system commands enabled.
+ file:line:error style messages enabled.
+**Cours.tex
+(./Cours.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "C:/Users/user/AppData/Local/MiKTeX/
+luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/fo
+ntloader-2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "C:/Users/user/AppData/Local/MiKTeX/
+luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (C:/Users/user/AppData/
+Local/Programs/MiKTeX/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/base/bk12.clo
+File: bk12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from C:/Users/user/AppData/Local/Mi
+KTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count273
+\c@chapter=\count274
+\c@section=\count275
+\c@subsection=\count276
+\c@subsubsection=\count277
+\c@paragraph=\count278
+\c@subparagraph=\count279
+\c@figure=\count280
+\c@table=\count281
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen147
+)
+(./Style_cours.sty
+Package: Style_cours 2026/03/17 Feuille de style de mes cours — v2
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xparse
+.sty (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-luat
+ex.def
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count282
+Inserting `l3color' in `luaotfload.parse_color'.))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec-luatex
+.sty
+Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count283
+\l__fontspec_language_int=\count284
+\l__fontspec_strnum_int=\count285
+\l__fontspec_tmp_int=\count286
+\l__fontspec_tmpa_int=\count287
+\l__fontspec_tmpb_int=\count288
+\l__fontspec_tmpc_int=\count289
+\l__fontspec_em_int=\count290
+\l__fontspec_emdef_int=\count291
+\l__fontspec_strong_int=\count292
+\l__fontspec_strongdef_int=\count293
+\l__fontspec_tmpa_dim=\dimen148
+\l__fontspec_tmpb_dim=\dimen149
+\l__fontspec_tmpc_dim=\dimen150
+ (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg)))
+luaotfload | cache : Lookup cache loaded from C:/Users/user/AppData/Local/MiKTeX
+/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+
+Package fontspec Info: 
+(fontspec)             Font family 'LatinModernRoman(0)' created for font
+(fontspec)             'Latin Modern Roman' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Latin Modern
+(fontspec)             Roman:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"name:Latin Modern
+(fontspec)             Roman/B:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"name:Latin
+(fontspec)             Modern
+(fontspec)             Roman/I:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"name:Latin
+(fontspec)             Modern
+(fontspec)             Roman/BI:mode=node;script=latn;language=dflt;+tlig;"
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty
+Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@afrikaans=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@ancientgreek=\language3
+\l@armenian=\language4
+\l@assamese=\language5
+\l@basque=\language6
+\l@belarusian=\language7
+\l@bengali=\language8
+\l@bokmal=\language9
+\l@bulgarian=\language10
+\l@catalan=\language11
+\l@churchslavonic=\language12
+\l@classiclatin=\language13
+\l@coptic=\language14
+\l@croatian=\language15
+\l@czech=\language16
+\l@danish=\language17
+\l@dutch=\language18
+\l@esperanto=\language19
+\l@estonian=\language20
+\l@ethiopic=\language21
+\l@finnish=\language22
+\l@french=\language23
+\l@friulan=\language24
+\l@galician=\language25
+\l@georgian=\language26
+\l@german=\language27
+\l@greek=\language28
+\l@gujarati=\language29
+\l@hindi=\language30
+\l@hungarian=\language31
+\l@icelandic=\language32
+\l@indonesian=\language33
+\l@interlingua=\language34
+\l@irish=\language35
+\l@italian=\language36
+\l@kannada=\language37
+\l@kurmanji=\language38
+\l@latin=\language39
+\l@latvian=\language40
+\l@lithuanian=\language41
+\l@liturgicallatin=\language42
+\l@macedonian=\language43
+\l@malayalam=\language44
+\l@marathi=\language45
+\l@mongolian=\language46
+\l@mongolianlmc=\language47
+\l@monogreek=\language48
+\l@ngerman=\language49
+\l@nynorsk=\language50
+\l@occitan=\language51
+\l@oriya=\language52
+\l@pali=\language53
+\l@panjabi=\language54
+\l@piedmontese=\language55
+\l@polish=\language56
+\l@portuguese=\language57
+\l@romanian=\language58
+\l@romansh=\language59
+\l@russian=\language60
+\l@sanskrit=\language61
+\l@serbian=\language62
+\l@serbianc=\language63
+\l@slovak=\language64
+\l@slovenian=\language65
+\l@spanish=\language66
+\l@swedish=\language67
+\l@swissgerman=\language68
+\l@tamil=\language69
+\l@telugu=\language70
+\l@thai=\language71
+\l@turkish=\language72
+\l@turkmen=\language73
+\l@ukenglish=\language74
+\l@ukrainian=\language75
+\l@uppersorbian=\language76
+\l@usenglishmax=\language77
+\l@welsh=\language78
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count294
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
+\U@D=\dimen151
+\l@unhyphenated=\language79
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+Package babel Info: Configuration files are deprecated, as
+(babel)             they can break document portability.
+(babel)             Reported on input line 4206.
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/fr/babel-
+french.tex)
+Package babel Info: Importing data for french
+(babel)             from babel-fr.ini. Reported on input line 4330.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/loa
+dhyph-fr.tex UTF-8 French hyphenation patterns
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/tex
+/hyph-fr.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/quo
+te/hyph-quote-fr.tex))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/fr/babel-
+french.tex))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count295
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\csq@reset=\count296
+\csq@gtype=\count297
+\csq@glevel=\count298
+\csq@qlevel=\count299
+\csq@maxlvl=\count300
+\csq@tshold=\count301
+\csq@ltx@everypar=\toks18
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype.sty
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
+\MT@toks=\toks19
+\MT@tempbox=\box53
+\MT@count=\count302
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
+\MT@prot@toks=\toks20
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen152
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count303
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype-luat
+ex.def
+File: microtype-luatex.def 2026/03/01 v3.2d Definitions specific to luatex (RS)
+
+Lua module: microtype 2026/03/01 v3.2d microtype module.
+Module microtype Info: overwriting function `keepligature' on input line 63
+LaTeX Info: Redefining \lsstyle on input line 779.
+LaTeX Info: Redefining \lslig on input line 779.
+\MT@outer@space=\skip51
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count304
+\Gm@cntv=\count305
+\c@Gm@tempcnt=\count306
+\Gm@bindingoffset=\dimen153
+\Gm@wd@mp=\dimen154
+\Gm@odd@mp=\dimen155
+\Gm@even@mp=\dimen156
+\Gm@layoutwidth=\dimen157
+\Gm@layoutheight=\dimen158
+\Gm@layouthoffset=\dimen159
+\Gm@layoutvoffset=\dimen160
+\Gm@dimlist=\toks21
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.def
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen161
+\ar@mcellbox=\box54
+\extrarowheight=\dimen162
+\NC@list=\toks22
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box55
+)
+\everycr=\toks23
+\minrowclearance=\skip54
+\rownum=\count307
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.cf
+g
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 106.
+)
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count308
+\float@exts=\toks24
+\float@box=\box56
+\@float@everytoks=\toks25
+\@floatcapt=\box57
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen165
+\WF@size=\dimen166
+\c@WF@wrappedlines=\count309
+\WF@box=\box58
+\WF@everypar=\toks26
+Package: wrapfig 2003/01/31  v 3.6
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz.s
+ty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.sty
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil-
+common.tex
+\pgfutil@everybye=\toks27
+\pgfutil@tempdima=\dimen167
+\pgfutil@tempdimb=\dimen168
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil-
+latex.def
+\pgfutil@abb=\box59
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfrcs.c
+ode.tex
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore.s
+ty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgfsys.s
+ty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsys
+.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys.
+code.tex
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeysl
+ibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks30
+))
+\pgf@x=\dimen169
+\pgf@y=\dimen170
+\pgf@xa=\dimen171
+\pgf@ya=\dimen172
+\pgf@xb=\dimen173
+\pgf@yb=\dimen174
+\pgf@xc=\dimen175
+\pgf@yc=\dimen176
+\pgf@xd=\dimen177
+\pgf@yd=\dimen178
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count310
+\c@pgf@countb=\count311
+\c@pgf@countc=\count312
+\c@pgf@countd=\count313
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
+\pgf@sys@id@count=\count314
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.cf
+g
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-luatex.def
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsys
+-luatex.def
+File: pgfsys-luatex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsys
+-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsys
+softpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count315
+\pgfsyssoftpath@bigbuffer@items=\count316
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsys
+protocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code.
+tex
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathutil.c
+ode.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparser
+.code.tex
+\pgfmath@dimen=\dimen179
+\pgfmath@count=\count317
+\pgfmath@box=\box60
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.basic.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.trigonometric.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.random.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.comparison.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.base.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.round.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.misc.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfuncti
+ons.integerarithmetics.code.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathcalc.c
+ode.tex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloat.
+code.tex
+\c@pgfmathroundto@lastzeros=\count318
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.t
+ex)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+points.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen180
+\pgf@picmaxx=\dimen181
+\pgf@picminy=\dimen182
+\pgf@picmaxy=\dimen183
+\pgf@pathminx=\dimen184
+\pgf@pathmaxx=\dimen185
+\pgf@pathminy=\dimen186
+\pgf@pathmaxy=\dimen187
+\pgf@xx=\dimen188
+\pgf@xy=\dimen189
+\pgf@yx=\dimen190
+\pgf@yy=\dimen191
+\pgf@zx=\dimen192
+\pgf@zy=\dimen193
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+pathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen194
+\pgf@path@lasty=\dimen195
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+pathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen196
+\pgf@shorten@start@additional=\dimen197
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+scopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count319
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+graphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen198
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+transformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen199
+\pgf@pt@y=\dimen256
+\pgf@pt@temp=\dimen257
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+quick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+objects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+pathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+arrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen258
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+shade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen259
+\pgf@sys@shading@range@num=\count320
+\pgf@shadingcount=\count321
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+image.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+external.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box64
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+layers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+transparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+patterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore
+rdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodules
+hapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box65
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodulep
+lot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfcom
+p-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen260
+\pgf@nodesepend=\dimen261
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfcom
+p-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgffor.sty
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.st
+y
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys.
+code.tex))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/pgfmath.sty
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code.
+tex))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor.c
+ode.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen262
+\pgffor@skip=\dimen263
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibra
+ryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count322
+\pgfplotmarksize=\dimen264
+)
+\tikz@lastx=\dimen265
+\tikz@lasty=\dimen266
+\tikz@lastxsaved=\dimen267
+\tikz@lastysaved=\dimen268
+\tikz@lastmovetox=\dimen269
+\tikz@lastmovetoy=\dimen270
+\tikzleveldistance=\dimen271
+\tikzsiblingdistance=\dimen272
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count323
+\tikznumberofchildren=\count324
+\tikznumberofcurrentchild=\count325
+\tikz@fig@count=\count326
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodulem
+atrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count327
+\pgfmatrixcurrentcolumn=\count328
+\pgf@matrix@numberofcolumns=\count329
+)
+\tikz@expandcount=\count330
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/p
+gflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibra
+ryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen273
+\pgfarrowlength=\dimen274
+\pgfarrowwidth=\dimen275
+\pgfarrowlinewidth=\dimen276
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibra
+ryfadings.code.tex
+File: pgflibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz
+/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen277
+\lightrulewidth=\dimen278
+\cmidrulewidth=\dimen279
+\belowrulesep=\dimen280
+\belowbottomsep=\dimen281
+\aboverulesep=\dimen282
+\abovetopsep=\dimen283
+\cmidrulesep=\dimen284
+\cmidrulekern=\dimen285
+\defaultaddspace=\dimen286
+\@cmidla=\count331
+\@cmidlb=\count332
+\@aboverulesep=\dimen287
+\@belowrulesep=\dimen288
+\@thisruleclass=\count333
+\@lastruleclass=\count334
+\@thisrulewidth=\dimen289
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count335
+\LTcapwidth=\dimen290
+\LT@head=\box70
+\LT@firsthead=\box71
+\LT@foot=\box72
+\LT@lastfoot=\box73
+\LT@gbox=\box74
+\LT@cols=\count336
+\LT@rows=\count337
+\c@LT@tables=\count338
+\c@LT@chunks=\count339
+\LT@p@ftn=\toks39
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen291
+\TX@old@table=\dimen292
+\TX@old@col=\dimen293
+\TX@target=\dimen294
+\TX@delta=\dimen295
+\TX@cols=\count340
+\TX@ftn=\toks40
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip59
+\multirow@cntb=\count341
+\multirow@dima=\skip60
+\bigstrutjot=\dimen296
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip61
+
+For additional information on amsmath, use the `?' option.
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks41
+\ex@=\dimen297
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen298
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count342
+LaTeX Info: Redefining \frac on input line 235.
+\uproot@=\count343
+\leftroot@=\count344
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count345
+\DOTSCASE@=\count346
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box75
+\strutbox@=\box76
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen299
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count347
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count348
+\dotsspace@=\muskip17
+\c@parentequation=\count349
+\dspbrk@lvl=\count350
+\tag@help=\toks42
+\row@=\count351
+\column@=\count352
+\maxfields@=\count353
+\andhelp@=\toks43
+\eqnshift@=\dimen300
+\alignsep@=\dimen301
+\tagshift@=\dimen302
+\tagwidth@=\dimen303
+\totwidth@=\dimen304
+\lineht@=\dimen305
+\@envbody=\toks44
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks45
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks46
+\thm@bodyfont=\toks47
+\thm@headfont=\toks48
+\thm@notefont=\toks49
+\thm@headpunct=\toks50
+\thm@preskip=\skip64
+\thm@postskip=\skip65
+\thm@headsep=\skip66
+\dth@everypar=\toks51
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks52
+\verbatim@line=\toks53
+\verbatim@in@stream=\read4
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.st
+y
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box77
+\tcb@upperbox=\box78
+\tcb@lowerbox=\box79
+\tcb@phantombox=\box80
+\c@tcbbreakpart=\count354
+\c@tcblayer=\count355
+\c@tcolorbox@number=\count356
+\l__tcobox_tmpa_box=\box81
+\l__tcobox_tmpa_dim=\dimen306
+\tcb@temp=\box82
+\tcb@temp=\box83
+\tcb@temp=\box84
+\tcb@temp=\box85
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbraster.code
+.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.9.0'
+\c@tcbrastercolumn=\count357
+\c@tcbrasterrow=\count358
+\c@tcbrasternum=\count359
+\c@tcbraster=\count360
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbskins.code.
+tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tikzfill/tikzfill.image.
+sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tikzfill/tikzfill-common
+.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tikzfill/tikzlibraryfill
+.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box86
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbskinsjigsaw
+.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbbreakable.c
+ode.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.st
+y
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box87
+\tcb@totalupperbox=\box88
+\tcb@totallowerbox=\box89
+ (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbhooks.code.
+tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbtheorems.co
+de.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbfitting.cod
+e.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
+\tcbfitdim=\dimen307
+\tcb@lowerfitdim=\dimen308
+\tcb@upperfitdim=\dimen309
+\tcb@cur@hbadness=\count361
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistingsutf
+8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistings.co
+de.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.sty
+\lst@mode=\count362
+\lst@gtempboxa=\box90
+\lst@token=\toks54
+\lst@length=\count363
+\lst@currlwidth=\dimen310
+\lst@column=\count364
+\lst@pos=\count365
+\lst@lostspace=\dimen311
+\lst@width=\dimen312
+\lst@newlines=\count366
+\lst@lineno=\count367
+\lst@maxwidth=\dimen313
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count368
+\lst@skipnumbers=\count369
+\lst@framebox=\box91
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcblistingscor
+e.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.9.0'
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbprocessing.
+code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.9.0'
+)
+\c@tcblisting=\count370
+))
+Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
+Library `listings` is loaded instead. on input line 29.
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbexternal.co
+de.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.9.0'
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbmagazine.co
+de.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.9.0'
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbvignette.co
+de.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.9.0'
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcbposter.code
+.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.9.0'
+)) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip67
+\enit@outerparindent=\dimen314
+\enit@toks=\toks55
+\enit@inbox=\box92
+\enit@count@id=\count371
+\enitdp@description=\count372
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lstaddons/lstautogobble.
+sty
+Package: lstautogobble 2012/05/03 v0.1 Implements 'autogobble' option for 'list
+ings'
+\lstag@spacecount=\count373
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip68
+\f@nch@offset@elh=\skip69
+\f@nch@offset@erh=\skip70
+\f@nch@offset@olh=\skip71
+\f@nch@offset@orh=\skip72
+\f@nch@offset@elf=\skip73
+\f@nch@offset@erf=\skip74
+\f@nch@offset@olf=\skip75
+\f@nch@offset@orf=\skip76
+\f@nch@height=\skip77
+\f@nch@footalignment=\skip78
+\f@nch@widthL=\skip79
+\f@nch@widthC=\skip80
+\f@nch@widthR=\skip81
+\@temptokenb=\toks56
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefinek
+eys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.st
+y
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds.
+sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks57
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettitl
+estring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count374
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.st
+y
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen315
+\Hy@linkcounter=\count375
+\Hy@pagecounter=\count376
+ (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count377
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4072.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4072.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4072
+.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count378
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen316
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.
+sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count379
+\Field@Width=\dimen317
+\Fld@charsize=\dimen318
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring ON on input line 6102.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count380
+\c@Item=\count381
+\c@Hfootnote=\count382
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
+\Fld@listcount=\count383
+\c@bookmark@seq@number=\count384
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfile
+check.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/uniquecounter/uniqueco
+unter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip82
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/doi/doi.sty
+Package: doi 2018/09/09 handle doi numbers
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count385
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count386
+\c@listtotal=\count387
+\c@listcount=\count388
+\c@liststart=\count389
+\c@liststop=\count390
+\c@citecount=\count391
+\c@citetotal=\count392
+\c@multicitecount=\count393
+\c@multicitetotal=\count394
+\c@instcount=\count395
+\c@maxnames=\count396
+\c@minnames=\count397
+\c@maxitems=\count398
+\c@minitems=\count399
+\c@citecounter=\count400
+\c@maxcitecounter=\count401
+\c@savedcitecounter=\count402
+\c@uniquelist=\count403
+\c@uniquename=\count404
+\c@refsection=\count405
+\c@refsegment=\count406
+\c@maxextratitle=\count407
+\c@maxextratitleyear=\count408
+\c@maxextraname=\count409
+\c@maxextradate=\count410
+\c@maxextraalpha=\count411
+\c@abbrvpenalty=\count412
+\c@highnamepenalty=\count413
+\c@lownamepenalty=\count414
+\c@maxparens=\count415
+\c@parenlevel=\count416
+\blx@tempcnta=\count417
+\blx@tempcntb=\count418
+\blx@tempcntc=\count419
+\c@blx@maxsection=\count420
+\blx@maxsegment@0=\count421
+\blx@notetype=\count422
+\blx@parenlevel@text=\count423
+\blx@parenlevel@foot=\count424
+\blx@sectionciteorder@0=\count425
+\blx@sectionciteorderinternal@0=\count426
+\blx@entrysetcounter=\count427
+\blx@biblioinstance=\count428
+\labelnumberwidth=\skip83
+\labelalphawidth=\skip84
+\biblabelsep=\skip85
+\bibitemsep=\skip86
+\bibnamesep=\skip87
+\bibinitsep=\skip88
+\bibparsep=\skip89
+\bibhang=\skip90
+\blx@bcfin=\read5
+\blx@bcfout=\write4
+\blx@langwohyphens=\language80
+\c@mincomprange=\count429
+\c@maxcomprange=\count430
+\c@mincompwidth=\count431
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count432
+\c@savedafterword=\count433
+\c@annotator=\count434
+\c@savedannotator=\count435
+\c@author=\count436
+\c@savedauthor=\count437
+\c@bookauthor=\count438
+\c@savedbookauthor=\count439
+\c@commentator=\count440
+\c@savedcommentator=\count441
+\c@editor=\count442
+\c@savededitor=\count443
+\c@editora=\count444
+\c@savededitora=\count445
+\c@editorb=\count446
+\c@savededitorb=\count447
+\c@editorc=\count448
+\c@savededitorc=\count449
+\c@foreword=\count450
+\c@savedforeword=\count451
+\c@holder=\count452
+\c@savedholder=\count453
+\c@introduction=\count454
+\c@savedintroduction=\count455
+\c@namea=\count456
+\c@savednamea=\count457
+\c@nameb=\count458
+\c@savednameb=\count459
+\c@namec=\count460
+\c@savednamec=\count461
+\c@translator=\count462
+\c@savedtranslator=\count463
+\c@shortauthor=\count464
+\c@savedshortauthor=\count465
+\c@shorteditor=\count466
+\c@savedshorteditor=\count467
+\c@labelname=\count468
+\c@savedlabelname=\count469
+\c@institution=\count470
+\c@savedinstitution=\count471
+\c@lista=\count472
+\c@savedlista=\count473
+\c@listb=\count474
+\c@savedlistb=\count475
+\c@listc=\count476
+\c@savedlistc=\count477
+\c@listd=\count478
+\c@savedlistd=\count479
+\c@liste=\count480
+\c@savedliste=\count481
+\c@listf=\count482
+\c@savedlistf=\count483
+\c@location=\count484
+\c@savedlocation=\count485
+\c@organization=\count486
+\c@savedorganization=\count487
+\c@origlocation=\count488
+\c@savedoriglocation=\count489
+\c@origpublisher=\count490
+\c@savedorigpublisher=\count491
+\c@publisher=\count492
+\c@savedpublisher=\count493
+\c@language=\count494
+\c@savedlanguage=\count495
+\c@origlanguage=\count496
+\c@savedoriglanguage=\count497
+\c@pageref=\count498
+\c@savedpageref=\count499
+\shorthandwidth=\skip91
+\shortjournalwidth=\skip92
+\shortserieswidth=\skip93
+\shorttitlewidth=\skip94
+\shortauthorwidth=\skip95
+\shorteditorwidth=\skip96
+\locallabelnumberwidth=\skip97
+\locallabelalphawidth=\skip98
+\localshorthandwidth=\skip99
+\localshortjournalwidth=\skip100
+\localshortserieswidth=\skip101
+\localshorttitlewidth=\skip102
+\localshortauthorwidth=\skip103
+\localshorteditorwidth=\skip104
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-unicode.def
+)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count500
+\c@textcitetotal=\count501
+\c@textcitemaxnames=\count502
+\c@biburlbigbreakpenalty=\count503
+\c@biburlbreakpenalty=\count504
+\c@biburlnumpenalty=\count505
+\c@biburlucpenalty=\count506
+\c@biburllcpenalty=\count507
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count508
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/numeric-com
+p.bbx
+File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/standard.bb
+x
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count509
+\c@bbx:relatedtotal=\count510
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2025-08-01 v1.4f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-verb'...
+Package biblatex Info: ... file 'numeric-verb.cbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/cbx/numeric-ver
+b.cbx
+File: numeric-verb.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+Package biblatex Info: Redefining '\textcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-case-expl3.
+sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+)) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+\@indexfile=\write5
+
+\openout5 = Cours.idx
+
+Writing index file Cours.idx
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/base/glossari
+es.sty
+Package: glossaries 2026/03/06 v5.0 (NLCT)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.tex
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks58
+\XKV@tempa@toks=\toks59
+)
+\XKV@depth=\count511
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2025/04/03 v2.09 (NLCT)
+\@glsmfirst=\toks60
+\@glsmrest=\toks61
+) (C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/tracklang/tracklang.te
+x)
+Package tracklang Info: Tracking dialect `french' (language `french') on input 
+line 264.
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/translator/translator.st
+y
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries-french/glossa
+ries-french.ldf
+File: glossaries-french.ldf 2016/12/12 v1.1
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-base.s
+ty
+Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
+\l__datatool_tmpa_int=\count512
+\l__datatool_tmpb_int=\count513
+\l__datatool_tmpc_int=\count514
+\l__datatool_tmpd_int=\count515
+\l__datatool_count_int=\count516
+\l__datatool_tmp_datatype_int=\count517
+\l__datatool_tmpa_dim=\dimen319
+\l__datatool_tmpb_dim=\dimen320
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-lua.de
+f
+File: datatool-lua.def 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@toks=\toks62
+\@dtl@tmpcount=\count518
+\dtl@tmplength=\skip105
+\l__datatool_measure_box=\box93
+\dtl@sortresult=\count519
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-utf8.l
+df
+File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@datatype=\count520
+\c_datatool_unknown_int=\count521
+\l__datatool_year_int=\count522
+\l__datatool_month_int=\count523
+\l__datatool_day_int=\count524
+\l__datatool_hour_int=\count525
+\l__datatool_minute_int=\count526
+\l__datatool_second_int=\count527
+\l__datatool_tzhour_int=\count528
+\l__datatool_tzminute_int=\count529
+\l__datatool_julian_int=\count530
+\l__datatool_local_julian_int=\count531
+\l__datatool_prefix_int=\count532
+\l__datatool_suffix_int=\count533
+\@dtl@foreach@level=\count534
+
+
+Package tracklang Warning: No `datatool' support for dialect `french'  on input
+ line 9924.
+
+\dtl@codeA=\count535
+\dtl@codeB=\count536
+)
+\gls@level=\count537
+\@gls@tmpb=\toks63
+\gls@tmplen=\skip106
+\l__glossaries_tmpa_dim=\dimen321
+\l__glossaries_tmpb_dim=\dimen322
+\glskeylisttok=\toks64
+\glslabeltok=\toks65
+\glsshorttok=\toks66
+\glslongtok=\toks67
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/glossa
+ry-hypernav.sty
+Package: glossary-hypernav 2026/03/06 v5.0 (NLCT)
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/glossa
+ry-list.sty
+Package: glossary-list 2026/03/06 v5.0 (NLCT)
+\glslistdottedwidth=\skip107
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/glossa
+ry-long.sty
+Package: glossary-long 2026/03/06 v5.0 (NLCT)
+\glsdescwidth=\skip108
+\glspagelistwidth=\skip109
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/glossa
+ry-super.sty
+Package: glossary-super 2026/03/06 v5.0 (NLCT)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/supertabular/supertabula
+r.sty
+Package: supertabular 2025/06/26 v4.2d the supertabular environment
+\c@tracingst=\count538
+\ST@wd=\dimen323
+\ST@rightskip=\skip110
+\ST@leftskip=\skip111
+\ST@parfillskip=\skip112
+\ST@pageleft=\dimen324
+\ST@headht=\dimen325
+\ST@tailht=\dimen326
+\ST@pagesofar=\dimen327
+\ST@pboxht=\dimen328
+\ST@rowht=\dimen329
+\ST@prevht=\dimen330
+\ST@toadd=\dimen331
+\ST@dimen=\dimen332
+\ST@pbox=\box94
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/glossa
+ry-tree.sty
+Package: glossary-tree 2026/03/06 v5.0 (NLCT)
+\l__glossaries_tree_max_known_level_int=\count539
+\l__glossaries_tree_offset_dim=\dimen333
+\l__glossaries_tree_namewidth_dim=\dimen334
+\l__glossaries_tree_symbolwidth_dim=\dimen335
+\l__glossaries_tree_prenamesym_width_dim=\dimen336
+\l__glossaries_tree_presubnamesym_width_dim=\dimen337
+\l__glossaries_tree_namewidth_padding_dim=\dimen338
+\l__glossaries_tree_symbolwidth_padding_dim=\dimen339
+\l__glossaries_tree_namesymbolwidth_dim=\dimen340
+\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen341
+\l__glossaries_tree_level_int=\count540
+\glstreeindent=\skip113
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/nextpage/nextpage.sty
+Package: nextpage 2009/09/03 v1.1a additional page commands
+)
+\beforeepigraphskip=\skip114
+\afterepigraphskip=\skip115
+\epigraphwidth=\skip116
+\epigraphrule=\skip117
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/marvosym/marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/pdflscape/pdflscape-nome
+tadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/tools/afterpage.sty
+Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
+\AP@output=\toks68
+\AP@partial=\box95
+\AP@footins=\box96
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box97
+\beforetitleunit=\skip118
+\aftertitleunit=\skip119
+\ttl@plus=\dimen342
+\ttl@minus=\dimen343
+\ttl@toksa=\toks69
+\titlewidth=\dimen344
+\titlewidthlast=\dimen345
+\titlewidthfirst=\dimen346
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titletoc.sty
+Package: titletoc 2025/01/04 v2.17 TOC entries
+\ttl@leftsep=\dimen347
+)
+\c@theoreme=\count541
+\c@definition=\count542
+\c@proposition=\count543
+\c@corollaire=\count544
+\c@lemme=\count545
+\c@remarque=\count546
+\c@exemple=\count547
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'french'.
+
+(./Cours.aux)
+\openout1 = Cours.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Info: Redefining \microtypecontext on input line 39.
+Package microtype Info: Applying patch `item' on input line 39.
+Package microtype Info: Applying patch `toc' on input line 39.
+Package microtype Info: Applying patch `eqnum' on input line 39.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 39.
+
+Package microtype Info: Applying patch `verbatim' on input line 39.
+LaTeX Info: Redefining \microtypesetup on input line 39.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No font expansion.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-LatinModern
+Roman.cfg
+File: mt-LatinModernRoman.cfg 2026/02/26 v1.2 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(79.6678pt, 446.70819pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=446.70819pt
+* \textheight=702.78308pt
+* \oddsidemargin=7.39781pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-51.0119pt
+* \headheight=30.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mki
+i
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count548
+\scratchdimen=\dimen348
+\scratchbox=\box98
+\nofMPsegments=\count549
+\nofMParguments=\count550
+\everyMPshowfont=\toks70
+\MPscratchCnt=\count551
+\MPscratchDim=\dimen349
+\MPnumerator=\count552
+\makeMPintoPDFobject=\count553
+\everyMPtoPDFconversion=\toks71
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-ba
+se.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.cf
+g
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+\c@lstlisting=\count554
+Package hyperref Info: Link coloring ON on input line 39.
+ (./Cours.out) (./Cours.out)
+\@outlinefile=\write6
+
+\openout6 = Cours.out
+Package biblatex Info: Trying to load language 'french'...
+Package biblatex Info: ... file 'french.lbx' found.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/lbx/french.lbx
+File: french.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+
+\openout4 = Cours.bcf
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Cours.bbl' found.
+(./Cours.bbl)
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
+ [1
+
+
+{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 142--151
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+56.
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+56.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+156.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+156.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 156.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 156
+.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 156
+.
+
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+[2
+
+] [3
+
+] [4
+
+
+] [5] [6
+
+
+] (./Cours.toc
+Overfull \hbox (6.0pt too wide) detected at line 2
+ \TU/lmr/b/n/12 5
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 3
+ \TU/lmr/b/n/12 17
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 4
+ \TU/lmr/b/n/12 19
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 5
+ \TU/lmr/b/n/12 21
+ []
+
+
+Overfull \hbox (6.0pt too wide) detected at line 6
+ \TU/lmr/b/n/12 1
+ []
+
+
+Overfull \hbox (6.0pt too wide) detected at line 8
+ \TU/lmr/b/n/12 9
+ []
+
+
+Overfull \hbox (5.475pt too wide) detected at line 9
+ \TU/lmr/m/n/10.95 9
+ []
+
+
+Overfull \hbox (5.0pt too wide) detected at line 10
+ \TU/lmr/m/n/10 9
+ []
+
+
+Overfull \hbox (5.0pt too wide) detected at line 11
+ \TU/lmr/m/n/10 9
+ []
+
+
+Overfull \hbox (5.475pt too wide) detected at line 12
+ \TU/lmr/m/n/10.95 9
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 13
+ \TU/lmr/m/n/10 10
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 14
+ \TU/lmr/m/n/10 10
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 15
+ \TU/lmr/m/n/10.95 10
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 16
+ \TU/lmr/m/n/10 10
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 17
+ \TU/lmr/m/n/10 10
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 18
+ \TU/lmr/m/n/10 10
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 19
+ \TU/lmr/m/n/10.95 11
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 20
+ \TU/lmr/m/n/10 11
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 21
+ \TU/lmr/b/n/12 13
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 22
+ \TU/lmr/m/n/10.95 13
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 23
+ \TU/lmr/m/n/10 13
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 24
+ \TU/lmr/m/n/10 14
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 25
+ \TU/lmr/m/n/10 14
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 26
+ []\TU/lmr/m/n/12 14
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 27
+ []\TU/lmr/m/n/12 14
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 28
+ []\TU/lmr/m/n/12 15
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 29
+ []\TU/lmr/m/n/12 15
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 30
+ []\TU/lmr/m/n/12 15
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 36
+ []\TU/lmr/m/n/12 17
+ []
+
+[7]
+Overfull \hbox (10.0pt too wide) detected at line 39
+ \TU/lmr/m/n/10 18
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 40
+ []\TU/lmr/m/n/12 18
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 41
+ []\TU/lmr/m/n/12 18
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 42
+ []\TU/lmr/m/n/12 19
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 43
+ \TU/lmr/m/n/10 19
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 44
+ \TU/lmr/m/n/10 19
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 45
+ \TU/lmr/m/n/10 19
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 46
+ \TU/lmr/m/n/10 20
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 47
+ \TU/lmr/m/n/10 20
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 49
+ \TU/lmr/m/n/10 21
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 50
+ \TU/lmr/m/n/10 22
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 51
+ \TU/lmr/m/n/10 22
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 52
+ []\TU/lmr/m/n/12 22
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 53
+ []\TU/lmr/m/n/12 22
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 56
+ \TU/lmr/m/n/10 23
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 57
+ \TU/lmr/m/n/10 23
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 58
+ \TU/lmr/m/n/10 24
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 59
+ \TU/lmr/m/n/10 24
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 60
+ \TU/lmr/m/n/10.95 24
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 61
+ \TU/lmr/m/n/10 24
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 62
+ \TU/lmr/m/n/10 24
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 63
+ []\TU/lmr/m/n/12 24
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 64
+ []\TU/lmr/m/n/12 24
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 65
+ []\TU/lmr/m/n/12 25
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 66
+ []\TU/lmr/m/n/12 25
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 67
+ []\TU/lmr/m/n/12 25
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 68
+ []\TU/lmr/m/n/12 25
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 69
+ []\TU/lmr/m/n/12 26
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 70
+ \TU/lmr/m/n/10 26
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 71
+ \TU/lmr/m/n/10 27
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 72
+ \TU/lmr/m/n/10 27
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 73
+ \TU/lmr/m/n/10 27
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 74
+ \TU/lmr/m/n/10 27
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 75
+ \TU/lmr/m/n/10 27
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 76
+ \TU/lmr/m/n/10.95 28
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 77
+ \TU/lmr/m/n/10 28
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 78
+ \TU/lmr/m/n/10 28
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 79
+ []\TU/lmr/m/n/12 28
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 86
+ []\TU/lmr/m/n/12 29
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 93
+ []\TU/lmr/m/n/12 30
+ []
+
+
+Overfull \hbox (0.96005pt too wide) in paragraph at lines 93--93
+ [][] [][][]\TU/lmr/m/n/12 Com-plé-men-ta-rité entre Contrôles Gé-né-raux 
+et Contrôles 
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 97
+ []\TU/lmr/m/n/12 31
+ []
+
+
+Overfull \hbox (2.80003pt too wide) in paragraph at lines 97--97
+ [][] [][][]\TU/lmr/m/n/12 Di-ver-gences entre Contrôles Gé-né-raux et Contr
+ôles d’Ap- 
+ []
+
+[8]
+Overfull \hbox (12.0pt too wide) detected at line 101
+ \TU/lmr/b/n/12 33
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 102
+ \TU/lmr/m/n/10.95 33
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 103
+ \TU/lmr/m/n/10 33
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 104
+ []\TU/lmr/m/n/12 33
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 105
+ \TU/lmr/m/n/10 33
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 106
+ \TU/lmr/m/n/10.95 33
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 107
+ \TU/lmr/m/n/10 33
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 108
+ \TU/lmr/m/n/10 34
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 109
+ \TU/lmr/m/n/10 34
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 110
+ \TU/lmr/m/n/10 35
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 111
+ \TU/lmr/m/n/10.95 35
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 112
+ \TU/lmr/m/n/10 35
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 113
+ \TU/lmr/m/n/10 35
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 114
+ []\TU/lmr/m/n/12 35
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 115
+ []\TU/lmr/m/n/12 35
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 116
+ []\TU/lmr/m/n/12 36
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 117
+ \TU/lmr/m/n/10 36
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 118
+ \TU/lmr/m/n/10.95 36
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 119
+ \TU/lmr/m/n/10 36
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 120
+ \TU/lmr/m/n/10 36
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 121
+ \TU/lmr/m/n/10 37
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 122
+ \TU/lmr/m/n/10 37
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 123
+ \TU/lmr/m/n/10.95 37
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 124
+ \TU/lmr/m/n/10 37
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 125
+ \TU/lmr/m/n/10 37
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 126
+ \TU/lmr/m/n/10.95 37
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 127
+ \TU/lmr/m/n/10.95 37
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 128
+ \TU/lmr/m/n/10.95 38
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 130
+ \TU/lmr/b/n/12 41
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 131
+ \TU/lmr/m/n/10.95 41
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 132
+ \TU/lmr/m/n/10 41
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 133
+ \TU/lmr/m/n/10 41
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 134
+ \TU/lmr/m/n/10 41
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 135
+ \TU/lmr/m/n/10.95 42
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 136
+ \TU/lmr/m/n/10 42
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 137
+ \TU/lmr/m/n/10 42
+ []
+
+[9]
+Overfull \hbox (10.0pt too wide) detected at line 138
+ \TU/lmr/m/n/10 42
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 139
+ \TU/lmr/m/n/10 42
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 140
+ \TU/lmr/m/n/10 42
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 141
+ \TU/lmr/m/n/10.95 43
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 142
+ \TU/lmr/m/n/10 43
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 143
+ \TU/lmr/m/n/10 43
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 144
+ \TU/lmr/m/n/10.95 44
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 145
+ \TU/lmr/b/n/12 45
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 146
+ \TU/lmr/m/n/10.95 46
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 147
+ \TU/lmr/m/n/10 46
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 148
+ \TU/lmr/m/n/10 46
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 149
+ \TU/lmr/m/n/10 46
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 150
+ \TU/lmr/m/n/10 47
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 151
+ \TU/lmr/m/n/10 47
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 152
+ \TU/lmr/m/n/10.95 47
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 153
+ \TU/lmr/m/n/10 48
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 154
+ \TU/lmr/m/n/10 48
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 155
+ \TU/lmr/m/n/10 48
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 156
+ \TU/lmr/m/n/10 49
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 157
+ \TU/lmr/m/n/10 49
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 158
+ \TU/lmr/m/n/10.95 49
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 159
+ \TU/lmr/m/n/10 49
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 160
+ \TU/lmr/m/n/10 50
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 161
+ \TU/lmr/m/n/10 50
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 162
+ \TU/lmr/m/n/10 50
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 163
+ \TU/lmr/m/n/10 50
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 164
+ \TU/lmr/m/n/10.95 51
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 165
+ \TU/lmr/m/n/10 51
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 166
+ \TU/lmr/m/n/10 51
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 167
+ \TU/lmr/m/n/10.95 52
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 168
+ \TU/lmr/m/n/10 52
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 169
+ \TU/lmr/m/n/10 52
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 170
+ \TU/lmr/m/n/10 53
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 171
+ \TU/lmr/m/n/10 53
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 172
+ \TU/lmr/m/n/10 53
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 173
+ \TU/lmr/m/n/10.95 54
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 174
+ \TU/lmr/m/n/10 54
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 175
+ \TU/lmr/m/n/10 54
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 176
+ \TU/lmr/m/n/10 55
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 177
+ \TU/lmr/m/n/10 55
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 178
+ \TU/lmr/m/n/10.95 55
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Overfull \hbox (10.0pt too wide) detected at line 179
+ \TU/lmr/m/n/10 55
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 180
+ \TU/lmr/m/n/10 56
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 181
+ \TU/lmr/m/n/10 56
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 182
+ \TU/lmr/m/n/10 56
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 183
+ \TU/lmr/m/n/10.95 56
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 184
+ \TU/lmr/m/n/10 56
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 185
+ \TU/lmr/m/n/10 57
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 186
+ \TU/lmr/m/n/10 57
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 187
+ \TU/lmr/m/n/10 57
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 188
+ \TU/lmr/m/n/10.95 58
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 190
+ \TU/lmr/b/n/12 63
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 191
+ \TU/lmr/m/n/10.95 63
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 192
+ \TU/lmr/m/n/10.95 64
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 193
+ \TU/lmr/m/n/10 64
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 195
+ \TU/lmr/m/n/10 65
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 196
+ \TU/lmr/m/n/10.95 65
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 197
+ \TU/lmr/m/n/10 65
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 198
+ \TU/lmr/m/n/10 65
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 200
+ \TU/lmr/m/n/10 66
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 201
+ \TU/lmr/m/n/10.95 67
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 202
+ \TU/lmr/m/n/10 67
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 203
+ \TU/lmr/m/n/10 68
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 204
+ \TU/lmr/m/n/10 68
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 205
+ \TU/lmr/m/n/10.95 69
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 206
+ \TU/lmr/m/n/10.95 70
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 207
+ \TU/lmr/m/n/10 70
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 208
+ \TU/lmr/m/n/10 70
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 209
+ \TU/lmr/m/n/10.95 71
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 210
+ \TU/lmr/m/n/10 71
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 211
+ \TU/lmr/m/n/10 71
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 212
+ \TU/lmr/m/n/10 72
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 213
+ \TU/lmr/m/n/10.95 72
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 214
+ \TU/lmr/m/n/10.95 73
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 215
+ \TU/lmr/m/n/10.95 75
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 216
+ \TU/lmr/m/n/10.95 75
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 217
+ \TU/lmr/b/n/12 77
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 218
+ \TU/lmr/m/n/10.95 77
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Overfull \hbox (10.0pt too wide) detected at line 219
+ \TU/lmr/m/n/10 77
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 224
+ \TU/lmr/m/n/10 78
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 225
+ \TU/lmr/m/n/10.95 78
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 226
+ \TU/lmr/m/n/10 79
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 227
+ \TU/lmr/m/n/10.95 80
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 228
+ \TU/lmr/m/n/10 80
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 230
+ \TU/lmr/m/n/10 81
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 232
+ \TU/lmr/m/n/10 81
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 234
+ \TU/lmr/m/n/10 82
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 236
+ \TU/lmr/m/n/10 82
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 238
+ \TU/lmr/m/n/10 83
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 241
+ \TU/lmr/m/n/10 84
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 243
+ \TU/lmr/m/n/10 85
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 245
+ \TU/lmr/m/n/10.95 85
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 246
+ \TU/lmr/m/n/10.95 86
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 247
+ \TU/lmr/m/n/10 87
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 250
+ \TU/lmr/m/n/10 87
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 251
+ \TU/lmr/m/n/10 89
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 256
+ \TU/lmr/m/n/10 90
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 257
+ \TU/lmr/m/n/10.95 91
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 258
+ \TU/lmr/m/n/10 91
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 259
+ \TU/lmr/m/n/10 91
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 260
+ \TU/lmr/m/n/10 92
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 261
+ \TU/lmr/m/n/10 92
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 262
+ \TU/lmr/m/n/10 92
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 263
+ \TU/lmr/m/n/10 92
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 264
+ \TU/lmr/m/n/10 92
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 265
+ \TU/lmr/m/n/10.95 93
+ []
+
+
+Overfull \hbox (12.0pt too wide) detected at line 266
+ \TU/lmr/b/n/12 95
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 267
+ \TU/lmr/m/n/10.95 95
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 268
+ \TU/lmr/m/n/10 96
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 269
+ \TU/lmr/m/n/10 96
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 270
+ []\TU/lmr/m/n/12 96
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 271
+ []\TU/lmr/m/n/12 96
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 272
+ []\TU/lmr/m/n/12 97
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 273
+ []\TU/lmr/m/n/12 97
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 274
+ \TU/lmr/m/n/10 97
+ []
+
+
+Overfull \hbox (10.95001pt too wide) detected at line 275
+ \TU/lmr/m/n/10.95 99
+ []
+
+
+Overfull \hbox (10.0pt too wide) detected at line 276
+ \TU/lmr/m/n/10 99
+ []
+
+[12]
+Overfull \hbox (15.0pt too wide) detected at line 277
+ \TU/lmr/m/n/10 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 278
+ []\TU/lmr/m/n/12 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 279
+ []\TU/lmr/m/n/12 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 280
+ []\TU/lmr/m/n/12 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 281
+ []\TU/lmr/m/n/12 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 282
+ []\TU/lmr/m/n/12 100
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 283
+ []\TU/lmr/m/n/12 101
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 284
+ \TU/lmr/m/n/10 101
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 285
+ \TU/lmr/m/n/10.95 102
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 286
+ \TU/lmr/m/n/10 102
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 287
+ \TU/lmr/m/n/10 103
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 288
+ []\TU/lmr/m/n/12 103
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 289
+ []\TU/lmr/m/n/12 103
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 290
+ []\TU/lmr/m/n/12 103
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 291
+ []\TU/lmr/m/n/12 104
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 292
+ \TU/lmr/m/n/10 104
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 293
+ \TU/lmr/m/n/10.95 105
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 294
+ \TU/lmr/m/n/10 105
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 295
+ \TU/lmr/m/n/10 106
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 296
+ []\TU/lmr/m/n/12 106
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 297
+ []\TU/lmr/m/n/12 106
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 298
+ []\TU/lmr/m/n/12 106
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 299
+ []\TU/lmr/m/n/12 107
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 300
+ \TU/lmr/m/n/10 107
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 301
+ \TU/lmr/m/n/10.95 108
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 302
+ \TU/lmr/m/n/10 108
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 303
+ \TU/lmr/m/n/10 109
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 304
+ []\TU/lmr/m/n/12 109
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 305
+ []\TU/lmr/m/n/12 109
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 306
+ []\TU/lmr/m/n/12 109
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 307
+ []\TU/lmr/m/n/12 110
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 308
+ []\TU/lmr/m/n/12 110
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 309
+ []\TU/lmr/m/n/12 110
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 310
+ []\TU/lmr/m/n/12 110
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 311
+ []\TU/lmr/m/n/12 110
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 312
+ []\TU/lmr/m/n/12 111
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 313
+ []\TU/lmr/m/n/12 111
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 314
+ \TU/lmr/m/n/10 111
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 315
+ \TU/lmr/m/n/10.95 113
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 316
+ \TU/lmr/m/n/10 113
+ []
+
+[13]
+Overfull \hbox (15.0pt too wide) detected at line 317
+ \TU/lmr/m/n/10 113
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 318
+ []\TU/lmr/m/n/12 113
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 319
+ []\TU/lmr/m/n/12 113
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 320
+ []\TU/lmr/m/n/12 114
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 321
+ \TU/lmr/m/n/10 114
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 322
+ \TU/lmr/m/n/10.95 117
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 324
+ \TU/lmr/b/n/12 121
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 325
+ \TU/lmr/m/n/10.95 121
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 326
+ \TU/lmr/m/n/10 121
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 327
+ \TU/lmr/m/n/10 121
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 328
+ \TU/lmr/m/n/10 121
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 329
+ \TU/lmr/m/n/10.95 122
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 330
+ \TU/lmr/m/n/10 122
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 331
+ \TU/lmr/m/n/10 122
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 332
+ \TU/lmr/m/n/10 122
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 333
+ []\TU/lmr/m/n/12 122
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 334
+ []\TU/lmr/m/n/12 122
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 335
+ \TU/lmr/m/n/10 123
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 336
+ \TU/lmr/m/n/10.95 123
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 337
+ \TU/lmr/m/n/10 123
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 338
+ \TU/lmr/m/n/10 123
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 339
+ \TU/lmr/m/n/10 124
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 340
+ \TU/lmr/b/n/12 125
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 341
+ \TU/lmr/m/n/10.95 125
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 342
+ \TU/lmr/m/n/10.95 129
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 343
+ \TU/lmr/m/n/10.95 130
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 344
+ \TU/lmr/m/n/10.95 130
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 345
+ \TU/lmr/m/n/10 130
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 347
+ \TU/lmr/b/n/12 135
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 348
+ \TU/lmr/m/n/10.95 135
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 349
+ \TU/lmr/m/n/10.95 135
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 350
+ \TU/lmr/m/n/10 135
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 351
+ \TU/lmr/m/n/10 136
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 352
+ \TU/lmr/m/n/10.95 136
+ []
+
+[14]
+Overfull \hbox (15.0pt too wide) detected at line 353
+ \TU/lmr/m/n/10 137
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 354
+ \TU/lmr/m/n/10 137
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 355
+ \TU/lmr/m/n/10.95 137
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 356
+ \TU/lmr/m/n/10 137
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 357
+ \TU/lmr/m/n/10 137
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 358
+ \TU/lmr/m/n/10 138
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 359
+ \TU/lmr/m/n/10.95 138
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 360
+ \TU/lmr/m/n/10 138
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 361
+ \TU/lmr/m/n/10.95 138
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 362
+ \TU/lmr/b/n/12 139
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 363
+ \TU/lmr/m/n/10.95 139
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 364
+ \TU/lmr/m/n/10.95 139
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 365
+ \TU/lmr/m/n/10 139
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 366
+ \TU/lmr/m/n/10 139
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 367
+ \TU/lmr/m/n/10.95 140
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 368
+ \TU/lmr/m/n/10 140
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 369
+ \TU/lmr/m/n/10 140
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 370
+ \TU/lmr/m/n/10.95 140
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 371
+ \TU/lmr/m/n/10 140
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 372
+ \TU/lmr/m/n/10 140
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 373
+ \TU/lmr/m/n/10.95 141
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 374
+ \TU/lmr/m/n/10 141
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 375
+ \TU/lmr/m/n/10 141
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 376
+ \TU/lmr/m/n/10.95 141
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 377
+ \TU/lmr/m/n/10 141
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 378
+ \TU/lmr/m/n/10 141
+ []
+
+
+Overfull \hbox (16.42502pt too wide) detected at line 379
+ \TU/lmr/m/n/10.95 141
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 380
+ \TU/lmr/b/n/12 143
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 381
+ \TU/lmr/b/n/12 147
+ []
+
+
+Overfull \hbox (18.0pt too wide) detected at line 382
+ \TU/lmr/b/n/12 148
+ []
+
+)
+\tf@toc=\write7
+
+\openout7 = Cours.toc
+ [15] [16
+
+
+] (./Cours.lof
+Overfull \hbox (11.76001pt too wide) detected at line 9
+ []\TU/lmr/m/n/12 80
+ []
+
+)
+\tf@lof=\write8
+
+\openout8 = Cours.lof
+ [17] [18
+
+] (./Cours.lot
+Overfull \hbox (11.76001pt too wide) detected at line 3
+ []\TU/lmr/m/n/12 11
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 5
+ []\TU/lmr/m/n/12 16
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 6
+ []\TU/lmr/m/n/12 26
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 8
+ []\TU/lmr/m/n/12 34
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 9
+ []\TU/lmr/m/n/12 38
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 11
+ []\TU/lmr/m/n/12 42
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 12
+ []\TU/lmr/m/n/12 43
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 13
+ []\TU/lmr/m/n/12 44
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 14
+ []\TU/lmr/m/n/12 44
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 17
+ []\TU/lmr/m/n/12 67
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 18
+ []\TU/lmr/m/n/12 68
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 19
+ []\TU/lmr/m/n/12 72
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 20
+ []\TU/lmr/m/n/12 72
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 22
+ []\TU/lmr/m/n/12 86
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 23
+ []\TU/lmr/m/n/12 88
+ []
+
+
+Overfull \hbox (11.76001pt too wide) detected at line 25
+ []\TU/lmr/m/n/12 98
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 26
+ []\TU/lmr/m/n/12 101
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 27
+ []\TU/lmr/m/n/12 104
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 28
+ []\TU/lmr/m/n/12 107
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 29
+ []\TU/lmr/m/n/12 111
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 30
+ []\TU/lmr/m/n/12 115
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 34
+ []\TU/lmr/m/n/12 138
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 36
+ []\TU/lmr/m/n/12 141
+ []
+
+)
+\tf@lot=\write9
+
+\openout9 = Cours.lot
+ [19] [20
+
+] (./Cours.lol
+Overfull \hbox (17.64001pt too wide) detected at line 1
+ []\TU/lmr/m/n/12 135
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 2
+ []\TU/lmr/m/n/12 136
+ []
+
+
+Overfull \hbox (17.64001pt too wide) detected at line 3
+ []\TU/lmr/m/n/12 140
+ []
+
+)
+\tf@lol=\write10
+
+\openout10 = Cours.lol
+ [21] [22
+
+] (./chapitres/0_Introduction.tex
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
+
+]
+Underfull \hbox (badness 6348) in paragraph at lines 48--49
+[]\TU/lmr/b/n/12 Mo-bi-li-ser les ré-fé-ren-tiels in-ter-na-tio-naux \TU/lmr/
+m/n/12 : \TU/lmr/m/sc/12 COSO\TU/lmr/m/n/12 , \TU/lmr/m/sc/12 CO-BIT 2019\TU/lm
+r/m/n/12 ,
+ []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
+[3]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
+[4])
+warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
+[5]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.6'
+[6
+
+]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.7'
+[7]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.8'
+[8] (./chapitres/01_cas_lizbiz.tex
+\bbl@ensure@french {Chapitre} 1.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.9'
+[9
+
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.10'
+[10]) (./chapitres/02_fondamentaux.tex
+warning  (pdf backend): ignoring duplicate destination with the name 'page.11'
+[11]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.12'
+[12
+
+]
+\bbl@ensure@french {Chapitre} 2.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.13'
+[13]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.14'
+[14]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 143.
+
+Underfull \hbox (badness 3148) in paragraph at lines 153--155
+[]|\TU/lmr/m/n/10.95 Ab-sence de sau-ve-garde ré-gu-lière (sau-ve-
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 170--173
+[]|\TU/lmr/m/n/10.95 Mau-vaise ges-tion de l’en-vi-ron-ne-ment ma-
+ []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.15'
+[15]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.16'
+[16]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.17'
+[17]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.18'
+[18]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.19'
+[19]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.20'
+[20]
+./chapitres/02_fondamentaux.tex:453: Undefined control sequence.
+l.453 Pour l'objectif \og
+                          S'assurer que l'apprenant soit identifié au nivea...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapitres/02_fondamentaux.tex:453: Undefined control sequence.
+l.453 ... soit identifié au niveau du portail \fg
+                                                  {},
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.21'
+[21]
+./chapitres/02_fondamentaux.tex:478: Undefined control sequence.
+l.478 Pour l'objectif \og
+                          S'assurer que l'apprenant soit identifié au nivea...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapitres/02_fondamentaux.tex:478: Undefined control sequence.
+l.478 ... soit identifié au niveau du portail \fg
+                                                  {} :
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.22'
+[22]
+./chapitres/02_fondamentaux.tex:532: Undefined control sequence.
+l.532 Élément \og
+                    sine qua non \fg{} du droit de la défense, le \termecle...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapitres/02_fondamentaux.tex:532: Undefined control sequence.
+l.532 Élément \og sine qua non \fg
+                                    {} du droit de la défense, le \termecle...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (0.53075pt too wide) in paragraph at lines 546--549
+\TU/lmr/m/n/12 Dans cer-tains types de rap-port de mis-sion, no-tam-ment ceux d
+’ISC comme le \TU/lmr/m/sc/12 CONSUPE
+ []
+
+[23] [24]
+Underfull \hbox (badness 1383) in paragraph at lines 695--696
+\TU/lmr/m/n/10.95 si une étape se passe mal
+ []
+
+
+Underfull \hbox (badness 1888) in paragraph at lines 697--699
+\TU/lmr/m/n/10.95 mise en œuvre ; res-source
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 700--701
+[]|\TU/lmr/m/n/10.95 Temps d’ap-pren-tis-sage suf-fi-
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 700--701
+\TU/lmr/m/n/10.95 sant du nou-veau sys-tème ;
+ []
+
+[25]
+Overfull \hbox (5.828pt too wide) in paragraph at lines 731--733
+[]\TU/lmr/m/n/12 Mi-cro-soft est le construc-teur du cé-lèbre sys-tème d’ex
+-ploi-ta-tion Win-dows, dont quelques
+ []
+
+[26]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [27] [28] [29] [30]) (./chapitres/03_demarche.tex [31] [32
+
+]
+\bbl@ensure@french {Chapitre} 3.
+
+Underfull \hbox (badness 2134) in paragraph at lines 30--31
+\TU/lmr/m/n/10.95 pro-blèmes tech-niques dé-tec-
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 32--32
+[]|\TU/lmr/m/n/10.95 Rendre compte avec exac-ti-
+ []
+
+
+Underfull \hbox (badness 7667) in paragraph at lines 34--34
+[]|\TU/lmr/b/n/10.95 De-voir de vi-gi-
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 34--35
+\TU/lmr/m/n/10.95 la pro-duc-tion (ex: tests de
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 36--36
+[]|\TU/lmr/m/n/10.95 Pro-té-ger l’in-for-ma-tion sen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+\TU/lmr/m/n/10.95 est constaté par cap-ture
+ []
+
+
+Underfull \hbox (badness 6380) in paragraph at lines 40--41
+\TU/lmr/m/n/10.95 d’écran (preuve), pas par
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33] [34] [35] [36]
+Overfull \hbox (14.24396pt too wide) in paragraph at lines 218--219
+[]\TU/lmr/m/it/12 Sous-dossier Tra-vaux : \TU/lmr/m/n/12 Ques-tion-naires, ex-tr
+ac-tions de don-nées (fi-chiers CSV/SQL
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Missing character: There is no é (U+00E9) in font lmmi12!
+[37]) [38] [39
+
+] [40] (./chapitres/04_referentiels.tex
+\bbl@ensure@french {Chapitre} 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|\TU/lmr/b/n/10.95 En-vi-ron-ne-ment de
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41
+
+]
+Overfull \hbox (66.76736pt too wide) in paragraph at lines 79--94
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42]
+Overfull \hbox (6.53874pt too wide) in paragraph at lines 125--126
+[]\TU/lmr/b/n/12 ISO 27002 : \TU/lmr/m/n/12 Code de bonne pra-tique. Liste dé-t
+aillée des me-sures de sé-cu-rité (contrôles)
+ []
+
+[43]
+Underfull \hbox (badness 1097) in paragraph at lines 152--153
+[]|\TU/lmr/b/n/12 Ques-tion clé pour l’au-di-
+ []
+
+
+Overfull \hbox (90.52295pt too wide) in paragraph at lines 166--173
+ [][] 
+ []
+
+) (./chapitres/05_types_audits.tex [44]
+\bbl@ensure@french {Chapitre} 5.
+
+Underfull \vbox (badness 4353) has occurred while \output is active []
+
+ [45
+
+]
+[46]
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [47]
+[48] [49] [50]
+Underfull \vbox (badness 6110) has occurred while \output is active []
+
+ [51]
+[52]
+Underfull \vbox (badness 8038) has occurred while \output is active []
+
+ [53]
+[54] [55] [56] [57] [58]) [59] [60
+
+] [61] [62]
+(./chapitres/05_theorie_information_shannon.tex
+\bbl@ensure@french {Chapitre} 6.
+
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [63
+
+]
+[64] [65]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+Overfull \hbox (0.10803pt too wide) in paragraph at lines 247--256
+[]\TU/lmr/m/n/12 Deux ob-ser-va-tions mé-ritent d’être sou-li-gnées. Pre-mi
+è-re-ment, une forte non-conformité
+ []
+
+
+Overfull \hbox (45.5609pt too wide) in paragraph at lines 247--256
+\TU/lmr/m/n/12 avé-rée (dis-tri-bu-tion $\OT1/lmr/m/n/12 0[]10$\TU/lmr/m/n/12
+ -$\OT1/lmr/m/n/12 0[]80$\TU/lmr/m/n/12 -$\OT1/lmr/m/n/12 0[]10$\TU/lmr/m/n/12 
+) et une forte ca-rence do-cu-men-taire (dis-tri-bu-tion $\OT1/lmr/m/n/12 0[]10$\TU/lmr/m/n/12 -$\OT1/lmr/m/n/12 0[]10$\TU/lmr/m/n/12 -$\OT1/lmr/m/n/12 0[]80$\TU/lmr/m/n/12 )
+ []
+
+
+Overfull \hbox (13.28802pt too wide) in paragraph at lines 288--291
+[]\TU/lmr/m/n/12 L’in-for-ma-tion mu-tuelle s’ex-prime éga-le-ment comme la
+ di-ver-gence de Kullback-Leibler [[][]3[][]]
+ []
+
+[67]
+Underfull \hbox (badness 1924) in paragraph at lines 312--313
+\TU/lmr/m/n/10.95 L’au-di-teur l’ignore avant
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 316--318
+\TU/lmr/m/n/10.95 di-teur ; en l’ab-sence de
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 320--320
+[]|\TU/lmr/m/n/10.95 Ré-ponse ob-te-nue (O, N,
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 321--322
+[]|\TU/lmr/m/n/10.95 Ré-ponse à une ques-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\TU/lmr/m/n/10.95 d’éva-lua-tion, do-cu-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\TU/lmr/m/n/10.95 exa-miné, en-tre-tien
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\TU/lmr/m/n/10.95 En-tro-pie a pos-te-riori
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+[]|\TU/lmr/m/n/10.95 In-for-ma-tion mu-tuelle
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 333--335
+[]|\TU/lmr/m/n/10.95 Va-leur in-for-ma-tive d’une
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 333--335
+\TU/lmr/m/n/10.95 ques-tion d’au-dit : ré-duc-
+ []
+
+
+Overfull \hbox (35.48201pt too wide) in paragraph at lines 339--348
+\TU/lmr/m/n/12 ma-tion mu-tuelle : l’au-di-teur cherche, par son plan d’in-v
+es-ti-ga-tion, à maxi-mi-ser $\OML/lmm/m/it/12 I\OT1/lmr/m/n/12 (\OML/lmm/m/it
+/12 X \OT1/lmr/m/n/12 ;  \OML/lmm/m/it/12 Y[]; [] ; Y[]\OT1/lmr/m/n/12 )$\TU/lm
+r/m/n/12 ,
+ []
+
+[68] [69] [70] [71]
+Overfull \hbox (86.7568pt too wide) in paragraph at lines 570--582
+ [][] 
+ []
+
+[72]
+Overfull \hbox (6.74689pt too wide) in paragraph at lines 616--621
+[]\TU/lmr/m/n/12 En au-dit, $\OML/lmm/m/it/12 q$ \TU/lmr/m/n/12 peut re-pré-sen
+-ter la dis-tri-bu-tion cible d’une or-ga-ni-sa-tion cer-ti-fiée (ex. $\OML/
+lmm/m/it/12 q[] \OT1/lmr/m/n/12 =
+ []
+
+[73] [74]
+Overfull \hbox (37.16017pt too wide) in paragraph at lines 728--731
+\TU/lmr/m/it/12 Tech-ni-cal Jour-nal\TU/lmr/m/n/12 , 27(3), 379--423 & 27(4), 62
+3--656. doi:[][]10.1002/j.1538-7305.1948.tb01338.x[][] 
+ []
+
+[75]) (./chapitres/06_outil_aide_audit.tex [76]
+\bbl@ensure@french {Chapitre} 7.
+[77
+
+] [78]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [79]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80]
+Underfull \vbox (badness 3098) has occurred while \output is active []
+
+ [81]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [82]
+Overfull \hbox (1.48271pt too wide) in paragraph at lines 346--349
+[]\TU/lmr/m/n/12 La mo-da-lité PAS/NEK n’est pas un aveu d’échec mé-tho-d
+o-lo-gique ; elle est au contraire
+ []
+
+[83]
+Overfull \hbox (12.73988pt too wide) in paragraph at lines 366--371
+[] []\TU/lmr/b/n/12 Me-sure de l’in-cer-ti-tude par l’en-tro-pie de Shan-non
+.[] \TU/lmr/m/n/12 La pro-por-tion de ré-ponses PAS/NEK
+ []
+
+[84] [85]
+Underfull \hbox (badness 2293) in paragraph at lines 502--502
+[]|\TU/lmr/m/n/10.95 Ap-pli-ca-tion en ser-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
+[]|\TU/lmr/m/n/10.95 Sé-cu-rité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+[]|\TU/lmr/b/n/10.95 2. Point
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 512--512
+[]|\TU/lmr/m/n/10.95 S’as-su-rer de l’exis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--513
+[]|\TU/lmr/m/n/10.95 S’as-su-rer qu’une
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 513--513
+\TU/lmr/m/n/10.95 po-li-tique for-ma-li-sée
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 514--515
+[]|\TU/lmr/m/n/10.95 S’as-su-rer de l’exis-
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 523--523
+[]|\TU/lmr/m/n/10.95 Do-cu-ment de po-li-
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 529--530
+[]|\TU/lmr/m/n/10.95 Un plan-ning di-rec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
+[]|\TU/lmr/m/n/10.95 La po-li-tique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
+\TU/lmr/m/n/10.95 ne couvre pas
+ []
+
+
+Underfull \hbox (badness 2326) in paragraph at lines 539--540
+\TU/lmr/m/n/10.95 pla-ni-fi-ca-tion, dé-pas-
+ []
+
+[86]
+Underfull \hbox (badness 2165) in paragraph at lines 648--651
+\TU/lmr/m/n/10.95 source de la preuve col-lec-tée, ou mo-tif
+ []
+
+
+Underfull \hbox (badness 2042) in paragraph at lines 653--658
+[]|\TU/lmr/m/n/10.95 Cal-cu-lée au-to-ma-ti-que-ment au ni-veau du
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+Overfull \vbox (230.29814pt too high) has occurred while \output is active []
+
+
+[88] [89]
+Overfull \hbox (10.40274pt too wide) in paragraph at lines 738--740
+[]\TU/lmr/m/n/12 la \TU/lmr/b/n/12 car-to-gra-phie des risques \TU/lmr/m/n/12 : ta-bleau crois
+é des risques ac-tifs (ré-ponses N et PAS/NEK)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+[]|\TU/lmr/b/n/12 Ré-
+ []
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 768--770
+\TU/lmr/m/n/12 cé-dure existe « quelque
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90]
+Underfull \vbox (badness 6961) has occurred while \output is active []
+
+ [91]
+[92]) (./chapitres/06b_decomposition_types_audit.tex [93] [94
+
+]
+\bbl@ensure@french {Chapitre} 8.
+
+Overfull \hbox (35.39519pt too wide) detected at line 25
+[]  [][]\OMS/lmsy/m/n/12 !  []  [][]!  []  [][]!  []  [][]!  []  [][]!  []
+ []
+
+
+Underfull \vbox (badness 4366) has occurred while \output is active []
+
+ [95]
+[96]
+Underfull \hbox (badness 2875) in paragraph at lines 116--116
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 113--118
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 120--120
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 118--122
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 122--124
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 126--126
+[]|\TU/lmr/m/n/12 Le co-mité in-for-
+ []
+
+
+Underfull \hbox (badness 4779) in paragraph at lines 127--127
+[]|\TU/lmr/m/n/12 PV de ses-sion
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 128--128
+[]|\TU/lmr/m/n/12 Le co-mité est-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+[]|\TU/lmr/m/n/12 Le co-mité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+\TU/lmr/m/n/12 n’est pas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+\TU/lmr/m/n/12 sans ni-veau
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+\TU/lmr/m/n/12 dé-ci-sion-nel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+\TU/lmr/m/n/12 adé-quat ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+\TU/lmr/m/n/12 in-co-hé-rence
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 133--133
+\TU/lmr/m/n/12 pré-sen-tées et in-
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 133--133
+\TU/lmr/m/n/12 fluentes au sein
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 134--134
+\TU/lmr/m/n/12 ta-tion, PV de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+[]|\TU/lmr/m/n/12 Les di-rec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+\TU/lmr/m/n/12 uti-li-sa-trices
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+\TU/lmr/m/n/12 sont-elles
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 135--135
+\TU/lmr/m/n/12 re-pré-sen-tées et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+[]|\TU/lmr/m/n/12 Ap-pli-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\TU/lmr/m/n/12 non adap-tée
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\TU/lmr/m/n/12 aux be-soins
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\TU/lmr/m/n/12 mé-tiers ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\TU/lmr/m/n/12 re-jet par les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+[]|\TU/lmr/m/n/12 Une piste
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+\TU/lmr/m/n/12 d’au-dit existe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+\TU/lmr/m/n/12 sur le sys-tème
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+\TU/lmr/m/n/12 toute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+\TU/lmr/m/n/12 mo-di-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 140--140
+\TU/lmr/m/n/12 est ho-ro-da-tée et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+[]|\TU/lmr/m/n/12 Ex-trac-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+\TU/lmr/m/n/12 des jour-naux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+\TU/lmr/m/n/12 sys-tème (logs)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+[]|\TU/lmr/m/n/12 Existe-t-il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+\TU/lmr/m/n/12 une piste
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+\TU/lmr/m/n/12 toutes les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+\TU/lmr/m/n/12 mo-di-fi-ca-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+\TU/lmr/m/n/12 de piste
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+\TU/lmr/m/n/12 d’au-dit sur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+\TU/lmr/m/n/12 les don-nées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+[]|\TU/lmr/m/n/12 Im-pos-si-bi-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+\TU/lmr/m/n/12 d’in-ves-ti-guer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+\TU/lmr/m/n/12 une fraude
+ []
+
+
+Underfull \hbox (badness 2042) in paragraph at lines 144--145
+\TU/lmr/m/n/12 ou une er-reur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+\TU/lmr/m/n/12 ; risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+\TU/lmr/m/n/12 ma-ni-pu-la-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\TU/lmr/m/n/12 existe entre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\TU/lmr/m/n/12 la DSI et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\TU/lmr/m/n/12 la di-rec-tion
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 147--147
+\TU/lmr/m/n/12 uti-li-sa-trice, avec
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 148--148
+[]|\TU/lmr/m/n/12 Contrat de ser-
+ []
+
+
+Underfull \hbox (badness 7832) in paragraph at lines 148--148
+\TU/lmr/m/n/12 vice si-gné, ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+[]|\TU/lmr/m/n/12 Un SLA
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 149--149
+\TU/lmr/m/n/12 for-ma-lisé est-il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+\TU/lmr/m/n/12 en place et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+\TU/lmr/m/n/12 ré-gu-liè-re-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 150--150
+\TU/lmr/m/n/12 SLA ou SLA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]|\TU/lmr/m/n/12 Ni-veau de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 ser-vice non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 ga-ranti
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 ; conflits
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 ré-cur-rents
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 entre DSI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+\TU/lmr/m/n/12 et mé-tiers
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 151--152
+\TU/lmr/m/n/12 sans ar-bi-trage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+[]|\TU/lmr/m/n/12 Une clause
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+\TU/lmr/m/n/12 d’\TU/lmr/m/it/12 Es-crow
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+\TU/lmr/m/it/12 Agree-ment \TU/lmr/m/n/12 est
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 154--154
+\TU/lmr/m/n/12 pré-sente dans le
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+[]|\TU/lmr/m/n/12 Contrat de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+\TU/lmr/m/n/12 main-te-nance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+[]|\TU/lmr/m/n/12 Le contrat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\TU/lmr/m/n/12 édi-teur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\TU/lmr/m/n/12 contient-il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\TU/lmr/m/n/12 une clause
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\TU/lmr/m/n/12 d’\TU/lmr/m/it/12 Es-crow
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\TU/lmr/m/n/12 ga-ran-tis-sant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\TU/lmr/m/n/12 de clause
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+[]|\TU/lmr/m/n/12 En cas de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 dé-faillance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 de l’édi-teur,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 im-pos-si-bi-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 de main-te-nir
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 l’ap-pli-ca-tion ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+\TU/lmr/m/n/12 risque de
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 124--160
+ [][][][][] 
+ []
+
+[97]
+./chapitres/06b_decomposition_types_audit.tex:160: ignored: Infinite glue shrink
+age found in box being split [98]
+Underfull \hbox (badness 5274) in paragraph at lines 173--174
+[]|\TU/lmr/m/n/12 Liste des pro-fils pro-duite et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+\TU/lmr/m/n/12 co-hé-rente avec les fonc-tions.
+ []
+
+[99]
+Overfull \hbox (16.81203pt too wide) in paragraph at lines 240--241
+[]\TU/lmr/m/n/12 Vé-ri-fier que les contrats contiennent des clauses de confi-d
+en-tia-lité et de non-concurrence. 
+ []
+
+[100]
+Underfull \hbox (badness 2875) in paragraph at lines 259--259
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 256--261
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 263--263
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 261--265
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 265--267
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 269--269
+\TU/lmr/m/n/12 ma-tique for-ma-li-
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 270--270
+[]|\TU/lmr/m/n/12 Charte in-for-ma-
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 271--271
+\TU/lmr/m/n/12 for-ma-tique for-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\TU/lmr/m/n/12 de charte
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[]|\TU/lmr/m/n/12 Rôle et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\TU/lmr/m/n/12 pé-ri-mètre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\TU/lmr/m/n/12 contrac-tua-li-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\TU/lmr/m/n/12 com-pé-tences
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
+[]|\TU/lmr/m/n/12 La sé-pa-ra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
+\TU/lmr/m/n/12 des tâches
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
+\TU/lmr/m/n/12 entre études
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
+\TU/lmr/m/n/12 et ex-ploi-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
+\TU/lmr/m/n/12 est do-cu-men-tée
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\TU/lmr/m/n/12 Or-ga-ni-gramme,
+ []
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 277--277
+\TU/lmr/m/n/12 fiches de poste,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\TU/lmr/m/n/12 pro-cé-dure
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\TU/lmr/m/n/12 de mise en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+[]|\TU/lmr/m/n/12 La sé-pa-ra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+\TU/lmr/m/n/12 études/ex-ploi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+\TU/lmr/m/n/12 ta-tion est-elle
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 278--278
+\TU/lmr/m/n/12 do-cu-men-tée et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+\TU/lmr/m/n/12 ef-fec-ti-ve-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+\TU/lmr/m/n/12 sé-pa-ra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+\TU/lmr/m/n/12 études/ex-ploi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+\TU/lmr/m/n/12 peut mo-di-fier
+ []
+
+
+Underfull \hbox (badness 7308) in paragraph at lines 280--281
+\TU/lmr/m/n/12 en pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+\TU/lmr/m/n/12 risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+\TU/lmr/m/n/12 fraude et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+\TU/lmr/m/n/12 d’er-reur non
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 283--283
+[]|\TU/lmr/m/n/12 Le turn-over an-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
+[]|\TU/lmr/m/n/12 Le taux de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
+\TU/lmr/m/n/12 turn-over de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
+\TU/lmr/m/n/12 la DSI est-il
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 285--285
+\TU/lmr/m/n/12 dans la plage
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 286--286
+[]|\TU/lmr/m/n/12 Turn-over ex-
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 287--288
+[]|\TU/lmr/m/n/12 In-sta-bi-lité des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+\TU/lmr/m/n/12 équipes ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+\TU/lmr/m/n/12 ri-gi-dité or-ga-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+\TU/lmr/m/n/12 ni-sa-tion-nelle ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+\TU/lmr/m/n/12 ré-sis-tance au
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\TU/lmr/m/n/12 Les lois
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 ca-me-rou-naises
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 290--290
+\TU/lmr/m/n/12 de 2010 sur la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 cy-ber-sé-cu-rité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 et la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 cy-ber-cri-mi-na-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 sont connues
+ []
+
+
+Underfull \hbox (badness 7433) in paragraph at lines 290--290
+\TU/lmr/m/n/12 et des me-sures
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+\TU/lmr/m/n/12 pré-ven-tives ont
+ []
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 291--291
+[]|\TU/lmr/m/n/12 Tout do-cu-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+\TU/lmr/m/n/12 la prise de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+\TU/lmr/m/n/12 connais-sance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+[]|\TU/lmr/m/n/12 Les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\TU/lmr/m/n/12 pres-crip-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\TU/lmr/m/n/12 des lois de
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 292--292
+\TU/lmr/m/n/12 2010 sont-elles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\TU/lmr/m/n/12 connues des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\TU/lmr/m/n/12 pré-ven-tives
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+\TU/lmr/m/n/12 sont-elles en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+[]|\TU/lmr/m/n/12 Non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+\TU/lmr/m/n/12 connaissance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
+\TU/lmr/m/n/12 des lois de
+ []
+
+
+Underfull \hbox (badness 7925) in paragraph at lines 293--293
+\TU/lmr/m/n/12 2010 par la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]|\TU/lmr/m/n/12 Ex-po-si-tion de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 l’or-ga-ni-sa-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 lé-gales ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 pro-tec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 in-for-ma-tique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\TU/lmr/m/n/12 pour-tant
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 294--295
+\TU/lmr/m/n/12 pré-vue par la
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 267--296
+ [][][][][] 
+ []
+
+./chapitres/06b_decomposition_types_audit.tex:296: ignored: Infinite glue shrink
+age found in box being split [101] [102] [103]
+Underfull \hbox (badness 2875) in paragraph at lines 371--371
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 368--373
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 375--375
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 373--377
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 377--379
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 381--381
+[]|\TU/lmr/m/n/12 L’étude d’op-por-
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 381--381
+\TU/lmr/m/n/12 tu-nité a été ap-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]|\TU/lmr/m/n/12 Étude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+\TU/lmr/m/n/12 d’op-por-tu-nité
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 382--382
+\TU/lmr/m/n/12 de la per-sonne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+[]|\TU/lmr/m/n/12 L’étude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\TU/lmr/m/n/12 d’op-por-tu-nité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\TU/lmr/m/n/12 a-t-elle été
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\TU/lmr/m/n/12 for-mel-le-ment
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 383--383
+\TU/lmr/m/n/12 ap-prou-vée par
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
+\TU/lmr/m/n/12 une per-sonne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\TU/lmr/m/n/12 d’ap-pro-ba-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\TU/lmr/m/n/12 for-melle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\TU/lmr/m/n/12 de l’étude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+[]|\TU/lmr/m/n/12 En-ga-ge-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+\TU/lmr/m/n/12 de res-sources
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+\TU/lmr/m/n/12 dé-ci-sion-nelle ;
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 388--388
+[]|\TU/lmr/m/n/12 Un re-gistre des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\TU/lmr/m/n/12 risques pro-jet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\TU/lmr/m/n/12 est main-tenu
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 388--388
+\TU/lmr/m/n/12 et mis à jour,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\TU/lmr/m/n/12 avec des plans
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\TU/lmr/m/n/12 d’at-té-nua-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]|\TU/lmr/m/n/12 Re-gistre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+\TU/lmr/m/n/12 des risques
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+\TU/lmr/m/n/12 daté, avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+\TU/lmr/m/n/12 res-pon-sables
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+\TU/lmr/m/n/12 et états
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\TU/lmr/m/n/12 risques pro-jet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\TU/lmr/m/n/12 existe-t-il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\TU/lmr/m/n/12 et est-il
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\TU/lmr/m/n/12 ac-ti-ve-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\TU/lmr/m/n/12 re-gistre des
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 392--393
+[]|\TU/lmr/m/n/12 Le pro-jet su-
+ []
+
+
+Underfull \hbox (badness 4913) in paragraph at lines 392--393
+\TU/lmr/m/n/12 bit les évé-ne-
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 392--393
+\TU/lmr/m/n/12 ments au lieu
+ []
+
+
+Underfull \hbox (badness 7649) in paragraph at lines 392--393
+\TU/lmr/m/n/12 de les an-ti-ci-
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 392--393
+\TU/lmr/m/n/12 per ; dé-pas-se-
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 392--393
+\TU/lmr/m/n/12 et de bud-gets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 est for-ma-li-sée
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 par écrit par
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 la di-rec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 uti-li-sa-trice,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 cou-vrant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 les ni-veaux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 fonc-tion-nel,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
+\TU/lmr/m/n/12 per-for-mance et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+[]|\TU/lmr/m/n/12 Les ré-sul-tats
+ []
+
+
+Underfull \hbox (badness 7291) in paragraph at lines 397--397
+\TU/lmr/m/n/12 de la re-cette
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\TU/lmr/m/n/12 fi-nale ont-ils
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\TU/lmr/m/n/12 été for-ma-li-sés
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 397--397
+\TU/lmr/m/n/12 par écrit par
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\TU/lmr/m/n/12 la di-rec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 399--400
+[]|\TU/lmr/m/n/12 Li-tige pos-sible
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 entre MOA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 et MOE sur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 la confor-mité
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 399--400
+\TU/lmr/m/n/12 des li-vrables ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 im-pos-si-bi-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 d’ac-ti-ver les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+\TU/lmr/m/n/12 ga-ran-ties
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+[]|\TU/lmr/m/n/12 La mise en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 res-pecte le
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 prin-cipe de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 sé-pa-ra-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 tâches entre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 équipe pro-jet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--402
+\TU/lmr/m/n/12 et équipe de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+[]|\TU/lmr/m/n/12 Pro-cé-dure
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+\TU/lmr/m/n/12 de mise en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+\TU/lmr/m/n/12 pro-duc-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]|\TU/lmr/m/n/12 Les équipes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 pro-jet et de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 ont-elles des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 pé-ri-mètres
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 d’ha-bi-li-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+\TU/lmr/m/n/12 dis-tincts lors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\TU/lmr/m/n/12 sé-pa-ra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\TU/lmr/m/n/12 peut
+ []
+
+
+Underfull \hbox (badness 8038) in paragraph at lines 406--407
+\TU/lmr/m/n/12 in-tro-duire des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\TU/lmr/m/n/12 mo-di-fi-ca-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\TU/lmr/m/n/12 non va-li-dées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\TU/lmr/m/n/12 risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\TU/lmr/m/n/12 fraude ou
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 379--408
+ [][][][][] 
+ []
+
+./chapitres/06b_decomposition_types_audit.tex:408: ignored: Infinite glue shrink
+age found in box being split [104] [105] [106]
+Underfull \hbox (badness 2875) in paragraph at lines 480--480
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 477--482
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 484--484
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 482--486
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 486--488
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 490--490
+\TU/lmr/m/n/12 ting est dé-ployé
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 490--490
+\TU/lmr/m/n/12 et tous les in-ci-
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 490--490
+\TU/lmr/m/n/12 hors heures ou-
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 491--491
+\TU/lmr/m/n/12 base de ti-ckets
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 491--491
+\TU/lmr/m/n/12 sur 3 mois, in-
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 491--491
+\TU/lmr/m/n/12 cluant les in-ci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+[]|\TU/lmr/m/n/12 Tous les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 in-ci-dents, y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 com-pris hors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 sont-ils sys-té-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 ma-ti-que-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 sai-sis dans
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--492
+\TU/lmr/m/n/12 l’ou-til de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+[]|\TU/lmr/m/n/12 In-ci-dents de
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 493--493
+\TU/lmr/m/n/12 nuit et jours
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--493
+\TU/lmr/m/n/12 fé-riés non
+ []
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 494--495
+[]|\TU/lmr/m/n/12 Perte de vi-si-
+ []
+
+
+Underfull \hbox (badness 8019) in paragraph at lines 494--495
+\TU/lmr/m/n/12 bi-lité sur les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+[]|\TU/lmr/m/n/12 Une CMDB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+\TU/lmr/m/n/12 à jour couvre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+\TU/lmr/m/n/12 l’en-semble
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+\TU/lmr/m/n/12 du parc avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+\TU/lmr/m/n/12 lo-ca-li-sa-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/12 Ex-port de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/12 la CMDB
+ []
+
+
+Underfull \hbox (badness 3792) in paragraph at lines 498--498
+\TU/lmr/m/n/12 daté ; ré-sul-tat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/12 du der-nier
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/12 in-ven-taire
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
+[]|\TU/lmr/m/n/12 Existe-t-il
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 499--499
+\TU/lmr/m/n/12 une CMDB à
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
+\TU/lmr/m/n/12 jour cou-vrant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
+\TU/lmr/m/n/12 l’en-semble
+ []
+
+
+Underfull \hbox (badness 5302) in paragraph at lines 499--499
+\TU/lmr/m/n/12 du parc avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\TU/lmr/m/n/12 CMDB ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\TU/lmr/m/n/12 CMDB non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+[]|\TU/lmr/m/n/12 In-ven-taire du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\TU/lmr/m/n/12 im-pos-si-bi-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\TU/lmr/m/n/12 équi-pe-ments
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 501--502
+\TU/lmr/m/n/12 ac-cès ré-si-duels
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\TU/lmr/m/n/12 sur des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
+\TU/lmr/m/n/12 ma-chines non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
+[]|\TU/lmr/m/n/12 Des re-vues
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
+\TU/lmr/m/n/12 ré-gu-lières des
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 504--504
+\TU/lmr/m/n/12 sont réa-li-sées et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--505
+[]|\TU/lmr/m/n/12 Rap-ports de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--505
+\TU/lmr/m/n/12 re-vue de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--505
+\TU/lmr/m/n/12 li-cences des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--505
+\TU/lmr/m/n/12 deux der-niers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+[]|\TU/lmr/m/n/12 Des re-vues
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+\TU/lmr/m/n/12 ré-gu-lières
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+\TU/lmr/m/n/12 des li-cences
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+\TU/lmr/m/n/12 lo-gi-cielles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+\TU/lmr/m/n/12 sont-elles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+\TU/lmr/m/n/12 réa-li-sées et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/12 vue ré-gu-lière
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+[]|\TU/lmr/m/n/12 Risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+\TU/lmr/m/n/12 non-conformité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+\TU/lmr/m/n/12 contrac-tuelle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+\TU/lmr/m/n/12 (sur-utilisation)
+ []
+
+
+Underfull \hbox (badness 6380) in paragraph at lines 508--509
+\TU/lmr/m/n/12 édi-teurs ; ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+\TU/lmr/m/n/12 sous-utilisation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+\TU/lmr/m/n/12 (gas-pillage
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 488--510
+ [][][][][] 
+ []
+
+./chapitres/06b_decomposition_types_audit.tex:510: ignored: Infinite glue shrink
+age found in box being split [107] [108] [109] [110]
+Underfull \hbox (badness 2875) in paragraph at lines 631--631
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 628--633
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 635--635
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 633--637
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 637--639
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--642
+[]|\TU/lmr/m/n/12 Lettre de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--642
+\TU/lmr/m/n/12 mis-sion ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--642
+\TU/lmr/m/n/12 dé-ci-sion de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--642
+\TU/lmr/m/n/12 no-mi-na-tion du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--643
+\TU/lmr/m/n/12 for-mel-le-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--643
+\TU/lmr/m/n/12 dé-si-gné
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--643
+\TU/lmr/m/n/12 avec des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--643
+\TU/lmr/m/n/12 res-pon-sa-bi-li-tés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--644
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 2486) in paragraph at lines 644--644
+\TU/lmr/m/n/12 RSSI ou res-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--644
+\TU/lmr/m/n/12 pon-sa-bi-li-tés
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 645--646
+\TU/lmr/m/n/12 pon-sa-bi-lité dif-
+ []
+
+
+Underfull \hbox (badness 7291) in paragraph at lines 645--646
+\TU/lmr/m/n/12 teur ne peut
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 645--646
+\TU/lmr/m/n/12 être tenu res-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+[]|\TU/lmr/m/n/12 Les iden-ti-fiants
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 648--648
+\TU/lmr/m/n/12 in-uti-li-sés au-delà
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+\TU/lmr/m/n/12 au-to-ma-ti-que-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
+[]|\TU/lmr/m/n/12 Po-li-tique de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
+\TU/lmr/m/n/12 ges-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
+\TU/lmr/m/n/12 des comptes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
+\TU/lmr/m/n/12 in-ac-tifs avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--650
+\TU/lmr/m/n/12 in-uti-li-sés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--650
+\TU/lmr/m/n/12 au-to-ma-ti-que-
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 650--650
+\TU/lmr/m/n/12 ment ré-vo-qués
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 652--653
+[]|\TU/lmr/m/n/12 Risque d’ac-cès
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 652--653
+\TU/lmr/m/n/12 par un an-cien
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
+\TU/lmr/m/n/12 col-la-bo-ra-teur
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 652--653
+\TU/lmr/m/n/12 ou un compte
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
+\TU/lmr/m/n/12 com-pro-mis,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
+\TU/lmr/m/n/12 sans alerte
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
+\TU/lmr/m/n/12 pos-sible pour
+ []
+
+
+Underfull \hbox (badness 3838) in paragraph at lines 655--655
+[]|\TU/lmr/m/n/12 La po-li-tique de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+\TU/lmr/m/n/12 sé-cu-rité couvre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+\TU/lmr/m/n/12 la to-ta-lité du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+\TU/lmr/m/n/12 SI, y com-pris
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+\TU/lmr/m/n/12 les équi-pe-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+\TU/lmr/m/n/12 non-standards
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 655--655
+\TU/lmr/m/n/12 (im-pri-mantes IP,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+[]|\TU/lmr/m/n/12 Po-li-tique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+\TU/lmr/m/n/12 de sé-cu-rité,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+\TU/lmr/m/n/12 in-ven-taire des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--656
+\TU/lmr/m/n/12 équi-pe-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+[]|\TU/lmr/m/n/12 La po-li-tique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+\TU/lmr/m/n/12 de sé-cu-rité
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 657--657
+\TU/lmr/m/n/12 to-ta-lité du SI,
+ []
+
+
+Underfull \hbox (badness 3612) in paragraph at lines 657--657
+\TU/lmr/m/n/12 y com-pris les
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+\TU/lmr/m/n/12 équi-pe-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+\TU/lmr/m/n/12 non-standards
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--658
+[]|\TU/lmr/m/n/12 Zones du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--658
+\TU/lmr/m/n/12 SI non
+ []
+
+
+Underfull \hbox (badness 2326) in paragraph at lines 658--658
+\TU/lmr/m/n/12 cou-vertes par
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+[]|\TU/lmr/m/n/12 Des vec-teurs
+ []
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 659--660
+\TU/lmr/m/n/12 d’at-taque non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 su-per-vi-sés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 sub-sistent ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 un at-ta-quant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 peut pi-vo-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 de-puis une
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 im-pri-mante
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 ré-seau non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 sé-cu-ri-sée vers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+\TU/lmr/m/n/12 les ser-veurs
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 662--662
+\TU/lmr/m/n/12 gap entre l’état
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/12 ré-gle-men-taire
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--663
+[]|\TU/lmr/m/n/12 Do-cu-ment de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--663
+\TU/lmr/m/n/12 gap ana-ly-sis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+[]|\TU/lmr/m/n/12 Un do-cu-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/12 d’écart entre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/12 les pra-tiques
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 664--664
+\TU/lmr/m/n/12 in-ternes et le
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/12 cadre lé-gal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/12 ca-me-rou-nais
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/12 existe-t-il et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--665
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--665
+\TU/lmr/m/n/12 d’ana-lyse
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--665
+\TU/lmr/m/n/12 d’écart
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+[]|\TU/lmr/m/n/12 Non-conformité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 sanc-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 lé-gales ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 d’in-va-li-da-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 de preuves
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 nu-mé-riques
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 en cas de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\TU/lmr/m/n/12 pro-cé-dure
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 639--668
+ [][][][][] 
+ []
+
+./chapitres/06b_decomposition_types_audit.tex:668: ignored: Infinite glue shrink
+age found in box being split [111]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [112]
+[113]
+Overfull \hbox (1.4801pt too wide) in paragraph at lines 721--722
+\TU/lmr/m/n/12 ma-nuel d’uti-li-sa-tion, des-crip-tion des don-nées, états 
+de contrôle dis-po-nibles, contrôles
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 729--729
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 726--731
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 733--733
+[]|\TU/lmr/b/n/12 Élé-ment re-quis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 733--734
+[]|\TU/lmr/b/n/12 Consé-quence
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 731--735
+ [][][][][] 
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 735--737
+ [][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--740
+[]|\TU/lmr/m/n/12 Do-cu-ment de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--740
+\TU/lmr/m/n/12 sé-pa-ra-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--740
+\TU/lmr/m/n/12 res-pon-sa-bi-li-tés,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--740
+\TU/lmr/m/n/12 ha-bi-li-ta-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--740
+\TU/lmr/m/n/12 dis-tinctes dans
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+[]|\TU/lmr/m/n/12 La ligne de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+\TU/lmr/m/n/12 par-tage entre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+\TU/lmr/m/n/12 études et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+\TU/lmr/m/n/12 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+\TU/lmr/m/n/12 est-elle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
+\TU/lmr/m/n/12 for-ma-li-sée
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 741--741
+\TU/lmr/m/n/12 et connue des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+\TU/lmr/m/n/12 de ligne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+\TU/lmr/m/n/12 de par-tage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+\TU/lmr/m/n/12 for-ma-li-sée
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--742
+\TU/lmr/m/n/12 entre études
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 pro-duc-tion ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 risque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 d’in-tro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 de code non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 va-lidé et de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
+\TU/lmr/m/n/12 fraude non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
+[]|\TU/lmr/m/n/12 Un ta-bleau de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
+\TU/lmr/m/n/12 bord men-suel
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 746--746
+\TU/lmr/m/n/12 de l’ac-ti-vité des
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 746--746
+\TU/lmr/m/n/12 études existe et
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 746--746
+\TU/lmr/m/n/12 est com-mu-ni-qué
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
+\TU/lmr/m/n/12 au Co-mité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/12 bord men-suel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/12 des études
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/12 est-il pro-duit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/12 et pré-senté
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/12 au Co-mité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
+[]|\TU/lmr/m/n/12 Ab-sence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
+\TU/lmr/m/n/12 de ta-bleau
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
+\TU/lmr/m/n/12 de bord de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
+\TU/lmr/m/n/12 l’ac-ti-vité des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+[]|\TU/lmr/m/n/12 Opa-cité de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 la charge et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 des prio-ri-tés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 des études ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 im-pos-si-bi-lité
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 de pi-lo-ter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 res-sources ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 pro-jets se
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 blo-quant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\TU/lmr/m/n/12 mu-tuel-le-ment
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 753--753
+[]|\TU/lmr/m/n/12 Des normes de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
+\TU/lmr/m/n/12 pro-gram-ma-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
+\TU/lmr/m/n/12 for-ma-li-sées
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 753--753
+\TU/lmr/m/n/12 existent et leur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
+\TU/lmr/m/n/12 ap-pli-ca-tion est
+ []
+
+
+Underfull \hbox (badness 4846) in paragraph at lines 753--753
+\TU/lmr/m/n/12 vé-ri-fiée par des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/12 Ma-nuel des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/12 normes de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/12 rap-ports de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/12 pro-gram-ma-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/12 existent-elles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/12 et sont-elles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/12 ef-fec-ti-ve-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/12 vé-ri-fiées par
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 755--755
+\TU/lmr/m/n/12 des re-vues de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--756
+[]|\TU/lmr/m/n/12 Ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--756
+\TU/lmr/m/n/12 normes ou
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--756
+\TU/lmr/m/n/12 ab-sence de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--756
+\TU/lmr/m/n/12 re-vues de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+[]|\TU/lmr/m/n/12 Code
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 hé-té-ro-gène
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 et non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 main-te-nable ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 vul-né-ra-bi-li-tés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 clas-siques
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 (in-jec-tions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 ges-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 er-reurs) non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
+\TU/lmr/m/n/12 dé-tec-tées
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 757--758
+\TU/lmr/m/n/12 avant mise en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+[]|\TU/lmr/m/n/12 Les cor-rec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 ur-gentes (bug
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 blo-quant)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 sont tra-cées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 et font l’ob-jet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 d’un rap-port
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/12 sys-té-ma-tique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--761
+[]|\TU/lmr/m/n/12 Re-gistre des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--761
+\TU/lmr/m/n/12 cor-rec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--761
+\TU/lmr/m/n/12 ur-gentes,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--761
+\TU/lmr/m/n/12 rap-ports de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 762--762
+\TU/lmr/m/n/12 ur-gentes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 762--762
+\TU/lmr/m/n/12 sont-elles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 762--762
+\TU/lmr/m/n/12 sys-té-ma-ti-que-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--763
+[]|\TU/lmr/m/n/12 Cor-rec-tions
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 763--763
+\TU/lmr/m/n/12 ur-gentes non
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--763
+\TU/lmr/m/n/12 tra-cées ni
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+[]|\TU/lmr/m/n/12 Des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 mo-di-fi-ca-tions
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 764--765
+\TU/lmr/m/n/12 non contrô-lées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 du code de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 pro-duc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 risque de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 ré-gres-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 et de fraude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 cou-vert d’une
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+\TU/lmr/m/n/12 cor-rec-tion
+ []
+
+
+Overfull \hbox (23.01172pt too wide) in alignment at lines 737--766
+ [][][][][] 
+ []
+
+[114]
+./chapitres/06b_decomposition_types_audit.tex:766: ignored: Infinite glue shrink
+age found in box being split [115]
+Underfull \hbox (badness 2662) in paragraph at lines 775--776
+[]|\TU/lmr/m/n/12 L’ad-mi-nis-tra-teur pro-duit un ex-port prou-vant que 3
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 775--776
+\TU/lmr/m/n/12 mois der-nier se-lon la po-li-tique do-cu-men-tée. Sta-tut :
+ []
+
+[116]) [117] [118
+
+] [119] [120] (./chapitres/07_sujets_connexes.tex
+\bbl@ensure@french {Chapitre} 9.
+
+Underfull \hbox (badness 5077) in paragraph at lines 34--34
+[]|\TU/lmr/b/n/12 Boîte Noire (Black
+ []
+
+[121
+
+] [122] [123]) (./chapitres/08_evaluation_finale.tex [124]
+\bbl@ensure@french {Chapitre} 10.
+[125
+
+] [126] [127] [128] [129] [130]) [131] [132
+
+] [133] [134]
+(./chapitres/lab1_application.tex
+\bbl@ensure@french {Chapitre} 11.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 28.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 31.
+[135
+
+] [136] [137]) (./chapitres/lab2_infrastructure.tex [138]
+\bbl@ensure@french {Chapitre} 12.
+[139
+
+]
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+[140]
+Underfull \hbox (badness 1028) in paragraph at lines 120--121
+[]|\TU/lmr/b/n/12 Confi-gu-ra-tion Ob-ser-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]|\TU/lmr/m/n/12 Ad-mi-nis-tra-tion
+ []
+
+) (./chapitres/00_Conclusion.tex [141] [142
+
+] [143] [144]) [145] [146
+
+]
+Overfull \hbox (10.34178pt too wide) in paragraph at lines 297--297
+[]\TU/lmr/m/n/12 D. A. \TU/lmr/m/sc/12 Huffman\TU/lmr/m/n/12 , «   A Me-thod fo
+r the Construc-tion of Minimum-Redundancy Codes, »
+ []
+
+[147
+
+
+]
+No file Cours.ind.
+[148
+
+
+
+] (./Cours.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `Cours.out' has not changed.
+(rerunfilecheck)             Checksum: B22948A4048BC7D5A5695638308C0AA0;91488.
+Package logreq Info: Writing requests to 'Cours.run.xml'.
+
+\openout1 = Cours.run.xml
+)
+
+Here is how much of LuaTeX's memory you used:
+ 54234 strings out of 476076
+ 477561,2373549 words of node,token memory allocated
+ 2005 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 1 glyph, 
+265 attribute, 85 glue_spec, 133 attribute_list, 3 write, 24 pdf_literal, 5 pdf_
+action, 26 pdf_colorstack nodes
+   avail lists: 1:10,2:7149,3:1846,4:11864,5:9516,6:151,7:13497,8:88,9:23559,10:
+36,11:968
+ 74375 multiletter control sequences out of 65536+600000
+ 94 fonts using 8915943 bytes
+ 99i,22n,107p,2473b,2783s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/users/user/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmonolt10
+-bold.otf><c:/users/user/appdata/local/programs/miktex/fonts/opentype/public/lm/
+lmmono10-italic.otf><c:/users/user/appdata/local/programs/miktex/fonts/opentype/
+public/lm/lmroman6-regular.otf><c:/users/user/appdata/local/programs/miktex/font
+s/opentype/public/lm/lmmono10-regular.otf><c:/users/user/appdata/local/programs/
+miktex/fonts/opentype/public/lm/lmroman8-italic.otf>{C:/Users/user/AppData/Local
+/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<c:/users/user/appdata/local/p
+rograms/miktex/fonts/opentype/public/lm/lmmono8-regular.otf>{C:/Users/user/AppDa
+ta/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/user/AppData
+/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/user/AppData/Local
+/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<c:/users/user/appdata/local/p
+rograms/miktex/fonts/opentype/public/lm/lmroman8-regular.otf><c:/users/user/appd
+ata/local/programs/miktex/fonts/opentype/public/lm/lmmono12-regular.otf><c:/user
+s/user/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.
+otf><c:/users/user/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
+n10-italic.otf><c:/users/user/appdata/local/programs/miktex/fonts/opentype/publi
+c/lm/lmroman10-regular.otf><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/op
+entype/public/lm/lmroman12-italic.otf><c:/users/user/appdata/local/programs/mikt
+ex/fonts/opentype/public/lm/lmromandemi10-regular.otf><c:/users/user/appdata/loc
+al/programs/miktex/fonts/opentype/public/lm/lmromancaps10-regular.otf><C:/Users/
+user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1
+.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.p
+fb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb
+><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><
+C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:
+/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Us
+ers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Use
+rs/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/
+user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/user/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/user/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/user/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/
+user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb
+>
+Output written on Cours.pdf (170 pages, 1231452 bytes).
+
+PDF statistics: 3465 PDF objects out of 3580 (max. 8388607)
+ 993 named destinations out of 1000 (max. 1048576)
+ 2912 words of extra memory for PDF output out of 10000 (max. 100000000)
+

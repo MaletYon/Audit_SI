@@ -1,0 +1,370 @@
+% ==============================================================================
+% Fichier     : Cours.tex
+% Titre       : Audit des Systèmes d'Information
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Institution : Université de Yaoundé I - Ecole Nationale Supérieure Polytechnique - Département de Génie Informatique — LIMSI
+% Année       : 2025-2026
+% Description : Fichier principal du cours. Orchestre tous les chapitres,
+%               la bibliographie et les éléments de couverture.
+% Compilateur : pdflatex + biber (ou lualatex recommandé)
+%               → lualatex Cours && biber Cours && lualatex Cours && lualatex Cours
+% ==============================================================================
+
+\documentclass[12pt, a4paper, twoside, openright]{book}
+
+% ==============================================================================
+% CHARGEMENT DE LA FEUILLE DE STYLE
+% ==============================================================================
+\usepackage{Style_cours}
+
+% ==============================================================================
+% BIBLIOGRAPHIE
+% ==============================================================================
+\addbibresource{bibliographie.bib}
+
+% ==============================================================================
+% MÉTADONNÉES PDF
+% ==============================================================================
+\hypersetup{
+    pdftitle  = {Audit des Systèmes d'Information},
+    pdfauthor = {MINKA MI NGUIDJOÏ Thierry Emmanuel},
+    pdfsubject= {Support de Cours— Audit SI, Gouvernance, Sécurité},
+    pdfkeywords={Audit SI, CISA, COBIT, ISO 27001, Contrôle interne,
+                 Sécurité des systèmes d'information, Université de Yaoundé I}
+}
+
+% ==============================================================================
+% DÉBUT DU DOCUMENT
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% 1. PAGE DE TITRE (1ère DE COUVERTURE)
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\pagecolor{CouleurPrimaire}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Bande dorée en bas de couverture
+    \fill[CouleurAccent]
+        (current page.south west) rectangle
+        ([yshift=2.2cm] current page.south east);
+    % Ligne décorative en haut
+    \fill[CouleurAccent]
+        ([yshift=-1.5cm] current page.north west) rectangle
+        ([yshift=-1.8cm] current page.north east);
+    % Élément graphique décoratif (carré tourné)
+    \fill[white, opacity=0.04]
+        ([xshift=8cm, yshift=-6cm] current page.north west)
+        -- ++(5,0) -- ++(0,-5) -- ++(-5,0) -- cycle;
+    \fill[white, opacity=0.06]
+        ([xshift=9cm, yshift=-7cm] current page.north west)
+        -- ++(6,0) -- ++(0,-6) -- ++(-6,0) -- cycle;
+\end{tikzpicture}
+
+\vspace*{1.5cm}
+
+% Logo institutionnel (à décommenter si disponible)
+% \begin{center}
+%     \includegraphics[height=2.5cm]{figures/logo_uy1.png}
+% \end{center}
+
+\begin{center}
+    {\color{white!80!gray}\small\scshape
+        Université de Yaoundé~I~·~Ecole Nationale Supérieure Polytechnique~·~Département de Génie Informatique}\\[0.4ex]
+    {\color{CouleurAccent}\rule{0.55\linewidth}{0.8pt}}
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{center}
+    {\color{white!60!gray}\footnotesize\scshape
+        support de cours}\\[1ex]
+    {\color{white}\fontsize{34}{42}\selectfont\bfseries
+        Audit des Systèmes d'Information}\\[1.5ex]
+    {\color{CouleurAccent}\Large\itshape
+        Fondements, Méthodes, Référentiels et Pratique}
+\end{center}
+
+\vspace{2cm}
+
+\begin{center}
+    {\color{white!70!gray}\small
+        \ding{43}\quad Cas fil rouge : Entreprise LiZbiZ}\\[0.5ex]
+    {\color{white!70!gray}\small
+        \ding{44}\quad COSO~·~COBIT~·~ISO 27001~·~ISO 19011}\\[0.5ex]
+    {\color{white!70!gray}\small
+        \ding{228}\quad Audit fonctionnel~·~Audit de sécurité~·~Gouvernance IA}
+\end{center}
+
+\vfill
+
+\begin{center}
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}\\[1.2ex]
+    {\color{white}\large\bfseries MINKA MI NGUIDJOÏ Thierry Emmanuel}\\[0.4ex]
+    {\color{white!80!gray}\small
+        CISA~·~CISM~·~CGEIT~·~CRISC~·~CDPSE~·~ISO 27001~·~ISO 22301~·~ISO 9001}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Chercheur — LIMSI — ENSP, Université de Yaoundé~I}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Expert Judiciaire~—~Gestionnaire de Risque~—~Auditeur Senior~—~Cryptographe}\\[1.2ex]
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}
+\end{center}
+
+\vspace{0.6cm}
+
+\begin{center}
+    {\color{white!60!gray}\small Année académique 2025--2026}
+\end{center}
+
+\afterpage{\nopagecolor}
+\end{titlepage}
+
+% ------------------------------------------------------------------------------
+% 2. PAGE DE DROITS / VERSO DE LA COUVERTURE
+% ------------------------------------------------------------------------------
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{center}
+    \begin{minipage}{0.78\textwidth}
+        \footnotesize\color{CouleurBordInfo}
+        \begin{center}
+            {\bfseries\color{CouleurPrimaire}
+                Audit des Systèmes d'Information}\\[0.4ex]
+            {\itshape Fondements, Méthodes, Référentiels et Pratique}
+        \end{center}
+        \vspace{0.8ex}
+        \hrule
+        \vspace{0.8ex}
+        \textbf{Auteur :} MINKA MI NGUIDJOÏ Thierry Emmanuel\\
+        \textbf{Institution :} Université de Yaoundé~I — LIMSI\\
+        \textbf{Année :} 2025--2026\\[0.5ex]
+        Ce document est un support de cours universitaire rédigé à des fins
+        pédagogiques. Toute reproduction partielle ou totale à des fins commerciales
+        est interdite sans l'autorisation écrite de l'auteur. Les références à des
+        produits, organisations ou normes sont citées à titre pédagogique uniquement.\\[0.5ex]
+        Les certifications CISA, CISM, CGEIT, CRISC et CDPSE sont des marques
+        déposées de l'\textbf{ISACA} (\textit{Information Systems Audit and Control Association}).\\[0.5ex]
+        
+        \hrule
+        \vspace{0.5ex}
+        {\centering\itshape
+        «~Éduquer, c'est donner à l'autre les armes de sa propre lucidité.~»}
+    \end{minipage}
+\end{center}
+
+\vspace*{\fill}
+
+% ------------------------------------------------------------------------------
+% 3. DÉDICACE
+% ------------------------------------------------------------------------------
+\clearpage
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{flushright}
+    \begin{minipage}{0.6\textwidth}
+        \itshape\large\color{CouleurPrimaire}
+        À ceux qui ont pris la peine de comprendre\\
+        avant d'agir, et de vérifier avant de conclure.\\[1.5ex]
+        \normalsize\normalfont\color{CouleurAccent}
+        Et à tous les auditeurs en devenir\\
+        qui liront ces pages avec l'exigence\\
+        qu'ils apporteront demain à leur métier.
+    \end{minipage}
+\end{flushright}
+
+% ------------------------------------------------------------------------------
+% 4. REMERCIEMENTS
+% ------------------------------------------------------------------------------
+\clearpage
+\thispagestyle{empty}
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+
+La conception de ce cours a bénéficié de l'expérience conjointe du chercheur et du praticien. L'auteur exprime sa reconnaissance à \textbf{tous les relecteurs anonymes et non} et qui ont contribué à l'enrichissement de cette version. 
+Une mention spéciale pour \textbf{le Professeur Hamadou Bâ} Directeur Général de l'Hôpital Général de Garoua, pour son amitié qui nous a permis de confronter  plusieurs de nos idées ici développées avec la réalité de la structure exigeante dont il a lacharge. De même, le Directeur du Contrôle Budgétaire au ministère des finances, \textbf{Madame Tabenyang Augusta épouse Ndjock Arrey}, a été d'un appui significatif dans la rédactionde ce cours, son professionalisme et sa disponiblité forcent l'admiration.
+
+La matière de ce cours a été nourrie par les missions menées au sein des \textbf{Services du Contrôle Supérieur de l'État}, où l'audit n'est pas une abstraction académique mais une responsabilité institutionnelle quotidienne. De même des prestations comme consultant individuel auprès d'entreprises nationales et internationales, ce qui lui donne une dimension transnationale.
+
+À nos étudiants ...
+
+% ------------------------------------------------------------------------------
+% 5. TABLE DES MATIÈRES
+% ------------------------------------------------------------------------------
+\clearpage
+\tableofcontents
+
+% ------------------------------------------------------------------------------
+% 6. LISTE DES FIGURES (si nécessaire)
+% ------------------------------------------------------------------------------
+\clearpage
+\listoffigures
+\addcontentsline{toc}{chapter}{Liste des figures}
+
+% ------------------------------------------------------------------------------
+% 7. LISTE DES TABLEAUX
+% ------------------------------------------------------------------------------
+\listoftables
+\addcontentsline{toc}{chapter}{Liste des tableaux}
+
+% ------------------------------------------------------------------------------
+% 8. LISTE DES CODES SOURCE
+% ------------------------------------------------------------------------------
+\lstlistoflistings
+\addcontentsline{toc}{chapter}{Liste des codes source}
+
+% ==============================================================================
+% CORPS DU COURS
+% ==============================================================================
+\mainmatter
+
+% --- Introduction Générale ---
+\input{chapitres/0_Introduction}
+
+% -------------------------------------------------------------------
+% PARTIE I — Fondements Théoriques et Méthodologiques
+% -------------------------------------------------------------------
+\part{Fondements Théoriques et Méthodologiques}
+
+% Chapitre 1 — Cas pratique fil rouge
+\input{chapitres/01_cas_lizbiz}
+
+% Chapitre 2 — Définitions, concepts et bases
+\input{chapitres/02_fondamentaux}
+
+% Chapitre 3 — Démarche générale d'audit SI
+\input{chapitres/03_demarche}
+
+% -------------------------------------------------------------------
+% PARTIE II — Référentiels et Typologies d'Audit
+% -------------------------------------------------------------------
+\part{Référentiels et Typologies d'Audit}
+
+% Chapitre 4 — Normes et référentiels usuels (COSO, COBIT, ISO 27000)
+\input{chapitres/04_referentiels}
+
+% Chapitre 5 — Principaux types d'audit SI
+\input{chapitres/05_types_audits}
+
+% -------------------------------------------------------------------
+% PARTIE III — Outils d'aide à l'audit
+% -------------------------------------------------------------------
+\part{Outils d'aide à l'audit}
+% Chapitre 6A — 05_theorie_information_shannon
+\input{chapitres/05_theorie_information_shannon}
+
+% Chapitre 6B — Outil d'aide à d'audit SI
+\input{chapitres/06_outil_aide_audit}
+
+% Chapitre 6C —décomposition
+\input{chapitres/06b_decomposition_types_audit}
+
+% -------------------------------------------------------------------
+% PARTIE IV — Enjeux Contemporains et Évaluation
+% -------------------------------------------------------------------
+\part{Enjeux Contemporains et Évaluation}
+
+% Chapitre 7 — Sujets connexes : IA et Fraude
+\input{chapitres/07_sujets_connexes}
+
+% Chapitre 8 — Évaluation finale
+\input{chapitres/08_evaluation_finale}
+
+% -------------------------------------------------------------------
+% TRAVAUX PRATIQUES (Laboratoires)
+% -------------------------------------------------------------------
+\part{Travaux Pratiques Immersifs}
+
+\input{chapitres/lab1_application}
+\input{chapitres/lab2_infrastructure}
+
+% --- Conclusion Générale ---
+\input{chapitres/00_Conclusion}
+
+% ==============================================================================
+% MATIÈRE POSTLIMINAIRE
+% ==============================================================================
+\backmatter
+
+% --- Bibliographie ---
+\clearpage
+\printbibliography[
+    heading=bibintoc,
+    title={Bibliographie et Références}
+]
+
+% --- À Propos de l'Auteur ---
+\clearpage
+%\input{chapitres/Apropos_Auteur}
+
+% --- Index ---
+\clearpage
+\printindex
+\addcontentsline{toc}{chapter}{Index}
+
+% ==============================================================================
+% 4ÈME DE COUVERTURE
+% ==============================================================================
+\clearpage
+\thispagestyle{empty}
+\pagecolor{CouleurPrimaire}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[CouleurAccent]
+        (current page.south west) rectangle
+        ([yshift=1.8cm] current page.south east);
+    \fill[CouleurAccent]
+        ([yshift=-1.4cm] current page.north west) rectangle
+        ([yshift=-1.7cm] current page.north east);
+\end{tikzpicture}
+
+\vspace*{2.5cm}
+
+\begin{center}
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}\\[1.5ex]
+    {\color{white}\Large\bfseries À propos de ce cours}\\[1.5ex]
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{minipage}{0.75\textwidth}
+\color{white!85!gray}\setstretch{1.4}
+Ce cours propose une approche intégrée et rigoureuse de l'audit des systèmes d'information, articulant les fondements théoriques du contrôle interne, les référentiels internationaux reconnus (COSO, COBIT, ISO 27001) et une pratique immersive à travers le cas fil rouge de l'entreprise LiZbiZ.
+
+\medskip
+
+Il s'adresse aux étudiants en informatique, gestion et sécurité des SI souhaitant acquérir les compétences opérationnelles et conceptuelles requises pour conduire des missions d'audit avec professionnalisme, en conformité avec les standards de l'ISACA et de l'IIA.
+
+\medskip
+
+Les thèmes abordés couvrent la démarche d'audit, l'analyse des risques, les tests fonctionnels et techniques, la gouvernance de l'intelligence artificielle, la détection de la fraude et la rédaction du rapport final.
+\end{minipage}
+\end{center}
+
+\vfill
+
+\begin{center}
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}\\[1.2ex]
+    {\color{white}\large\bfseries MINKA MI NGUIDJOÏ Thierry Emmanuel}\\[0.4ex]
+    {\color{white!80!gray}\small
+        CISA~·~CISM~·~CGEIT~·~CRISC~·~CDPSE~·~ISO 27001~·~ISO 22301~·~ISO 9001}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Chercheur — LIMSI — ENSP, Université de Yaoundé~I}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Expert Judiciaire~—~Gestionnaire de Risque~—~Auditeur Senior~—~Cryptographe}\\[1.2ex]
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}
+\end{center}
+
+\vspace{1cm}
+
+\afterpage{\nopagecolor}
+
+\end{document}
+% ==============================================================================
+% Fin de Cours.tex
+% ==============================================================================

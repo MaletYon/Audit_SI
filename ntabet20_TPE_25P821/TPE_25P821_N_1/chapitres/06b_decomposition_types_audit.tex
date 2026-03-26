@@ -1,0 +1,808 @@
+% ==============================================================================
+% Fichier     : 06b_decomposition_types_audit.tex
+% Description : Décomposition hiérarchique des types d'audit SI
+% ==============================================================================
+
+\chapter{Décomposition Hiérarchique des Types d'Audit SI}
+\label{chap:decomposition}
+
+\begin{boxobjectifs}
+À l'issue de ce chapitre, l'apprenant doit être capable de :
+\begin{itemize}
+    \item Déployer la chaîne complète de décomposition, du point de contrôle à la conséquence, pour chacun des six types d'audit SI ;
+    \item Formuler correctement des objectifs de contrôle, des critères, des questions d'évaluation trichotomiques, des risques et des conséquences ;
+    \item Construire la feuille de calcul correspondante dans l'outil d'aide à l'audit ;
+    \item Distinguer une réponse \textbf{N} (défaillance avérée) d'une réponse \textbf{PAS/NEK} (incertitude documentaire) et en tirer les conséquences analytiques appropriées.
+\end{itemize}
+\end{boxobjectifs}
+
+Le chapitre précédent a établi le \textit{cadre} de la décomposition hiérarchique, ses huit niveaux, leur logique interne, et les formules d'automatisation qui transforment la grille en instrument de pilotage. Ce chapitre en constitue le \textit{corpus} : il applique ce cadre à chacun des six types d'audit canoniques, en fournissant pour chaque domaine les points de contrôle, les objectifs de contrôle opérationnels, ainsi qu'une décomposition illustrée jusqu'à la conséquence sur les cas les plus significatifs. Les apprenants complèteront, sur le modèle des exemples donnés, les niveaux 4 à 8 dans leur outil Excel personnel.
+
+\begin{boxinfo}
+\textbf{Convention de lecture.} Dans ce chapitre, la chaîne de décomposition est présentée sous la forme suivante pour chaque exemple développé :
+\[
+\underbrace{\text{Objectif}}_{\text{N3}} \;\longrightarrow\; \underbrace{\text{Critère}}_{\text{N4}} \;\longrightarrow\; \underbrace{\text{Élément requis}}_{\text{N5}} \;\longrightarrow\; \underbrace{\text{Question}}_{\text{N6}} \;\longrightarrow\; \underbrace{\text{Risque}}_{\text{N7}} \;\longrightarrow\; \underbrace{\text{Conséquence}}_{\text{N8}}
+\]
+Le niveau 2 (Point de contrôle) et le niveau 1 (Domaine) sont rappelés en en-tête de section.
+\end{boxinfo}
+
+
+% ==============================================================================
+\section{Domaine 1, Audit des Applications en Service}
+\label{sec:decomp-appli}
+% ==============================================================================
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 56--66), six points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Organisation
+    \item Application (contrôles d'accès, saisie, traitement, sorties)
+    \item Fonction informatique (SLA, sauvegardes, plan de secours)
+    \item Adéquation de l'application aux besoins
+    \item Performance et rentabilité
+    \item Évolutivité et pérennité
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (Niveau 3)}
+
+\subsubsection{Point 1, Organisation}
+
+\begin{enumerate}[label=1.\arabic*.]
+    \item S'assurer de l'existence d'un comité informatique.
+    \item S'assurer de l'existence d'une politique relative aux applications.
+    \item S'assurer que les rôles et responsabilités des utilisateurs sont bien définis.
+    \item S'assurer qu'une analyse des risques a été réalisée.
+    \item S'assurer que le prolongement de l'analyse de risque a été réalisé.
+    \item S'assurer que l'analyse et l'évaluation du niveau de sensibilité ont été réalisées.
+    \item Vérifier l'existence d'un manuel d'administration de l'application.
+    \item Vérifier l'existence de procédures formalisées.
+    \item S'assurer de l'existence et de la mise à disposition d'un compte rendu mensuel au propriétaire.
+    \item S'assurer de l'existence d'un guide utilisateur et d'un manuel de procédures.
+\end{enumerate}
+
+\subsubsection{Point 2, Application}
+
+\begin{enumerate}[label=2.\arabic*.]
+    \item S'assurer que l'accès aux ressources est restreint par un système de gestion des profils.
+    \item Vérifier que l'identification des utilisateurs et la gestion des mots de passe sont effectives.
+    \item S'assurer que les tentatives de connexion infructueuses sont suivies.
+    \item Vérifier l'existence de pistes d'audit sur le système d'administration.
+    \item S'assurer que les documents servant de base à la saisie sont tous pris en compte.
+    \item S'assurer que les contrôles de validation des brouillards de saisie existent.
+    \item Vérifier que les saisies de données sensibles sont gérées et suivies.
+    \item S'assurer de la conservation et de la correction des données rejetées.
+    \item Vérifier que la distribution des états de sortie est effective et contrôlée.
+    \item S'assurer de l'intégrité des données transmises entre modules.
+\end{enumerate}
+
+\subsubsection{Point 3, Fonction informatique}
+
+\begin{enumerate}[label=3.\arabic*.]
+    \item S'assurer que les tâches de développement et d'exploitation sont documentées et séparées.
+    \item Vérifier que la maintenance de la séparation des tâches est effective.
+    \item S'assurer de l'existence et de l'application d'un contrat de service (SLA).
+    \item Vérifier que les procédures de sauvegarde et de reprise sont effectives et testées.
+    \item S'assurer de l'existence d'un plan de secours adapté aux enjeux, mis à jour et testé.
+    \item Vérifier la présence d'un responsable sécurité et d'une politique formalisée.
+    \item S'assurer que les accès aux ressources système sont réglementés et révisés périodiquement.
+\end{enumerate}
+
+\subsubsection{Points 4, 5 et 6, Adéquation, Performance, Évolutivité}
+
+\begin{enumerate}[label=4.\arabic*.]
+    \item Vérifier l'existence et la mise à jour d'un schéma directeur du SI.
+    \item S'assurer que l'alignement stratégique de l'application a été évalué.
+    \item Vérifier qu'une évaluation de l'adéquation aux besoins des utilisateurs a été réalisée.
+\end{enumerate}
+\begin{enumerate}[label=5.\arabic*.]
+    \item Vérifier qu'une évaluation de la rentabilité et un bilan post-projet existent.
+    \item S'assurer que des indicateurs de performance et un tableau de bord sont disponibles.
+\end{enumerate}
+\begin{enumerate}[label=6.\arabic*.]
+    \item S'assurer que la version installée est la plus récente et que les montées de version sont suivies.
+    \item Vérifier l'existence d'une clause d'\textit{Escrow Agreement} dans le contrat éditeur.
+    \item S'assurer que l'éditeur a des références indiscutables et que la pérennité du progiciel est garantie.
+\end{enumerate}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+Le tableau suivant illustre la chaîne complète de décomposition sur cinq objectifs représentatifs du domaine.
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Applications en service (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+Le comité informatique existe et est présidé par le DG. &
+PV de session du comité, décision de création signée. &
+Le comité est-il présidé par le DG ? &
+Le comité n'est pas présidé par le DG. &
+Décisions prises par des acteurs sans niveau décisionnel adéquat ; incohérence stratégique. \\
+\addlinespace
+
+Les directions utilisatrices sont représentées et influentes au sein du comité. &
+Décision d'affectation, PV de session. &
+Les directions utilisatrices sont-elles représentées et influentes ? &
+Les directions utilisatrices ne sont pas représentées. &
+Application non adaptée aux besoins métiers ; rejet par les utilisateurs. \\
+\addlinespace
+
+Une piste d'audit existe sur le système d'administration~: toute modification est horodatée et attribuée. &
+Extraction des journaux système (logs) sur la période. &
+Existe-t-il une piste d'audit traçant toutes les modifications sur les données sensibles ? &
+Absence de piste d'audit sur les données sensibles. &
+Impossibilité d'investiguer une fraude ou une erreur ; risque de manipulation non détectée. \\
+\addlinespace
+
+Un SLA formalisé existe entre la DSI et la direction utilisatrice, avec des indicateurs de niveau de service. &
+Contrat de service signé, tableaux de bord de suivi. &
+Un SLA formalisé est-il en place et régulièrement mesuré ? &
+Absence de SLA ou SLA non mesuré. &
+Niveau de service non garanti ; conflits récurrents entre DSI et métiers sans arbitrage objectif. \\
+\addlinespace
+
+Une clause d'\textit{Escrow Agreement} est présente dans le contrat éditeur. &
+Contrat de maintenance avec l'éditeur. &
+Le contrat éditeur contient-il une clause d'\textit{Escrow} garantissant l'accès au code source ? &
+Absence de clause d'\textit{Escrow}. &
+En cas de défaillance de l'éditeur, impossibilité de maintenir l'application~; risque de paralysie du SI. \\
+
+\end{longtable}
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Application des réponses trichotomiques (Point 2 : Application)}
+
+\smallskip
+\begin{tabular}{p{5.5cm}p{1cm}p{6cm}}
+\textbf{Question} & \textbf{Rép.} & \textbf{Interprétation} \\
+\midrule
+Une piste d'audit existe-t-elle sur le module comptable ? & \textbf{N} & Défaillance avérée. L'administrateur confirme l'absence de journalisation. \texttt{NON CONFORME}. \\
+\addlinespace
+Le SLA est-il mesuré mensuellement ? & \textbf{PAS} & Le responsable évoque un tableau de bord «~en cours de conception~» depuis 18 mois. Aucun document produit. \texttt{ZONE GRISE}. \\
+\addlinespace
+L'accès aux données est-il restreint par profil utilisateur ? & \textbf{O} & Liste des profils produite et cohérente avec les fonctions. \texttt{CONFORME}. \\
+\end{tabular}
+
+\smallskip
+Entropie du point de contrôle sur ces trois questions : $H = -\frac{1}{3}\log_2\frac{1}{3} \times 3 \approx 1{,}585$ bits, zone grise critique.
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Domaine 2, Audit de la Fonction Informatique (DSI)}
+\label{sec:decomp-dsi}
+% ==============================================================================
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 37--42), six points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Rôle et positionnement de l'informatique dans l'organisation
+    \item Planification stratégique
+    \item Budgets et coûts informatiques
+    \item Mesure et suivi de la performance informatique
+    \item Organisation et structure de la DSI
+    \item Cadre législatif et réglementaire camerounais
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (Niveau 3)}
+
+\subsubsection{Point 1, Rôle et positionnement}
+\begin{enumerate}[label=1.\arabic*.]
+    \item Vérifier la création et le fonctionnement de comités informatiques (stratégique, pilotage).
+    \item Vérifier l'existence d'une charte informatique définissant le rôle et le périmètre de la DSI.
+    \item Évaluer le degré d'implication des organes de gestion dans les SI.
+    \item Vérifier que le leadership des grands projets est assuré par les organes de gestion.
+    \item Vérifier que les métiers assurent effectivement leur rôle de MOA.
+\end{enumerate}
+
+\subsubsection{Point 2, Planification stratégique}
+\begin{enumerate}[label=2.\arabic*.]
+    \item Vérifier la couverture et la mise à jour du périmètre fonctionnel du schéma directeur.
+    \item Vérifier l'existence et la mise à jour des documents d'urbanisme du SI.
+    \item Vérifier la cohérence et l'homogénéité des technologies retenues.
+    \item Vérifier l'existence et l'unicité des référentiels (clients, fournisseurs, articles).
+\end{enumerate}
+
+\subsubsection{Point 3, Budgets et coûts}
+\begin{enumerate}[label=3.\arabic*.]
+    \item Évaluer l'organisation et les processus budgétaires existants.
+    \item Vérifier l'existence de ratios et d'éléments de benchmark (coûts/CA, coût par utilisateur).
+\end{enumerate}
+
+\subsubsection{Point 4, Mesure et suivi de la performance}
+\begin{enumerate}[label=4.\arabic*.]
+    \item Vérifier que des objectifs CT/MT/LT existent et sont assignés à la DSI (approche BSC).
+    \item Évaluer la pertinence des indicateurs de qualité et de performance.
+    \item Vérifier que la DSI tient un tableau de bord BSC consolidé.
+    \item Vérifier qu'un bilan économique est réalisé après chaque projet.
+\end{enumerate}
+
+\subsubsection{Point 5, Organisation et structure de la DSI}
+\begin{enumerate}[label=5.\arabic*.]
+    \item Vérifier l'existence d'un organigramme à jour avec des définitions de fonctions claires.
+    \item Évaluer la couverture des composantes essentielles de la fonction informatique.
+    \item Évaluer l'adéquation des effectifs et des qualifications aux fonctions occupées.
+    \item Vérifier la séparation des tâches entre études et exploitation, maintenue lors des rotations.
+    \item Évaluer le turn-over de la DSI (taux raisonnable : 5--15\,\% / an).
+    \item Évaluer la dépendance vis-à-vis de personnes-clés.
+    \item Vérifier que les contrats contiennent des clauses de confidentialité et de non-concurrence.
+    \item Vérifier que les informaticiens sont dispensés de préavis en cas de rupture brutale.
+    \item Vérifier l'existence d'un plan de formation nominatif, adapté et inscrit dans la durée.
+\end{enumerate}
+
+\subsubsection{Point 6, Cadre législatif et réglementaire camerounais}
+\begin{enumerate}[label=6.\arabic*.]
+    \item Vérifier que les prescriptions des lois de 2010 (cybersécurité, cybercriminalité, transactions électroniques) sont connues et respectées.
+    \item Vérifier que les mesures préventives relatives à la fraude informatique sont en place.
+    \item S'assurer que l'usage du chiffrement et de la signature électronique est conforme.
+    \item Vérifier la conformité avec la loi sur l'archivage électronique.
+    \item Vérifier le respect des dispositions sur la propriété intellectuelle et les logiciels.
+\end{enumerate}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Fonction informatique (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+Une charte informatique formalisée définit le rôle et le périmètre de la DSI. &
+Charte informatique signée, en vigueur. &
+Une charte informatique formalisée existe-t-elle ? &
+Absence de charte informatique. &
+Rôle et périmètre de la DSI non contractualisés~; conflits de compétences récurrents avec les métiers. \\
+\addlinespace
+
+La séparation des tâches entre études et exploitation est documentée et maintenue lors des rotations. &
+Organigramme, fiches de poste, procédure de mise en production. &
+La séparation études/exploitation est-elle documentée et effectivement maintenue ? &
+Absence de séparation études/exploitation. &
+Un développeur peut modifier les programmes en production sans contrôle~; risque de fraude et d'erreur non détectée. \\
+\addlinespace
+
+Le turn-over annuel de la DSI est compris entre 5 et 15\,\%. &
+Statistiques RH des trois derniers exercices. &
+Le taux de turn-over de la DSI est-il dans la plage 5--15\,\%/an ? &
+Turn-over excessif (>15\,\%) ou trop faible (<5\,\%). &
+Instabilité des équipes ou rigidité organisationnelle~; risque de perte de compétences critiques ou de résistance au changement. \\
+\addlinespace
+
+Les lois camerounaises de 2010 sur la cybersécurité et la cybercriminalité sont connues et des mesures préventives ont été prises. &
+Tout document interne attestant la prise de connaissance (note de service, formation). &
+Les prescriptions des lois de 2010 sont-elles connues des responsables IT et des mesures préventives sont-elles en place ? &
+Non-connaissance des lois de 2010 par la DSI. &
+Exposition de l'organisation à des sanctions légales~; absence de protection contre la fraude informatique pourtant prévue par la loi. \\
+
+\end{longtable}
+
+
+% ==============================================================================
+\section{Domaine 3, Audit des Projets Informatiques}
+\label{sec:decomp-projets}
+% ==============================================================================
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 73--90), quinze points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Objectifs et enjeux du projet
+    \item Étude d'opportunité et expression des besoins
+    \item Planification
+    \item Instances de pilotage
+    \item Méthodes et outils
+    \item Qualité
+    \item Conception générale et analyse
+    \item Conception détaillée
+    \item Développement, réalisation ou paramétrage
+    \item Tests et recettes
+    \item Conduite du changement et mise en œuvre
+    \item Documentation
+    \item Structures mises en place à l'occasion du projet
+    \item Gestion des évolutions
+    \item Mise en production
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (sélection, Niveaux 3)}
+
+En raison de la richesse du domaine, les objectifs les plus critiques sont listés pour chaque point. L'apprenant complète les objectifs secondaires dans son outil Excel.
+
+\subsubsection{Points 1--3 : Enjeux, Besoins, Planification}
+\begin{itemize}
+    \item S'assurer qu'une étude de valeur et des études d'opportunité et d'impacts ont été réalisées.
+    \item S'assurer que les objectifs et périmètres du projet sont définis, partagés et stabilisés.
+    \item S'assurer que l'expression des besoins est formalisée dans un cahier des charges MOA comprenant~: exigences utilisateurs, faisabilité, bénéfices attendus, contraintes, acteurs.
+    \item S'assurer que l'approbation de l'étude d'opportunité a été formalisée par écrit.
+    \item S'assurer qu'il existe un planning directeur commun, décliné en plans détaillés révisés.
+    \item S'assurer qu'il existe une évaluation des risques liés à la nature du projet, à la technologie, aux délais et à la synchronisation des activités.
+\end{itemize}
+
+\subsubsection{Points 4--6 : Pilotage, Méthodes, Qualité}
+\begin{itemize}
+    \item S'assurer de l'existence d'un comité de pilotage, d'un comité de projet et d'un comité des utilisateurs avec des participants représentatifs.
+    \item S'assurer qu'il existe une méthode de conduite de projet documentée et effectivement appliquée.
+    \item S'assurer qu'il existe un dispositif d'assurance qualité documenté et indépendant des équipes de développement.
+    \item S'assurer qu'il existe un circuit d'approbation des livrables pertinent.
+\end{itemize}
+
+\subsubsection{Points 7--10 : Conception, Développement, Tests}
+\begin{itemize}
+    \item S'assurer que les aspects de contrôle interne et de sécurité ont été pris en compte dans le cahier des charges dès la conception générale.
+    \item S'assurer qu'il existe des pistes d'audit permettant de suivre la totalité des transactions dans la conception détaillée.
+    \item S'assurer qu'il existe des normes de programmation formalisées, connues et appliquées.
+    \item S'assurer que la MOE réalise des tests unitaires, fonctionnels, d'intégration et de performance.
+    \item S'assurer qu'il existe une procédure formalisée de recette finale avec participation de tous les acteurs et formalisation écrite des résultats.
+\end{itemize}
+
+\subsubsection{Points 11--15 : Changement, Documentation, Production}
+\begin{itemize}
+    \item S'assurer qu'il existe un plan de communication et un plan de formation cohérents avec le planning du projet.
+    \item S'assurer qu'il existe un manuel d'utilisation et un manuel d'exploitation conformes aux normes en vigueur.
+    \item S'assurer que les rôles et responsabilités respectifs de la MOA et de la MOE sont clairement définis.
+    \item S'assurer qu'il existe une procédure de gestion des évolutions du périmètre avec mesure d'impact.
+    \item S'assurer que les responsabilités lors de la mise en production respectent le principe de séparation des tâches et que la bascule vers la maintenance est organisée contractuellement.
+\end{itemize}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Projets informatiques (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+L'étude d'opportunité a été approuvée par écrit par une personne ayant autorité. &
+Étude d'opportunité signée avec visa de la personne compétente. &
+L'étude d'opportunité a-t-elle été formellement approuvée par une personne habilitée ? &
+Absence d'approbation formelle de l'étude d'opportunité. &
+Engagement de ressources sans validation décisionnelle~; risque de projet non aligné avec les priorités de la direction. \\
+\addlinespace
+
+Un registre des risques projet est maintenu et mis à jour, avec des plans d'atténuation assignés. &
+Registre des risques daté, avec responsables et états d'avancement. &
+Un registre des risques projet existe-t-il et est-il activement mis à jour ? &
+Absence de registre des risques projet. &
+Le projet subit les événements au lieu de les anticiper~; dépassements de délais et de budgets non prévenus. \\
+\addlinespace
+
+La recette finale est formalisée par écrit par la direction utilisatrice, couvrant les niveaux fonctionnel, performance et sécurité. &
+PV de recette signé par la MOA. &
+Les résultats de la recette finale ont-ils été formalisés par écrit par la direction utilisatrice ? &
+Absence de PV de recette formalisé. &
+Litige possible entre MOA et MOE sur la conformité des livrables~; impossibilité d'activer les garanties contractuelles. \\
+\addlinespace
+
+La mise en production respecte le principe de séparation des tâches entre équipe projet et équipe de production. &
+Procédure de mise en production, habilitations des équipes. &
+Les équipes projet et de production ont-elles des périmètres d'habilitation distincts lors de la mise en production ? &
+Absence de séparation lors de la mise en production. &
+Un développeur peut introduire des modifications non validées en production~; risque de fraude ou d'instabilité du SI. \\
+
+\end{longtable}
+
+
+% ==============================================================================
+\section{Domaine 4, Audit du Support Utilisateur et de la Gestion du Parc}
+\label{sec:decomp-support}
+% ==============================================================================
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 67--68), quatre points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Fonction support~: audit de fiabilité et de sécurité
+    \item Fonction support~: audit d'efficacité et de performance
+    \item Gestion du parc matériel et logiciel~: audit de fiabilité et de sécurité
+    \item Gestion du parc matériel et logiciel~: audit d'efficacité et de performance
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (Niveau 3)}
+
+\subsubsection{Point 1, Fonction support : fiabilité et sécurité}
+\begin{enumerate}[label=1.\arabic*.]
+    \item S'assurer qu'une structure de centre d'assistance (Helpdesk) est mise en place.
+    \item S'assurer qu'une procédure de gestion des demandes d'assistance est diffusée et connue des utilisateurs.
+    \item S'assurer qu'une procédure d'escalade est mise en place.
+    \item S'assurer de la couverture géographique et fonctionnelle du Helpdesk.
+    \item S'assurer qu'un outil de prise d'appel et de suivi des tickets est implémenté.
+    \item S'assurer que des critères de qualification des tickets existent.
+    \item S'assurer que les problèmes sont gérés via un processus formalisé.
+    \item S'assurer que les incidents de production (nuit et jours fériés) sont saisis dans l'outil.
+    \item S'assurer que des comités de suivi des incidents et de leur résolution existent.
+    \item S'assurer que si le Helpdesk est externalisé, un contrat de service avec des indicateurs de suivi existe.
+\end{enumerate}
+
+\subsubsection{Point 2, Fonction support : efficacité et performance}
+\begin{enumerate}[label=2.\arabic*.]
+    \item S'assurer qu'il existe une aide à la saisie et des revues qualité pour les tickets.
+    \item Vérifier l'existence et la mise à jour d'une base de connaissance.
+    \item S'assurer que des études de satisfaction sont réalisées auprès des utilisateurs.
+    \item S'assurer que l'obtention de certifications (ITIL, ISO, COBIT) est encouragée au sein du Helpdesk.
+    \item Vérifier que les procédures de reporting et de suivi sont fonctionnelles.
+    \item Vérifier que les résultats des études de satisfaction sont pris en compte.
+\end{enumerate}
+
+\subsubsection{Point 3, Gestion du parc : fiabilité et sécurité}
+\begin{enumerate}[label=3.\arabic*.]
+    \item Vérifier la procédure de déploiement des mises à jour et des nouveaux logiciels.
+    \item Vérifier les outils mis en place pour gérer les versions logicielles et le matériel.
+    \item S'assurer que l'installation des postes est faite à partir d'un master standardisé.
+    \item S'assurer qu'un processus spécifique existe pour le suivi des mises à jour sur les portables.
+    \item Vérifier que le déploiement à distance est possible pour les utilisateurs nomades.
+    \item Vérifier comment est géré le parc informatique (types de machines, outils déployés).
+    \item S'assurer que l'inventaire du parc comprend la localisation des machines.
+    \item Vérifier que les utilisateurs sont sensibilisés à l'installation de logiciels non officiels.
+\end{enumerate}
+
+\subsubsection{Point 4, Gestion du parc : efficacité et performance}
+\begin{enumerate}[label=4.\arabic*.]
+    \item Vérifier comment est effectué l'inventaire des licences (logiciel, version, date, nombre d'utilisateurs).
+    \item S'assurer que des outils SAM (\textit{Software Asset Management}) sont déployés.
+    \item S'assurer qu'il existe des revues régulières des licences.
+    \item S'assurer qu'il existe une base CMDB (\textit{Configuration Management Database}) à jour.
+    \item Vérifier que la DSI est sensibilisée aux enjeux de la maîtrise des licences.
+    \item Vérifier qu'une politique logicielle existe et est appliquée.
+\end{enumerate}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Support et gestion du parc (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+Un outil de ticketing est déployé et tous les incidents, y compris hors heures ouvrées, y sont saisis. &
+Extraction de la base de tickets sur 3 mois, incluant les incidents de nuit et jours fériés. &
+Tous les incidents, y compris hors heures ouvrées, sont-ils systématiquement saisis dans l'outil de ticketing ? &
+Incidents de nuit et jours fériés non saisis. &
+Perte de visibilité sur les incidents récurrents~; impossibilité de piloter la fiabilité du SI hors heures ouvrées. \\
+\addlinespace
+
+Une CMDB à jour couvre l'ensemble du parc avec localisation des machines. &
+Export de la CMDB daté~; résultat du dernier inventaire physique. &
+Existe-t-il une CMDB à jour couvrant l'ensemble du parc avec localisation ? &
+Absence de CMDB ou CMDB non tenue à jour. &
+Inventaire du parc inconnu~; impossibilité de détecter des équipements disparus ou des accès résiduels sur des machines non inventoriées. \\
+\addlinespace
+
+Des revues régulières des licences logicielles sont réalisées et documentées. &
+Rapports de revue de licences des deux derniers exercices. &
+Des revues régulières des licences logicielles sont-elles réalisées et documentées ? &
+Absence de revue régulière des licences. &
+Risque de non-conformité contractuelle (sur-utilisation) et de sanctions éditeurs~; ou sous-utilisation (gaspillage budgétaire). \\
+
+\end{longtable}
+
+
+% ==============================================================================
+\section{Domaine 5, Audit de Sécurité Informatique}
+\label{sec:decomp-securite}
+% ==============================================================================
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 43--49), dix points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Facteurs clés de succès
+    \item Politique de sécurité
+    \item Organisation de la sécurité
+    \item Classification et contrôle des actifs
+    \item Sécurité du personnel
+    \item Gestion des communications et des opérations
+    \item Conformité
+    \item Gestion des identifiants et des mots de passe
+    \item Contrôle des accès
+    \item Développement et maintenance des systèmes
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (Niveau 3)}
+
+\subsubsection{Point 1, Facteurs clés de succès}
+\begin{enumerate}[label=1.\arabic*.]
+    \item Vérifier qu'une politique de sécurité est définie et correspond à l'activité de l'organisation.
+    \item Vérifier que la direction assure un soutien total et un engagement visible pour la sécurité.
+    \item Vérifier que les exigences de sécurité et les risques sont compris et évalués.
+    \item Vérifier que l'ensemble des responsables et employés sont sensibilisés et informés.
+    \item Vérifier que les lignes directrices de la politique de sécurité sont distribuées à tous les employés et fournisseurs.
+    \item Vérifier que les acteurs de la sécurité sont formés de manière appropriée.
+    \item Vérifier qu'un système de mesure complet évalue l'efficacité de la gestion de la sécurité.
+\end{enumerate}
+
+\subsubsection{Point 2, Politique de sécurité}
+\begin{enumerate}[label=2.\arabic*.]
+    \item S'assurer qu'il existe une politique de sécurité formalisée avec implication de la DG et définition claire des responsabilités.
+    \item S'assurer que la politique est communiquée à tous les utilisateurs de façon pertinente et compréhensible.
+    \item S'assurer qu'une revue régulière de la politique est réalisée.
+    \item S'assurer que la démarche de sécurité couvre la totalité du SI, y compris imprimantes, téléphones IP, informatique industrielle et de bâtiment.
+\end{enumerate}
+
+\subsubsection{Point 3, Organisation de la sécurité}
+\begin{enumerate}[label=3.\arabic*.]
+    \item S'assurer qu'il existe une structure dédiée~: comité sécurité, RSSI, correspondants sécurité dans les unités.
+    \item Vérifier qu'il y a une attribution claire des responsabilités et qu'un propriétaire est désigné pour chaque actif.
+    \item S'assurer qu'il existe des procédures d'autorisation de nouveaux matériels ou logiciels.
+    \item S'assurer qu'il existe des procédures pour l'accès des tiers et la protection des informations confiées à des sous-traitants.
+    \item Vérifier qu'il existe des modalités de réaction aux incidents de sécurité.
+    \item S'assurer qu'il existe une revue régulière de la sécurité par des audits internes et externes.
+\end{enumerate}
+
+\subsubsection{Point 4, Classification et contrôle des actifs}
+\begin{enumerate}[label=4.\arabic*.]
+    \item Vérifier que les actifs sont inventoriés et hiérarchisés par valeur pour l'organisation.
+    \item Vérifier que pour tout actif important, un propriétaire est désigné et informé de ses responsabilités.
+    \item Vérifier qu'il existe un système de classification définissant des niveaux de protection appropriés.
+    \item Vérifier que chaque actif a fait l'objet d'une étude de classification.
+\end{enumerate}
+
+\subsubsection{Point 5, Sécurité du personnel}
+\begin{enumerate}[label=5.\arabic*.]
+    \item Vérifier que les postes et ressources sont définis.
+    \item Vérifier qu'il existe un programme de formation adapté aux spécificités des postes.
+    \item Vérifier que tous les personnels participent aux formations.
+    \item Vérifier que des évaluations ante et post formation mesurent leur impact.
+\end{enumerate}
+
+\subsubsection{Point 6, Gestion des communications et des opérations}
+\begin{enumerate}[label=6.\arabic*.]
+    \item Vérifier que la documentation des procédures et les responsabilités opérationnelles existent.
+    \item Vérifier que le contrôle des modifications opérationnelles est réalisé.
+    \item Vérifier que des procédures de gestion des incidents existent.
+    \item Vérifier que la séparation des fonctions et des infrastructures existe.
+    \item Vérifier que les mesures de protection contre les infections logiques existent.
+    \item Vérifier que les sauvegardes des données sont réalisées et que les modalités de gestion des supports sont définies et appliquées.
+\end{enumerate}
+
+\subsubsection{Point 7, Conformité}
+\begin{enumerate}[label=7.\arabic*.]
+    \item Vérifier que les politiques internalisent les exigences légales et réglementaires.
+    \item Vérifier que la convergence vers le cadre réglementaire national est recherchée.
+    \item S'assurer qu'un document retraçant le gap entre l'état actuel et le cadre réglementaire existe et est tenu à jour.
+    \item S'assurer que tous les audits réglementaires sont réalisés et qu'un responsable conformité est désigné.
+\end{enumerate}
+
+\subsubsection{Point 8, Gestion des identifiants et des mots de passe}
+\begin{enumerate}[label=8.\arabic*.]
+    \item Vérifier qu'il y a un seul utilisateur par identifiant.
+    \item Vérifier que les identifiants inutilisés pendant un délai défini sont révoqués.
+    \item Vérifier que des règles de gestion des mots de passe existent et sont respectées (casse, longueur, renouvellement).
+    \item Vérifier que la procédure de gestion des mots de passe statue sur leur réutilisation, leur stockage, leur diffusion et leur réinitialisation.
+\end{enumerate}
+
+\subsubsection{Point 9, Contrôle des accès}
+\begin{enumerate}[label=9.\arabic*.]
+    \item Vérifier que la politique de contrôle d'accès est définie et documentée.
+    \item S'assurer que la gestion des accès utilisateurs est effective.
+    \item Vérifier que le contrôle des accès réseau, OS, applications est effectif.
+    \item Vérifier que la surveillance des accès aux systèmes et leur utilisation sont effectives.
+    \item Vérifier que la gestion de l'informatique mobile est prise en compte.
+    \item Vérifier que des suites sont systématiquement données aux incidents d'accès.
+\end{enumerate}
+
+\subsubsection{Point 10, Développement et maintenance des systèmes}
+\begin{enumerate}[label=10.\arabic*.]
+    \item S'assurer que les exigences de sécurité des systèmes sont documentées.
+    \item S'assurer que la sécurité des systèmes d'application est effective.
+    \item S'assurer qu'un protocole de recette sécurisé existe et a été testé.
+    \item S'assurer que la sécurité des fichiers est prise en compte.
+\end{enumerate}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Sécurité informatique (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+Un RSSI est désigné avec une attribution claire de responsabilités. &
+Lettre de mission ou décision de nomination du RSSI. &
+Un RSSI est-il formellement désigné avec des responsabilités documentées ? &
+Absence de RSSI ou responsabilités non définies. &
+La sécurité du SI est une responsabilité diffuse~; aucun acteur ne peut être tenu responsable en cas d'incident. \\
+\addlinespace
+
+Les identifiants inutilisés au-delà d'un délai défini (ex. 90~jours) sont automatiquement révoqués. &
+Politique de gestion des comptes, export des comptes inactifs avec dates de dernière connexion. &
+Les identifiants inutilisés depuis plus de 90~jours sont-ils automatiquement révoqués ? &
+Identifiants inactifs non révoqués. &
+Risque d'accès par un ancien collaborateur ou un compte compromis, sans alerte possible pour l'organisation. \\
+\addlinespace
+
+La politique de sécurité couvre la totalité du SI, y compris les équipements non-standards (imprimantes IP, téléphonie, IoT). &
+Politique de sécurité, inventaire des équipements couverts. &
+La politique de sécurité couvre-t-elle la totalité du SI, y compris les équipements non-standards ? &
+Zones du SI non couvertes par la politique de sécurité. &
+Des vecteurs d'attaque non supervisés subsistent~; un attaquant peut pivoter depuis une imprimante réseau non sécurisée vers les serveurs critiques. \\
+\addlinespace
+
+Un document de gap entre l'état actuel et le cadre réglementaire camerounais (lois 2010) existe et est tenu à jour. &
+Document de gap analysis daté et signé. &
+Un document d'écart entre les pratiques internes et le cadre légal camerounais existe-t-il et est-il mis à jour ? &
+Absence d'analyse d'écart réglementaire. &
+Non-conformité non identifiée~; risque de sanctions légales ou d'invalidation de preuves numériques en cas de procédure judiciaire. \\
+
+\end{longtable}
+
+
+% ==============================================================================
+\section{Domaine 6, Audit de la Fonction Étude (Développement)}
+\label{sec:decomp-etude}
+% ==============================================================================
+
+\begin{boxinfo}
+\textbf{Distinction essentielle.} L'audit de la fonction étude s'adresse à une \textit{structure permanente} de l'organisation~: le service en charge du développement et de la maintenance applicative. Il ne doit pas être confondu avec l'audit de projet, qui s'adresse à une \textit{organisation temporaire et sur mesure}. L'audit de projet examine comment un projet particulier s'est déroulé~; l'audit de la fonction étude examine si la structure permanente est organisée, dotée et pilotée pour produire des logiciels fiables durablement.
+\end{boxinfo}
+
+\subsection{Points de contrôle (Niveau 2)}
+
+Conformément au guide d'audit des SI (pages 69--72), trois points de contrôle structurent ce domaine :
+
+\begin{enumerate}
+    \item Activité de pilotage
+    \item Activités opérationnelles
+    \item Développement des applications spécifiques
+\end{enumerate}
+
+\subsection{Objectifs de contrôle par point (Niveau 3)}
+
+\subsubsection{Point 1, Activité de pilotage}
+\begin{enumerate}[label=1.\arabic*.]
+    \item S'assurer que la ligne de partage entre études et production est clairement définie et documentée.
+    \item S'assurer qu'il existe une cellule dédiée au suivi et au contrôle des projets et des ressources (plannings, budgets, temps, coûts).
+    \item Vérifier l'existence d'une procédure de planification détaillée par projet et par ressource, nominative et suffisamment précise.
+    \item Vérifier l'existence d'une procédure périodique (hebdomadaire à mensuelle) de suivi de l'activité et de mise à jour du planning.
+    \item Vérifier que pour les travaux de maintenance, la charge réalisée est rapprochée de l'estimation initiale pour affiner les méthodes et mesurer la productivité.
+    \item Vérifier l'existence d'un tableau de bord mensuel de l'activité des études, communiqué et analysé par le Comité informatique.
+\end{enumerate}
+
+\subsubsection{Point 2, Activités opérationnelles}
+\begin{enumerate}[label=2.\arabic*.]
+    \item Vérifier l'existence d'une MOA forte et d'une fonction études limitée à la MOE.
+    \item Évaluer le rôle du Comité Informatique dans le contrôle de l'activité des études.
+    \item S'assurer qu'il existe une procédure standard et formalisée de maintenance.
+    \item Vérifier que pour la maintenance évolutive, le versionnage (2 à 3 versions/an) est préféré à la maintenance au fil de l'eau.
+    \item S'assurer que les nouveaux programmes et versions sont systématiquement testés et recettés dans un environnement dédié avant livraison à l'exploitation.
+    \item Vérifier que la documentation est systématiquement mise à jour après chaque intervention de maintenance.
+    \item Vérifier que les corrections urgentes (bug bloquant de gravité 1) sont tracées et font l'objet d'un rapport systématique revu par la DSI.
+    \item Pour les environnements obsolètes, s'assurer que les langages et compilateurs restent opérationnels et maintenus.
+\end{enumerate}
+
+\subsubsection{Point 3, Développement des applications spécifiques}
+\begin{enumerate}[label=3.\arabic*.]
+    \item Vérifier l'utilisation de méthodes et outils de conception et de modélisation (UML, BPMN, Rational Rose ou équivalent).
+    \item S'assurer que ces outils et méthodes sont adaptés, maîtrisés et partagés par l'ensemble des équipes.
+    \item S'assurer que la formation reçue pour ces outils est adaptée.
+    \item S'assurer qu'il existe des normes de programmation formalisées dans un manuel à l'attention des développeurs.
+    \item Vérifier l'application effective de ces normes (revues de code).
+    \item S'assurer qu'il existe une documentation utilisateurs par application, comprenant~: manuel d'utilisation, description des données, états de contrôle disponibles, contrôles automatiques effectués.
+\end{enumerate}
+
+\subsection{Décomposition illustrée (Niveaux 4 à 8)}
+
+\begin{longtable}{p{3.2cm}p{3cm}p{2.8cm}p{2.6cm}p{2.8cm}}
+\caption{Décomposition N4--N8, Domaine : Fonction étude (extrait)} \\
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Critère (N4)} & \textbf{Élément requis (N5)} & \textbf{Question (N6)} & \textbf{Risque (N7)} & \textbf{Conséquence (N8)} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+La ligne de partage entre études et production est clairement définie et documentée. &
+Document de séparation des responsabilités, habilitations distinctes dans les systèmes. &
+La ligne de partage entre études et production est-elle formalisée et connue des deux équipes ? &
+Absence de ligne de partage formalisée entre études et production. &
+Un développeur peut intervenir directement en production~; risque d'introduction de code non validé et de fraude non détectable. \\
+\addlinespace
+
+Un tableau de bord mensuel de l'activité des études existe et est communiqué au Comité informatique. &
+Tableau de bord des trois derniers mois, PV de comité attestant sa présentation. &
+Un tableau de bord mensuel des études est-il produit et présenté au Comité informatique ? &
+Absence de tableau de bord de l'activité des études. &
+Opacité de la charge et des priorités des études~; impossibilité de piloter l'allocation des ressources~; projets se bloquant mutuellement sans arbitrage. \\
+\addlinespace
+
+Des normes de programmation formalisées existent et leur application est vérifiée par des revues de code. &
+Manuel des normes de programmation~; rapports de revue de code. &
+Des normes de programmation existent-elles et sont-elles effectivement vérifiées par des revues de code régulières ? &
+Absence de normes ou absence de revues de code. &
+Code hétérogène et non maintenable~; vulnérabilités classiques (injections, gestion des erreurs) non détectées avant mise en production. \\
+\addlinespace
+
+Les corrections urgentes (bug bloquant) sont tracées et font l'objet d'un rapport systématique revu par la DSI. &
+Registre des corrections urgentes, rapports de revue DSI. &
+Les corrections urgentes sont-elles systématiquement tracées et soumises à une revue DSI ? &
+Corrections urgentes non tracées ni revues. &
+Des modifications non contrôlées du code de production sont possibles~; risque de régression et de fraude dissimulée sous couvert d'une correction urgente. \\
+
+\end{longtable}
+
+\begin{boxlizbiz}
+\textbf{LiZbiZ, Application de la décomposition au domaine Sécurité (Point 8)}
+
+La question \textit{«~Les identifiants inutilisés depuis plus de 90~jours sont-ils révoqués~?~»} génère trois réponses possibles selon la situation rencontrée sur le terrain~:
+
+\smallskip
+\begin{tabular}{p{2cm}p{10.5cm}}
+\textbf{O} & L'administrateur produit un export prouvant que 3 comptes inactifs ont été désactivés automatiquement le mois dernier selon la politique documentée. Statut~: \texttt{CONFORME}. \\
+\addlinespace
+\textbf{N} & L'administrateur confirme qu'aucune procédure de révocation n'existe et qu'il n'a pas de visibilité sur les comptes inactifs. Statut~: \texttt{NON CONFORME}. Risque activé~: identifiants inactifs non révoqués. Conséquence~: risque d'accès non autorisé par un compte compromis ou un ancien collaborateur. \\
+\addlinespace
+\textbf{PAS} & L'administrateur affirme qu'une procédure existe «~dans la politique de sécurité~», mais ne peut pas en produire la trace ni confirmer si elle est appliquée automatiquement ou manuellement. Aucun export de comptes inactifs n'est disponible. Statut~: \texttt{ZONE GRISE}. Signal~: le contrôle est peut-être en place, mais l'organisation ne peut pas l'attester, ce qui est en soi une défaillance du contrôle interne. \\
+\end{tabular}
+\end{boxlizbiz}
+
+
+% ==============================================================================
+\section{Exercice de synthèse, Construction de la grille complète}
+\label{sec:exercice}
+% ==============================================================================
+
+\begin{boxexo}
+\textbf{Exercice, Outil d'aide à l'audit de LiZbiZ}
+
+À partir des éléments présentés dans ce chapitre, l'apprenant constitue un classeur Excel nommé \texttt{Outil\_Audit\_NomApprenant} comportant les six feuilles de domaine et une feuille \texttt{SYNTHÈSE}. Pour chaque domaine~:
+
+\begin{enumerate}
+    \item Reprendre les points de contrôle (colonne~B) et les objectifs de contrôle (colonne~C) présentés dans ce chapitre.
+    \item Compléter les critères (colonne~D), éléments requis (colonne~E) et questions (colonne~F) en s'appuyant sur les exemples des tableaux de décomposition et en les étendant à l'ensemble des objectifs listés.
+    \item Formuler les risques (colonne~H) et conséquences (colonne~I) correspondants.
+    \item Implémenter les formules de statut, de criticité et d'entropie de Shannon présentées au chapitre précédent.
+    \item Appliquer les mises en forme conditionnelles~: vert/rouge/orange ambré pour le statut~; gradient blanc-jaune-rouge pour l'entropie.
+    \item Simuler une mission d'audit en saisissant des réponses trichotomiques fictives couvrant les trois modalités (O, N, PAS) pour au moins dix questions par domaine. Analyser les résultats dans la feuille \texttt{SYNTHÈSE}.
+\end{enumerate}
+
+\textbf{Livrable~:} Le classeur finalisé, nommé \texttt{Outil\_Final\_NomApprenant}, constitue l'outil personnel de l'apprenant pour ses futures missions d'audit.
+\end{boxexo}
+
+\begin{boxresume}
+\textbf{À retenir.} Ce chapitre a déployé la méthode de décomposition hiérarchique sur les six domaines d'audit canoniques, en fournissant pour chacun les points de contrôle de référence, les objectifs opérationnels et des exemples complets de chaîne N4--N8. La structure est invariante~: seul le contenu change d'un domaine à l'autre. Un auditeur maîtrisant cette méthode dispose d'un instrument universel qu'il peut adapter à tout nouveau périmètre d'audit en appliquant le protocole en sept étapes présenté au chapitre précédent. Le chapitre suivant applique cette grille à la mission complète sur l'entreprise LiZbiZ, de la planification à la communication des résultats.
+\end{boxresume}

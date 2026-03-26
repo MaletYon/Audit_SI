@@ -1,0 +1,200 @@
+% ==============================================================================
+% Fichier : lab1_application.tex
+% Description : Laboratoire 1 - Audit d'une Application Comptable (APPLICATION)
+% ==============================================================================
+
+\chapter{Laboratoire 1 : Audit d'une Application en Service}\label{chap:lab1_application}
+
+Ce laboratoire met en pratique la méthodologie d'audit sur le cas de l'application comptable de l'entreprise LiZbiZ, nommée \textbf{APPLICATION}. L'objectif est de simuler une mission réelle : revue de contrôle interne, tests de données et rédaction de rapport.
+
+\section{Objectifs du TP}
+\begin{itemize}
+    \item Créer et peupler l'environnement technique (Base de données).
+    \item Concevoir les outils d'audit (Grilles de contrôle).
+    \item Réaliser des tests de contrôles et des tests substantifs via SQL.
+    \item Rédiger le rapport d'audit final.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Étape 1 : Préparation de l'Environnement (Base de Données)}
+% ------------------------------------------------------------------------------
+
+Avant d'auditer, il faut disposer du système. Nous allons créer le schéma de la base de données de l'APPLICATION.
+
+\subsection{Création du Schéma Relationnel}
+
+Exécutez le script SQL suivant sur votre SGBD (PostgreSQL ou MySQL).
+
+\begin{lstlisting}[language=SQL, caption=Script de création de la base APPLICATION]
+-- Creation des tables
+
+CREATE TABLE UTILISATEUR (
+    IdUser INT PRIMARY KEY,
+    Nom VARCHAR(50),
+    Prenom VARCHAR(50),
+    Service VARCHAR(50),
+    Profil VARCHAR(20), -- 'Admin', 'Comptable', 'Validation'
+    Actif BOOLEAN
+);
+
+CREATE TABLE JOURNAL (
+    CodeJournal VARCHAR(5) PRIMARY KEY,
+    Libelle VARCHAR(50)
+);
+
+CREATE TABLE COMPTE (
+    NumCompte VARCHAR(10) PRIMARY KEY,
+    Libelle VARCHAR(100),
+    Classe VARCHAR(2)
+);
+
+CREATE TABLE TIERS (
+    IdTiers INT PRIMARY KEY,
+    Nom VARCHAR(100),
+    Type VARCHAR(20), -- 'Client', 'Fournisseur'
+    Email VARCHAR(100)
+);
+
+CREATE TABLE ECRITURE (
+    IdEcriture INT PRIMARY KEY,
+    DateEcriture DATE,
+    CodeJournal VARCHAR(5),
+    NumCompte VARCHAR(10),
+    IdTiers INT,
+    Libelle VARCHAR(200),
+    Debit DECIMAL(15,2),
+    Credit DECIMAL(15,2),
+    IdUserCreate INT,
+    IdUserValid INT, -- Utilisateur qui valide
+    Statut VARCHAR(10), -- 'Brouillon', 'Valide'
+    FOREIGN KEY (CodeJournal) REFERENCES JOURNAL(CodeJournal),
+    FOREIGN KEY (NumCompte) REFERENCES COMPTE(NumCompte),
+    FOREIGN KEY (IdTiers) REFERENCES TIERS(IdTiers)
+);
+\end{lstlisting}
+
+\subsection{Chargement des Données de Test}
+
+Insérez un jeu de données fictives pour simuler l'activité de LiZbiZ. (Voir annexe du PDF source pour un jeu complet ou générez-en un simplifié).
+
+\begin{lstlisting}[language=SQL, caption=Exemple d'insertion]
+-- Insertion des utilisateurs
+INSERT INTO UTILISATEUR VALUES (1, 'DUPONT', 'Marie', 'Comptabilite', 'Comptable', TRUE);
+INSERT INTO UTILISATEUR VALUES (2, 'MARTIN', 'Paul', 'Direction', 'Validation', TRUE);
+INSERT INTO UTILISATEUR VALUES (3, 'HACK', 'Bad', 'IT', 'Admin', TRUE);
+
+-- Insertion d'une ecriture suspecte (Fraude potentielle)
+INSERT INTO ECRITURE VALUES (1001, '2023-12-15', 'ACH', '607', 50, 'Achat Fictif', 5000, 0, 1, 1, 'Valide');
+\end{lstlisting}
+
+% ------------------------------------------------------------------------------
+\section{Étape 2 : Évaluation du Contrôle Interne (COSO)}
+% ------------------------------------------------------------------------------
+
+L'objectif est de concevoir la "Checklist" d'audit.
+
+\subsection{Domaine : Environnement de Contrôle}
+
+Concevez un questionnaire d'évaluation pour vérifier la culture sécurité du service comptabilité de LiZbiZ.
+\textbf{Questions à formuler :}
+\begin{itemize}
+    \item Existe-t-il une charte informatique signée par les comptables ?
+    \item Les utilisateurs connaissent-ils leur profil d'accès ?
+    \item Qui a le profil "Admin" sur l'application ?
+\end{itemize}
+
+\subsection{Domaine : Activités de Contrôle (Séparation des Tâches)}
+
+C'est le point critique. Vérifiez la matrice RACI.
+\textbf{Tâche :} Vérifier si un même utilisateur peut créer ET valider une écriture (Risque de fraude majeur).
+
+\begin{boxlizbiz}
+\textbf{Requête SQL de vérification (Audit Technique) :}
+Ecrire une requête pour détecter les utilisateurs qui ont créé une écriture et l'ont eux-mêmes validée.
+\begin{lstlisting}[language=SQL]
+SELECT IdEcriture, Libelle, IdUserCreate 
+FROM ECRITURE 
+WHERE IdUserCreate = IdUserValid;
+\end{lstlisting}
+\textbf{Analyse :} Si le résultat n'est pas vide, c'est une Non-Conformité Majeure (Règle des 4 yeux non respectée).
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Étape 3 : Audit des Données (Tests Substantifs)}
+% ------------------------------------------------------------------------------
+
+Nous utilisons le langage SQL comme outil d'audit (CAATs - Computer Assisted Audit Techniques).
+
+\subsection{Test d'Intégrité : Recherche de Doublons}
+
+\textbf{Risque :} Factures payées deux fois.
+\textbf{Objectif :} Détecter les écritures strictement identiques (même montant, même date, même tiers, même libellé).
+
+\begin{lstlisting}[language=SQL]
+SELECT DateEcriture, IdTiers, Libelle, Sum(Debit) as TotalDebit, Count(*) as NbOcurrences
+FROM ECRITURE
+GROUP BY DateEcriture, IdTiers, Libelle
+HAVING Count(*) > 1;
+\end{lstlisting}
+
+\subsection{Test de Cohérence : Equilibre Journal}
+
+\textbf{Risque :} Déséquilibre comptable.
+\textbf{Objectif :} Vérifier que Total Débit = Total Crédit pour chaque journal.
+
+\begin{lstlisting}[language=SQL]
+SELECT CodeJournal, SUM(Debit) as TotalD, SUM(Credit) as TotalC
+FROM ECRITURE
+GROUP BY CodeJournal
+HAVING SUM(Debit) != SUM(Credit);
+\end{lstlisting}
+
+\subsection{Test de Convention : Seuil de Validation}
+
+\textbf{Règle de gestion LiZbiZ :} Toute écriture supérieure à 5000 € doit être validée par le Directeur (Profil 'Validation').
+\textbf{Objectif :} Détecter les écritures > 5000 € validées par un simple comptable.
+
+\begin{lstlisting}[language=SQL]
+SELECT E.IdEcriture, E.Libelle, E.Debit, U.Nom as Validateur, U.Profil
+FROM ECRITURE E
+JOIN UTILISATEUR U ON E.IdUserValid = U.IdUser
+WHERE E.Debit > 5000 AND U.Profil != 'Validation';
+\end{lstlisting}
+
+% ------------------------------------------------------------------------------
+\section{Étape 4 : Rapport d'Audit}
+% ------------------------------------------------------------------------------
+
+\subsection{Rédaction des Observations}
+
+Sur la base des requêtes exécutées, rédigez une fiche d'observation pour le rapport final (Format : Constat / Risque / Recommandation).
+
+\textbf{Exemple de fiche à compléter :}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{9cm}|}
+    \hline
+    \textbf{Titre} & Non respect de la séparation des tâches (Création/Validation). \\
+    \hline
+    \textbf{Constat} & La requête SQL a identifié X écritures validées par leur créateur. \\
+    \hline
+    \textbf{Risque} & Fraude interne sans contrôle (Détournement possible). \\
+    \hline
+    \textbf{Recommandation} & Configurer l'APPLICATION pour interdire l'auto-validation (Bloquer l'enregistrement si IdUserCreate = IdUserValid). \\
+    \hline
+\end{tabular}
+\caption{Modèle de fiche d'observation}
+\end{table}
+
+% ------------------------------------------------------------------------------
+\section{Livrables à rendre}
+% ------------------------------------------------------------------------------
+
+\begin{enumerate}
+    \item Le script SQL de création de la base (Fichier .sql).
+    \item Le fichier Excel ou Word contenant les grilles de contrôle interne.
+    \item Les scripts SQL utilisés pour les tests (Audit des données).
+    \item Le rapport d'audit final (PDF) contenant les observations et le plan d'action.
+\end{enumerate}

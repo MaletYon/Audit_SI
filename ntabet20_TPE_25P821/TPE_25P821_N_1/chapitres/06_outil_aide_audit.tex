@@ -1,0 +1,884 @@
+% ==============================================================================
+% Fichier  : 06_outil_aide_audit.tex
+% Titre    : Conception d'un Outil d'Aide à l'Audit des SI par Décomposition
+%            Hiérarchique
+% ==============================================================================
+
+\chapter{Conception d'un Outil d'Aide à l'Audit des Systèmes d'Information}
+\label{chap:06_outil_aide_audit}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Pourquoi un outil structuré d'aide à l'audit~?}
+\label{sec:pourquoi}
+% ──────────────────────────────────────────────────────────────────────────────
+
+L'audit des systèmes d'information est une démarche intellectuelle exigeante~:
+l'auditeur doit simultanément maintenir une vue d'ensemble du périmètre audité,
+descendre au niveau du détail opérationnel le plus fin, collecter des preuves,
+formuler des risques et en anticiper les conséquences pour l'organisation.
+Conduite sans support méthodique, cette démarche expose à deux écueils
+symétriques et également coûteux~: l'omission de zones à risque et la
+redondance d'investigations sans valeur ajoutée.
+
+Un \emph{outil d'aide à l'audit} est un dispositif documentaire et
+computationnel qui matérialise la logique de la mission d'audit sous une forme
+directement opérationnelle. Il ne remplace pas le jugement professionnel de
+l'auditeur~; il le libère des tâches mécaniques de mémorisation et de
+structuration, pour qu'il puisse concentrer son attention sur ce qui requiert
+réellement une expertise~: l'interprétation des faits et la formulation des
+recommandations.
+
+\begin{boxdef}{Outil d'aide à l'audit}
+Un outil d'aide à l'audit est un référentiel structuré qui, pour un domaine
+d'audit donné, décompose de manière exhaustive et ordonnée l'ensemble des
+vérifications à conduire, depuis les grands axes de contrôle jusqu'aux questions
+élémentaires à poser sur le terrain, en associant à chaque question le risque
+qu'elle vise à détecter et la conséquence organisationnelle que l'absence de
+contrôle ferait peser sur l'entité auditée.
+\end{boxdef}
+
+\subsection{Fonctions de l'outil}
+
+Un outil d'aide à l'audit remplit quatre fonctions complémentaires.
+
+\paragraph{Fonction de complétude.}
+En déployant systématiquement la totalité des niveaux de décomposition, l'outil
+garantit qu'aucun point de contrôle pertinent n'est oublié, quelle que soit
+l'expérience de l'auditeur qui le met en œuvre.
+
+\paragraph{Fonction de traçabilité.}
+Chaque observation de terrain est rattachée, via la structure de l'outil, à un
+point de contrôle, un objectif et un critère précis. Cette chaîne de traçabilité
+est indispensable pour que le rapport d'audit soit opposable~: chaque constat
+doit pouvoir être remonté jusqu'au référentiel qui le fonde.
+
+\paragraph{Fonction de standardisation.}
+Dès lors que l'outil est partagé au sein d'une équipe ou d'une institution, il
+assure la comparabilité des missions d'audit conduites à des moments différents
+ou par des auditeurs différents sur un même périmètre. Cette standardisation est
+la condition sine qua non d'un suivi pluriannuel de la maturité organisationnelle.
+
+\paragraph{Fonction d'automatisation.}
+Implémenté dans un tableur, l'outil peut intégrer des formules de scoring, des
+indicateurs de couverture, des alertes de non-conformité et des tableaux de bord
+synthétiques, transformant ainsi un simple guide de questions en un véritable
+instrument de pilotage de la mission.
+
+\subsection{Ancrage normatif}
+
+La nécessité d'un tel outil n'est pas une construction ex nihilo~: elle est
+explicitement posée par les principaux référentiels internationaux de l'audit
+des SI.
+
+COBIT~2019 structure l'évaluation des processus IT en objectifs de gouvernance et
+de gestion, eux-mêmes décomposés en pratiques, activités et indicateurs~; cette
+arborescence est le prototype même de la décomposition hiérarchique décrite dans
+ce chapitre. Les normes ISACA (CISA~Review~Manual) prescrivent une approche par
+domaines et sous-domaines, avec des objectifs de contrôle définis pour chacun.
+La norme ISO/IEC~27001 organise la sécurité de l'information en~114~mesures de
+contrôle regroupées en~14~domaines, dont la vérification lors d'un audit suit
+précisément la logique du critère, de l'élément probant et de la question
+d'évaluation. Le COSO, enfin, articule le contrôle interne en cinq composantes
+dont la vérification lors d'un audit suit la même progression~: assertion
+(objectif de contrôle), test (critère et question), preuve (élément requis),
+constat (risque), et impact (conséquence).
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: la nécessité vécue de l'outil}
+
+Lors d'une mission d'audit de l'application de gestion des stocks de Lizbiz's,
+l'équipe d'audit arrive sur site sans grille structurée. Elle identifie un
+problème d'accès non autorisé aux données de production, mais ne documente pas
+systématiquement les questions connexes~: la gestion des profils, la piste
+d'audit, la journalisation des modifications. Le rapport conclut à une faille de
+contrôle d'accès. Six mois plus tard, un audit externe révèle que les données
+sensibles étaient également accessibles via un module non inventorié. La faille
+était pourtant couverte par la grille de contrôle standard, elle avait été
+omise faute d'un outil de décomposition systématique. L'outil d'aide à l'audit
+aurait rendu cette omission impossible.
+\end{boxlizbiz}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{La méthode de décomposition hiérarchique}
+\label{sec:methode}
+% ──────────────────────────────────────────────────────────────────────────────
+
+La méthode de décomposition hiérarchique est le cœur intellectuel de l'outil
+d'aide à l'audit. Elle repose sur un principe simple~: tout audit, quel que soit
+son type ou son périmètre, peut être entièrement représenté par une arborescence
+à huit niveaux, depuis le domaine le plus général jusqu'aux conséquences les
+plus concrètes de chaque défaillance de contrôle.
+
+\begin{boxdef}{Méthode de décomposition hiérarchique}
+La méthode de décomposition hiérarchique est un cadre d'analyse qui structure
+tout périmètre d'audit en une succession ordonnée de niveaux d'abstraction
+décroissante, chaque niveau étant entièrement dérivé du précédent selon une
+relation logique de type \emph{général~$\to$~particulier}. Elle produit, pour
+chaque domaine audité, une arborescence exhaustive reliant le champ d'audit
+(niveau~1) aux conséquences organisationnelles des risques détectés (niveau~8).
+\end{boxdef}
+
+\subsection{Vue d'ensemble de l'arborescence}
+
+Les huit niveaux de la décomposition sont les suivants~:
+
+\begin{enumerate}
+  \item \textbf{Domaine}~:  le champ d'audit considéré~;
+  \item \textbf{Point de contrôle}~:  les grandes thématiques à examiner dans
+        ce domaine~;
+  \item \textbf{Objectif de contrôle}~:  ce que l'auditeur cherche à vérifier
+        pour chaque point~;
+  \item \textbf{Critère}~:  les conditions précises dont la réunion établit
+        que l'objectif est atteint~;
+  \item \textbf{Élément requis}~:  les documents ou preuves tangibles à
+        collecter pour renseigner chaque critère~;
+  \item \textbf{Question d'évaluation}~:  la formulation interrogative
+        opérationnelle dérivée du critère~;
+  \item \textbf{Risque}~:  ce que l'absence ou la défaillance du contrôle
+        associé à la question fait peser sur l'entité~;
+  \item \textbf{Conséquence}~:  l'impact organisationnel, opérationnel ou
+        réglementaire de la réalisation du risque.
+\end{enumerate}
+
+La figure suivante représente cette arborescence~:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  every node/.style={draw, rounded corners=3pt, fill=white,
+                     text width=7.2cm, align=left, inner sep=5pt,
+                     minimum height=0.75cm},
+  arrow/.style={-Stealth, thick, color=chaptercolor},
+  level/.style={sibling distance=8cm, level distance=1.1cm}
+]
+  \node[fill=chaptercolor!20, text=chaptercolor, font=\small\bfseries]
+       {Niveau~1 \quad \textbf{Domaine}}
+    child[arrow] { node[fill=enspblue!10]
+       {Niveau~2 \quad \textbf{Point de contrôle}}
+      child[arrow] { node[fill=enspblue!10]
+         {Niveau~3 \quad \textbf{Objectif de contrôle}}
+        child[arrow] { node[fill=enspgreen!10]
+           {Niveau~4 \quad \textbf{Critère}}
+          child[arrow] { node[fill=enspgreen!10]
+             {Niveau~5 \quad \textbf{Élément requis}}
+            child[arrow] { node[fill=navyblue!10]
+               {Niveau~6 \quad \textbf{Question d'évaluation}}
+              child[arrow] { node[fill=enspred!10]
+                 {Niveau~7 \quad \textbf{Risque}}
+                child[arrow] { node[fill=enspred!20]
+                   {Niveau~8 \quad \textbf{Conséquence}}
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+\end{tikzpicture}
+\caption{Arborescence de la méthode de décomposition hiérarchique}
+\label{fig:arborescence}
+\end{figure}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Rôle et logique de chaque palier}
+\label{sec:paliers}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Niveau~1. Le Domaine}
+
+\begin{boxdef}{Domaine}
+Le domaine désigne le champ d'audit considéré dans son ensemble, c'est-à-dire
+l'entité, la fonction, le processus ou le système sur lequel porte la mission.
+\end{boxdef}
+
+Le domaine est le point d'entrée de toute décomposition~; il répond à la
+question~: \emph{qu'est-ce qu'on audite~?} Il peut s'agir d'une application
+informatique en service, de la fonction informatique (DSI), d'un projet
+informatique, du support utilisateur, de la sécurité informatique, de la
+fonction étude, ou de tout autre périmètre défini dans le mandat d'audit.
+
+Le domaine ne contient en lui-même aucun contenu évaluable~; il sert
+exclusivement de label d'en-tête pour la feuille de calcul correspondante dans
+l'outil. Chaque domaine donne lieu à une feuille distincte.
+
+\paragraph{Clé de conception.}
+Un domaine bien délimité est un domaine dont les frontières sont acceptées par
+l'audité. La lettre de mission doit formaliser cette délimitation avant le début
+des travaux de terrain.
+
+\subsection{Niveau~2. Le Point de contrôle}
+
+\begin{boxdef}{Point de contrôle}
+Un point de contrôle est une thématique majeure du domaine audité, identifiée
+comme un axe de vérification cohérent et autonome. Il regroupe l'ensemble des
+vérifications portant sur une même composante fonctionnelle, organisationnelle
+ou technique du domaine.
+\end{boxdef}
+
+Les points de contrôle constituent le plan de l'audit~; ils répondent à la
+question~: \emph{sur quels axes doit-on se prononcer~?} Ils sont définis par
+référence à un référentiel reconnu~: guide d'audit des SI (IFACI/CIGREF), COBIT,
+ISO~27001, guide ISACA, ou document normatif sectoriel. Leur nombre varie selon
+le type d'audit~: six pour l'audit des applications en service, dix pour
+l'audit de sécurité, quinze pour l'audit des projets informatiques.
+
+\paragraph{Clé de conception.}
+Un bon point de contrôle est \emph{homogène} (toutes les vérifications qu'il
+recouvre concernent bien la même composante), \emph{exhaustif} (il ne laisse
+pas de zone d'ombre dans sa thématique) et \emph{indépendant} des autres points
+de contrôle du même domaine (pas de recouvrement).
+
+\subsection{Niveau~3. L'Objectif de contrôle}
+
+\begin{boxdef}{Objectif de contrôle}
+Un objectif de contrôle est une assertion précise sur ce qui doit être vérifié
+au sein d'un point de contrôle. Il formule, de manière affirmative et
+vérifiable, l'état attendu d'une composante du système audité.
+\end{boxdef}
+
+Les objectifs de contrôle répondent à la question~: \emph{que doit-on
+s'assurer~?} Ils sont formulés à l'infinitif~: \emph{S'assurer que\ldots} ou
+\emph{Vérifier que\ldots}. Cette formulation n'est pas stylistique~: elle
+rappelle que l'objectif engage la responsabilité de l'auditeur, il doit
+apporter la preuve que la vérification a bien été conduite.
+
+Un point de contrôle peut comporter plusieurs objectifs de contrôle. Par
+exemple, le point de contrôle \emph{Organisation} dans l'audit des applications
+en service comporte dix objectifs, allant de l'existence d'un comité
+informatique jusqu'à la disponibilité d'un guide utilisateur.
+
+\paragraph{Clé de conception.}
+Chaque objectif doit être \emph{formulé en termes d'état} (ce qui doit exister
+ou être effectif), et non en termes d'action (ce que l'auditeur va faire)~; la
+formulation de l'action relève du niveau~6 (question d'évaluation).
+
+\subsection{Niveau~4. Le Critère}
+
+\begin{boxdef}{Critère}
+Un critère est une condition élémentaire et vérifiable dont la satisfaction
+contribue à établir qu'un objectif de contrôle est atteint. Il décompose
+l'objectif en assertions unitaires, chacune susceptible d'être évaluée
+indépendamment.
+\end{boxdef}
+
+Les critères répondent à la question~: \emph{à quelles conditions peut-on
+considérer que l'objectif est rempli~?} Ils sont formulés sous la forme de
+propositions assertives au présent de l'indicatif~: \emph{Le comité est présidé
+par le Directeur Général~; les directions utilisatrices sont représentées~;
+etc.}
+
+La granularité du critère doit être telle qu'il ne soit ni trop large (auquel
+cas il se confondrait avec l'objectif) ni trop étroit (auquel cas il deviendrait
+une simple modalité). Un critère bien formulé peut être binaire~: soit il est
+vérifié, soit il ne l'est pas.
+
+\paragraph{Clé de conception.}
+La somme des critères associés à un objectif doit être à la fois nécessaire et
+suffisante~: si tous les critères sont satisfaits, l'objectif est atteint~; si
+l'un d'eux ne l'est pas, l'objectif est partiellement ou totalement défaillant.
+
+\subsection{Niveau~5. L'Élément requis}
+
+\begin{boxdef}{Élément requis}
+Un élément requis est un document, un enregistrement, un artefact ou une
+preuve tangible dont la production ou la présentation par l'audité est nécessaire
+pour que l'auditeur puisse se prononcer sur la satisfaction d'un critère.
+\end{boxdef}
+
+Les éléments requis répondent à la question~: \emph{quelles preuves faut-il
+collecter~?} Ce sont les pièces du dossier d'audit~: procès-verbaux de réunion,
+décisions de nomination, politiques formalisées, contrats, journaux système,
+rapports d'activité, etc.
+
+Ce niveau est le lien entre la démarche analytique de l'auditeur (les niveaux 1
+à 4) et le terrain de la mission (la collecte documentaire). La liste des
+éléments requis constitue, une fois compilée sur l'ensemble des critères, le
+\emph{tableau de demandes de documents} à remettre à l'audité en début de
+mission.
+
+\paragraph{Clé de conception.}
+Un élément requis doit être \emph{nominatif} (document spécifique, pas une
+catégorie) et \emph{daté} si possible (version en vigueur, exercice concerné),
+de manière à ce que l'audité sache précisément ce qui est attendu de lui.
+
+\subsection{Niveau~6. La Question d'évaluation}
+
+\begin{boxdef}{Question d'évaluation}
+Une question d'évaluation est la formulation interrogative opérationnelle d'un
+critère~; c'est la question que l'auditeur pose à l'audité, ou qu'il se pose
+lui-même lors de l'examen d'un document, pour vérifier la satisfaction du
+critère correspondant.
+\end{boxdef}
+
+Les questions d'évaluation répondent à la question~: \emph{comment vérifier
+concrètement le critère sur le terrain~?} Elles sont formulées en propositions
+interrogatives directes~: \emph{Existe-t-il un comité informatique~? Le comité
+est-il présidé par le Directeur Général~?}
+
+Ce niveau est le \emph{questionnaire d'audit}~: l'ensemble des questions
+d'évaluation d'un domaine, une fois extrait de l'outil, constitue le guide
+d'entretien utilisable lors des réunions avec l'audité ou lors de l'examen
+documentaire.
+
+\paragraph{Clé de conception~: la réponse trichotomique.}
+Contrairement à une idée reçue, la question d'évaluation ne doit pas être
+strictement binaire. L'expérience du terrain révèle qu'une troisième situation
+échappe systématiquement à la dichotomie Oui/Non~: celle où l'auditeur ne
+dispose pas d'une information suffisante pour se prononcer, non par manque
+de diligence, mais parce que l'information elle-même n'existe pas, ne circule
+pas ou n'est pas accessible au sein de l'entité auditée.
+
+L'outil retient donc un \emph{système de réponse trichotomique}~:
+
+\begin{itemize}
+  \item \textbf{O} (\emph{Oui}), le critère est satisfait~; la preuve a été
+        collectée et est probante~;
+  \item \textbf{N} (\emph{Non}), le critère n'est pas satisfait~; la
+        défaillance est avérée~;
+  \item \textbf{PAS} (\emph{Pas Assez de Savoir}), également noté
+        \textbf{NEK} (\emph{Not Enough Knowledge}), l'auditeur ne dispose pas
+        d'une information suffisante pour conclure~: le document requis n'a pas
+        été produit, les interlocuteurs ne peuvent pas répondre, ou les réponses
+        obtenues sont contradictoires.
+\end{itemize}
+
+La modalité PAS/NEK n'est pas un aveu d'échec méthodologique~; elle est au
+contraire un \emph{signal diagnostique de première importance}. Deux
+interprétations organisationnelles lui sont associées~:
+
+\begin{enumerate}
+  \item \textbf{Défaillance du contrôle interne}~: si une proportion élevée de
+        réponses PAS/NEK se concentre sur un point de contrôle donné, cela
+        indique que les mécanismes de contrôle de ce point sont soit inexistants,
+        soit non documentés, soit non appliqués, ce qui constitue en
+        soi un risque, indépendamment du fait que le contrôle soit ou non en
+        place.
+  \item \textbf{Défaut de circulation de l'information}~: si les réponses
+        PAS/NEK sont dispersées sur l'ensemble des points de contrôle et des
+        interlocuteurs rencontrés, cela révèle que l'information pertinente pour
+        le fonctionnement de l'organisation ne circule pas correctement~: les
+        acteurs ne savent pas ce qui se fait, ce qui existe ou ce qui est décidé
+        ailleurs dans leur propre organisation.
+\end{enumerate}
+
+\paragraph{Mesure de l'incertitude par l'entropie de Shannon.}
+La proportion de réponses PAS/NEK dans un domaine ou sur l'ensemble d'un audit
+peut être quantifiée par l'\emph{entropie informationnelle de Shannon},
+appliquée à la distribution des trois modalités de réponse. Pour un domaine
+comportant $n$~questions, en notant $p_O$, $p_N$ et $p_P$ les proportions
+respectives de réponses O, N et PAS/NEK, l'entropie de Shannon s'écrit~:
+
+\begin{equation}
+H = -\, p_O \log_2 p_O \;-\; p_N \log_2 p_N \;-\; p_P \log_2 p_P
+\quad \in [0,\; \log_2 3 \approx 1{,}585 \text{ bits}]
+\end{equation}
+
+L'entropie $H$ est nulle lorsque toutes les réponses sont identiques (certitude
+complète) et maximale ($\approx 1{,}585$~bits) lorsque les trois modalités sont
+équiprobables (incertitude maximale). En pratique~:
+
+\begin{itemize}
+  \item une entropie élevée sur un domaine signale une \emph{zone grise}~:
+        l'auditeur ne peut pas se prononcer de manière fiable, ce qui est en
+        soi un constat d'audit~;
+  \item la cartographie des entropies par domaine et par point de contrôle
+        constitue un \emph{indicateur de qualité de l'information} au sein de
+        l'entité, complémentaire au taux de conformité.
+\end{itemize}
+
+Ce double signal, taux de conformité d'une part, entropie informationnelle
+d'autre part, fait de l'outil un instrument à deux dimensions~: il mesure à
+la fois \emph{ce qui ne va pas} (réponses~N) et \emph{ce qu'on ne sait pas}
+(réponses~PAS/NEK), les deux dimensions pouvant pointer des pathologies
+organisationnelles distinctes.
+
+\subsection{Niveau~7. Le Risque}
+
+\begin{boxdef}{Risque}
+Dans la grille de décomposition, le risque désigne la situation de défaillance
+ou d'absence de contrôle que l'auditeur identifie lorsque la réponse à une
+question d'évaluation est négative. Il est formulé comme l'antithèse du critère
+correspondant.
+\end{boxdef}
+
+Les risques répondent à la question~: \emph{que se passe-t-il si la réponse à
+la question est négative~?} Ils sont formulés comme des assertions descriptives
+de l'état de non-conformité~: \emph{Inexistence d'un comité informatique~; Le
+comité n'est pas présidé par le Directeur Général~; Les directions utilisatrices
+ne sont pas représentées.}
+
+Ce niveau est \emph{mécaniquement dérivé} du niveau~6~: à chaque question dont
+la réponse est Non correspond un risque formalisé. L'outil peut donc générer
+automatiquement la liste des risques actifs à partir des réponses saisies par
+l'auditeur, et constituer ainsi la base de la cartographie des risques de la
+mission.
+
+\paragraph{Clé de conception.}
+Le risque doit être formulé au niveau de l'état de non-conformité constaté, pas
+au niveau de la cause (qui relève de l'analyse de l'auditeur) ni de l'impact
+(qui relève du niveau~8). La frontière avec les niveaux adjacents doit être
+tenue pour que le scoring soit cohérent.
+
+\subsection{Niveau~8. La Conséquence}
+
+\begin{boxdef}{Conséquence}
+La conséquence est l'impact organisationnel, opérationnel, financier ou
+réglementaire que la réalisation du risque fait peser sur l'entité auditée.
+Elle représente le \emph{préjudice potentiel} que l'absence du contrôle
+concerné rend possible.
+\end{boxdef}
+
+Les conséquences répondent à la question~: \emph{pourquoi ce risque est-il
+grave~?} Elles sont formulées en termes d'impacts mesurables ou plausibles~:
+\emph{Incohérence des choix stratégiques~; Application non adaptée aux besoins
+du métier~; Perte de données sensibles~; Non-conformité réglementaire exposant
+l'entité à des sanctions.}
+
+Ce niveau justifie, pour chaque risque identifié, la nécessité d'une
+recommandation dans le rapport d'audit. La conséquence est l'argument de fond
+qui permet à l'auditeur de convaincre la direction auditée de l'urgence d'une
+action corrective.
+
+\paragraph{Clé de conception.}
+La conséquence doit être \emph{proportionnée}~: une conséquence surévaluée
+crédite l'auditeur d'un alarmisme peu professionnel~; une conséquence
+sous-évaluée banalise un constat qui mérite attention. Elle doit également être
+\emph{rattachée au contexte de l'entité} et non générique~: l'absence d'un PCA
+n'a pas les mêmes conséquences pour un opérateur de services critiques que pour
+une PME commerciale.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Universalité et adaptabilité de la méthode}
+\label{sec:universalite}
+% ──────────────────────────────────────────────────────────────────────────────
+
+Un trait essentiel de la méthode de décomposition hiérarchique est son
+\emph{invariance structurelle}~: la succession des huit niveaux reste identique
+quel que soit le type d'audit considéré. Ce qui change d'un type à l'autre,
+c'est uniquement le contenu de chaque niveau, le nombre de points de
+contrôle, la formulation des objectifs, la nature des éléments requis, mais
+jamais la logique de décomposition elle-même.
+
+\begin{boiteTheoreme}{Invariance structurelle de la décomposition}
+Pour tout domaine d'audit $\mathcal{D}$, il existe une décomposition
+hiérarchique $\mathcal{H}(\mathcal{D})$ en huit niveaux tels que~:
+\begin{enumerate}
+  \item Chaque élément de niveau $k$ est intégralement dérivé d'un et d'un seul
+        élément de niveau $k-1$~;
+  \item La réunion de tous les éléments de niveau $k$ associés à un élément
+        de niveau $k-1$ couvre exhaustivement cet élément~;
+  \item Deux éléments de même niveau rattachés au même parent de niveau
+        $k-1$ sont disjoints.
+\end{enumerate}
+Cette propriété garantit que l'outil d'audit construit à partir de
+$\mathcal{H}(\mathcal{D})$ est à la fois exhaustif, non redondant et
+entièrement traçable.
+\end{boiteTheoreme}
+
+Cette invariance a une conséquence pratique immédiate~: \emph{apprendre la
+méthode une fois suffit pour l'appliquer à n'importe quel type d'audit}. Un
+auditeur qui maîtrise la décomposition sur l'audit des applications en service
+peut, en changeant le contenu des cellules sans changer la structure du tableur,
+construire une grille d'audit de la sécurité informatique, d'un projet ou de la
+fonction DSI.
+
+Le tableau~\ref{tab:types-niveaux} illustre la variabilité du contenu avec
+l'invariance de la structure sur trois types d'audit.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Invariance structurelle~: le même niveau pour trois domaines différents}
+\label{tab:types-niveaux}
+\begin{tabular}{p{2.6cm}p{3.5cm}p{3.5cm}p{3.5cm}}
+\toprule
+\textbf{Niveau} &
+\textbf{Audit Applications} &
+\textbf{Audit Sécurité} &
+\textbf{Audit Projets} \\
+\midrule
+\textbf{1. Domaine} &
+Application en service &
+Sécurité informatique &
+Projet informatique \\
+\addlinespace
+\textbf{2. Point de~contrôle} &
+Organisation (6~pts) &
+Politique de sécurité (10~pts) &
+Planification (15~pts) \\
+\addlinespace
+\textbf{3. Objectif} &
+S'assurer de l'existence d'un comité informatique &
+S'assurer qu'une politique formalisée existe &
+S'assurer de l'existence d'un planning directeur \\
+\addlinespace
+\textbf{4. Critère} &
+Le comité est présidé par le DG &
+La politique couvre l'ensemble du SI &
+Le planning intègre une gestion optimale des ressources \\
+\addlinespace
+\textbf{5. Élément requis} &
+PV de session du comité &
+Document de politique de sécurité en vigueur &
+Planning directeur signé et révisé \\
+\addlinespace
+\textbf{6. Question} &
+Le comité est-il présidé par le DG~? &
+La politique couvre-t-elle l'ensemble du SI~? &
+Un planning directeur commun existe-t-il~? \\
+\addlinespace
+\textbf{7. Risque} &
+Le comité n'est pas présidé par le DG &
+La politique ne couvre pas l'ensemble du SI &
+Absence de planning directeur commun \\
+\addlinespace
+\textbf{8. Conséquence} &
+Décisions prises par des acteurs sans niveau décisionnel adéquat &
+Zones du SI non couvertes exposées sans protection &
+Incohérence dans la planification, dépassements de délais \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Structuration du fichier Excel de l'outil d'aide à l'audit}
+\label{sec:excel}
+% ──────────────────────────────────────────────────────────────────────────────
+
+L'implémentation naturelle de la méthode de décomposition hiérarchique est un
+classeur tableur (Microsoft Excel ou LibreOffice Calc). Sa structure reflète
+directement l'arborescence à huit niveaux~: chaque feuille correspond à un
+domaine (niveau~1), et chaque ligne correspond à une feuille terminale de
+l'arborescence, c'est-à-dire à la combinaison complète des huit niveaux pour une
+unité élémentaire de vérification.
+
+\subsection{Architecture du classeur}
+
+\paragraph{Organisation en feuilles.}
+Le classeur comporte autant de feuilles que de domaines d'audit~: une feuille
+par type d'audit (application en service, fonction informatique, projets,
+support/parc, sécurité, fonction étude). Une feuille supplémentaire, nommée
+\texttt{SYNTHÈSE}, agrège les indicateurs de l'ensemble des domaines.
+
+\paragraph{Nommage des feuilles.}
+Chaque feuille est nommée de manière à identifier sans ambiguïté le domaine
+qu'elle couvre, selon la convention~: \texttt{[N°]\_[SIGLE\_DOMAINE]}, par
+exemple~: \texttt{01\_APPLI}, \texttt{02\_DSI}, \texttt{03\_PROJETS},
+\texttt{04\_SUPPORT}, \texttt{05\_SECURITE}, \texttt{06\_ETUDE}.
+
+\subsection{Structure de chaque feuille de domaine}
+
+Chaque feuille de domaine comporte les colonnes suivantes, dans l'ordre~:
+
+\begin{table}[H]
+\centering
+\small
+\caption{Structure standard d'une feuille de domaine dans l'outil d'aide à
+l'audit}
+\label{tab:colonnes-excel}
+\begin{tabular}{clp{7.5cm}}
+\toprule
+\textbf{Col.} & \textbf{En-tête} & \textbf{Contenu et rôle} \\
+\midrule
+A & \texttt{DOMAINE} &
+  Nom du domaine audité (identique sur toutes les lignes de la feuille~;
+  sert à la consolidation dans la synthèse). \\
+\addlinespace
+B & \texttt{POINT DE CONTRÔLE} &
+  Libellé du point de contrôle (niveau~2). Plusieurs lignes successives
+  partagent le même libellé, regroupées visuellement par un fond coloré
+  alterné. \\
+\addlinespace
+C & \texttt{OBJECTIF DE CONTRÔLE} &
+  Libellé de l'objectif de contrôle (niveau~3), formulé à l'infinitif
+  (\emph{S'assurer que\ldots}, \emph{Vérifier que\ldots}). \\
+\addlinespace
+D & \texttt{CRITÈRE} &
+  Assertion élémentaire à vérifier (niveau~4), formulée au présent de
+  l'indicatif. \\
+\addlinespace
+E & \texttt{ÉLÉMENT REQUIS} &
+  Document ou preuve à collecter (niveau~5). \\
+\addlinespace
+F & \texttt{QUESTION D'ÉVALUATION} &
+  Question posée sur le terrain (niveau~6), appelant une réponse
+  trichotomique~: \texttt{O}~/ \texttt{N}~/ \texttt{PAS}. \\
+\addlinespace
+G & \texttt{RÉPONSE} &
+  Cellule de saisie auditeur~: réponse \emph{trichotomique} obligatoire.
+  \texttt{O}~(\emph{Oui})~: critère satisfait, preuve collectée.
+  \texttt{N}~(\emph{Non})~: critère non satisfait, défaillance avérée.
+  \texttt{PAS}~(\emph{Pas Assez de Savoir}, aussi noté \texttt{NEK}~: 
+  \emph{Not Enough Knowledge})~: information insuffisante pour conclure,
+  signalant soit une défaillance du contrôle interne, soit un défaut de
+  circulation de l'information.
+  C'est la \emph{seule colonne remplie manuellement} lors de la mission~;
+  toutes les autres colonnes calculées en dépendent. \\
+\addlinespace
+H & \texttt{RISQUE} &
+  Formulation du risque associé à une réponse négative (niveau~7).
+  Affiché en rouge automatiquement si la réponse en col.~G est~N. \\
+\addlinespace
+I & \texttt{CONSÉQUENCE} &
+  Impact organisationnel de la réalisation du risque (niveau~8). \\
+\addlinespace
+J & \texttt{CRITICITÉ} &
+  Score calculé automatiquement (formule)~: pondération de la
+  probabilité d'occurrence du risque et de la gravité de la conséquence.
+  Exprimé sur une échelle~1--4 ou 1--9 selon le référentiel retenu. \\
+\addlinespace
+K & \texttt{STATUT} &
+  Formule conditionnelle~: \texttt{CONFORME} si \texttt{G}~=~\texttt{O}~;
+  \texttt{NON~CONFORME} si \texttt{G}~=~\texttt{N}~;
+  \texttt{ZONE~GRISE} si \texttt{G}~=~\texttt{PAS}.
+  Mise en forme conditionnelle~: vert~/ rouge~/ orange ambré
+  respectivement. \\
+\addlinespace
+L & \texttt{RECOMMANDATION} &
+  Cellule de saisie auditeur~: action corrective recommandée. Renseignée
+  pour les statuts \texttt{NON~CONFORME} et \texttt{ZONE~GRISE}. \\
+\addlinespace
+M & \texttt{PRIORITÉ} &
+  Urgence de la recommandation~: \texttt{IMMÉDIATE}, \texttt{COURT TERME}
+  ou \texttt{MOYEN TERME}. Calculée à partir du score de criticité
+  (col.~J). \\
+\addlinespace
+N & \texttt{COMMENTAIRE} &
+  Champ libre de l'auditeur~: nuance, contexte, source de la preuve
+  collectée, ou motif du PAS/NEK (document non produit, réponses
+  contradictoires, interlocuteur non disponible). \\
+\addlinespace
+O & \texttt{ENTROPIE} &
+  Calculée automatiquement au niveau du point de contrôle (ligne de
+  sous-total)~: $H = -\sum_{m \in \{O,N,P\}} p_m \log_2 p_m$ où $p_m$
+  est la proportion de réponses de modalité~$m$ dans le point de contrôle
+  considéré. Une valeur proche de $\log_2 3 \approx 1{,}585$~bits signale
+  une zone grise à fort niveau d'incertitude. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Fonctionnement des formules d'automatisation}
+
+Trois familles de formules font de la feuille de calcul un outil actif et non
+un simple formulaire statique.
+
+\paragraph{Formule de statut (colonne~K).}
+Le statut de chaque ligne est calculé automatiquement à partir de la réponse
+trichotomique saisie en colonne~G~:
+
+\begin{verbatim}
+=SI(G2="O";"CONFORME";SI(G2="N";"NON CONFORME";"ZONE GRISE"))
+\end{verbatim}
+
+La mise en forme conditionnelle applique un fond vert au statut
+\texttt{CONFORME}, rouge au statut \texttt{NON~CONFORME}, et orange ambré au
+statut \texttt{ZONE~GRISE}. Ce dernier appel visuel signale à l'auditeur que la
+ligne exige un approfondissement~: investigation complémentaire, relance de
+l'audité ou recherche d'une source d'information alternative.
+
+\paragraph{Formule de criticité (colonne~J).}
+La criticité est activée pour les réponses \texttt{N} et \texttt{PAS}~: une
+réponse PAS/NEK porte un risque potentiel aussi réel qu'une réponse négative
+avérée, même si sa nature diffère (incertitude vs défaillance). La formule
+type est~:
+
+\begin{verbatim}
+=SI(G2="O";"";SI(G2="N";PROBABILITE*GRAVITE;PROBABILITE*GRAVITE*0.7))
+\end{verbatim}
+
+Le coefficient~0,7 appliqué au score PAS/NEK traduit l'incertitude
+inhérente~: le risque est réel mais non entièrement établi. Ce coefficient est
+paramétrable selon la politique de risque de l'institution auditrice.
+
+\paragraph{Formule d'entropie (colonne~O, niveau point de contrôle).}
+L'entropie de Shannon est calculée sur les lignes de sous-total agrégées par
+point de contrôle. En nommant \texttt{NbO}, \texttt{NbN}, \texttt{NbP} les
+compteurs de réponses O, N et PAS dans le groupe, et \texttt{NbTotal} leur
+somme~:
+
+\begin{verbatim}
+=SI(NbTotal=0;"";
+   -SI(NbO=0;0;(NbO/NbTotal)*LOG(NbO/NbTotal;2))
+   -SI(NbN=0;0;(NbN/NbTotal)*LOG(NbN/NbTotal;2))
+   -SI(NbP=0;0;(NbP/NbTotal)*LOG(NbP/NbTotal;2)))
+\end{verbatim}
+
+La valeur résultante, comprise entre~0 et $\log_2 3 \approx 1{,}585$~bits,
+est affichée avec une mise en forme conditionnelle à gradient~: blanc pour
+$H < 0{,}5$ (certitude), jaune pour $0{,}5 \leq H < 1{,}0$ (incertitude
+modérée), rouge pour $H \geq 1{,}0$ (zone grise critique).
+
+\paragraph{Formule de priorité (colonne~M).}
+La priorité de la recommandation est dérivée du score de criticité~:
+
+\begin{verbatim}
+=SI(J2>=7;"IMMÉDIATE";SI(J2>=4;"COURT TERME";"MOYEN TERME"))
+\end{verbatim}
+
+\subsection{La feuille de synthèse}
+
+La feuille \texttt{SYNTHÈSE} agrège automatiquement, pour l'ensemble des
+domaines, les indicateurs de couverture et de qualité de la mission. Elle
+comporte~:
+
+\begin{itemize}
+  \item le \textbf{taux de couverture} par domaine~: proportion de questions
+        auxquelles une réponse a été saisie (mesure de l'avancement de la
+        mission)~;
+  \item le \textbf{taux de conformité} par domaine~: proportion de réponses~O
+        sur l'ensemble des questions évaluées~;
+  \item le \textbf{taux d'incertitude} par domaine~: proportion de réponses
+        PAS/NEK, indicateur direct de la qualité de l'information disponible
+        dans l'entité auditée~;
+  \item la \textbf{cartographie entropique}~: histogramme des entropies de
+        Shannon par point de contrôle, permettant de visualiser d'un coup d'œil
+        les zones grises les plus denses~;
+  \item la \textbf{cartographie des risques}~: tableau croisé des risques
+        actifs (réponses~N et PAS/NEK) par domaine et par niveau de criticité~;
+  \item le \textbf{plan d'action synthétique}~: liste consolidée des
+        recommandations de priorité \texttt{IMMÉDIATE} et \texttt{COURT TERME},
+        extraites automatiquement des feuilles de domaine.
+\end{itemize}
+
+Ces indicateurs sont visualisés dans un tableau de bord graphique à deux
+dimensions~: la dimension \emph{conformité} (ce qui ne va pas, réponses~N)
+et la dimension \emph{incertitude} (ce qu'on ne sait pas, réponses~PAS/NEK),
+représentées sur un radar chart à six axes (un par domaine), inséré dans la
+feuille \texttt{SYNTHÈSE}.
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: trichotomie O~/ N~/ PAS appliquée au domaine Sécurité}
+
+Lors de l'audit de sécurité de Lizbiz's, trois questions du point de contrôle
+\emph{Gestion des identifiants et des mots de passe} illustrent les trois
+modalités de réponse~:
+
+\smallskip
+\begin{tabular}{p{6.5cm}p{1.2cm}p{5cm}}
+\textbf{Question} & \textbf{Réponse} & \textbf{Interprétation} \\
+\midrule
+Existe-t-il une procédure de gestion des mots de passe~? &
+\texttt{N} &
+Défaillance avérée~; aucun document produit. Statut~: \texttt{NON~CONFORME}. \\
+\addlinespace
+Les identifiants inutilisés sont-ils révoqués après un délai défini~? &
+\texttt{PAS} &
+L'administrateur réseau interrogé déclare qu'une procédure existe «~quelque
+part~», mais ne peut en produire aucune trace. Statut~: \texttt{ZONE~GRISE}. \\
+\addlinespace
+Vérifie-t-on qu'il y a un seul utilisateur par identifiant~? &
+\texttt{O} &
+Liste des comptes actifs produite~; vérification effectuée sans anomalie. \\
+\end{tabular}
+
+\smallskip
+L'entropie du point de contrôle sur ces trois questions est~:
+$H = -\frac{1}{3}\log_2\frac{1}{3} - \frac{1}{3}\log_2\frac{1}{3}
+        - \frac{1}{3}\log_2\frac{1}{3} \approx 1{,}585$~bits~: valeur maximale,
+signalant que ce point de contrôle est une \emph{zone grise critique}. La
+réponse PAS/NEK sur la révocation des identifiants n'indique pas que le
+contrôle est absent~; elle indique que l'organisation ne \emph{sait pas} si
+elle le pratique, ce qui est, pour un auditeur, aussi préoccupant qu'une
+réponse N~: un contrôle dont personne ne peut attester l'existence est un
+contrôle sur lequel on ne peut pas s'appuyer.
+\end{boxlizbiz}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Protocole de construction de l'outil pour un nouveau domaine}
+\label{sec:protocole}
+% ──────────────────────────────────────────────────────────────────────────────
+
+La méthode de décomposition hiérarchique étant universelle, la construction de
+l'outil pour tout nouveau domaine d'audit suit un protocole en sept étapes.
+
+\subsection{Étape~1~: Délimiter le domaine}
+
+Définir précisément le périmètre de l'audit (application, fonction, projet,
+processus) et s'assurer que ce périmètre est formalisé dans la lettre de
+mission. Créer une nouvelle feuille dans le classeur et lui attribuer le nom
+codifié du domaine.
+
+\subsection{Étape~2~: Identifier les points de contrôle}
+
+À partir du référentiel applicable (guide d'audit IFACI/CIGREF, COBIT, ISO,
+ISACA ou référentiel sectoriel), lister les grands axes de vérification du
+domaine. Renseigner la colonne~B. Vérifier que la liste est exhaustive (aucun
+axe majeur oublié), homogène (chaque axe couvre bien une composante
+distincte) et mutuellement exclusive (pas de recouvrement entre axes).
+
+\subsection{Étape~3~: Décomposer chaque point en objectifs de contrôle}
+
+Pour chaque point de contrôle, formuler les objectifs de contrôle correspondants
+en utilisant systématiquement les tournures \emph{S'assurer que\ldots} ou
+\emph{Vérifier que\ldots} Renseigner la colonne~C. S'assurer que chaque
+objectif est un état attendu vérifiable, et non une action.
+
+\subsection{Étape~4~: Dériver les critères}
+
+Pour chaque objectif, décomposer l'état attendu en assertions élémentaires et
+vérifiables indépendamment l'une de l'autre. Renseigner la colonne~D. Vérifier
+que la somme des critères est à la fois nécessaire et suffisante à l'objectif.
+
+\subsection{Étape~5~: Spécifier les éléments requis et les questions}
+
+Pour chaque critère~: (i) identifier le document ou la preuve qui permettrait
+d'en établir la satisfaction (colonne~E)~; (ii) reformuler le critère en
+question trichotomique (O~/~N~/~PAS) posable à l'audité (colonne~F). Vérifier
+que la formulation est suffisamment précise pour qu'une réponse PAS/NEK soit
+distinguable d'une réponse N~: si l'audité dit «~je ne sais pas~», c'est un
+PAS~; si l'audité dit «~non, ça n'existe pas~», c'est un N.
+
+\subsection{Étape~6~: Formuler les risques et les conséquences}
+
+Pour chaque question~: (i) formuler l'état de non-conformité correspondant à une
+réponse négative (colonne~H)~; (ii) décrire l'impact organisationnel de la
+réalisation de ce risque (colonne~I). Évaluer la gravité de la conséquence et
+renseigner la pondération dans la plage nommée \texttt{GRAVITE}.
+
+\subsection{Étape~7~: Saisir les formules d'automatisation et tester}
+
+Implémenter les formules de statut (colonne~K), de criticité (colonne~J),
+de priorité (colonne~M) et d'entropie de Shannon (colonne~O, niveau point de
+contrôle). Appliquer les mises en forme conditionnelles~: vert/rouge/orange
+ambré pour le statut, gradient blanc-jaune-rouge pour l'entropie. Relier la
+feuille à la feuille \texttt{SYNTHÈSE}. Effectuer un test en saisissant des
+réponses fictives couvrant les trois modalités (O, N, PAS) et vérifier que les
+calculs, les colorations, les scores d'entropie et les remontées en synthèse se
+comportent conformément aux spécifications.
+
+\begin{boiteTheoreme}{Complétude de la décomposition}
+La décomposition d'un domaine $\mathcal{D}$ est dite \emph{complète} si et
+seulement si les trois conditions suivantes sont simultanément satisfaites~:
+
+\begin{enumerate}
+  \item \textbf{Exhaustivité}~: tout risque réel du domaine $\mathcal{D}$ est
+        couvert par au moins une question d'évaluation de la grille~;
+  \item \textbf{Non-redondance}~: aucune question n'est logiquement équivalente
+        à une autre question de la même grille~;
+  \item \textbf{Traçabilité}~: toute observation de terrain est rattachable,
+        via la structure de la grille, à un point de contrôle et à un objectif
+        de contrôle précis.
+\end{enumerate}
+
+Ces trois propriétés sont nécessaires et suffisantes pour garantir que le
+rapport d'audit produit à partir de l'outil est exhaustif, non redondant et
+opposable.
+\end{boiteTheoreme}
+% ------------------------------------------------------------------------------
+\section{Le Tableau de Bord de Synthèse (Reporting)}
+% ------------------------------------------------------------------------------
+
+L'outil ne doit pas être une simple liste de questions. Pour LiZbiZ, il doit générer une vision macroscopique.
+
+\begin{itemize}
+    \item \textbf{Calcul du Taux de Conformité :} Moyenne pondérée des scores par domaine.
+    \item \textbf{Visualisation :} Utilisation de graphiques de type "Radar" (Kiviat) pour identifier visuellement les faiblesses du SI.
+\end{itemize}
+
+\begin{boxdef}
+\textbf{Indicateur de Maturité :} 
+$M = \frac{\sum (Note \times Coeff)}{\sum Coeff}$. \\
+Ce score permet de situer LiZbiZ sur une échelle de 0 à 5 (inspirée de l'échelle CMMI de COBIT).
+\end{boxdef}

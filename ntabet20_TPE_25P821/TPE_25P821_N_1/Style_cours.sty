@@ -1,0 +1,607 @@
+% ==============================================================================
+% Fichier     : Style_cours.sty
+% Titre       : Feuille de style — de tous mes cours
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Institution : Université de Yaoundé I — LIMSI
+% Description : Définit l'ensemble des styles, environnements, commandes
+%               personnalisées et mises en forme utilisés dans les chapitres.
+%
+% CORRECTIONS APPLIQUÉES (version 2026-03-17) :
+%   1. fontspec + setmainfont  → résout les caractères manquants (—, œ, €)
+%   2. csquotes                → active \displayquote et corrige l'avert. biblatex
+%   3. headheight agrandi      → supprime les avertissements fancyhdr
+%   4. Couleurs manquantes     → chaptercolor, enspblue, enspgreen, enspred,
+%                                navyblue (utilisées dans 06_outil_aide_audit.tex)
+%   5. \doi défini             → corrige "Undefined control sequence \doi"
+%   6. boiteTheoreme défini    → corrige "Environment boiteTheoreme undefined"
+%   7. boiteRemarque défini    → corrige "Environment boiteRemarque undefined"
+%   8. enumerate[(a)] corrigé  → note : dans les chapitres, remplacer
+%                                \begin{enumerate}[(a)] par
+%                                \begin{enumerate}[label=(\alph*)]
+% ==============================================================================
+
+\ProvidesPackage{Style_cours}[2026/03/17 Feuille de style de mes cours — v2]
+
+% ==============================================================================
+% I. PACKAGES REQUIS
+% ==============================================================================
+
+% --- CORRECTION 1 : Encodage Unicode (LuaLaTeX uniquement) ---
+% fontenc et inputenc sont incompatibles avec LuaLaTeX.
+% fontspec gère nativement l'Unicode et permet d'afficher —, œ, €, etc.
+% Les deux lignes commentées ci-dessous NE DOIVENT PAS être décommentées.
+%\RequirePackage[T1]{fontenc}   % ← NE PAS DÉCOMMENTER avec LuaLaTeX
+%\RequirePackage[utf8]{inputenc} % ← NE PAS DÉCOMMENTER avec LuaLaTeX
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}   % Police principale Unicode complète
+
+% --- Langue ---
+\RequirePackage[provide=*,french]{babel}
+\RequirePackage{lmodern}
+
+% --- CORRECTION 2 : csquotes ---
+% Requis par biblatex (style ieee + babel/french).
+% Active aussi l'environnement \displayquote utilisé dans 08_evaluation_finale.tex.
+\usepackage{csquotes}
+
+% --- Typographie fine ---
+\RequirePackage[protrusion=true,expansion=false]{microtype}
+
+% --- CORRECTION 3 : headheight suffisant pour fancyhdr ---
+% La valeur 14pt était trop petite → avertissements répétés.
+% 30pt couvre les en-têtes sur deux lignes (cas des titres de chapitre longs).
+\RequirePackage[
+    top=2.5cm, bottom=2.5cm,
+    left=2.8cm, right=2.5cm,
+    headheight=30pt    % corrigé : était 14pt
+]{geometry}
+
+% --- Couleurs ---
+\RequirePackage[dvipsnames, table]{xcolor}
+
+% --- Graphiques & Figures ---
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{wrapfig}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, shadows, calc}
+
+% --- Tableaux ---
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\RequirePackage{array}
+\RequirePackage{colortbl}
+
+% --- Mathématiques ---
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+% --- Environnements décoratifs ---
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+% --- Listes ---
+% NOTE CORRECTION 8 : dans les chapitres, la syntaxe \begin{enumerate}[(a)]
+% est invalide avec enumitem. Remplacer par \begin{enumerate}[label=(\alph*)]
+\RequirePackage{enumitem}
+
+% --- Code source ---
+\RequirePackage{listings}
+\RequirePackage{lstautogobble}
+
+% --- En-têtes et pieds de page ---
+\RequirePackage{fancyhdr}
+
+% --- Hyperréférences ---
+\RequirePackage[
+    colorlinks=true,
+    linkcolor=CouleurPrimaire,
+    urlcolor=CouleurSecondaire,
+    citecolor=CouleurAccent,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    pdfauthor={MINKA MI NGUIDJOÏ Thierry Emmanuel},
+    pdftitle={Audit des Systèmes d'Information}
+]{hyperref}
+
+% --- CORRECTION 5 : package doi ---
+% Fournit la commande \doi{} utilisée dans 05_theorie_information_shannon.tex.
+% Si le package n'est pas disponible, la commande de secours est définie plus bas.
+\RequirePackage{doi}
+
+% --- Bibliographie ---
+\RequirePackage[
+    backend=biber,
+    style=ieee,
+    sorting=nyt
+]{biblatex}
+
+% --- Index ---
+\RequirePackage{makeidx}
+\makeindex
+
+% --- Glossaires ---
+\RequirePackage[toc, acronym]{glossaries}
+
+% --- Divers ---
+\RequirePackage{epigraph}
+\RequirePackage{pifont}
+\RequirePackage{marvosym}
+\RequirePackage{setspace}
+\RequirePackage{pdflscape}
+\RequirePackage{afterpage}
+
+
+% ==============================================================================
+% II. PALETTE CHROMATIQUE
+% ==============================================================================
+
+% --- Couleurs institutionnelles — tons bleu marine / or ---
+\definecolor{CouleurPrimaire}{RGB}{0, 47, 108}       % Bleu marine profond
+\definecolor{CouleurSecondaire}{RGB}{0, 102, 179}    % Bleu universitaire
+\definecolor{CouleurAccent}{RGB}{196, 142, 0}        % Or institutionnel
+\definecolor{CouleurTexte}{RGB}{30, 30, 30}          % Quasi-noir
+
+% --- Couleurs fonctionnelles (boîtes et alertes) ---
+\definecolor{CouleurDef}{RGB}{230, 244, 255}         % Bleu très clair (définitions)
+\definecolor{CouleurBordDef}{RGB}{0, 102, 179}       % Bordure bleu vif
+\definecolor{CouleurAlerte}{RGB}{255, 243, 225}      % Ambre pâle (alertes)
+\definecolor{CouleurBordAlerte}{RGB}{204, 102, 0}    % Orange foncé
+\definecolor{CouleurLizbiz}{RGB}{230, 255, 236}      % Vert très clair (cas pratique)
+\definecolor{CouleurBordLizbiz}{RGB}{34, 139, 34}    % Vert forêt
+\definecolor{CouleurInfo}{RGB}{245, 245, 245}        % Gris clair (info)
+\definecolor{CouleurBordInfo}{RGB}{120, 120, 120}    % Gris moyen
+\definecolor{CouleurCode}{RGB}{245, 247, 250}        % Fond code
+\definecolor{CouleurBordCode}{RGB}{70, 130, 180}     % Bleu acier
+
+% --- Couleurs de tableau alternées ---
+\definecolor{TableauPair}{RGB}{242, 246, 251}
+\definecolor{TableauImpair}{RGB}{255, 255, 255}
+\definecolor{TableauEntete}{RGB}{0, 47, 108}
+
+% --- CORRECTION 4 : Couleurs manquantes ---
+% Ces couleurs sont référencées dans 06_outil_aide_audit.tex (diagrammes TikZ)
+% mais n'étaient pas définies → erreurs xcolor "Undefined color".
+\definecolor{chaptercolor}{RGB}{0, 47, 108}          % Alias de CouleurPrimaire
+\definecolor{enspblue}{RGB}{0, 82, 156}              % Bleu ENSP
+\definecolor{enspgreen}{RGB}{0, 128, 64}             % Vert ENSP
+\definecolor{enspred}{RGB}{180, 30, 30}              % Rouge ENSP
+\definecolor{navyblue}{RGB}{0, 0, 128}               % Bleu marine standard
+
+
+% ==============================================================================
+% III. POLICES ET TYPOGRAPHIE
+% ==============================================================================
+
+% Espacement du texte courant
+\setstretch{1.15}
+
+% Paragraphes
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.4ex}
+
+
+% ==============================================================================
+% IV. STYLES DE CHAPITRES ET SECTIONS
+% ==============================================================================
+
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
+
+% --- Style de chapitre ---
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\color{CouleurPrimaire}}
+    {%
+        \filleft
+        \begin{tikzpicture}
+            \fill[CouleurPrimaire] (0,0) rectangle (1.2,1.2);
+            \node[white, font=\fontsize{28}{28}\selectfont\bfseries]
+                at (0.6,0.6) {\thechapter};
+        \end{tikzpicture}
+    }
+    {-0.5ex}
+    {\filright\fontsize{18}{22}\selectfont\MakeUppercase}
+    [\vspace{0.5ex}{\color{CouleurAccent}\titlerule[2pt]}\vspace{1ex}]
+
+\titlespacing*{\chapter}{0pt}{10pt}{25pt}
+
+% --- Style de section ---
+\titleformat{\section}
+    {\normalfont\large\bfseries\color{CouleurPrimaire}}
+    {\colorbox{CouleurPrimaire}{\color{white}\,\thesection\,}}
+    {0.7em}
+    {}
+    [\vspace{-0.4ex}{\color{CouleurSecondaire}\titlerule[0.8pt]}]
+
+\titlespacing*{\section}{0pt}{1.4ex plus 0.5ex}{0.8ex plus 0.3ex}
+
+% --- Style de sous-section ---
+\titleformat{\subsection}
+    {\normalfont\normalsize\bfseries\color{CouleurSecondaire}}
+    {\thesubsection}
+    {0.6em}
+    {}
+
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.4ex}{0.5ex plus 0.2ex}
+
+% --- Style de sous-sous-section ---
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\itshape\color{CouleurAccent}}
+    {\thesubsubsection}
+    {0.5em}
+    {}
+
+\titlespacing*{\subsubsection}{0pt}{0.8ex plus 0.3ex}{0.3ex plus 0.1ex}
+
+
+% ==============================================================================
+% V. EN-TÊTES ET PIEDS DE PAGE
+% ==============================================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{CouleurPrimaire}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrule}{\color{CouleurAccent}\hrule width\headwidth height\footrulewidth}
+
+\fancyhead[LE]{\small\color{CouleurPrimaire}\leftmark}
+\fancyhead[RO]{\small\color{CouleurPrimaire}\rightmark}
+\fancyhead[LO,RE]{\small\color{CouleurAccent}\textit{Cours — ENSP — UY1}}
+
+\fancyfoot[C]{\small\color{CouleurPrimaire}\thepage}
+\fancyfoot[LE,RO]{\small\color{CouleurTexte}\textit{MINKA MI NGUIDJOÏ Thierry Emmanuel}}
+
+% Style pour pages de début de chapitre
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{\small\color{CouleurPrimaire}\thepage}
+    \fancyfoot[LE,RO]{\small\color{CouleurTexte}\textit{MINKA MI NGUIDJOÏ Thierry Emmanuel}}
+}
+
+
+% ==============================================================================
+% VI. TABLE DES MATIÈRES (TITLETOC)
+% ==============================================================================
+
+\contentsmargin{0pt}
+
+\titlecontents{chapter}
+    [1.5em]
+    {\addvspace{1ex}\bfseries\color{CouleurPrimaire}}
+    {\contentslabel{1.5em}}
+    {\hspace*{-1.5em}}
+    {\hfill\contentspage}
+    [\addvspace{0.3ex}]
+
+\titlecontents{section}
+    [3.8em]
+    {\small}
+    {\contentslabel{2.3em}}
+    {\hspace*{-2.3em}}
+    {\ \titlerule*[0.5pc]{.}\contentspage}
+
+\titlecontents{subsection}
+    [6.5em]
+    {\footnotesize\color{CouleurBordInfo}}
+    {\contentslabel{3em}}
+    {\hspace*{-3em}}
+    {\ \titlerule*[0.5pc]{.}\contentspage}
+
+
+% ==============================================================================
+% VII. ENVIRONNEMENTS TCOLORBOX PERSONNALISÉS
+% ==============================================================================
+
+% --- A. Boîte Définition ---
+\newtcolorbox{boxdef}[1][]{
+    enhanced, breakable,
+    colback=CouleurDef, colframe=CouleurBordDef,
+    fonttitle=\bfseries\color{white},
+    title={$\blacksquare$\quad Définition},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurBordDef, rounded corners},
+    arc=3pt, boxrule=0.8pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- B. Boîte Alerte / Avertissement ---
+\newtcolorbox{boxalert}[1][]{
+    enhanced, breakable,
+    colback=CouleurAlerte, colframe=CouleurBordAlerte,
+    fonttitle=\bfseries\color{white},
+    title={\ding{72}\quad Attention},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurBordAlerte, rounded corners},
+    arc=3pt, boxrule=0.8pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- C. Boîte Cas LiZbiZ (Fil rouge) ---
+\newtcolorbox{boxlizbiz}[1][]{
+    enhanced, breakable,
+    colback=CouleurLizbiz, colframe=CouleurBordLizbiz,
+    fonttitle=\bfseries\color{white},
+    title={\ding{110}\quad Cas Pratique — Entreprise LiZbiZ},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurBordLizbiz, rounded corners},
+    arc=3pt, boxrule=0.8pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- D. Boîte Information / Note ---
+\newtcolorbox{boxinfo}[1][]{
+    enhanced, breakable,
+    colback=CouleurInfo, colframe=CouleurBordInfo,
+    fonttitle=\bfseries,
+    title={\ding{108}\quad Note},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurBordInfo, rounded corners},
+    arc=3pt, boxrule=0.6pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- E. Boîte Objectifs de chapitre ---
+\newtcolorbox{boxobjectifs}[1][]{
+    enhanced, breakable,
+    colback=white, colframe=CouleurPrimaire,
+    fonttitle=\bfseries\color{white},
+    title={\ding{70}\quad Objectifs du chapitre},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurPrimaire, rounded corners},
+    arc=4pt, boxrule=1.2pt,
+    left=8pt, right=8pt, top=10pt, bottom=8pt, #1
+}
+
+% --- F. Boîte Résumé / À retenir ---
+\newtcolorbox{boxresume}[1][]{
+    enhanced, breakable,
+    colback=white, colframe=CouleurAccent,
+    fonttitle=\bfseries\color{white},
+    title={\ding{72}\quad À retenir},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurAccent, rounded corners},
+    arc=3pt, boxrule=0.8pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- G. Boîte Question / Exercice ---
+\newtcolorbox{boxexo}[1][]{
+    enhanced, breakable,
+    colback=white, colframe=CouleurSecondaire,
+    fonttitle=\bfseries\color{white},
+    title={\ding{45}\quad Exercice},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurSecondaire, rounded corners},
+    arc=3pt, boxrule=0.8pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt, #1
+}
+
+% --- CORRECTION 6 : Environnement boiteTheoreme ---
+% Utilisé dans 05_theorie_information_shannon.tex et 06_outil_aide_audit.tex.
+% Syntaxe : \begin{boiteTheoreme}{Titre du théorème} ... \end{boiteTheoreme}
+\newtcolorbox{boiteTheoreme}[1]{
+    enhanced, breakable,
+    colback=CouleurDef!60!white,
+    colframe=CouleurPrimaire,
+    fonttitle=\bfseries\color{white},
+    title={\ding{72}\quad Théorème~: #1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurPrimaire, rounded corners},
+    arc=3pt, boxrule=1pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt
+}
+
+% --- CORRECTION 7 : Environnement boiteRemarque ---
+% Utilisé dans 05_theorie_information_shannon.tex.
+% Syntaxe : \begin{boiteRemarque}{Titre} ... \end{boiteRemarque}
+\newtcolorbox{boiteRemarque}[1]{
+    enhanced, breakable,
+    colback=CouleurInfo,
+    colframe=CouleurBordInfo,
+    fonttitle=\bfseries,
+    title={\ding{108}\quad Remarque~: #1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=CouleurBordInfo, rounded corners},
+    arc=3pt, boxrule=0.6pt,
+    left=6pt, right=6pt, top=8pt, bottom=6pt
+}
+
+
+% ==============================================================================
+% VIII. STYLE DE CODE SOURCE (LISTINGS)
+% ==============================================================================
+
+\lstdefinestyle{StyleCode}{
+    backgroundcolor=\color{CouleurCode},
+    basicstyle=\ttfamily\footnotesize\color{CouleurTexte},
+    keywordstyle=\bfseries\color{CouleurSecondaire},
+    commentstyle=\itshape\color{gray!70},
+    stringstyle=\color{CouleurBordAlerte},
+    numberstyle=\tiny\color{gray},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    frameround=tttt,
+    rulecolor=\color{CouleurBordCode},
+    autogobble=true,
+    xleftmargin=12pt,
+    xrightmargin=4pt,
+    aboveskip=8pt,
+    belowskip=6pt,
+    literate=
+        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+        {à}{{\`a}}1 {â}{{\^a}}1 {ç}{{\c{c}}}1 {ù}{{\`u}}1
+        {û}{{\^u}}1 {î}{{\^i}}1 {ô}{{\^o}}1
+}
+
+\lstset{style=StyleCode}
+
+% Langages spéciaux
+\lstdefinelanguage{SQL}{
+    keywords={SELECT, FROM, WHERE, AND, OR, NOT, INSERT, INTO, VALUES,
+              UPDATE, SET, DELETE, CREATE, TABLE, ALTER, DROP, INDEX,
+              JOIN, LEFT, RIGHT, INNER, OUTER, ON, GROUP, BY, ORDER,
+              HAVING, AS, DISTINCT, UNION, ALL, IN, EXISTS, LIKE,
+              IS, NULL, BETWEEN, CASE, WHEN, THEN, ELSE, END,
+              PRIMARY, KEY, FOREIGN, REFERENCES, UNIQUE, CHECK,
+              DATABASE, USE, SHOW, DESCRIBE, GRANT, REVOKE},
+    sensitive=false,
+    morecomment=[l]{--},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+
+% ==============================================================================
+% IX. LISTES PERSONNALISÉES
+% ==============================================================================
+
+\setlist[itemize,1]{
+    leftmargin=1.8em,
+    label={\color{CouleurPrimaire}\ding{227}},
+    itemsep=0.3ex
+}
+\setlist[itemize,2]{
+    leftmargin=1.5em,
+    label={\color{CouleurSecondaire}$\triangleright$},
+    itemsep=0.2ex
+}
+\setlist[itemize,3]{
+    leftmargin=1.2em,
+    label={\color{CouleurAccent}$\bullet$},
+    itemsep=0.1ex
+}
+
+\setlist[enumerate,1]{
+    leftmargin=2em,
+    label={\color{CouleurPrimaire}\bfseries\arabic*.},
+    itemsep=0.3ex
+}
+\setlist[enumerate,2]{
+    leftmargin=1.8em,
+    label={\color{CouleurSecondaire}\alph*)},
+    itemsep=0.2ex
+}
+
+
+% ==============================================================================
+% X. STYLE DES TABLEAUX
+% ==============================================================================
+
+\newcommand{\tableauHeader}[1]{%
+    \rowcolor{TableauEntete}\color{white}\bfseries #1
+}
+
+\newcommand{\ligneTableau}[1]{%
+    \rowcolor{TableauPair} #1
+}
+
+\newenvironment{tableaucours}[2]{%
+    \begin{table}[htbp]
+    \centering
+    \small
+    \rowcolors{2}{TableauPair}{TableauImpair}
+    \begin{tabular}{#1}
+    \toprule
+    #2
+    \midrule
+}{%
+    \bottomrule
+    \end{tabular}
+    \end{table}
+}
+
+
+% ==============================================================================
+% XI. COMMANDES UTILITAIRES
+% ==============================================================================
+
+% Mise en évidence d'un terme clé (index automatique)
+\newcommand{\termecle}[1]{%
+    \textbf{\color{CouleurPrimaire}#1}\index{#1}%
+}
+
+% Sigle ou acronyme
+\newcommand{\sigle}[1]{\textsc{#1}}
+
+% Note de marge
+\newcommand{\notemarge}[1]{%
+    \marginpar{\footnotesize\color{CouleurBordInfo}\itshape #1}%
+}
+
+% Icônes de niveau
+\newcommand{\niveaubase}{\textcolor{green!60!black}{\ding{72}\ding{73}\ding{73}}}
+\newcommand{\niveaumoyen}{\textcolor{orange}{\ding{72}\ding{72}\ding{73}}}
+\newcommand{\niveauexpert}{\textcolor{red!70!black}{\ding{72}\ding{72}\ding{72}}}
+
+% Référence à la norme
+\newcommand{\norme}[1]{\textbf{\color{CouleurAccent}[#1]}}
+
+% Séparateur de section décoratif
+\newcommand{\separateur}{%
+    \begin{center}
+        \color{CouleurAccent}
+        \rule{0.4\linewidth}{0.4pt}\quad
+        \ding{109}\quad
+        \rule{0.4\linewidth}{0.4pt}
+    \end{center}
+    \vspace{0.5ex}
+}
+
+% Métadonnées du cours
+\newcommand{\auteurcours}{MINKA MI NGUIDJOÏ Thierry Emmanuel}
+\newcommand{\institutionprimaire}{Université de Yaoundé I — ENSPY}
+\newcommand{\unitepedago}{Département de Génie Informatique}
+\newcommand{\anneescolaire}{2025--2026}
+
+
+% ==============================================================================
+% XII. ENVIRONNEMENTS MATHÉMATIQUES
+% ==============================================================================
+
+\theoremstyle{definition}
+\newtheorem{theoreme}{Théorème}[chapter]
+\newtheorem{definition}{Définition}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{corollaire}{Corollaire}[chapter]
+\newtheorem{lemme}{Lemme}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remarque}{Remarque}[chapter]
+\newtheorem{exemple}{Exemple}[chapter]
+
+
+% ==============================================================================
+% XIII. PARAMÈTRES FINAUX
+% ==============================================================================
+
+% Profondeur de numérotation
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Corrections de césure
+\hyphenpenalty=800
+\exhyphenpenalty=800
+
+% Couleur de texte par défaut
+\color{CouleurTexte}
+
+\endinput
+% ==============================================================================
+% Fin de Style_cours.sty
+% ==============================================================================

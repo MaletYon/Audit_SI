@@ -1,0 +1,151 @@
+% ==============================================================================
+% Fichier : lab2_infrastructure.tex
+% Description : Laboratoire 2 - Audit de Sécurité d'une Infrastructure
+% ==============================================================================
+
+\chapter{Laboratoire 2 : Audit de Sécurité d'une Infrastructure}\label{chap:lab2_infrastructure}
+
+Ce laboratoire complète l'audit fonctionnel par une approche technique. L'objectif est d'évaluer la sécurité du réseau et des systèmes de l'entreprise LiZbiZ pour détecter les vulnérabilités exploitables par un attaquant.
+
+\section{Objectifs du TP}
+\begin{itemize}
+    \item Analyser une architecture réseau pour valider la segmentation.
+    \item Réaliser un audit de configuration (pare-feu, services).
+    \item Utiliser des outils d'audit standards (Nmap, scanners de vulnérabilités).
+    \item Produire un rapport technique d'audit infrastructure.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Étape 1 : Analyse de l'Architecture (Revue Documentaire)}
+% ------------------------------------------------------------------------------
+
+\subsection{Présentation de l'Infrastructure LiZbiZ}
+
+L'infrastructure cible est modélisée sous GNS3 ou EVE-NG. Elle est composée de trois zones principales :
+
+\begin{itemize}
+    \item \textbf{VLAN 10 (DMZ) :} Serveur Web Public (Accessibilité Internet).
+    \item \textbf{VLAN 20 (Applicatif) :} Serveur ERP, Base de Données.
+    \item \textbf{VLAN 30 (Utilisateurs) :} Postes de travail, Active Directory.
+\end{itemize}
+
+\subsection{Travail Demandé : Analyse de la Cartographie}
+
+À partir du schéma fourni (ou de la simulation), répondez aux questions suivantes :
+\begin{enumerate}
+    \item Le serveur Web en DMZ a-t-il un accès direct au VLAN Utilisateurs ? (Risque : pivot depuis le web vers les postes).
+    \item La Base de Données est-elle accessible depuis Internet ? (Risque : exposition des données).
+    \item Les protocoles d'administration (SSH, Telnet, RDP) sont-ils autorisés entre toutes les zones ?
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Attention :} Une architecture correcte doit interdire tout flux direct Internet $\rightarrow$ BDD. Le flux doit passer par le Serveur Web (Proxy).
+\end{boxalert}
+
+% ------------------------------------------------------------------------------
+\section{Étape 2 : Découverte et Cartographie Réelle (Nmap)}
+% ------------------------------------------------------------------------------
+
+L'auditeur ne se fie pas uniquement aux schémas théoriques. Il doit scanner le réseau pour voir la réalité technique ("Shadow IT" potentiel).
+
+\subsection{Scan de Découverte}
+
+Utilisez l'outil \textbf{Nmap} depuis une machine attaquante (ex: Kali Linux) placée en position externe (simulant Internet) ou interne (simulant un poste utilisateur compromis).
+
+\textbf{Commande de base :}
+\begin{lstlisting}[language=bash, caption=Scan réseau Nmap]
+# Scan rapide pour voir les hotes actifs
+nmap -sn 192.168.1.0/24
+
+# Scan des ports ouverts sur le serveur Web
+nmap -sV -p- 192.168.1.10 (IP Serveur Web)
+\end{lstlisting}
+
+\subsection{Questions d'Audit}
+\begin{itemize}
+    \item \textbf{Question 1 :} Quels ports sont ouverts sur le serveur Web ? (Attendu : 80/443. Risque : 22, 21, 3389 ouverts).
+    \item \textbf{Question 2 :} Le pare-feu bloque-t-il les pings (ICMP) ? (Mesure de sécurité basique).
+    \item \textbf{Question 3 :} Identifiez-vous des services vulnérables (ex: FTP non chiffré, vieux Apache) ?
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Étape 3 : Audit de Configuration et Vulnérabilités}
+% ------------------------------------------------------------------------------
+
+\subsection{Test de Segmentation (Bypass Pare-feu)}
+
+\textbf{Objectif :} Vérifier que le VLAN Utilisateur ne peut pas accéder directement au port d'administration de la Base de Données (ex: port 3306 ou 5432).
+
+\textbf{Action :} Depuis une machine du VLAN 30, tentez de vous connecter au port SQL du VLAN 20.
+\begin{lstlisting}[language=bash]
+telnet <IP_SERVEUR_DB> 3306
+# Si la connexion s'ouvre -> ECHEC DU CONTROLE (Segmentation inexistante).
+\end{lstlisting}
+
+\subsection{Scan de Vulnérabilités (OpenVAS / Nessus)}
+
+Lancez un scan de vulnérabilités sur le serveur Web (DMZ).
+\textbf{Analyse des résultats :}
+\begin{itemize}
+    \item Classez les vulnérabilités par sévérité (Critical, High, Medium).
+    \item Identifiez les failles connues (CVE) non patchées.
+\end{itemize}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's :}
+Le scan révèle que le serveur Web exécute une version d'Apache datant de 2018 (CVE critique présente).
+\textbf{Constat :} Le processus de mise à jour (Patch Management) est défaillant.
+\textbf{Risque :} Prise de contrôle totale du serveur par un attaquant externe.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Étape 4 : Analyse des Configurations (Hardening)}
+% ------------------------------------------------------------------------------
+
+\subsection{Audit des Comptes par Défaut}
+
+Connectez-vous aux équipements (Routeur/Firewall) ou aux services (Base de données).
+Vérifiez :
+\begin{itemize}
+    \item Est-ce que le compte "admin" / "admin" fonctionne encore ?
+    \item Est-ce que le compte "root" de la base de données a un mot de passe vide ?
+\end{itemize}
+
+\subsection{Audit des Protocoles}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{4cm}p{4cm}p{4cm}}
+    \toprule
+    \textbf{Service} & \textbf{Configuration Sécurisée} & \textbf{Configuration Observée} \\
+    \midrule
+    Administration Réseau & SSH (v2) & Telnet (Clair) ? \\
+    Transfert Fichier & SFTP / SCP & FTP (Clair) ? \\
+    Accès Web & HTTPS & HTTP ? \\
+    \bottomrule
+\end{tabular}
+\caption{Grille de vérification des protocoles}
+\end{table}
+
+% ------------------------------------------------------------------------------
+\section{Étape 5 : Rapport d'Audit Technique}
+% ------------------------------------------------------------------------------
+
+\subsection{Synthèse des Risques}
+
+Résumez les risques majeurs identifiés (Impact Technique $\rightarrow$ Impact Métier).
+
+\subsection{Plan de Remédiation}
+
+Proposez un plan d'action technique pour LiZbiZ (Exemples : "Fermer le port 22 sur la DMZ", "Migrer de HTTP à HTTPS", "Appliquer les mises à jour de sécurité").
+
+% ------------------------------------------------------------------------------
+\section{Livrables à Rendre}
+% ------------------------------------------------------------------------------
+
+\begin{enumerate}
+    \item Fichier Nmap (format XML ou texte) montrant les résultats du scan.
+    \item Tableau d'analyse de la segmentation (Matrice de flux autorisés vs observés).
+    \item Rapport d'audit technique avec classification des vulnérabilités (CVSS).
+\end{enumerate}
+

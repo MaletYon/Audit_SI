@@ -1,0 +1,840 @@
+% ==============================================================================
+% Fichier  : 05_theorie_information_shannon.tex
+% Titre    : Fondements de la Théorie de l'Information de Shannon
+%            appliqués à l'Audit des Systèmes d'Information
+% Cours    : Audit des Systèmes d'Information – ENSP, Département GI
+% Niveau   : Humanités Numériques, Niveau 3
+% ==============================================================================
+
+\chapter{Fondements de la Théorie de l'Information de Shannon}
+\label{chap:shannon}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Pourquoi un auditeur doit-il connaître la théorie de l'information~?}
+\label{sec:motivation}
+% ──────────────────────────────────────────────────────────────────────────────
+
+L'audit des systèmes d'information est, dans son essence, une activité de
+réduction d'incertitude. L'auditeur arrive dans une organisation dont il ignore
+l'état réel~: les contrôles sont-ils en place~? La documentation existe-t-elle~?
+Les processus sont-ils appliqués~? Chaque question posée, chaque document
+examiné, chaque entretien conduit contribue à réduire cette incertitude initiale
+et à construire une opinion argumentée sur la qualité du contrôle interne.
+
+Cette réduction progressive de l'incertitude n'est pas seulement une métaphore
+intuitive~: elle peut être \emph{mesurée}. C'est précisément l'objet de la
+théorie mathématique de l'information, fondée par Claude Elwood Shannon en
+1948~\cite{Shannon1948}. Cette théorie fournit une métrique rigoureuse, l'entropie,
+qui quantifie l'incertitude contenue dans une distribution de probabilités. Dans
+le chapitre suivant, cette métrique sera directement mise en œuvre pour
+quantifier l'incertitude résiduelle d'un audit à travers la distribution des
+réponses trichotomiques O~/~N~/~PAS. Comprendre son fondement théorique est donc
+une condition préalable à l'utilisation correcte et à l'interprétation juste de
+l'outil d'aide à l'audit.
+
+Ce chapitre présente les notions fondamentales dans l'ordre de leur construction
+logique~: la quantification de l'information (§\,\ref{sec:information}), l'entropie
+de Shannon et ses propriétés (§\,\ref{sec:entropie}), la notion d'information
+mutuelle et de réduction d'incertitude (§\,\ref{sec:info-mutuelle}), puis
+l'application directe à la mesure de l'incertitude dans un audit
+(§\,\ref{sec:application-audit}).
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: l'incertitude comme objet d'audit}
+
+Lors d'une mission préliminaire chez Lizbiz's, l'auditeur senior dresse un bilan
+intermédiaire~: sur~30~questions du domaine Sécurité, 10~ont reçu une réponse~O,
+10~une réponse~N, et 10~une réponse~PAS. L'équipe dispose donc d'une vision à peu
+près aussi informative que le hasard le plus complet. Ce constat, avant même
+d'avoir produit un rapport, est \emph{en soi} un constat d'audit~: une
+organisation dont les acteurs ne savent pas si ses propres contrôles de sécurité
+fonctionnent est une organisation en situation de risque structurel. La mesure
+de cette situation par l'entropie de Shannon permettra de la rendre communicable,
+comparable et traçable d'un exercice à l'autre.
+\end{boxlizbiz}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{La mesure de l'information}
+\label{sec:information}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Le problème de la surprise}
+
+La question fondatrice de Shannon est d'une simplicité trompeuse~: \emph{combien
+d'information apporte un message~?} L'intuition quotidienne suggère que la réponse
+dépend du degré de surprise provoqué par ce message. Apprendre que le soleil s'est
+levé ce matin n'apporte aucune information~: c'est un événement certain. Apprendre
+qu'un système d'information national a subi une intrusion réussie malgré une
+politique de sécurité certifiée ISO~27001 est fortement informatif~: c'est un
+événement de faible probabilité.
+
+Cette intuition peut être formalisée~: l'information apportée par un événement
+doit être une fonction \emph{décroissante} de sa probabilité. Shannon montre
+qu'à deux contraintes supplémentaires près, continuité de la fonction et
+additivité pour les événements indépendants, il existe une unique famille de
+fonctions satisfaisant ces propriétés~\cite{Shannon1948, Cover2006}.
+
+\begin{boxdef}{Information propre (auto-information)}
+Soit $\mathcal{X}$ un espace de probabilité fini et $x \in \mathcal{X}$ un
+événement de probabilité $p(x) \in (0,\,1]$. L'\emph{information propre}
+(ou \emph{auto-information}) de $x$ est définie par~:
+\begin{equation}
+  I(x) \;=\; -\log_2 p(x) \;\in\; [0,\,+\infty)
+  \label{eq:autopinfo}
+\end{equation}
+L'unité de mesure est le \emph{bit} lorsque le logarithme est en base~2.
+\end{boxdef}
+
+Quelques cas limites illustrent la cohérence de cette définition~:
+\begin{itemize}
+  \item si $p(x) = 1$ (événement certain), alors $I(x) = -\log_2 1 = 0$~: un
+        événement certain n'apporte aucune information~;
+  \item si $p(x) = 1/2$, alors $I(x) = 1$~bit~: l'issue d'un tirage à pile-ou-face
+        équitable apporte exactement~1~bit d'information~;
+  \item si $p(x) \to 0$ (événement rarissime), alors $I(x) \to +\infty$~: un événement
+        de probabilité quasi nulle serait, s'il se réalisait, porteur d'une
+        information quasi infinie.
+\end{itemize}
+
+\paragraph{Propriété d'additivité.}
+Si $x$ et $y$ sont deux événements \emph{indépendants}, l'information apportée
+par leur réalisation conjointe est la somme des informations individuelles~:
+\begin{equation}
+  I(x,y) \;=\; I(x) + I(y)
+  \label{eq:additivite}
+\end{equation}
+Cette propriété est fondamentale~: elle est la traduction formelle du fait qu'apprendre
+deux nouvelles indépendantes est aussi informatif qu'apprendre chacune séparément.
+
+\subsection{De l'événement à la source}
+
+Dans la pratique, on s'intéresse rarement à un événement isolé mais à une
+\emph{source d'information}, c'est-à-dire une variable aléatoire $X$ prenant ses
+valeurs dans un ensemble fini $\mathcal{X} = \{x_1, \ldots, x_n\}$ avec des
+probabilités $p(x_i) = \Pr[X = x_i]$. La question pertinente devient alors~:
+quelle est l'incertitude \emph{moyenne} sur la valeur que va prendre $X$, avant
+qu'on en connaisse la réalisation~? La réponse est l'entropie de Shannon.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{L'entropie de Shannon}
+\label{sec:entropie}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Définition}
+
+\begin{boxdef}{Entropie de Shannon}
+Soit $X$ une variable aléatoire discrète à valeurs dans $\mathcal{X} =
+\{x_1, \ldots, x_n\}$, de loi $p$. L'\emph{entropie de Shannon} de $X$ est la
+valeur d'information propre \emph{moyenne} sous la loi $p$~:
+\begin{equation}
+  H(X) \;=\; \mathbb{E}_{p}\bigl[I(X)\bigr]
+           \;=\; -\sum_{i=1}^{n} p(x_i)\,\log_2 p(x_i)
+  \label{eq:entropie}
+\end{equation}
+avec la convention $0 \log_2 0 = 0$ (limite par continuité). L'unité est le
+\emph{bit}. $H(X)$ mesure l'incertitude moyenne associée à la source $X$.
+\end{boxdef}
+
+La formulation de Shannon est remarquable par sa concision~: elle réduit la notion
+d'incertitude, intuitive mais diffuse, à une seule quantité scalaire, calculable,
+additive et reliée à la notion de compression optimale de l'information
+\cite{Shannon1948, MacKay2003}.
+
+\subsection{Propriétés fondamentales}
+
+Les quatre propriétés suivantes sont des théorèmes démontrables à partir de la
+définition~\eqref{eq:entropie}~\cite{Cover2006}.
+
+\begin{boiteTheoreme}{Non-négativité et borne supérieure de l'entropie}
+Pour toute variable aléatoire discrète $X$ à $n$ valeurs~:
+\begin{equation}
+  0 \;\leq\; H(X) \;\leq\; \log_2 n
+  \label{eq:bornes}
+\end{equation}
+\begin{itemize}
+  \item $H(X) = 0$ si et seulement si $X$ est \emph{déterministe}~: une et une
+        seule valeur $x_i$ a une probabilité~1 (certitude complète, incertitude
+        nulle)~;
+  \item $H(X) = \log_2 n$ si et seulement si $X$ est \emph{uniformément distribuée}~:
+        toutes les valeurs sont équiprobables (incertitude maximale).
+\end{itemize}
+\end{boiteTheoreme}
+
+\paragraph{Application au contexte trichotomique de l'audit.}
+Dans l'outil d'aide à l'audit (chapitre~\ref{chap:06_outil_aide_audit}), les réponses
+prennent trois valeurs~: $n = 3$. La borne supérieure de l'entropie est donc
+$\log_2 3 \approx 1{,}585$~bits, valeur atteinte lorsque les trois modalités O, N
+et PAS/NEK sont équiprobables. C'est le repère cardinal de l'outil~: une entropie
+proche de~$1{,}585$ signale que les réponses d'un point de contrôle sont aussi
+incertaines que le hasard le plus parfait; une entropie proche de~0 signale une
+situation de quasi-certitude (toutes les réponses convergent vers la même
+modalité).
+
+\begin{boiteTheoreme}{Concavité de l'entropie}
+La fonction $H$ est \emph{strictement concave} sur le simplexe des distributions
+de probabilité~: pour toutes distributions $p$ et $q$ et tout $\lambda \in (0,1)$,
+\begin{equation}
+  H\bigl(\lambda p + (1-\lambda) q\bigr) \;\geq\; \lambda H(p) + (1-\lambda) H(q)
+  \label{eq:concavite}
+\end{equation}
+\end{boiteTheoreme}
+
+La concavité a une interprétation directe~: mélanger deux sources d'information
+ne peut qu'augmenter ou conserver l'incertitude, jamais la réduire. En termes
+d'audit, agréger les réponses de deux équipes d'auditeurs indépendants sur le même
+périmètre ne peut que maintenir ou accroître l'entropie globale~; elle ne saurait
+la réduire.
+
+\begin{boiteTheoreme}{Sous-additivité}
+Pour deux variables aléatoires $X$ et $Y$, l'entropie jointe satisfait~:
+\begin{equation}
+  H(X, Y) \;\leq\; H(X) + H(Y)
+  \label{eq:sous-additivite}
+\end{equation}
+avec égalité si et seulement si $X$ et $Y$ sont \emph{indépendantes}.
+\end{boiteTheoreme}
+
+\begin{boiteTheoreme}{Entropie conditionnelle et règle de chaînage}
+L'\emph{entropie conditionnelle} de $X$ sachant $Y$ est l'incertitude résiduelle
+sur $X$ lorsque $Y$ est connue~:
+\begin{equation}
+  H(X \mid Y) \;=\; -\sum_{j} p(y_j) \sum_{i} p(x_i \mid y_j)\,\log_2 p(x_i \mid y_j)
+  \label{eq:entropie-cond}
+\end{equation}
+La \emph{règle de chaînage} s'écrit alors~:
+\begin{equation}
+  H(X, Y) \;=\; H(X) + H(Y \mid X) \;=\; H(Y) + H(X \mid Y)
+  \label{eq:chainage}
+\end{equation}
+On a toujours $H(X \mid Y) \leq H(X)$~: la connaissance d'une observation $Y$
+ne peut qu'égaler ou réduire l'incertitude sur $X$, jamais l'augmenter.
+\end{boiteTheoreme}
+
+\subsection{Illustration sur des distributions élémentaires}
+
+Le tableau~\ref{tab:entropies} calcule l'entropie pour plusieurs distributions
+trichotomiques représentatives de situations d'audit.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Entropie de Shannon pour des distributions trichotomiques {O, N, PAS}
+représentatives de situations d'audit}
+\label{tab:entropies}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Situation d'audit} & $p_O$ & $p_N$ & $p_P$ &
+$H$ (bits) & \textbf{Interprétation} \\
+\midrule
+Conformité totale &
+1{,}00 & 0{,}00 & 0{,}00 & 0{,}000 & Certitude~: aucune zone d'ombre \\
+\addlinespace
+Forte non-conformité &
+0{,}10 & 0{,}80 & 0{,}10 & 0{,}922 & Situation dégradée mais lisible \\
+\addlinespace
+Forte incertitude &
+0{,}10 & 0{,}10 & 0{,}80 & 0{,}922 & Carence informationnelle majeure \\
+\addlinespace
+Incertitude modérée &
+0{,}50 & 0{,}25 & 0{,}25 & 1{,}500 & Zone grise significative \\
+\addlinespace
+Incertitude maximale &
+$\frac{1}{3}$ & $\frac{1}{3}$ & $\frac{1}{3}$ & 1{,}585 & Chaos informationnel \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Deux observations méritent d'être soulignées. Premièrement, une forte
+non-conformité avérée (distribution $0{,}10$-$0{,}80$-$0{,}10$) et une forte
+carence documentaire (distribution $0{,}10$-$0{,}10$-$0{,}80$) produisent la
+\emph{même} entropie~: les deux situations sont, du point de vue informationnel,
+également certaines, bien qu'elles appellent des recommandations distinctes.
+Deuxièmement, la situation de zone grise modérée ($0{,}50$-$0{,}25$-$0{,}25$),
+qui pourrait paraître rassurante du fait de la majorité de réponses O, est
+presque aussi entropique que le désordre complet~: la présence de~$25\,\%$ de
+réponses PAS/NEK suffit à élever fortement l'incertitude globale.
+
+\begin{boiteRemarque}{Calcul de l'entropie~: règle de convention}
+Par définition, $0 \log_2 0 = 0$. Cette convention est indispensable pour que
+la formule~\eqref{eq:entropie} reste valide lorsqu'une ou plusieurs modalités
+ont une probabilité nulle. Dans un tableur, elle se traduit par l'usage d'un
+test conditionnel~: \verb|SI(p=0;0;p*LOG(p;2))|. Omettre cette convention produit
+une erreur de division par zéro.
+\end{boiteRemarque}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Information mutuelle et réduction d'incertitude}
+\label{sec:info-mutuelle}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Définition}
+
+La notion d'information mutuelle formalise la question~: \emph{combien une
+observation $Y$ réduit-elle l'incertitude sur $X$~?} C'est la traduction
+quantitative de l'activité même de l'audit.
+
+\begin{boxdef}{Information mutuelle}
+L'\emph{information mutuelle} de deux variables aléatoires $X$ et $Y$ est
+définie par~:
+\begin{equation}
+  I(X\,;\,Y) \;=\; H(X) - H(X \mid Y) \;=\; H(Y) - H(Y \mid X)
+  \label{eq:info-mutuelle}
+\end{equation}
+Elle mesure la réduction d'incertitude sur $X$ apportée par la connaissance de
+$Y$, et réciproquement. On a $I(X\,;\,Y) \geq 0$, avec égalité si et seulement
+si $X$ et $Y$ sont indépendantes.
+\end{boxdef}
+
+L'information mutuelle s'exprime également comme la divergence de
+Kullback-Leibler~\cite{Kullback1951} entre la loi jointe $p(x,y)$ et le produit
+des lois marginales $p(x)\,p(y)$~:
+\begin{equation}
+  I(X\,;\,Y) \;=\; \sum_{x,y} p(x,y)\,\log_2 \frac{p(x,y)}{p(x)\,p(y)}
+  \label{eq:kl}
+\end{equation}
+
+\subsection{Interprétation dans le contexte de l'audit}
+
+La table~\ref{tab:analogie-audit} établit le parallèle entre les notions de la
+théorie de l'information et les réalités de la mission d'audit.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Correspondance entre théorie de l'information et pratique de l'audit}
+\label{tab:analogie-audit}
+\begin{tabular}{p{4.5cm}p{4.5cm}p{4.5cm}}
+\toprule
+\textbf{Notion formelle} & \textbf{Notation} & \textbf{Réalité de l'audit} \\
+\midrule
+Variable aléatoire $X$ &
+$X$ : état réel du contrôle &
+Le contrôle est-il effectif~? L'auditeur l'ignore avant l'audit. \\
+\addlinespace
+Distribution a priori de $X$ &
+$p(x)$ avant investigation &
+Croyances initiales de l'auditeur~; en l'absence de données~: 
+distribution uniforme sur O/N/PAS. \\
+\addlinespace
+Observation $Y$ &
+Réponse obtenue (O, N, PAS) &
+Réponse à une question d'évaluation, document examiné, entretien conduit. \\
+\addlinespace
+Entropie a priori $H(X)$ &
+Incertitude avant investigation &
+Incertitude totale à l'ouverture de la mission. \\
+\addlinespace
+Entropie a posteriori $H(X \mid Y)$ &
+Incertitude après observation &
+Incertitude résiduelle après collecte des preuves. \\
+\addlinespace
+Information mutuelle $I(X\,;\,Y)$ &
+$H(X) - H(X \mid Y)$ &
+Valeur informative d'une question d'audit~: réduction d'incertitude produite
+par l'investigation. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La mission d'audit peut donc se lire comme un processus de maximisation de
+l'information mutuelle~: l'auditeur cherche, par son plan d'investigation, à
+maximiser $I(X\,;\,Y_1, \ldots, Y_k)$, c'est-à-dire à sélectionner les questions
+et les observations qui réduisent le plus l'incertitude initiale $H(X)$. Un
+point de contrôle pour lequel l'entropie reste élevée après investigation, parce
+que toutes les réponses sont PAS/NEK, est un point pour lequel l'information
+mutuelle entre les observations et l'état réel du contrôle est nulle~: les
+questions posées n'ont apporté aucune réduction d'incertitude. C'est un constat
+d'audit en soi.
+
+\subsection{La divergence de Kullback-Leibler et la mesure de l'écart normatif}
+
+La théorie de l'information offre un outil complémentaire~: la divergence de
+Kullback-Leibler (KL), qui mesure l'écart entre une distribution observée et une
+distribution de référence~\cite{Kullback1951}.
+
+\begin{boxdef}{Divergence de Kullback-Leibler}
+Soient $p$ (distribution observée) et $q$ (distribution de référence) deux
+distributions sur un espace fini $\mathcal{X}$. La \emph{divergence KL} de $p$
+par rapport à $q$ est~:
+\begin{equation}
+  D_{\mathrm{KL}}(p \,\|\, q) \;=\; \sum_{x \in \mathcal{X}} p(x)\,\log_2\frac{p(x)}{q(x)}
+  \label{eq:kl-div}
+\end{equation}
+avec $D_{\mathrm{KL}}(p \,\|\, q) \geq 0$ et égalité si et seulement si $p = q$
+(inégalité de Gibbs~\cite{Cover2006}).
+\end{boxdef}
+
+Dans le contexte de l'audit, $q$ peut représenter la distribution cible d'une
+organisation mature, par exemple $q = (0{,}90,\,0{,}05,\,0{,}05)$ pour
+un domaine bien contrôlé, et $p$ la distribution observée lors d'une mission.
+La divergence KL mesure alors l'écart entre la réalité observée et l'état
+souhaité~: c'est un indicateur synthétique de la distance entre la maturité
+effective et la maturité cible.
+
+\begin{boiteRemarque}{Non-symétrie de la divergence KL}
+La divergence KL n'est pas symétrique~: $D_{\mathrm{KL}}(p \,\|\, q) \neq
+D_{\mathrm{KL}}(q \,\|\, p)$ en général. Elle ne définit donc pas une distance
+au sens mathématique strict. Pour des usages où la symétrie est souhaitable
+(comparaison entre deux unités auditées), on lui préfère la divergence de Jensen-Shannon,
+définie comme la moyenne des divergences KL de $p$ et $q$ vers leur mélange
+$m = \frac{1}{2}(p+q)$~\cite{Lin1991}. Son usage reste optionnel dans le cadre de
+ce cours~; la divergence KL suffit pour les applications présentées au chapitre
+suivant.
+\end{boiteRemarque}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Le codage de l'information~: lien avec la compression}
+\label{sec:codage}
+% ──────────────────────────────────────────────────────────────────────────────
+
+L'entropie possède une interprétation opérationnelle fondamentale qui en justifie
+le nom et en éclaire le sens profond~: elle représente la \emph{longueur minimale
+moyenne} d'un code nécessaire pour représenter les messages d'une source. Ce
+résultat est le \emph{théorème du codage source} de Shannon.
+
+\begin{boiteTheoreme}{Théorème du codage source (Shannon, 1948)}
+Soit $X$ une source discrète sans mémoire de loi $p$. Tout code préfixe
+(code de Huffman~\cite{Huffman1952}, par exemple) attribue à chaque symbole $x_i$
+un mot de code de longueur $\ell_i$. La \emph{longueur moyenne} $\bar{L} =
+\sum_i p(x_i)\,\ell_i$ satisfait~:
+\begin{equation}
+  H(X) \;\leq\; \bar{L} \;<\; H(X) + 1
+  \label{eq:codage-source}
+\end{equation}
+La borne inférieure $H(X)$ est atteinte asymptotiquement~: l'entropie est la
+limite fondamentale de la compression sans perte.
+\end{boiteTheoreme}
+
+L'interprétation pour l'audit est la suivante. Si un point de contrôle présente
+une entropie $H \approx 0$, ses réponses sont quasi certaines~: elles sont peu
+informatives dans l'absolu, mais elles sont \emph{compressibles} en très peu de
+bits. À l'inverse, une entropie $H \approx 1{,}585$~bits signifie que les
+réponses de ce point de contrôle sont si imprévisibles qu'elles nécessitent la
+quasi-totalité du potentiel informationnel d'un système à trois symboles~: chaque
+réponse est véritablement une \emph{nouvelle} au sens informationnel du terme.
+
+Cette intuition rejoint directement la pratique de l'audit~: un point de contrôle
+à forte entropie mérite plus de temps, d'investigations complémentaires et de
+diligences documentaires, précisément parce que chaque réponse y est plus
+susceptible d'être surprenante et donc potentiellement révélatrice.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Entropie et distributions trichotomiques~: analyse exhaustive}
+\label{sec:trichotomique}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Paramétrisation de la surface d'entropie}
+
+La surface d'entropie d'une distribution trichotomique $(p_O, p_N, p_P)$ avec
+$p_O + p_N + p_P = 1$ forme un simplexe bidimensionnel. Son étude complète
+permet de comprendre comment chacun des trois types de réponse contribue à l'entropie
+globale.
+
+En posant $\mathbf{p} = (p_O, p_N, p_P)$, on a~:
+\begin{equation}
+  H(\mathbf{p})
+    = -p_O \log_2 p_O - p_N \log_2 p_N - p_P \log_2 p_P
+    \;\in\; [0,\; \log_2 3]
+  \label{eq:entropie-tri}
+\end{equation}
+
+Les lignes de niveau de cette surface révèlent trois zones de qualité distinctes~:
+
+\begin{enumerate}
+  \item \textbf{Zone de certitude} ($H < 0{,}5$~bit)~: au moins l'une des trois
+        modalités est largement dominante. L'audit est conclusif, même si la
+        conclusion est défavorable. Un audit entièrement rouge (toutes les
+        réponses~N) est, paradoxalement, aussi informatif qu'un audit entièrement
+        vert~: dans les deux cas, $H = 0$.
+  \item \textbf{Zone d'incertitude modérée} ($0{,}5 \leq H < 1{,}0$~bit)~:
+        les réponses sont partagées mais avec une tendance perceptible.
+        L'investigation complémentaire est utile mais non urgente.
+  \item \textbf{Zone grise critique} ($H \geq 1{,}0$~bit)~: les trois modalités
+        coexistent de façon significative. L'audit de ce point de contrôle doit
+        être étendu avant que toute conclusion soit émise.
+\end{enumerate}
+
+\subsection{Décomposition de l'entropie et contribution des composantes}
+
+L'entropie d'une distribution trichotomique peut se décomposer en la somme de
+l'entropie binaire O~vs.~(N+PAS) et de l'entropie conditionnelle sur la
+répartition N/PAS~:
+\begin{equation}
+  H(p_O, p_N, p_P) \;=\;
+    H_b(p_O) \;+\; (1 - p_O)\,H\!\left(\frac{p_N}{1-p_O},\;
+    \frac{p_P}{1-p_O}\right)
+  \label{eq:decomp}
+\end{equation}
+où $H_b(\alpha) = -\alpha \log_2 \alpha - (1-\alpha)\log_2(1-\alpha)$ est
+l'entropie binaire de Bernoulli. Cette décomposition est utile pour identifier
+la source principale d'incertitude~: le premier terme mesure l'incertitude sur la
+dichotomie conformité/non-conformité, tandis que le second mesure l'incertitude
+entre non-conformité avérée et incertitude documentaire.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Application à la mesure de l'incertitude dans un audit}
+\label{sec:application-audit}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\subsection{Modélisation formelle du processus d'audit}
+
+Soit $\mathcal{D}$ un domaine d'audit décomposé en $K$ points de contrôle
+$\{C_1, \ldots, C_K\}$, et soit $C_k$ un point de contrôle comportant $n_k$
+questions d'évaluation. Pour chaque question $j \in \{1, \ldots, n_k\}$, l'auditeur
+collecte une réponse $r_{k,j} \in \{\texttt{O},\,\texttt{N},\,\texttt{PAS}\}$.
+
+\begin{boxdef}{Entropie d'un point de contrôle}
+Notons $n_k^O$, $n_k^N$, $n_k^P$ les effectifs de chaque modalité dans le point
+de contrôle $C_k$, et $n_k = n_k^O + n_k^N + n_k^P$ le nombre total de questions.
+L'\emph{entropie empirique} du point de contrôle est~:
+\begin{equation}
+  H(C_k) \;=\; -\!\!\!\sum_{m \,\in\, \{\texttt{O},\texttt{N},\texttt{P}\}}
+  \hat{p}_{k,m}\,\log_2 \hat{p}_{k,m}
+  \label{eq:entropie-cp}
+\end{equation}
+où $\hat{p}_{k,m} = n_k^m / n_k$ est la fréquence observée de la modalité~$m$.
+\end{boxdef}
+
+\begin{boxdef}{Entropie d'un domaine (entropie agrégée)}
+L'\emph{entropie du domaine} $\mathcal{D}$ est la moyenne pondérée des entropies
+de ses points de contrôle, pondérée par le nombre de questions~:
+\begin{equation}
+  H(\mathcal{D}) \;=\; \frac{\displaystyle\sum_{k=1}^{K} n_k\,H(C_k)}{\displaystyle\sum_{k=1}^{K} n_k}
+  \label{eq:entropie-domaine}
+\end{equation}
+Cette quantité est l'entropie empirique calculée sur l'ensemble des réponses du
+domaine, traitées comme un seul échantillon.
+\end{boxdef}
+
+\subsection{Le double signal de l'outil d'audit}
+
+Le chapitre~\ref{chap:06_outil_aide_audit} introduit l'idée que l'outil mesure deux
+dimensions distinctes~: \emph{ce qui ne va pas} (taux de non-conformité,
+proportion de réponses~N) et \emph{ce qu'on ne sait pas} (proportion de réponses
+PAS/NEK). La théorie de Shannon éclaire pourquoi ces deux dimensions sont
+fondamentalement irréductibles l'une à l'autre.
+
+Formellement, les deux signaux sont~:
+\begin{align}
+  \tau_c(\mathcal{D}) &= \hat{p}_O \;=\; \frac{n^O}{n}
+  \label{eq:taux-conformite} \\[6pt]
+  H(\mathcal{D}) &= -\hat{p}_O \log_2 \hat{p}_O
+                   - \hat{p}_N \log_2 \hat{p}_N
+                   - \hat{p}_P \log_2 \hat{p}_P
+  \label{eq:entropie-domaine2}
+\end{align}
+
+Ces deux indicateurs sont \emph{orthogonaux}~: deux domaines de même taux de
+conformité peuvent présenter des entropies très différentes, et inversement. Le
+tableau~\ref{tab:ortho} illustre cette orthogonalité.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Orthogonalité du taux de conformité et de l'entropie~: quatre
+configurations distinctes pour un même taux de conformité de~$50\,\%$}
+\label{tab:ortho}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Configuration} & $\hat{p}_O$ & $\hat{p}_N$ & $\hat{p}_P$ &
+$\tau_c$ & $H$ (bits) \\
+\midrule
+Audit clair, moitié conforme & 0{,}50 & 0{,}50 & 0{,}00 & 50\,\% & 1{,}000 \\
+Audit ambigu, sans zone grise & 0{,}50 & 0{,}25 & 0{,}25 & 50\,\% & 1{,}500 \\
+Forte carence documentaire & 0{,}50 & 0{,}10 & 0{,}40 & 50\,\% & 1{,}361 \\
+Incertitude maximale & $\frac{1}{3}$ & $\frac{1}{3}$ & $\frac{1}{3}$ & 33\,\% & 1{,}585 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ces quatre situations n'ont pas le même profil de risque, bien que les deux
+premières partagent le même taux de conformité de~$50\,\%$. Dans la première,
+l'auditeur sait ce qui va et ce qui ne va pas~; dans la seconde, un quart des
+réponses reste dans la zone grise, ce qui signifie qu'un quart du périmètre
+audité est soustrait à l'opinion de l'auditeur. Réduire l'audit à son seul taux
+de conformité reviendrait à traiter ces situations de façon identique, ce qui
+serait une erreur méthodologique grave.
+
+\subsection{Interprétation normative des seuils d'entropie}
+
+La table~\ref{tab:seuils} résume les seuils d'interprétation de l'entropie en
+contexte d'audit, tels qu'ils seront mis en œuvre dans l'outil du chapitre
+suivant.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Seuils normatifs d'entropie pour l'interprétation d'un point de
+contrôle dans l'outil d'aide à l'audit}
+\label{tab:seuils}
+\begin{tabular}{cccl}
+\toprule
+\textbf{Plage} & \textbf{Couleur outil} & \textbf{Qualification} &
+\textbf{Conduite à tenir} \\
+\midrule
+$H < 0{,}5$ & Blanc & Certitude & Aucune investigation complémentaire requise \\
+$0{,}5 \leq H < 1{,}0$ & Jaune & Incertitude modérée &
+Relance de l'audité sur les PAS/NEK \\
+$H \geq 1{,}0$ & Rouge & Zone grise critique &
+Investigation approfondie obligatoire avant conclusion \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{boiteRemarque}{Nature statistique de l'entropie empirique}
+L'entropie~$H(C_k)$ calculée dans l'outil est une \emph{entropie empirique}~:
+elle est estimée sur un échantillon fini de $n_k$ questions. Pour des points de
+contrôle comportant peu de questions ($n_k < 10$), l'estimation peut être biaisée
+et instable. L'estimateur du maximum de vraisemblance de l'entropie est
+asymptotiquement non biaisé mais surestimé pour de petits $n$~\cite{Paninski2003}.
+Des correcteurs de biais (correcteur de Miller-Madow) existent mais ne sont pas
+nécessaires dans le cadre de ce cours, où l'entropie est utilisée comme indicateur
+de pilotage et non comme estimateur statistique précis.
+\end{boiteRemarque}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Extensions~: entropie croisée et mesures apparentées}
+\label{sec:extensions}
+% ──────────────────────────────────────────────────────────────────────────────
+
+Pour les lecteurs souhaitant aller plus loin, deux extensions de la notion
+d'entropie de Shannon sont présentées~: l'entropie croisée, utilisée pour mesurer
+l'adéquation d'un modèle à une distribution observée, et l'entropie de Rényi,
+qui généralise l'entropie de Shannon à une famille paramétrée.
+
+\begin{boxdef}{Entropie croisée}
+Soient $p$ (distribution réelle) et $q$ (distribution modèle) deux distributions
+sur $\mathcal{X}$. L'\emph{entropie croisée} de $p$ relativement à $q$ est~:
+\begin{equation}
+  H(p, q) \;=\; -\sum_{x \in \mathcal{X}} p(x)\,\log_2 q(x)
+  \label{eq:entropie-croisee}
+\end{equation}
+On a $H(p,q) = H(p) + D_{\mathrm{KL}}(p\,\|\,q) \geq H(p)$, avec égalité si
+et seulement si $p = q$.
+\end{boxdef}
+
+En audit, $q$ peut représenter la distribution cible d'une organisation certifiée
+(ex.~$q_{\mathrm{cible}} = (0{,}90, 0{,}05, 0{,}05)$) et $p$ la distribution observée.
+L'entropie croisée $H(p, q_{\mathrm{cible}})$ mesure alors le coût informationnel
+de l'inadéquation entre la réalité et la cible~: plus ce coût est élevé, plus
+l'organisation s'écarte de son niveau de maturité attendu.
+
+\begin{boxdef}{Entropie de Rényi}
+Soit $\alpha > 0$, $\alpha \neq 1$. L'\emph{entropie de Rényi d'ordre $\alpha$}
+est~:
+\begin{equation}
+  H_\alpha(X) \;=\; \frac{1}{1-\alpha}\,\log_2\!\left(\sum_{i} p(x_i)^\alpha\right)
+  \label{eq:renyi}
+\end{equation}
+À la limite $\alpha \to 1$, $H_\alpha(X) \to H(X)$ (entropie de Shannon).
+\end{boxdef}
+
+L'entropie de Rényi d'ordre~$\alpha > 1$ pénalise davantage les événements
+fréquents et est moins sensible aux événements rares~; pour $\alpha < 1$,
+l'effet inverse se produit. Dans le contexte de l'audit, l'entropie de Rényi
+d'ordre~2 ($H_2$), appelée \emph{entropie de collision}, offre une mesure
+d'incertitude plus robuste aux petites erreurs d'estimation des probabilités~;
+elle peut être utilisée comme vérification de la stabilité des résultats obtenus
+avec l'entropie de Shannon standard~\cite{Renyi1961}.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Synthèse~: de Shannon à l'audit}
+\label{sec:synthese}
+% ──────────────────────────────────────────────────────────────────────────────
+
+Ce chapitre a construit le socle théorique nécessaire à la pleine compréhension
+de l'outil d'aide à l'audit présenté au chapitre suivant. La progression logique
+en est la suivante~:
+
+\begin{enumerate}
+  \item L'information propre $I(x) = -\log_2 p(x)$ quantifie la surprise associée
+        à l'observation d'un événement isolé~; son analogue en audit est l'apport
+        informationnel d'une seule réponse d'évaluation.
+  \item L'entropie de Shannon $H(X)$ est la moyenne de cette surprise sur
+        l'ensemble d'une source~; appliquée à un point de contrôle, elle mesure
+        l'incertitude résiduelle de l'auditeur après investigation.
+  \item L'information mutuelle $I(X\,;\,Y)$ mesure la réduction d'incertitude
+        apportée par une observation~; elle formalise la valeur informative d'un
+        programme d'audit~: un bon plan d'audit est celui qui maximise la
+        réduction d'incertitude pour un coût d'investigation donné.
+  \item Le théorème du codage source relie l'entropie à la compressibilité~;
+        un point de contrôle à entropie élevée est, au sens formel, un point
+        dont les réponses sont fondamentalement incompressibles~: elles ne peuvent
+        être prédites ni remplacées par des connaissances préalables.
+  \item La divergence de Kullback-Leibler permet de mesurer l'écart entre l'état
+        observé d'un domaine et un référentiel de maturité cible~; elle est
+        l'instrument formel de la notation de maturité.
+\end{enumerate}
+
+\begin{boiteTheoreme}{Principe de la cartographie entropique en audit}
+Soit un audit portant sur $K$ points de contrôle. Définissons le vecteur
+d'entropies $\mathbf{H} = (H(C_1), \ldots, H(C_K)) \in [0,\,\log_2 3]^K$.
+La \emph{cartographie entropique} de l'audit est la représentation graphique de
+$\mathbf{H}$. Elle constitue un second tableau de bord orthogonal au vecteur des
+taux de conformité $\boldsymbol{\tau} = (\tau_{c,1}, \ldots, \tau_{c,K})$.
+
+Les quatre quadrants du plan $(\tau_c, H)$ correspondent à quatre pathologies
+distinctes~:
+\begin{itemize}
+  \item $(\tau_c$ élevé, $H$ faible)~: bonne conformité, haute lisibilité~---
+        la situation nominale visée~;
+  \item $(\tau_c$ faible, $H$ faible)~: non-conformité massive mais clairement
+        identifiée, situation grave mais traçable~;
+  \item $(\tau_c$ élevé, $H$ élevée)~: apparence de conformité masquée par une
+        carence d'information, situation trompeuse, à risque sous-estimé~;
+  \item $(\tau_c$ faible, $H$ élevée)~: non-conformité probable et incertitude
+        élevée, la situation la plus préoccupante, requérant une investigation
+        immédiate.
+\end{itemize}
+\end{boiteTheoreme}
+
+\begin{boxlizbiz}
+\textbf{Cas Lizbiz's~: lecture de la cartographie entropique}
+
+À l'issue de l'audit de Lizbiz's, la feuille \texttt{SYNTHÈSE} produit le
+vecteur d'entropies suivant pour cinq domaines~:
+
+\smallskip
+\begin{tabular}{lccl}
+\toprule
+\textbf{Domaine} & $\tau_c$ & $H$ (bits) & \textbf{Quadrant} \\
+\midrule
+Applications & $78\,\%$ & $0{,}62$ & Bonne conformité, lisibilité moyenne \\
+DSI & $55\,\%$ & $0{,}38$ & Non-conformité marquée, lisible \\
+Projets & $82\,\%$ & $1{,}21$ & \textbf{Conformité apparente, fort risque masqué} \\
+Support & $91\,\%$ & $0{,}18$ & Situation nominale \\
+Sécurité & $33\,\%$ & $1{,}40$ & \textbf{Non-conformité et incertitude critiques} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+La lecture du seul taux de conformité aurait conduit à concentrer les
+recommandations sur les domaines DSI et Sécurité. La cartographie entropique
+révèle que le domaine Projets, apparemment sain ($\tau_c = 82\,\%$), est en
+réalité une zone grise critique ($H = 1{,}21$~bits)~: plus de la moitié des
+réponses de ce domaine sont PAS/NEK, signalant une organisation de projet dont
+personne ne connaît le fonctionnement réel. Ce domaine exige une investigation
+complémentaire prioritaire avant que l'auditeur puisse émettre une opinion.
+\end{boxlizbiz}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section*{Références bibliographiques}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\addcontentsline{toc}{section}{Références bibliographiques}
+
+\begin{itemize}
+
+\item \textsc{Shannon}, C.\,E. (1948). A mathematical theory of communication.
+\emph{Bell System Technical Journal}, 27(3), 379--423 \& 27(4), 623--656.
+\doi{10.1002/j.1538-7305.1948.tb01338.x}
+
+\item \textsc{Cover}, T.\,M. et \textsc{Thomas}, J.\,A. (2006).
+\emph{Elements of Information Theory} (2\textsuperscript{e}~éd.).
+Wiley-Interscience. ISBN 978-0-471-24195-9.
+
+\item \textsc{MacKay}, D.\,J.\,C. (2003).
+\emph{Information Theory, Inference, and Learning Algorithms}.
+Cambridge University Press. ISBN 978-0-521-64298-9.
+Disponible en libre accès~: \url{http://www.inference.org.uk/mackay/itila/}
+
+\item \textsc{Kullback}, S. et \textsc{Leibler}, R.\,A. (1951).
+On information and sufficiency.
+\emph{The Annals of Mathematical Statistics}, 22(1), 79--86.
+\doi{10.1214/aoms/1177729694}
+
+\item \textsc{Huffman}, D.\,A. (1952).
+A method for the construction of minimum-redundancy codes.
+\emph{Proceedings of the IRE}, 40(9), 1098--1101.
+\doi{10.1109/JRPROC.1952.273898}
+
+\item \textsc{Lin}, J. (1991).
+Divergence measures based on the Shannon entropy.
+\emph{IEEE Transactions on Information Theory}, 37(1), 145--151.
+\doi{10.1109/18.61115}
+
+\item \textsc{Rényi}, A. (1961).
+On measures of entropy and information.
+\emph{Proceedings of the 4th Berkeley Symposium on Mathematical Statistics and
+Probability}, 1, 547--561.
+University of California Press.
+
+\item \textsc{Paninski}, L. (2003).
+Estimation of entropy and mutual information.
+\emph{Neural Computation}, 15(6), 1191--1253.
+\doi{10.1162/089976603321780272}
+
+\item \textsc{Jaynes}, E.\,T. (1957).
+Information theory and statistical mechanics.
+\emph{Physical Review}, 106(4), 620--630.
+\doi{10.1103/PhysRev.106.620}
+
+\item \textsc{ISACA} (2022).
+\emph{CISA Review Manual, 28\textsuperscript{th} Edition}.
+ISACA. ISBN 978-1-60420-981-4.
+
+\end{itemize}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section*{Exercices}
+% ──────────────────────────────────────────────────────────────────────────────
+
+\addcontentsline{toc}{section}{Exercices}
+
+\begin{boxexo}
+\textbf{Exercice~1 – Calcul direct d'entropie}
+
+Un auditeur clôture l'examen d'un point de contrôle \emph{Gestion des accès}
+comportant 12~questions. Les réponses sont~: 6~O, 3~N, 3~PAS.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Calculer l'entropie empirique $H$ du point de contrôle.
+  \item Situer cette valeur dans la table de seuils (table~\ref{tab:seuils}).
+  \item Conclure sur la conduite à tenir.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}
+\textbf{Exercice~2 – Orthogonalité des indicateurs}
+
+Deux domaines $\mathcal{D}_1$ et $\mathcal{D}_2$ présentent le même taux de
+conformité $\tau_c = 60\,\%$. La distribution de $\mathcal{D}_1$ est
+$(0{,}60, 0{,}30, 0{,}10)$ et celle de $\mathcal{D}_2$ est $(0{,}60, 0{,}10, 0{,}30)$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Calculer $H(\mathcal{D}_1)$ et $H(\mathcal{D}_2)$.
+  \item Ces deux valeurs sont-elles différentes~? Justifier.
+  \item Quel domaine présente le risque le plus préoccupant du point de vue de
+        la qualité de l'information~? Argumenter.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}
+\textbf{Exercice~3 – Divergence de Kullback-Leibler et écart normatif}
+
+Une organisation de référence présente la distribution cible
+$q = (0{,}90, 0{,}05, 0{,}05)$. L'organisation Lizbiz's présente sur le domaine
+Sécurité la distribution observée $p = (0{,}33, 0{,}40, 0{,}27)$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Calculer $D_{\mathrm{KL}}(p \,\|\, q)$.
+  \item Interpréter le résultat en termes d'écart de maturité.
+  \item Commenter la non-symétrie en calculant $D_{\mathrm{KL}}(q \,\|\, p)$.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}
+\textbf{Exercice~4 – Codage et interprétation}
+
+Un point de contrôle présente une distribution de réponses $(0{,}80, 0{,}15, 0{,}05)$.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Calculer l'entropie $H$.
+  \item En utilisant le théorème du codage source, donner la longueur minimale
+        moyenne d'un code binaire représentant les réponses de ce point de
+        contrôle.
+  \item Un code naïf assignerait~2~bits par symbole (codage en base~4). Quel
+        est le gain de compression théorique possible~?
+\end{enumerate}
+\end{boxexo}
+

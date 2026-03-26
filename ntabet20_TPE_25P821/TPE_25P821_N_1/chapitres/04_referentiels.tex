@@ -1,0 +1,174 @@
+% ==============================================================================
+% Fichier : 04_referentiels.tex
+% Description : Normes et Référentiels Usuels en Audit des SI
+% ==============================================================================
+
+\chapter{Normes et Référentiels Usuels en Audit des Systèmes d'Information}\label{chap:04_referentiels}
+
+L'auditeur a besoin de "briques" techniques et organisationnelles pour évaluer la maturité d'un SI. Les référentiels fournissent les bonnes pratiques reconnues internationalement. Ce chapitre présente les trois piliers : COSO, COBIT et la série ISO 27000.
+
+\section{COSO : Le Modèle de Contrôle Interne}
+% ------------------------------------------------------------------------------
+
+\subsection{Présentation}
+
+\begin{boxdef}
+\textbf{COSO (Committee of Sponsoring Organizations) :} Cadre de référence conceptuel du contrôle interne, publié en 1992 (révisé en 2013). C'est le modèle standard pour la gouvernance d'entreprise, souvent exigé par les lois sur la gouvernance (ex: Sarbanes-Oxley aux USA).
+\end{boxdef}
+
+Bien que généraliste, COSO est le socle sur lequel s'appuient les autres référentiels informatiques.
+
+\subsection{Les Trois Objectifs}
+
+Le contrôle interne selon COSO vise à donner une assurance raisonnable sur la réalisation de trois objectifs :
+\begin{enumerate}
+    \item \textbf{Réalisation et Optimisation des opérations} (Performance).
+    \item \textbf{Fiabilité des informations financières} (Comptabilité).
+    \item \textbf{Conformité aux lois et règlements} (Juridique).
+\end{enumerate}
+
+\subsection{Les Cinq Composantes (Le Cube COSO)}
+
+Pour atteindre ces objectifs, l'organisation doit mettre en place 5 composantes liées :
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{4cm}p{8cm}}
+    \toprule
+    \textbf{Composante} & \textbf{Description} \\
+    \midrule
+    \textbf{Environnement de Contrôle} & La culture, l'éthique, la compétence du personnel. (Le "ton donné par le sommet"). \\
+    \textbf{Évaluation des Risques} & Identification et analyse des risques qui pourraient empêcher d'atteindre les objectifs. \\
+    \textbf{Activités de Contrôle} & Les politiques et procédures concrètes (Séparation des tâches, autorisations). \\
+    \textbf{Information et Communication} & La circulation de l'information nécessaire au pilotage (Qualité des données). \\
+    \textbf{Pilotage (Monitoring)} & Surveillance continue du système de contrôle interne (Audits, Supervision). \\
+    \bottomrule
+\end{tabular}
+\caption{Les 5 composantes du référentiel COSO}
+\end{table}
+
+\begin{boxlizbiz}
+\textbf{Application Lizbiz's :}
+L'audit du système de gestion des commandes chez Lizbiz's vérifiera si les 5 composantes COSO sont présentes : existe-t-il une procédure (Activité de contrôle) ? Les risques de fraude sont-ils évalués (Évaluation des risques) ? Les managers supervisent-ils les anomalies (Pilotage) ?
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{COBIT : La Gouvernance des SI}
+% ------------------------------------------------------------------------------
+
+\subsection{Présentation}
+
+\begin{boxdef}
+\textbf{COBIT (Control Objectives for Information and Related Technologies) :} Référentiel de gouvernance et de management des SI développé par l'ISACA. Il fait le pont entre les métiers et l'IT.
+\end{boxdef}
+
+C'est le référentiel de choix pour l'auditeur SI car il propose une liste d'objectifs de contrôle précis pour chaque processus informatique.
+
+\subsection{Objectifs et Apports}
+
+COBIT répond à la question : "Comment aligner l'IT sur la stratégie de l'entreprise ?".
+Il structure le SI en domaines et processus, offrant à l'auditeur une grille de lecture universelle.
+
+\subsection{Structure de COBIT (Version 5 / 2019)}
+
+COBIT divise la gouvernance et le management en 5 domaines principaux :
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Domaine} & \textbf{Contenu (Exemples de processus)} \\
+    \midrule
+    \textbf{Evaluer, Diriger et Surveiller (EDM)} & Gouvernance stratégique (EDM01 : Gouvernance du cadre I\&T). \\
+    \midrule
+    \textbf{Planifier et Organiser (PO)} & Stratégie, Architecture, Budget (PO01 : Gérer le cadre de management IT). \\
+    \midrule
+    \textbf{Acquérir et Implémenter (AI)} & Projets, Développement, Intégration (AI06 : Gérer les changements). \\
+    \midrule
+    \textbf{Délivrer et Servir (DS)} & Exploitation, Support, Sécurité (DS01 : Gérer les opérations). \\
+    \midrule
+    \textbf{Surveiller, Évaluer et Analyser (MEA)} & Performance, Conformité (MEA02 : Surveiller et évaluer le contrôle interne). \\
+    \bottomrule
+\end{tabular}
+\caption{Les domaines de COBIT}
+\end{table}
+
+\subsection{Utilisation par l'Auditeur}
+
+Pour chaque processus (ex: DS5 "Gérer la sécurité"), COBIT fournit :
+\begin{itemize}
+    \item Un objectif de contrôle détaillé.
+    \item Des indicateurs de performance (KPI).
+    \item Un modèle de maturité (de 0 : Inexistant à 5 : Optimisé).
+\end{itemize}
+
+\subsection{La Cascade d'Objectifs COBIT}
+L'un des points forts de COBIT est sa capacité à lier la stratégie métier aux objectifs techniques. 
+\begin{enumerate}
+    \item \textbf{Besoins des parties prenantes} (Bénéfices, Risques, Ressources).
+    \item \textbf{Objectifs d'entreprise} (ex: Portefeuille de produits et services structurés).
+    \item \textbf{Objectifs d'alignement} (ex: Qualité des informations financières liées à l'IT).
+\end{enumerate}
+% ------------------------------------------------------------------------------
+\section{La Série ISO 27000 : La Sécurité Normative}
+% ------------------------------------------------------------------------------
+
+Alors que COBIT gère l'IT, la série ISO 27000 se concentre spécifiquement sur la \textbf{Sécurité de l'Information}.
+
+\subsection{Vue d'Ensemble}
+
+C'est une famille de normes internationales. Les plus critiques pour l'auditeur sont :
+
+\begin{itemize}
+    \item \textbf{ISO 27001 :} Exigences pour un Système de Management de la Sécurité de l'Information (SMSI). C'est la norme \textit{certifiable}.
+    \item \textbf{ISO 27002 :} Code de bonne pratique. Liste détaillée des mesures de sécurité (contrôles) à implémenter.
+    \item \textbf{ISO 27005 :} Gestion des risques en sécurité de l'information.
+    \item \textbf{ISO 27006 :} Exigences pour les organismes de certification.
+\end{itemize}
+
+\subsection{Importance pour l'Audit}
+
+\begin{enumerate}
+    \item \textbf{Critères d'audit :} ISO 27001 fournit les exigences ("Il faut une politique de sécurité"). L'auditeur vérifie si c'est fait.
+    \item \textbf{Mesures techniques :} ISO 27002 aide l'auditeur à proposer des recommandations techniques précises (ex: "Comment configurer l'authentification ?").
+\end{enumerate}
+
+\begin{boxlizbiz}
+\textbf{Projet Lizbiz's :}
+Suite à l'audit, la direction de Lizbiz's souhaite rassurer ses clients. Elle décide de se faire certifier \textbf{ISO 27001}. L'auditeur utilisera l'Annexe A de cette norme (qui liste les contrôles obligatoires) comme grille d'évaluation pour le futur audit de certification.
+\end{boxlizbiz}
+
+% ------------------------------------------------------------------------------
+\section{Synthèse : Comment Choisir ?}
+% ------------------------------------------------------------------------------
+
+L'auditeur combine souvent ces référentiels :
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{3cm}p{4cm}p{5cm}}
+    \toprule
+    \textbf{Référentiel} & \textbf{Angle d'attaque} & \textbf{Question clé pour l'auditeur} \\
+    \midrule
+    \textbf{COSO} & Gouvernance Globale & Les contrôles internes sont-ils bien conçus ? \\
+    \textbf{COBIT} & Processus IT & L'informatique est-elle bien gérée ? \\
+    \textbf{ISO 27001} & Sécurité Info & Le système est-il sécurisé et certifiable ? \\
+    \bottomrule
+\end{tabular}
+\caption{Comparatif des référentiels}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor{blue!10} \textbf{Référentiel} & \textbf{Cible} & \textbf{Focus Auditeur} & \textbf{Livrable type} \\ \hline
+    \textbf{COSO} & DG / Audit Interne & Contrôle Interne Global & Rapport de conformité Loi Sarbanes-Oxley \\ \hline
+    \textbf{COBIT} & DSI / Métiers & Gouvernance et Alignement & Matrice de maturité des processus SI \\ \hline
+    \textbf{ISO 27001} & RSSI / Sécurité & Management de la Sécurité & Certification SMSI (Audit de conformité) \\ \hline
+\end{tabular}
+\caption{Tableau comparatif des référentiels d'audit}
+\end{table}
