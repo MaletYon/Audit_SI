@@ -1,0 +1,6 @@
+Exemples de la règle des quatres yeux 
+
+-Un administrateur réseau finit la configuration d'une architecture réseau, et demande à son  homologue de jeter un coup d'oeil.
+
+
+Un auditeur finit d'auditer le SI d'information d'une banque et demande à un colègue de jeter un coup doeil à son travail.
